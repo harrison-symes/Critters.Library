@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+.shop {
+  margin: auto;
+  /* max-width: 500px; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.shop-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.shop-orders {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 4px;
+  background-color: lightgray;
+  padding: 16px;
+  padding-bottom: 32px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  width: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.stats {
+  border: 3px solid orange;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 24px;
+}
+
+.cards {
+  margin: auto;
+  text-align: center;
+  max-width: 80vw;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button {
+  background-color: lightblue;
+  color: black;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  line-height: 1.6;
+  cursor: pointer;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.button__big {
+  margin-top: 8px;
+  display: block;
+  font-size: 32px;
+}
+
+.card {
+  /* height: 300px; */
+  border-radius: 4px;;
+  margin: 8px 8px;
+  /* height: 400px; */
+  width: 300px;
+  border: 3px solid pink;
+  box-shadow: 1px 1px solid black;
+}
+
+.card-name {
+  position: relative;
+  top: 0;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  color: black;
+  font-size: 30px;
+  /* -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black; */
+  margin-bottom: 8px;
+}
+
+.card-cost {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.card-cost__item {
+  width: 16px;
+  height: 16px;
+  margin: 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-cost__carrot {
+  background-color: orange;
+}
+.card-cost__berries {
+  background-color: mediumpurple;
+}
+.card-cost__apple {
+  background-color: lightcoral;
+}
+
+.card-description {
+  width: 250px;
+  padding: 4px 8px;
+  position: relative;
+  top: 0;
+  text-align: center;
+  margin: auto;
+  color: black;
+  font-size: 16px;
+  /* -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black; */
+  margin: 8px auto;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: burlywood;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  max-height: 100%;
+  max-width: 100%;
+  width: 250px;
+  margin: auto;
+  display: flex;
+  overflow: hidden;
+  object-fit: contain;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.card-footer {
+  padding: 4px 8px;
+  width: 250px;
+  margin: 8px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-type {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid black;
+  background-color: burlywood;
+}
+
+.card-durability {
+  margin-left: auto;
+  width: fit-content;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.card-durability__icon {
+  margin-left: 4px;
+  height: 30px;
+}
+
+.work-order {
+  /* height: 300px; */
+  border-radius: 4px;
+  ;
+  margin: 8px 8px;
+  /* height: 400px; */
+  width: 300px;
+  border: 3px solid brown;
+  box-shadow: 1px 1px solid black;
 }
