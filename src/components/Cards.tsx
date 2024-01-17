@@ -94,13 +94,6 @@ const Cards = () => {
         ))}
       </div>
       <hr />
-      <h1>Worms ({worms.length})</h1>
-      <div className="card-list">
-        {worms.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
       <h1>Caterpillars ({caterpillars.length})</h1>
       <div className="card-list">
         {caterpillars.map((card) => (

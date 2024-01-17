@@ -24,7 +24,7 @@ export interface ICard {
     apples: number;
   };
   type: CARD_TYPE;
-  durability?: number;
+  energy?: number;
 }
 
 export interface IWorkOrder {

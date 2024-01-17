@@ -3,11 +3,11 @@ import { CARD_TYPE, ICard } from "../models/cards.models";
 const seeds: ICard[] = [
   {
     name: "Carrot Seeds",
-    qty: 4,
+    qty: 2,
     cost: {
-      carrots: 3,
       apples: 0,
-      berries: 0,
+      berries: 1,
+      carrots: 2,
     },
     image: "carrot_seeds",
     description: "After 2 turns, Harvest 3 Carrots.",
@@ -15,7 +15,7 @@ const seeds: ICard[] = [
   },
   {
     name: "Apple Seeds",
-    qty: 4,
+    qty: 2,
     cost: {
       apples: 2,
       berries: 0,
@@ -27,11 +27,11 @@ const seeds: ICard[] = [
   },
   {
     name: "Berry Seeds",
-    qty: 4,
+    qty: 2,
     cost: {
-      apples: 0,
+      apples: 1,
       berries: 2,
-      carrots: 1,
+      carrots: 0,
     },
     image: "berry_seeds",
     description: "After 2 turns, Harvest 3 Berries.",
@@ -39,7 +39,7 @@ const seeds: ICard[] = [
   },
   {
     name: "Mixed Seeds",
-    qty: 4,
+    qty: 2,
     cost: {
       apples: 1,
       berries: 1,
@@ -51,7 +51,7 @@ const seeds: ICard[] = [
   },
   {
     name: "Coffee Seeds",
-    qty: 3,
+    qty: 1,
     cost: {
       apples: 1,
       berries: 1,

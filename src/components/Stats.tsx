@@ -31,6 +31,14 @@ const Stats = (props: IProps) => {
     0
   );
 
+  const cardsThatCostAllThree = props.deck.reduce(
+    (accum, card) =>
+      card.cost.apples > 0 && card.cost.berries > 0 && card.cost.berries > 0
+        ? accum + 1
+        : accum,
+    0
+  );
+
   return (
     <div className="stats">
       <button className="button button__big" onClick={props.recreate}>
@@ -50,6 +58,10 @@ const Stats = (props: IProps) => {
       <div>
         Apples cost: {appleCostTotal}. Avg{" "}
         {Math.round((appleCostTotal / props.deck.length) * 100) / 100}
+      </div>
+      <div>
+        Cards that cost all 3 crops: {cardsThatCostAllThree} /{" "}
+        {props.deck.length}.
       </div>
       <div>Work Order Total: {workOrderTotal}.</div>
       <div>Work Order VP Total: {workOrderTotalVP}.</div>

@@ -10,7 +10,7 @@ const ShopPage = () => {
     createWorkOrderDeck()
   );
   const [shopDeck, setShopDeck] = React.useState(
-    [...deck].slice(9, deck.length)
+    [...deck].slice(6, deck.length)
   );
   const [workOrders, setWorkOrders] = React.useState(
     [...workOrderDeck].slice(0, 5)
@@ -19,14 +19,14 @@ const ShopPage = () => {
   console.log({ workOrders, workOrderDeck });
 
   const [shopCards, setShopCards] = React.useState<ICard[]>(
-    shopDeck.slice(0, 9)
+    shopDeck.slice(0, 6)
   );
 
   // React.useEffect(() => {
   //   const cards: ICard[] = [...shopCards];
   //   const deck = [...shopDeck];
 
-  //   const missingCards = cards.length - 9;
+  //   const missingCards = cards.length - 6;
   //   for (let i = 0; i < missingCards; i++) {
   //     const nextCard = deck.pop();
 
@@ -71,8 +71,8 @@ const ShopPage = () => {
   const recreate = () => {
     const newDeck = createDeck();
     setDeck(newDeck);
-    setShopDeck([...newDeck].slice(9, newDeck.length));
-    setShopCards([...newDeck].slice(0, 9));
+    setShopDeck([...newDeck].slice(6, newDeck.length));
+    setShopCards([...newDeck].slice(0, 6));
 
     const newWorkOrders = createWorkOrderDeck();
     setWorkOrderDeck([...newWorkOrders].slice(5, newWorkOrders.length));

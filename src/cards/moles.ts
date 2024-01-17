@@ -3,30 +3,29 @@ import { CARD_TYPE, ICard } from "../models/cards.models";
 const moles: ICard[] = [
   {
     name: "Quaker",
-    qty: 3,
+    qty: 2,
     cost: {
-      apples: 2,
+      apples: 0,
       berries: 4,
-      carrots: 2,
+      carrots: 4,
     },
     image: "quaker",
-    description:
-      "Action: -1 durability to all of a competitor's critters and constructs.",
+    description: "Action: -1 energy from each of competitor's critters.",
     type: CARD_TYPE.Mole,
-    durability: 2,
+    energy: 2,
   },
   {
     name: "Burrower",
-    qty: 4,
+    qty: 2,
     cost: {
-      apples: 2,
-      berries: 1,
-      carrots: 1,
+      apples: 0,
+      carrots: 3,
+      berries: 2,
     },
     image: "burrower",
-    description: "Action: -2 durability to a competitor's critter.",
+    description: "Action: -1 energy from a competitor's critter.",
     type: CARD_TYPE.Mole,
-    durability: 2,
+    energy: 3,
   },
   {
     name: "Saboteur",
@@ -38,9 +37,9 @@ const moles: ICard[] = [
     },
     image: "saboteur",
     description:
-      "Action: -2 to a competitor's construct, or discard the top card of EVERY deck.",
+      "Action: Look at the top 3 cards of a competitor's deck, discard any of them.",
     type: CARD_TYPE.Mole,
-    durability: 2,
+    energy: 3,
   },
   {
     name: "Blind Borris",
@@ -52,9 +51,9 @@ const moles: ICard[] = [
     },
     image: "blind_borris",
     description:
-      "Action: -1 Durability to a competitor's critter. If it is defeated, remove it from the game.",
+      "Action: -1 Energy from a competitor's critter. If it is exhausted, remove it from the game.",
     type: CARD_TYPE.Mole,
-    durability: 4,
+    energy: 3,
   },
 ];
 

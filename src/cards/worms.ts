@@ -13,7 +13,7 @@ const worms: ICard[] = [
   //   description:
   //     "Entry: Advance your seeds by 1 turn. Your seeds return to the top of your deck when harvested.",
   //   type: CARD_TYPE.Worm,
-  //   durability: 1,
+  //   durability: 3,
   // },
 ];
 

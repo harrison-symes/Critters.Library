@@ -12,21 +12,23 @@ const ShopCard = ({ card, ...props }: IProps) => {
       className="card"
       onClick={() => props.removeCard && props.removeCard(card)}
     >
-      <h1 className="card-name">{card.name}</h1>
+      <h1 className="card-name">
+        {card.name} - x{card.qty}
+      </h1>
       <img
         className="card-image"
         src={`/images/${card.image}.png`}
         alt={card.name}
       />
       <div className="card-cost">
-        {card.cost.carrots > 0 && (
-          <div className="card-cost__item card-cost__carrot">
-            {card.cost.carrots}
-          </div>
-        )}
         {card.cost.apples > 0 && (
           <div className="card-cost__item card-cost__apple">
             {card.cost.apples}
+          </div>
+        )}
+        {card.cost.carrots > 0 && (
+          <div className="card-cost__item card-cost__carrot">
+            {card.cost.carrots}
           </div>
         )}
         {card.cost.berries > 0 && (
@@ -38,9 +40,9 @@ const ShopCard = ({ card, ...props }: IProps) => {
       <div className="card-description">{card.description}</div>
       <div className="card-footer">
         <div className="card-type">{card.type}</div>
-        {card.durability && (
+        {card.energy && (
           <div className="card-durability">
-            <span className="card-durability__number">{card.durability}</span>
+            <span className="card-durability__number">{card.energy}</span>
             <img className="card-durability__icon" src="/images/heart.png" />
           </div>
         )}
