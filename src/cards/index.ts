@@ -1,4 +1,5 @@
 import { ICard, IWorkOrder } from "../models/cards.models";
+import bumblebees from "./bumblebees";
 import caterpillars from "./caterpillars";
 import constructs from "./constructs";
 import crows from "./crows";
@@ -53,6 +54,7 @@ export const createDeck = (): ICard[] => {
   addToDeck(deck, raccoons);
   addToDeck(deck, hedgehogs);
   addToDeck(deck, constructs);
+  addToDeck(deck, bumblebees);
 
   return shuffleDeck(deck);
 };

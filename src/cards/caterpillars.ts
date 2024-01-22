@@ -19,7 +19,7 @@ const caterpillars: ICard[] = [
     qty: 2,
     cost: {
       apples: 2,
-      carrots: 1,
+      carrots: 0,
       berries: 2,
     },
     image: "caterpillar_1",

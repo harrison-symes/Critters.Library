@@ -6,11 +6,10 @@ export enum CARD_TYPE {
   Rat = "Rat",
   Mole = "Mole",
   Hedgehog = "Hedgehog",
-  Crow = "Crow",
   Raccoon = "Raccoon",
   Worm = "Worm",
   Caterpillar = "Caterpillar",
-  Ladybug = "Ladybug",
+  BumbleBee = "Bumblebee",
 }
 
 export interface ICard {

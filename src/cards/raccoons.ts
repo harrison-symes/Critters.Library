@@ -31,13 +31,13 @@ const raccoons: ICard[] = [
     name: "Trash Panda",
     qty: 2,
     cost: {
-      apples: 1,
+      apples: 0,
       berries: 2,
       carrots: 4,
     },
     image: "trash_panda",
     description:
-      "Action: Put a card from your discard pile on top of your deck.",
+      "Action: Shuffle a card from your discard pile into your deck.",
     type: CARD_TYPE.Raccoon,
     energy: 3,
   },
@@ -46,7 +46,7 @@ const raccoons: ICard[] = [
     qty: 1,
     cost: {
       apples: 3,
-      berries: 9,
+      berries: 6,
       carrots: 3,
     },
     image: "sticky_fingers",

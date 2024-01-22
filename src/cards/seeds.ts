@@ -3,10 +3,10 @@ import { CARD_TYPE, ICard } from "../models/cards.models";
 const seeds: ICard[] = [
   {
     name: "Carrot Seeds",
-    qty: 2,
+    qty: 3,
     cost: {
       apples: 0,
-      berries: 1,
+      berries: 0,
       carrots: 2,
     },
     image: "carrot_seeds",
@@ -15,11 +15,11 @@ const seeds: ICard[] = [
   },
   {
     name: "Apple Seeds",
-    qty: 2,
+    qty: 3,
     cost: {
       apples: 2,
       berries: 0,
-      carrots: 1,
+      carrots: 0,
     },
     image: "apple_seeds",
     description: "After 2 turns, Harvest 3 Apples.",
@@ -27,9 +27,9 @@ const seeds: ICard[] = [
   },
   {
     name: "Berry Seeds",
-    qty: 2,
+    qty: 3,
     cost: {
-      apples: 1,
+      apples: 0,
       berries: 2,
       carrots: 0,
     },
@@ -38,7 +38,7 @@ const seeds: ICard[] = [
     type: CARD_TYPE.Seeds,
   },
   {
-    name: "Mixed Seeds",
+    name: "Miracle Seeds",
     qty: 2,
     cost: {
       apples: 1,
@@ -46,7 +46,19 @@ const seeds: ICard[] = [
       carrots: 1,
     },
     image: "mixed_seeds",
-    description: "After 2 turns, Harvest 1 of each crop.",
+    description: "After 2 turns, Harvest 3 of any crop.",
+    type: CARD_TYPE.Seeds,
+  },
+  {
+    name: "Jumbo Seeds",
+    qty: 2,
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    image: "mixed_seeds",
+    description: "After 2 turns, Harvest 2 of each crop.",
     type: CARD_TYPE.Seeds,
   },
   {
@@ -65,12 +77,12 @@ const seeds: ICard[] = [
     name: "Magic Seeds",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 2,
-      carrots: 2,
+      apples: 3,
+      berries: 3,
+      carrots: 3,
     },
     image: "magic_seeds",
-    description: "After 2 turns, Harvest any 5 crops.",
+    description: "After 2 turns, Harvest 3 of each crop.",
     type: CARD_TYPE.Seeds,
   },
 ];
