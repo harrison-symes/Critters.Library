@@ -14,26 +14,26 @@ const rabbits: ICard[] = [
   //   type: CARD_TYPE.Rabbit,
   //   energy: 3,
   // },
-  {
-    name: "Crop Picker",
-    qty: 5,
-    cost: {
-      apples: 1,
-      berries: 1,
-      carrots: 1,
-    },
-    image: "agriculturist",
-    description: "Action: Gain any 1 crop",
-    type: CARD_TYPE.Rabbit,
-    energy: 3,
-  },
+  // {
+  //   name: "Crop Picker",
+  //   qty: 5,
+  //   cost: {
+  //     apples: 1,
+  //     berries: 1,
+  //     carrots: 1,
+  //   },
+  //   image: "agriculturist",
+  //   description: "Action: Gain any 1 crop",
+  //   type: CARD_TYPE.Rabbit,
+  //   energy: 3,
+  // },
   {
     name: "Carrot Grower",
     qty: 3,
     cost: {
       apples: 0,
       berries: 2,
-      carrots: 5,
+      carrots: 6,
     },
     image: "carrot_grower",
     description: "Action: Gain 2 Carrots.",
@@ -45,7 +45,7 @@ const rabbits: ICard[] = [
     qty: 1,
     cost: {
       apples: 2,
-      berries: 2,
+      berries: 3,
       carrots: 7,
     },
     image: "carrot_rancher",
@@ -70,7 +70,7 @@ const rabbits: ICard[] = [
     name: "Apple Grower",
     qty: 3,
     cost: {
-      apples: 5,
+      apples: 6,
       berries: 0,
       carrots: 2,
     },
@@ -85,7 +85,7 @@ const rabbits: ICard[] = [
     cost: {
       apples: 7,
       berries: 2,
-      carrots: 2,
+      carrots: 3,
     },
     image: "apple_rancher",
     description: "Action: Gain 3 Apples.",
@@ -110,7 +110,7 @@ const rabbits: ICard[] = [
     qty: 3,
     cost: {
       apples: 2,
-      berries: 5,
+      berries: 6,
       carrots: 0,
     },
     image: "berry_grower",
@@ -122,7 +122,7 @@ const rabbits: ICard[] = [
     name: "Berry Rancher",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       berries: 7,
       carrots: 2,
     },
@@ -148,9 +148,9 @@ const rabbits: ICard[] = [
     name: "Clodhopper",
     qty: 1,
     cost: {
-      apples: 6,
-      berries: 6,
-      carrots: 6,
+      apples: 7,
+      berries: 7,
+      carrots: 7,
     },
     image: "clodhopper",
     description: "Action: Gain 2 of each crop.",

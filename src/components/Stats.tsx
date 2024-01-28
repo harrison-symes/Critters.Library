@@ -19,6 +19,8 @@ const Stats = (props: IProps) => {
     ).length;
   };
 
+  const items = props.deck.filter((c) => c.type === CARD_TYPE.Item);
+
   const carrotCostTotal = props.deck.reduce(
     (accum, card) => accum + (card.cost.carrots ?? 0),
     0
@@ -31,6 +33,18 @@ const Stats = (props: IProps) => {
     (accum, card) => accum + (card.cost.apples ?? 0),
     0
   );
+  const carrotCostItemsTotal = items.reduce(
+    (accum, card) => accum + (card.cost.carrots ?? 0),
+    0
+  );
+  const berryCostItemsTotal = items.reduce(
+    (accum, card) => accum + (card.cost.berries ?? 0),
+    0
+  );
+  const appleCostItemsTotal = items.reduce(
+    (accum, card) => accum + (card.cost.apples ?? 0),
+    0
+  );
   const workOrderTotal = createWorkOrderDeck().length;
   const workOrderTotalVP = createWorkOrderDeck().reduce(
     (accum, card) => accum + card.victoryPoints,
@@ -39,11 +53,20 @@ const Stats = (props: IProps) => {
 
   const cardsThatCostAllThree = props.deck.reduce(
     (accum, card) =>
-      card.cost.apples > 0 && card.cost.berries > 0 && card.cost.berries > 0
+      card.cost.apples > 0 && card.cost.berries > 0 && card.cost.carrots > 0
         ? accum + 1
         : accum,
     0
   );
+
+  const itemsThatCostAllThree = items.reduce(
+    (accum, card) =>
+      card.cost.apples > 0 && card.cost.berries > 0 && card.cost.carrots > 0
+        ? accum + 1
+        : accum,
+    0
+  );
+
   const appleAndCarrot = props.deck.reduce(
     (accum, card) =>
       card.cost.apples > 0 && card.cost.berries === 0 && card.cost.carrots > 0
@@ -59,6 +82,27 @@ const Stats = (props: IProps) => {
     0
   );
   const appleAndBerry = props.deck.reduce(
+    (accum, card) =>
+      card.cost.apples > 0 && card.cost.berries > 0 && card.cost.carrots === 0
+        ? accum + 1
+        : accum,
+    0
+  );
+  const appleAndCarrotItems = items.reduce(
+    (accum, card) =>
+      card.cost.apples > 0 && card.cost.berries === 0 && card.cost.carrots > 0
+        ? accum + 1
+        : accum,
+    0
+  );
+  const berryAndCarrotItems = items.reduce(
+    (accum, card) =>
+      card.cost.apples === 0 && card.cost.berries > 0 && card.cost.carrots > 0
+        ? accum + 1
+        : accum,
+    0
+  );
+  const appleAndBerryItems = items.reduce(
     (accum, card) =>
       card.cost.apples > 0 && card.cost.berries > 0 && card.cost.carrots === 0
         ? accum + 1
@@ -99,6 +143,33 @@ const Stats = (props: IProps) => {
       </div>
       <div>
         Apple and Carrot: {appleAndCarrot} / {props.deck.length}.
+      </div>
+      <hr />
+      <div>
+        (Items) Carrot cost: {carrotCostTotal}. Avg{" "}
+        {Math.round((carrotCostTotal / props.deck.length) * 100) / 100}
+      </div>
+      <div>
+        (Item) Berry cost: {berryCostTotal}. Avg{" "}
+        {Math.round((berryCostTotal / props.deck.length) * 100) / 100}
+      </div>
+      <div>
+        (Items) Apples cost: {appleCostTotal}. Avg{" "}
+        {Math.round((appleCostTotal / props.deck.length) * 100) / 100}
+      </div>
+      <hr />
+      <div>
+        Items that cost all 3 crops: {itemsThatCostAllThree} /{" "}
+        {props.deck.length}.
+      </div>
+      <div>
+        (items) Apple and Berry: {appleAndBerryItems} / {props.deck.length}.
+      </div>
+      <div>
+        (items) Carrot and Berry: {berryAndCarrotItems} / {props.deck.length}.
+      </div>
+      <div>
+        (items) Apple and Carrot: {appleAndCarrotItems} / {props.deck.length}.
       </div>
       <hr />
       <div>Work Order Total: {workOrderTotal}.</div>

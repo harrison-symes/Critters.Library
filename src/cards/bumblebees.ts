@@ -27,19 +27,19 @@ const bumblebees: ICard[] = [
     type: CARD_TYPE.BumbleBee,
     energy: 3,
   },
-  {
-    name: "Pollen Spreader",
-    qty: 2,
-    cost: {
-      apples: 4,
-      carrots: 2,
-      berries: 4,
-    },
-    image: "rummager",
-    description: "Action: Draw a card for each work order your have completed.",
-    type: CARD_TYPE.BumbleBee,
-    energy: 2,
-  },
+  // {
+  //   name: "Pollen Spreader",
+  //   qty: 2,
+  //   cost: {
+  //     apples: 4,
+  //     carrots: 2,
+  //     berries: 4,
+  //   },
+  //   image: "rummager",
+  //   description: "Action: Draw a card for each work order your have completed.",
+  //   type: CARD_TYPE.BumbleBee,
+  //   energy: 2,
+  // },
   {
     name: "The Queen",
     qty: 1,
@@ -49,8 +49,7 @@ const bumblebees: ICard[] = [
       berries: 4,
     },
     image: "rummager",
-    description:
-      "Action: Steal 2 crops from a competitor's work order. You may add them to yours.",
+    description: "Action: Draw a card for each work order your have completed.",
     type: CARD_TYPE.BumbleBee,
     energy: 2,
   },
