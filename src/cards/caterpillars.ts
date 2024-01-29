@@ -31,7 +31,7 @@ const caterpillars: ICard[] = [
     name: "Pilly",
     qty: 1,
     cost: {
-      apples: 0,
+      apples: 2,
       berries: 2,
       carrots: 2,
     },

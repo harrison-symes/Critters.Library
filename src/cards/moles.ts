@@ -1,25 +1,12 @@
 import { CARD_TYPE, ICard } from "../models/cards.models";
 
 const moles: ICard[] = [
-  // {
-  //   name: "Quaker",
-  //   qty: 2,
-  //   cost: {
-  //     apples: 0,
-  //     berries: 4,
-  //     carrots: 4,
-  //   },
-  //   image: "quaker",
-  //   description: "Action: -1 energy from each of competitor's critters.",
-  //   type: CARD_TYPE.Mole,
-  //   energy: 2,
-  // },
   {
     name: "Burrower",
     qty: 2,
     cost: {
-      apples: 0,
-      carrots: 3,
+      apples: 3,
+      carrots: 0,
       berries: 2,
     },
     image: "burrower",
@@ -32,22 +19,22 @@ const moles: ICard[] = [
     qty: 2,
     cost: {
       apples: 2,
-      berries: 0,
-      carrots: 1,
+      carrots: 0,
+      berries: 2,
     },
     image: "saboteur",
     description:
       "Action: Look at the top 3 cards of a competitor's deck, discard one of them.",
     type: CARD_TYPE.Mole,
-    energy: 3,
+    energy: 2,
   },
   {
     name: "Blind Borris",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 4,
       berries: 4,
-      carrots: 4,
+      carrots: 3,
     },
     image: "blind_borris",
     description:

@@ -31,9 +31,9 @@ const rats: ICard[] = [
     name: "Hermes",
     qty: 1,
     cost: {
-      apples: 1,
+      apples: 2,
       carrots: 3,
-      berries: 2,
+      berries: 1,
     },
     image: "hermes",
     description: "Action: Refund a card from your hand.",

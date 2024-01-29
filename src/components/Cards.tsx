@@ -1,106 +1,97 @@
 import * as React from "react";
-import items from "../cards/items";
-import ShopCard from "./ShopCard";
-import constructs from "../cards/constructs";
-import seeds from "../cards/seeds";
-import rabbits from "../cards/rabbits";
-import crows from "../cards/crows";
-import hedgehogs from "../cards/hedgehogs";
-import rats from "../cards/rats";
-import moles from "../cards/moles";
-import worms from "../cards/worms";
-import caterpillars from "../cards/caterpillars";
-import raccoons from "../cards/raccoons";
-import nonShop from "../cards/nonshop";
 import workOrders from "../cards/workOrders";
 import WorkOrder from "./WorkOrder";
+import cn from "classnames";
+import CardList from "./CardList";
+import { createDeck } from "../cards";
+import { CARD_TYPE, RESOURCE } from "../models/cards.models";
 
 const Cards = () => {
+  const [costFilters, setCostFilters] = React.useState<Array<RESOURCE>>([]);
+  const deck = createDeck(true);
+
+  const onCostFilterClick = (resource: RESOURCE) => {
+    if (costFilters.includes(resource)) {
+      setCostFilters(costFilters.filter((c) => c !== resource));
+    } else {
+      setCostFilters([...costFilters, resource]);
+    }
+  };
+
+  const filteredDeck = deck.filter((c) => {
+    if (costFilters.length > 0) {
+      return !costFilters.find((resource) => c.cost[resource] === 0);
+    }
+
+    return true;
+  });
+
   return (
-    <div className="cards">
-      <h1>Work Orders ({workOrders.length})</h1>
-      <div className="card-list">
-        {workOrders.map((card) => (
-          <WorkOrder order={card} />
-        ))}
+    <div>
+      <div className="cards">
+        <div className="filters">
+          <div className="cost-filters">
+            <div
+              className={cn("cost-filter cost-filter--apple", {
+                "cost-filter--selected": costFilters.includes(RESOURCE.APPLE),
+              })}
+              onClick={() => onCostFilterClick(RESOURCE.APPLE)}
+            >
+              Apple
+            </div>
+            <div
+              className={cn("cost-filter cost-filter--carrot", {
+                "cost-filter--selected": costFilters.includes(RESOURCE.CARROT),
+              })}
+              onClick={() => onCostFilterClick(RESOURCE.CARROT)}
+            >
+              Carrot
+            </div>
+            <div
+              className={cn("cost-filter cost-filter--berry", {
+                "cost-filter--selected": costFilters.includes(RESOURCE.BERRY),
+              })}
+              onClick={() => onCostFilterClick(RESOURCE.BERRY)}
+            >
+              Berry
+            </div>
+          </div>
+        </div>
+        <h1>Work Orders ({workOrders.length})</h1>
+        <div className="card-list">
+          {workOrders.map((card) => (
+            <WorkOrder order={card} />
+          ))}
+        </div>
+        <CardList title="Items" deck={filteredDeck} cardType={CARD_TYPE.Item} />
+        <CardList
+          title="Seeds"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Seeds}
+        />
+        <CardList
+          title="Rabbits"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Rabbit}
+        />
+        <CardList
+          title="Hedgehogs"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Hedgehog}
+        />
+        <CardList title="Rats" deck={filteredDeck} cardType={CARD_TYPE.Rat} />
+        <CardList title="Moles" deck={filteredDeck} cardType={CARD_TYPE.Mole} />
+        <CardList
+          title="Raccoons"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Raccoon}
+        />
+        <CardList
+          title="Caterpillars"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Caterpillar}
+        />
       </div>
-      <h1>Not in the shop ({nonShop.length})</h1>
-      <div className="card-list">
-        {nonShop.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Items ({items.length})</h1>
-      <div className="card-list">
-        {items.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Constructs ({constructs.length})</h1>
-      <div className="card-list">
-        {constructs.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Seeds ({seeds.length})</h1>
-      <div className="card-list">
-        {seeds.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Rabbits ({rabbits.length})</h1>
-      <div className="card-list">
-        {rabbits.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Crows ({crows.length})</h1>
-      <div className="card-list">
-        {crows.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Hedgehog ({hedgehogs.length})</h1>
-      <div className="card-list">
-        {hedgehogs.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Rats ({rats.length})</h1>
-      <div className="card-list">
-        {rats.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Moles ({moles.length})</h1>
-      <div className="card-list">
-        {moles.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Raccoons ({rats.length})</h1>
-      <div className="card-list">
-        {raccoons.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
-      <h1>Caterpillars ({caterpillars.length})</h1>
-      <div className="card-list">
-        {caterpillars.map((card) => (
-          <ShopCard card={card} />
-        ))}
-      </div>
-      <hr />
     </div>
   );
 };

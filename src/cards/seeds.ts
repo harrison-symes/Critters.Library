@@ -38,18 +38,6 @@ const seeds: ICard[] = [
     type: CARD_TYPE.Seeds,
   },
   {
-    name: "Miracle Seeds",
-    qty: 2,
-    cost: {
-      apples: 1,
-      berries: 1,
-      carrots: 1,
-    },
-    image: "mixed_seeds",
-    description: "After 2 turns, Harvest 3 of any crop.",
-    type: CARD_TYPE.Seeds,
-  },
-  {
     name: "Jumbo Seeds",
     qty: 2,
     cost: {
@@ -63,7 +51,7 @@ const seeds: ICard[] = [
   },
   {
     name: "Coffee Seeds",
-    qty: 1,
+    qty: 2,
     cost: {
       apples: 1,
       berries: 1,
@@ -83,6 +71,19 @@ const seeds: ICard[] = [
     },
     image: "magic_seeds",
     description: "After 2 turns, Harvest 3 of each crop.",
+    type: CARD_TYPE.Seeds,
+  },
+  {
+    name: "Infinite Seeds",
+    qty: 1,
+    cost: {
+      apples: 3,
+      berries: 3,
+      carrots: 3,
+    },
+    image: "magic_seeds",
+    description:
+      "After 2 turns, Harvest 2 of each crop then place this on top of your deck.",
     type: CARD_TYPE.Seeds,
   },
 ];

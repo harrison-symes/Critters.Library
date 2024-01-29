@@ -1,8 +1,6 @@
 import { ICard, IWorkOrder } from "../models/cards.models";
 import bumblebees from "./bumblebees";
 import caterpillars from "./caterpillars";
-import constructs from "./constructs";
-import crows from "./crows";
 import hedgehogs from "./hedgehogs";
 
 import items from "./items";
@@ -33,28 +31,26 @@ const shuffleDeck = (deck: any[]) => {
   return deck;
 };
 
-const addToDeck = (deck: ICard[], cards: ICard[]) => {
+const addToDeck = (deck: ICard[], cards: ICard[], noDuplicates: boolean) => {
   cards.forEach((card) => {
-    for (let i = 0; i < card.qty; i++) {
+    for (let i = 0; i < (noDuplicates ? 1 : card.qty); i++) {
       deck.push({ ...card });
     }
   });
 };
 
-export const createDeck = (): ICard[] => {
+export const createDeck = (noDuplicates: boolean = false): ICard[] => {
   const deck: ICard[] = [];
 
-  addToDeck(deck, items);
-  addToDeck(deck, seeds);
-  addToDeck(deck, caterpillars);
-  addToDeck(deck, rabbits);
-  addToDeck(deck, crows);
-  addToDeck(deck, moles);
-  addToDeck(deck, rats);
-  addToDeck(deck, raccoons);
-  addToDeck(deck, hedgehogs);
-  addToDeck(deck, constructs);
-  addToDeck(deck, bumblebees);
+  addToDeck(deck, items, noDuplicates);
+  addToDeck(deck, seeds, noDuplicates);
+  addToDeck(deck, caterpillars, noDuplicates);
+  addToDeck(deck, rabbits, noDuplicates);
+  addToDeck(deck, moles, noDuplicates);
+  addToDeck(deck, rats, noDuplicates);
+  addToDeck(deck, raccoons, noDuplicates);
+  addToDeck(deck, hedgehogs, noDuplicates);
+  addToDeck(deck, bumblebees, noDuplicates);
 
   return shuffleDeck(deck);
 };

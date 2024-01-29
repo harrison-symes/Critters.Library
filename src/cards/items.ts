@@ -19,8 +19,8 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 0,
-      carrots: 2,
-      berries: 4,
+      carrots: 4,
+      berries: 2,
     },
     image: "recycling",
     description: "Discard a card to gain 2 of each crop.",
@@ -54,9 +54,9 @@ const items: ICard[] = [
     name: "Uproot",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 2,
       berries: 0,
-      carrots: 2,
+      carrots: 3,
     },
     image: "rummager",
     description: "Gain +2 of a crop, and +1 of each other crop.",
@@ -91,7 +91,7 @@ const items: ICard[] = [
     name: "Receipts",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 2,
       carrots: 0,
       berries: 3,
     },
@@ -126,24 +126,24 @@ const items: ICard[] = [
   },
   // card draw
   {
-    name: "Fire Sale!",
+    name: "Shopping Spree!",
     qty: 1,
     cost: {
       apples: 0,
       berries: 2,
-      carrots: 1,
+      carrots: 2,
     },
     image: "rummager",
-    description: "Whenever you buy a card this turn, draw a card.",
+    description: "Whenever you buy a card this turn, draw 2 cards.",
     type: CARD_TYPE.Item,
   },
   {
     name: "Growth Spurt",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 1,
       berries: 2,
-      carrots: 1,
+      carrots: 3,
     },
     image: "growth_spurt",
     description: "Draw 2 cards.",
@@ -154,8 +154,8 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 0,
-      berries: 3,
-      carrots: 1,
+      berries: 2,
+      carrots: 2,
     },
     image: "rummager",
     description:
@@ -178,22 +178,21 @@ const items: ICard[] = [
     name: "Time out",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 1,
+      apples: 1,
+      berries: 2,
       carrots: 0,
     },
     image: "rummager",
-    description:
-      "Exhaust one of your critters, draw a card for each energy they had left.",
+    description: "Exhaust one of your critters to draw 2 cards.",
     type: CARD_TYPE.Item,
   },
   {
     name: "Plow",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 1,
       berries: 0,
-      carrots: 1,
+      carrots: 3,
     },
     image: "worm",
     description: "Draw a card for each of your active seeds.",
@@ -203,8 +202,8 @@ const items: ICard[] = [
     name: "Feeding Frenzy",
     qty: 1,
     cost: {
-      apples: 3,
-      berries: 2,
+      apples: 2,
+      berries: 3,
       carrots: 0,
     },
     image: "morning_tea",
@@ -216,11 +215,23 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 0,
-      berries: 3,
-      carrots: 2,
+      berries: 2,
+      carrots: 3,
     },
     image: "rummager",
     description: "Discard the top 2 cards of your deck, then draw 2 cards.",
+    type: CARD_TYPE.Item,
+  },
+  {
+    name: "Fresh Start",
+    qty: 1,
+    cost: {
+      apples: 0,
+      berries: 2,
+      carrots: 2,
+    },
+    image: "rummager",
+    description: "Shuffle your discard pile into your deck, then draw 2 cards.",
     type: CARD_TYPE.Item,
   },
 
@@ -230,8 +241,8 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 0,
-      berries: 3,
-      carrots: 1,
+      berries: 2,
+      carrots: 2,
     },
     image: "rummager",
     description:
@@ -242,9 +253,9 @@ const items: ICard[] = [
     name: "Digging Deep",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 2,
       berries: 0,
-      carrots: 2,
+      carrots: 3,
     },
     image: "rummager",
     description:
@@ -267,8 +278,8 @@ const items: ICard[] = [
     name: "Recycling",
     qty: 1,
     cost: {
-      apples: 3,
-      carrots: 1,
+      apples: 1,
+      carrots: 3,
       berries: 0,
     },
     image: "recycling",
@@ -373,8 +384,8 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 1,
-      berries: 1,
       carrots: 1,
+      berries: 1,
     },
     image: "typhoon",
     description: "Shuffle a critter or seeds back into their owner's deck.",
@@ -385,8 +396,8 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 4,
-      berries: 0,
       carrots: 2,
+      berries: 0,
     },
     image: "typhoon",
     description:
@@ -445,20 +456,6 @@ const items: ICard[] = [
   },
 
   {
-    name: "Machine Claw",
-    qty: 1,
-    cost: {
-      apples: 0,
-      berries: 2,
-      carrots: 3,
-    },
-    image: "machine_claw",
-    description:
-      "Put the top card of a competitor's deck onto the top of your deck (without looking!).",
-    type: CARD_TYPE.Item,
-  },
-
-  {
     name: "Gift Card",
     qty: 1,
     cost: {
@@ -467,7 +464,8 @@ const items: ICard[] = [
       carrots: 1,
     },
     image: "morning_tea",
-    description: "The next card you buy this turn costs -1 of each crop.",
+    description:
+      "The next card you buy costs -1 of each crop. (Stays in your hand)",
     type: CARD_TYPE.Item,
   },
 
@@ -491,7 +489,7 @@ const items: ICard[] = [
     cost: {
       apples: 0,
       berries: 4,
-      carrots: 3,
+      carrots: 2,
     },
     image: "rummager",
     description: "Your item cards are doubled this turn.",

@@ -69,7 +69,7 @@ const Stats = (props: IProps) => {
 
   const appleAndCarrot = props.deck.reduce(
     (accum, card) =>
-      card.cost.apples > 0 && card.cost.berries === 0 && card.cost.carrots > 0
+      card.cost.apples > 0 && card.cost.carrots === 0 && card.cost.berries > 0
         ? accum + 1
         : accum,
     0
@@ -146,16 +146,16 @@ const Stats = (props: IProps) => {
       </div>
       <hr />
       <div>
-        (Items) Carrot cost: {carrotCostTotal}. Avg{" "}
-        {Math.round((carrotCostTotal / props.deck.length) * 100) / 100}
+        (Items) Carrot cost: {carrotCostItemsTotal}. Avg{" "}
+        {Math.round((carrotCostItemsTotal / props.deck.length) * 100) / 100}
       </div>
       <div>
-        (Item) Berry cost: {berryCostTotal}. Avg{" "}
-        {Math.round((berryCostTotal / props.deck.length) * 100) / 100}
+        (Item) Berry cost: {berryCostItemsTotal}. Avg{" "}
+        {Math.round((berryCostItemsTotal / props.deck.length) * 100) / 100}
       </div>
       <div>
-        (Items) Apples cost: {appleCostTotal}. Avg{" "}
-        {Math.round((appleCostTotal / props.deck.length) * 100) / 100}
+        (Items) Apples cost: {appleCostItemsTotal}. Avg{" "}
+        {Math.round((appleCostItemsTotal / props.deck.length) * 100) / 100}
       </div>
       <hr />
       <div>

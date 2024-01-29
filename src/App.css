@@ -47,7 +47,33 @@
 
 .card-list {
   display: flex;
+  width: 100%;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.cost-filters {
+  display: flex;
+}
+
+.cost-filter {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: lightslategrey;
+  cursor: pointer;
+}
+
+.cost-filter--carrot.cost-filter--selected {
+  background-color: orange;
+}
+.cost-filter--apple.cost-filter--selected {
+  background-color: crimson;
+}
+.cost-filter--berry.cost-filter--selected {
+  background-color: violet;
 }
 
 .button {
