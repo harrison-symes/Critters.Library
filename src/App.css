@@ -143,6 +143,9 @@
 .card-cost__berries {
   background-color: mediumpurple;
 }
+.card-cost__any {
+  background-color: grey;
+}
 .card-cost__apple {
   background-color: lightcoral;
 }

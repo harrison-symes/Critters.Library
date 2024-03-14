@@ -10,12 +10,14 @@ export enum CARD_TYPE {
   Worm = "Worm",
   Caterpillar = "Caterpillar",
   BumbleBee = "Bumblebee",
+  Action = "Action",
 }
 
 export enum RESOURCE {
   CARROT = "carrots",
   APPLE = "apples",
   BERRY = "berries",
+  ANY = "any",
 }
 
 export interface ICard {
@@ -23,7 +25,12 @@ export interface ICard {
   description?: string;
   qty: number;
   image?: string;
-  cost: Record<RESOURCE, number>;
+  cost: {
+    [RESOURCE.APPLE]: number;
+    [RESOURCE.CARROT]: number;
+    [RESOURCE.BERRY]: number;
+    [RESOURCE.ANY]?: number;
+  };
   type: CARD_TYPE;
   energy?: number;
 }

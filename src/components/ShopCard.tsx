@@ -36,6 +36,9 @@ const ShopCard = ({ card, ...props }: IProps) => {
             {card.cost.berries}
           </div>
         )}
+        {(card.cost.any ?? 0) > 0 && (
+          <div className="card-cost__item card-cost__any">{card.cost.any}</div>
+        )}
       </div>
       <div className="card-description">{card.description}</div>
       <div className="card-footer">
