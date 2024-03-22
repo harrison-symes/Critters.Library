@@ -2,6 +2,19 @@ import { CARD_TYPE, ICard } from "../models/cards.models";
 
 const actions: ICard[] = [
   {
+    name: "Peek",
+    qty: 3,
+    cost: {
+      apples: 0,
+      carrots: 0,
+      berries: 0,
+      any: 1,
+    },
+    image: "rummager",
+    description: "Look at the top card of a shop deck.",
+    type: CARD_TYPE.Action,
+  },
+  {
     name: "Exchange",
     qty: 3,
     cost: {
@@ -28,6 +41,19 @@ const actions: ICard[] = [
     type: CARD_TYPE.Action,
   },
   {
+    name: "Tick it off",
+    qty: 3,
+    cost: {
+      apples: 0,
+      carrots: 0,
+      berries: 0,
+      any: 1,
+    },
+    image: "rummager",
+    description: "Progress your task by 1.",
+    type: CARD_TYPE.Action,
+  },
+  {
     name: "Pester",
     qty: 3,
     cost: {
@@ -41,7 +67,20 @@ const actions: ICard[] = [
     type: CARD_TYPE.Action,
   },
   {
-    name: "Shove",
+    name: "Try again",
+    qty: 3,
+    cost: {
+      apples: 0,
+      carrots: 0,
+      berries: 0,
+      any: 1,
+    },
+    image: "rummager",
+    description: "Discard a card to draw a card.",
+    type: CARD_TYPE.Action,
+  },
+  {
+    name: "Cheat",
     qty: 2,
     cost: {
       apples: 0,
@@ -50,11 +89,11 @@ const actions: ICard[] = [
       any: 2,
     },
     image: "rummager",
-    description: "Target competitor draws 1 less card on their next turn.",
+    description: "Shuffle a card from your discard pile into your deck.",
     type: CARD_TYPE.Action,
   },
   {
-    name: "Overtime",
+    name: "Collect",
     qty: 2,
     cost: {
       apples: 0,
@@ -90,47 +129,33 @@ const actions: ICard[] = [
     },
     image: "rummager",
     description:
-      "Reserve a card in the shop, only you may buy it. (It cannot be refreshed)",
-    type: CARD_TYPE.Action,
-  },
-  {
-    name: "Try again",
-    qty: 1,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 3,
-    },
-    image: "rummager",
-    description: "Discard your hand, draw that many cards.",
+      "Reserve a card in the shop, only you may buy it. (Refreshing removes this)",
     type: CARD_TYPE.Action,
   },
   {
     name: "Refund",
-    qty: 1,
+    qty: 2,
     cost: {
       apples: 0,
       carrots: 0,
       berries: 0,
-      any: 3,
+      any: 2,
     },
     image: "rummager",
     description: "Refund a card from your hand.",
     type: CARD_TYPE.Action,
   },
   {
-    name: "Fast-track",
-    qty: 1,
+    name: "Forecast",
+    qty: 2,
     cost: {
       apples: 0,
       carrots: 0,
       berries: 0,
-      any: 3,
+      any: 2,
     },
     image: "rummager",
-    description:
-      "The next card you buy this turn is placed on top of your deck.",
+    description: "Look at the top 3 cards of your deck.",
     type: CARD_TYPE.Action,
   },
 ];

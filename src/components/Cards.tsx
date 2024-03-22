@@ -6,6 +6,7 @@ import CardList from "./CardList";
 import { createDeck } from "../cards";
 import { CARD_TYPE, RESOURCE } from "../models/cards.models";
 import actions from "../cards/actions";
+import rewards from "../cards/rewards";
 
 const Cards = () => {
   const [costFilters, setCostFilters] = React.useState<Array<RESOURCE>>([]);
@@ -64,6 +65,7 @@ const Cards = () => {
             <WorkOrder order={card} />
           ))}
         </div>
+        <CardList title="Rewards" deck={rewards} cardType={CARD_TYPE.Reward} />
         <CardList title="Actions" deck={actions} cardType={CARD_TYPE.Action} />
         <CardList title="Items" deck={filteredDeck} cardType={CARD_TYPE.Item} />
         <CardList

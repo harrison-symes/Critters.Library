@@ -11,6 +11,7 @@ export enum CARD_TYPE {
   Caterpillar = "Caterpillar",
   BumbleBee = "Bumblebee",
   Action = "Action",
+  Reward = "Rewards",
 }
 
 export enum RESOURCE {
@@ -33,6 +34,7 @@ export interface ICard {
   };
   type: CARD_TYPE;
   energy?: number;
+  victoryPoints?: number;
 }
 
 export interface IWorkOrder {
