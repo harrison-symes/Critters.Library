@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const caterpillars: ICard[] = [
   {
@@ -26,20 +26,22 @@ const caterpillars: ICard[] = [
     description: "Evolves in 2 turns. Evolved: Action: Gain 2 of any crop.",
     type: CARD_TYPE.Caterpillar,
     energy: 3,
+    tags: [TAGS.DELAYED, TAGS.GAIN_CROP_2, TAGS.CHOICE],
   },
   {
     name: "Pilly",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 2,
-      carrots: 2,
+      apples: 4,
+      berries: 4,
+      carrots: 0,
     },
     image: "caterpillar_1",
     description:
       "Evolves in 2 turns. Evolved: Action: Refund a card from your discard pile.",
     type: CARD_TYPE.Caterpillar,
-    energy: 3,
+    energy: 2,
+    tags: [TAGS.DELAYED, TAGS.REFUND_FROM_DISCARD],
   },
 ];
 

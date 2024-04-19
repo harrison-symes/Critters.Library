@@ -31,9 +31,9 @@ const bumblebees: ICard[] = [
     name: "The Queen",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 4,
       carrots: 2,
-      berries: 4,
+      berries: 3,
     },
     image: "rummager",
     description: "Action: Draw a card for each work order your have completed.",

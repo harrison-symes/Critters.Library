@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const seeds: ICard[] = [
   {
@@ -12,6 +12,7 @@ const seeds: ICard[] = [
     image: "carrot_seeds",
     description: "After 2 turns, Harvest 3 Carrots.",
     type: CARD_TYPE.Seeds,
+    tags: [TAGS.GAIN_CROP_3, TAGS.DELAYED],
   },
   {
     name: "Apple Seeds",
@@ -24,6 +25,7 @@ const seeds: ICard[] = [
     image: "apple_seeds",
     description: "After 2 turns, Harvest 3 Apples.",
     type: CARD_TYPE.Seeds,
+    tags: [TAGS.GAIN_CROP_3, TAGS.DELAYED],
   },
   {
     name: "Berry Seeds",
@@ -36,6 +38,7 @@ const seeds: ICard[] = [
     image: "berry_seeds",
     description: "After 2 turns, Harvest 3 Berries.",
     type: CARD_TYPE.Seeds,
+    tags: [TAGS.GAIN_CROP_3, TAGS.DELAYED],
   },
   {
     name: "Jumbo Seeds",
@@ -48,18 +51,20 @@ const seeds: ICard[] = [
     image: "mixed_seeds",
     description: "After 2 turns, Harvest 2 of each crop.",
     type: CARD_TYPE.Seeds,
+    tags: [TAGS.GAIN_CROP_6, TAGS.DELAYED, TAGS.DIVERSE_CROPS],
   },
   {
     name: "Coffee Seeds",
     qty: 2,
     cost: {
-      apples: 1,
-      berries: 1,
-      carrots: 1,
+      apples: 0,
+      carrots: 2,
+      berries: 2,
     },
     image: "coffee_seeds",
     description: "After 2 turns, draw 2 cards.",
     type: CARD_TYPE.Seeds,
+    tags: [TAGS.DRAW_2_CARDS, TAGS.DELAYED],
   },
   {
     name: "Magic Seeds",
@@ -72,6 +77,7 @@ const seeds: ICard[] = [
     image: "magic_seeds",
     description: "After 2 turns, Harvest 3 of each crop.",
     type: CARD_TYPE.Seeds,
+    tags: [TAGS.GAIN_CROP_9, TAGS.DIVERSE_CROPS, TAGS.DELAYED],
   },
   {
     name: "Infinite Seeds",
@@ -85,6 +91,12 @@ const seeds: ICard[] = [
     description:
       "After 2 turns, Harvest 2 of each crop then place this on top of your deck.",
     type: CARD_TYPE.Seeds,
+    tags: [
+      TAGS.GAIN_CROP_6,
+      TAGS.DELAYED,
+      TAGS.DIVERSE_CROPS,
+      TAGS.PLACE_ON_TOP_DECK,
+    ],
   },
 ];
 

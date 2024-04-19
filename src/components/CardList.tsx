@@ -16,8 +16,8 @@ const CardList = (props: IProps) => {
         {props.title} ({cardList.length})
       </h1>
       <div className="card-list">
-        {cardList.map((card) => (
-          <ShopCard card={card} />
+        {cardList.map((card, i) => (
+          <ShopCard key={`{card.name}-${i}`} card={card} />
         ))}
       </div>
       <hr />

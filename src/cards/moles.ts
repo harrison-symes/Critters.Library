@@ -1,11 +1,11 @@
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const moles: ICard[] = [
   {
     name: "Burrower",
     qty: 2,
     cost: {
-      apples: 3,
+      apples: 2,
       carrots: 0,
       berries: 2,
     },
@@ -13,6 +13,7 @@ const moles: ICard[] = [
     description: "Action: -1 energy from a competitor's critter.",
     type: CARD_TYPE.Mole,
     energy: 3,
+    tags: [TAGS.REMOVE_ENERGY_1],
   },
   {
     name: "Saboteur",
@@ -26,6 +27,7 @@ const moles: ICard[] = [
     description:
       "Action: Look at the top 3 cards of a competitor's deck, discard one of them.",
     type: CARD_TYPE.Mole,
+    tags: [TAGS.DISCARD_OPPONENT_DECK_1],
     energy: 2,
   },
   {
@@ -34,13 +36,18 @@ const moles: ICard[] = [
     cost: {
       apples: 4,
       berries: 4,
-      carrots: 3,
+      carrots: 5,
     },
     image: "blind_borris",
     description:
-      "Action: -1 Energy from a competitor's critter. If it is exhausted, remove it from the game.",
+      "Action: Look at the top 3 cards of a competitor's deck and discard one. They draw one less card next turn.",
     type: CARD_TYPE.Mole,
-    energy: 3,
+    energy: 2,
+    tags: [
+      TAGS.DISCARD_OPPONENT_DECK_1,
+      TAGS.DISCARD_OPPONENT_HAND_1,
+      TAGS.TITULAR,
+    ],
   },
 ];
 

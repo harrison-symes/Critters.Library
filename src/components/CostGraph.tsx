@@ -1,68 +1,73 @@
 import * as React from "react";
 // import rd3 from "react-d3-library";
 import * as d3 from "d3";
-import { ICard } from "../models/cards.models";
+import { CARD_TYPE, ICard } from "../models/cards.models";
 import { createDeck } from "../cards";
 import { BarChart } from "@mui/x-charts/BarChart";
 
-const CostGraph = () => {
-  const deck = createDeck();
+interface IProps {
+  deck: ICard[];
+}
 
-  const costMap = deck.reduce(
-    (accum, card) => {
-      const totalCost =
-        (card.cost.berries ?? 0) +
-        (card.cost.apples ?? 0) +
-        (card.cost.carrots ?? 0);
-      let max = accum.max;
-      let totalMax = accum.totalMax;
+const CostGraph = (props: IProps) => {
+  const createCostMap = (deck: ICard[]) => {
+    return deck.reduce(
+      (accum, card) => {
+        const totalCost =
+          (card.cost.berries ?? 0) +
+          (card.cost.apples ?? 0) +
+          (card.cost.carrots ?? 0);
+        let max = accum.max;
+        let totalMax = accum.totalMax;
 
-      const applyCost = (obj: Record<number, number>, cost: number = 0) => {
-        if (cost > max) max = cost;
-        if (obj[cost] === undefined) {
-          obj[cost] = 1;
+        const applyCost = (obj: Record<number, number>, cost: number = 0) => {
+          if (cost > max) max = cost;
+          if (obj[cost] === undefined) {
+            obj[cost] = 1;
+          } else {
+            obj[cost]++;
+          }
+        };
+
+        const { apples, carrots, berries, total } = accum;
+
+        applyCost(apples, card.cost.apples);
+        applyCost(berries, card.cost.berries);
+        applyCost(carrots, card.cost.carrots);
+
+        if (total[totalCost] === undefined) {
+          total[totalCost] = 1;
         } else {
-          obj[cost]++;
+          total[totalCost]++;
         }
-      };
 
-      const { apples, carrots, berries, total } = accum;
+        if (totalCost > totalMax) totalMax = totalCost;
 
-      applyCost(apples, card.cost.apples);
-      applyCost(berries, card.cost.berries);
-      applyCost(carrots, card.cost.carrots);
+        accum.max = max;
+        accum.totalMax = totalMax;
 
-      if (total[totalCost] === undefined) {
-        total[totalCost] = 1;
-      } else {
-        total[totalCost]++;
+        return accum;
+      },
+      {
+        apples: {},
+        carrots: {},
+        berries: {},
+        total: {},
+        max: 0,
+        totalMax: 0,
+      } as {
+        total: Record<number, number>;
+        carrots: Record<number, number>;
+        apples: Record<number, number>;
+        berries: Record<number, number>;
+        max: number;
+        totalMax: number;
       }
+    );
+  };
 
-      if (totalCost > totalMax) totalMax = totalCost;
+  const costMap = createCostMap(props.deck);
 
-      accum.max = max;
-      accum.totalMax = totalMax;
-
-      return accum;
-    },
-    {
-      apples: {},
-      carrots: {},
-      berries: {},
-      total: {},
-      max: 0,
-      totalMax: 0,
-    } as {
-      total: Record<number, number>;
-      carrots: Record<number, number>;
-      apples: Record<number, number>;
-      berries: Record<number, number>;
-      max: number;
-      totalMax: number;
-    }
-  );
-
-  console.log({ costMap });
   const costs = new Array(costMap.max).fill(0).map((_, i) => i + 1);
   const totalCosts = new Array(costMap.totalMax).fill(0).map((_, i) => i + 1);
   return (

@@ -1,84 +1,49 @@
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const rats: ICard[] = [
   {
     name: "Crop Trader",
     qty: 2,
     cost: {
-      apples: 3,
-      carrots: 1,
-      berries: 2,
+      apples: 1,
+      carrots: 2,
+      berries: 1,
     },
     image: "carrot_trader",
     description: "Action: Trade 2 of a crop for 2 of another crop.",
     type: CARD_TYPE.Rat,
     energy: 3,
+    tags: [TAGS.TRADE_1_FOR_1, TAGS.GAIN_CROP_1],
   },
   {
     name: "Dispatcher",
     qty: 2,
     cost: {
-      apples: 1,
-      carrots: 2,
+      apples: 3,
+      carrots: 1,
       berries: 3,
     },
     image: "carrot_trader",
-    description: "Action: If you bought a card this turn, draw a card.",
+    description:
+      "Action: The next card you buy this turn is placed on top of your deck.",
     type: CARD_TYPE.Rat,
-    energy: 3,
+    energy: 2,
+    tags: [TAGS.PLACE_ON_TOP_DECK],
   },
   {
     name: "Hermes",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       carrots: 3,
-      berries: 1,
+      berries: 4,
     },
     image: "hermes",
     description: "Action: Refund a card from your hand.",
     type: CARD_TYPE.Rat,
-    energy: 2,
+    energy: 3,
+    tags: [TAGS.REFUND_FROM_HAND, TAGS.TITULAR],
   },
-  // {
-  //   name: "Carrot Trader",
-  //   qty: 2,
-  //   cost: {
-  //     apples: 0,
-  //     berries: 0,
-  //     carrots: 3,
-  //   },
-  //   image: "carrot_trader",
-  //   description: "Action: Trade 2 Carrots for 3 of another crop.",
-  //   type: CARD_TYPE.Rat,
-  //   energy: 3,
-  // },
-  // {
-  //   name: "Apple Trader",
-  //   qty: 2,
-  //   cost: {
-  //     apples: 3,
-  //     berries: 0,
-  //     carrots: 0,
-  //   },
-  //   image: "apple_trader",
-  //   description: "Action: Trade 2 Apples for 3 of another crop.",
-  //   type: CARD_TYPE.Rat,
-  //   energy: 3,
-  // },
-  // {
-  //   name: "Berry Trader",
-  //   qty: 2,
-  //   cost: {
-  //     apples: 0,
-  //     berries: 3,
-  //     carrots: 0,
-  //   },
-  //   image: "berry_trader",
-  //   description: "Action: Trade 2 Berries for 3 of another crop.",
-  //   type: CARD_TYPE.Rat,
-  //   energy: 3,
-  // },
 ];
 
 export default rats;

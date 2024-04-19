@@ -1,85 +1,54 @@
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const hedgehogs: ICard[] = [
   {
     name: "Crop Thief",
     qty: 2,
     cost: {
-      apples: 3,
+      apples: 2,
       berries: 0,
-      carrots: 2,
+      carrots: 3,
     },
     image: "carrot_theif",
     description: "Action: Steal any 1 crop from a competitor.",
     type: CARD_TYPE.Hedgehog,
     energy: 3,
+    tags: [TAGS.DESTROY_1_CROP, TAGS.GAIN_CROP_1, TAGS.DIVERSE_CROPS],
   },
   {
     name: "Deviant Hog",
     qty: 2,
     cost: {
-      apples: 0,
+      apples: 5,
       carrots: 4,
-      berries: 5,
+      berries: 0,
     },
     image: "carrot_theif",
     description: "Action: Steal any 2 crops from a competitor.",
     type: CARD_TYPE.Hedgehog,
     energy: 2,
+    tags: [TAGS.DESTROY_2_CROP, TAGS.GAIN_CROP_2, TAGS.DIVERSE_CROPS],
   },
   {
     name: "The Head Chog",
     qty: 1,
     cost: {
-      apples: 5,
-      carrots: 4,
-      berries: 4,
+      apples: 4,
+      carrots: 5,
+      berries: 5,
     },
     image: "quilly",
     description:
       "Action: Steal any 2 crops from a competitor's stash or work order.",
     type: CARD_TYPE.Hedgehog,
     energy: 2,
+    tags: [
+      TAGS.GAIN_CROP_2,
+      TAGS.DIVERSE_CROPS,
+      TAGS.TITULAR,
+      TAGS.DISRUPT_WORK_ORDER_2,
+    ],
   },
-  // {
-  //   name: "Carrot Thief",
-  //   qty: 2,
-  //   cost: {
-  //     apples: 2,
-  //     berries: 0,
-  //     carrots: 3,
-  //   },
-  //   image: "carrot_theif",
-  //   description: "Action: Steal 1 Carrot from a competitor.",
-  //   type: CARD_TYPE.Hedgehog,
-  //   energy: 3,
-  // },
-  // {
-  //   name: "Berry Thief",
-  //   qty: 2,
-  //   cost: {
-  //     apples: 0,
-  //     berries: 3,
-  //     carrots: 2,
-  //   },
-  //   image: "berry_theif",
-  //   description: "Action: Steal 1 Berry from a competitor.",
-  //   type: CARD_TYPE.Hedgehog,
-  //   energy: 3,
-  // },
-  // {
-  //   name: "Apple Thief",
-  //   qty: 2,
-  //   cost: {
-  //     apples: 3,
-  //     berries: 2,
-  //     carrots: 0,
-  //   },
-  //   image: "apple_theif",
-  //   description: "Action: Steal 1 Apple from a competitor.",
-  //   type: CARD_TYPE.Hedgehog,
-  //   energy: 3,
-  // },
 ];
 
 export default hedgehogs;
