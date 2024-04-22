@@ -118,7 +118,7 @@ const evaluateCostOfTag = (tag: TAGS, energy: number) => {
     case TAGS.DISRUPT_WORK_ORDER_1:
       return +3 * energy;
     case TAGS.DISRUPT_WORK_ORDER_2:
-      return +6 * energy;
+      return +5 * energy;
     case TAGS.REMOVE_ENERGY_1:
       return +3 * energy;
     case TAGS.DISCARD_OPPONENT_DECK_1:
@@ -143,6 +143,8 @@ const evaluateCostOfTag = (tag: TAGS, energy: number) => {
       return 6 * energy;
     case TAGS.REFUND_FROM_DISCARD:
       return 10 * energy;
+    case TAGS.PACK_WORK_ORDER_1:
+      return 2 * energy;
     case TAGS.PACK_WORK_ORDER_2:
       return 4 * energy;
     case TAGS.DISCARD_FROM_DECK:

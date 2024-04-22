@@ -6,8 +6,8 @@ const hedgehogs: ICard[] = [
     qty: 2,
     cost: {
       apples: 2,
-      berries: 0,
       carrots: 3,
+      berries: 0,
     },
     image: "carrot_theif",
     description: "Action: Steal any 1 crop from a competitor.",

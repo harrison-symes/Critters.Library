@@ -59,8 +59,8 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 2,
-      berries: 0,
       carrots: 3,
+      berries: 0,
     },
     image: "uproot",
     description: "Gain +2 of a crop, and +1 of each other crop.",
@@ -112,8 +112,8 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 1,
-      berries: 2,
       carrots: 1,
+      berries: 2,
     },
     image: "damaged_goods",
     description: "Refund a card from your hand or discard pile",
@@ -478,7 +478,7 @@ const items: ICard[] = [
   },
 
   {
-    name: "Bad Review",
+    name: "Sprinklers",
     qty: 1,
     cost: {
       apples: 2,

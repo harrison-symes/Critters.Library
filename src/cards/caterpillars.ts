@@ -6,13 +6,14 @@ const caterpillars: ICard[] = [
     qty: 2,
     cost: {
       apples: 2,
-      berries: 0,
       carrots: 2,
+      berries: 0,
     },
     image: "caterpillar_2",
     description: "Evolves in 2 turns. Evolved: Action: draw a card.",
     type: CARD_TYPE.Caterpillar,
     energy: 3,
+    tags: [TAGS.DELAYED, TAGS.DRAW_A_CARD],
   },
   {
     name: "Muncher",

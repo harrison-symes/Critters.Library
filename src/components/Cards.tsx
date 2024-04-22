@@ -95,6 +95,11 @@ const Cards = () => {
           deck={filteredDeck}
           cardType={CARD_TYPE.Caterpillar}
         />
+        <CardList
+          title="Bees"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.BumbleBee}
+        />
       </div>
     </div>
   );

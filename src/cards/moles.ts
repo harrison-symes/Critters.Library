@@ -35,8 +35,8 @@ const moles: ICard[] = [
     qty: 1,
     cost: {
       apples: 4,
-      berries: 4,
       carrots: 5,
+      berries: 4,
     },
     image: "blind_borris",
     description:

@@ -16,7 +16,7 @@ const rats: ICard[] = [
     tags: [TAGS.TRADE_1_FOR_1, TAGS.GAIN_CROP_1],
   },
   {
-    name: "Dispatcher",
+    name: "Courier",
     qty: 2,
     cost: {
       apples: 3,
@@ -41,7 +41,7 @@ const rats: ICard[] = [
     image: "hermes",
     description: "Action: Refund a card from your hand.",
     type: CARD_TYPE.Rat,
-    energy: 3,
+    energy: 2,
     tags: [TAGS.REFUND_FROM_HAND, TAGS.TITULAR],
   },
 ];
