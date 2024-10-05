@@ -5,8 +5,8 @@ const bumblebees: ICard[] = [
     name: "Worker Bee",
     qty: 2,
     cost: {
-      apples: 1,
-      carrots: 3,
+      apples: 2,
+      carrots: 2,
       berries: 3,
     },
     image: "rummager",
@@ -34,11 +34,12 @@ const bumblebees: ICard[] = [
     qty: 1,
     cost: {
       apples: 2,
-      carrots: 5,
+      carrots: 2,
       berries: 3,
     },
     image: "rummager",
-    description: "Action: Draw a card for each work order your have completed.",
+    description:
+      "Action: Add a crop from your rival's stash to your work order. Repeat for every 2 Victory Points you have.",
     type: CARD_TYPE.BumbleBee,
     energy: 2,
     tags: [TAGS.TITULAR, TAGS.DRAW_2_CARDS, TAGS.CONDITIONAL_MED],

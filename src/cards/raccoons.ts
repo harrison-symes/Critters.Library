@@ -5,9 +5,9 @@ const raccoons: ICard[] = [
     name: "Rummager",
     qty: 2,
     cost: {
-      apples: 3,
-      carrots: 0,
-      berries: 2,
+      apples: 0,
+      carrots: 4,
+      berries: 1,
     },
     image: "rummager",
     description: "Action: Draw a card, then discard a card.",
@@ -19,9 +19,9 @@ const raccoons: ICard[] = [
     name: "Trash Panda",
     qty: 2,
     cost: {
-      apples: 0,
-      carrots: 4,
-      berries: 3,
+      apples: 4,
+      carrots: 0,
+      berries: 1,
     },
     image: "trash_panda",
     description:
@@ -36,7 +36,7 @@ const raccoons: ICard[] = [
     cost: {
       apples: 3,
       carrots: 3,
-      berries: 4,
+      berries: 2,
     },
     image: "sticky_fingers",
     description:

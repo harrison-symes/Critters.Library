@@ -74,9 +74,9 @@ export const createWorkOrderDeck = (): IWorkOrder[] => {
 const evaluateCostOfTag = (tag: TAGS, energy: number) => {
   switch (tag) {
     case TAGS.DRAW_A_CARD:
-      return +4 * energy;
+      return +3 * energy;
     case TAGS.DRAW_2_CARDS:
-      return +10 * energy;
+      return +6 * energy;
     case TAGS.DIVERSE_CROPS:
       return +1;
     case TAGS.CHOICE:
@@ -84,21 +84,21 @@ const evaluateCostOfTag = (tag: TAGS, energy: number) => {
     case TAGS.DELAYED:
       return 0;
     case TAGS.SHUFFLE_DISCARD_TO_DECK:
-      return +4 * energy;
+      return +3 * energy;
     case TAGS.GAIN_CROP_1:
-      return +2 * energy;
+      return +1 * energy;
     case TAGS.GAIN_CROP_2:
-      return +4 * energy;
+      return +2 * energy;
     case TAGS.GAIN_CROP_3:
-      return +6 * energy;
+      return +3 * energy;
     case TAGS.GAIN_CROP_4:
-      return +8 * energy;
+      return +4 * energy;
     case TAGS.GAIN_CROP_5:
-      return +10 * energy;
+      return +5 * energy;
     case TAGS.GAIN_CROP_6:
-      return +12 * energy;
+      return +6 * energy;
     case TAGS.GAIN_CROP_9:
-      return +18 * energy;
+      return +9 * energy;
     case TAGS.TITULAR:
       return -3;
     case TAGS.DESTROY_1_OWN_CROP:
@@ -116,33 +116,33 @@ const evaluateCostOfTag = (tag: TAGS, energy: number) => {
     case TAGS.DESTROY_6_CROP:
       return +6 * energy;
     case TAGS.DISRUPT_WORK_ORDER_1:
-      return +3 * energy;
+      return +2 * energy;
     case TAGS.DISRUPT_WORK_ORDER_2:
-      return +5 * energy;
-    case TAGS.REMOVE_ENERGY_1:
-      return +3 * energy;
-    case TAGS.DISCARD_OPPONENT_DECK_1:
       return +4 * energy;
+    case TAGS.REMOVE_ENERGY_1:
+      return +2 * energy;
+    case TAGS.DISCARD_OPPONENT_DECK_1:
+      return +2 * energy;
     case TAGS.DISCARD_OPPONENT_HAND_1:
-      return +6 * energy;
+      return +4 * energy;
     case TAGS.DISCARD_FROM_HAND_1:
-      return -2 * energy;
+      return -3 * energy;
     case TAGS.DISCARD_FROM_HAND_2:
-      return -4 * energy;
+      return -6 * energy;
     case TAGS.PLACE_ON_TOP_DECK:
-      return 6 * energy;
+      return 4 * energy;
     case TAGS.CONDITIONAL_SML:
       return -1 * energy;
     case TAGS.CONDITIONAL_MED:
       return -2 * energy;
     case TAGS.CONDITIONAL_LRG:
-      return -4 * energy;
+      return -3 * energy;
     case TAGS.TRADE_1_FOR_1:
       return 1 * energy;
     case TAGS.REFUND_FROM_HAND:
-      return 6 * energy;
+      return 3 * energy;
     case TAGS.REFUND_FROM_DISCARD:
-      return 10 * energy;
+      return 6 * energy;
     case TAGS.PACK_WORK_ORDER_1:
       return 2 * energy;
     case TAGS.PACK_WORK_ORDER_2:
@@ -154,24 +154,24 @@ const evaluateCostOfTag = (tag: TAGS, energy: number) => {
     case TAGS.RESTORE_ALL_ENERGY:
       return 2;
     case TAGS.RESTORE_1_ENERGY_TO_ALL:
-      return 3;
+      return 2;
     case TAGS.RESTORE_ALL_ENERGY_TO_ALL:
-      return 6;
+      return 4;
     case TAGS.REMOVE_1_ENERGY_FROM_ALL:
-      return 6;
+      return 4;
     case TAGS.REFRESH_SHOP_CARD:
       return 1;
     case TAGS.BOMB:
       return 4;
     case TAGS.EXHAUST:
-      return 6;
+      return 5;
     default:
       return 0;
   }
 };
 
 export const estimateCardCost = (card: ICard) => {
-  let cost = -2;
+  let cost = 0;
   const energy = card.energy ?? 1;
 
   cost -= energy > 1 ? energy : 0;
@@ -184,10 +184,6 @@ export const estimateCardCost = (card: ICard) => {
 
   if (card.tags?.includes(TAGS.DELAYED)) {
     cost -= Math.floor(cost / 2);
-  }
-
-  if (card.type === CARD_TYPE.Item) {
-    cost -= Math.ceil(cost * 0.2);
   }
 
   return cost;

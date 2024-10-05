@@ -5,8 +5,8 @@ const moles: ICard[] = [
     name: "Burrower",
     qty: 2,
     cost: {
-      apples: 2,
-      carrots: 0,
+      apples: 0,
+      carrots: 2,
       berries: 2,
     },
     image: "burrower",
@@ -19,9 +19,9 @@ const moles: ICard[] = [
     name: "Saboteur",
     qty: 2,
     cost: {
-      apples: 2,
+      apples: 4,
       carrots: 0,
-      berries: 2,
+      berries: 1,
     },
     image: "saboteur",
     description:
@@ -34,13 +34,12 @@ const moles: ICard[] = [
     name: "Blind Borris",
     qty: 1,
     cost: {
-      apples: 4,
-      carrots: 5,
+      apples: 3,
+      carrots: 0,
       berries: 4,
     },
     image: "blind_borris",
-    description:
-      "Action: Look at the top 3 cards of a competitor's deck and discard one. They draw one less card next turn.",
+    description: "Action: Discard a random card from your opponent's hand",
     type: CARD_TYPE.Mole,
     energy: 2,
     tags: [

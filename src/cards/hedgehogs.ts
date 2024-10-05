@@ -5,9 +5,9 @@ const hedgehogs: ICard[] = [
     name: "Crop Thief",
     qty: 2,
     cost: {
-      apples: 2,
-      carrots: 3,
-      berries: 0,
+      apples: 0,
+      carrots: 2,
+      berries: 3,
     },
     image: "carrot_theif",
     description: "Action: Steal any 1 crop from a competitor.",
@@ -19,7 +19,7 @@ const hedgehogs: ICard[] = [
     name: "Deviant Hog",
     qty: 2,
     cost: {
-      apples: 5,
+      apples: 3,
       carrots: 4,
       berries: 0,
     },
@@ -34,8 +34,8 @@ const hedgehogs: ICard[] = [
     qty: 1,
     cost: {
       apples: 4,
-      carrots: 5,
-      berries: 5,
+      carrots: 2,
+      berries: 4,
     },
     image: "quilly",
     description:
