@@ -90,16 +90,8 @@ const Cards = () => {
           deck={filteredDeck}
           cardType={CARD_TYPE.Raccoon}
         />
-        <CardList
-          title="Caterpillars"
-          deck={filteredDeck}
-          cardType={CARD_TYPE.Caterpillar}
-        />
-        <CardList
-          title="Bees"
-          deck={filteredDeck}
-          cardType={CARD_TYPE.BumbleBee}
-        />
+        <CardList title="Worms" deck={filteredDeck} cardType={CARD_TYPE.Worm} />
+        <CardList title="Bees" deck={filteredDeck} cardType={CARD_TYPE.Bee} />
       </div>
     </div>
   );

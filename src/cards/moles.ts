@@ -2,51 +2,44 @@ import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const moles: ICard[] = [
   {
-    name: "Burrower",
+    name: "Saboteur",
     qty: 2,
     cost: {
       apples: 0,
       carrots: 2,
       berries: 2,
     },
-    image: "burrower",
-    description: "Action: -1 energy from a competitor's critter.",
+    image: "rummager",
+    description: "Add a Zzz counter to a Rival's critter.",
+    energy: 2,
     type: CARD_TYPE.Mole,
-    energy: 3,
-    tags: [TAGS.REMOVE_ENERGY_1],
   },
   {
-    name: "Saboteur",
+    name: "Burrower",
     qty: 2,
     cost: {
-      apples: 4,
-      carrots: 0,
-      berries: 1,
+      apples: 3,
+      carrots: 2,
+      berries: 0,
     },
-    image: "saboteur",
-    description:
-      "Action: Look at the top 3 cards of a competitor's deck, discard one of them.",
+    image: "rummager",
+    description: "Steal a crop from your Rival.",
+    energy: 3,
     type: CARD_TYPE.Mole,
-    tags: [TAGS.DISCARD_OPPONENT_DECK_1],
-    energy: 2,
   },
   {
-    name: "Blind Borris",
+    name: "Wacker Mole",
     qty: 1,
     cost: {
-      apples: 3,
-      carrots: 0,
+      apples: 2,
+      carrots: 1,
       berries: 4,
     },
-    image: "blind_borris",
-    description: "Action: Discard a random card from your opponent's hand",
-    type: CARD_TYPE.Mole,
+    image: "rummager",
+    description:
+      "Add a Zzz counter to each of your Rival's critters. Steal 1 of each crop from them.",
     energy: 2,
-    tags: [
-      TAGS.DISCARD_OPPONENT_DECK_1,
-      TAGS.DISCARD_OPPONENT_HAND_1,
-      TAGS.TITULAR,
-    ],
+    type: CARD_TYPE.Mole,
   },
 ];
 

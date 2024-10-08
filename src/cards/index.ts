@@ -1,6 +1,6 @@
 import { CARD_TYPE, ICard, IWorkOrder, TAGS } from "../models/cards.models";
-import bumblebees from "./bumblebees";
-import caterpillars from "./caterpillars";
+import bees from "./bees";
+import worms from "./worms";
 import hedgehogs from "./hedgehogs";
 
 import items from "./items";
@@ -44,13 +44,13 @@ export const createDeck = (noDuplicates: boolean = false): ICard[] => {
 
   addToDeck(deck, items, noDuplicates);
   addToDeck(deck, seeds, noDuplicates);
-  addToDeck(deck, caterpillars, noDuplicates);
+  addToDeck(deck, worms, noDuplicates);
   addToDeck(deck, rabbits, noDuplicates);
   addToDeck(deck, moles, noDuplicates);
   addToDeck(deck, rats, noDuplicates);
   addToDeck(deck, raccoons, noDuplicates);
   addToDeck(deck, hedgehogs, noDuplicates);
-  addToDeck(deck, bumblebees, noDuplicates);
+  addToDeck(deck, bees, noDuplicates);
 
   if (!noDuplicates) {
     return shuffleDeck(deck);

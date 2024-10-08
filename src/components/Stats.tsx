@@ -197,14 +197,13 @@ const Stats = (props: IProps) => {
       <hr />
       <div>Items: {countType(CARD_TYPE.Item)}</div>
       <div>Seeds: {countType(CARD_TYPE.Seeds)}</div>
-      <div>Constructs: {countType(CARD_TYPE.Construct)}</div>
       <div>Rabbits: {countType(CARD_TYPE.Rabbit)}</div>
       <div>Rats: {countType(CARD_TYPE.Rat)}</div>
       <div>Moles: {countType(CARD_TYPE.Mole)}</div>
       <div>Hedgehogs: {countType(CARD_TYPE.Hedgehog)}</div>
-      <div>Bees: {countType(CARD_TYPE.BumbleBee)}</div>
+      <div>Bees: {countType(CARD_TYPE.Bee)}</div>
       <div>Raccoons: {countType(CARD_TYPE.Raccoon)}</div>
-      <div>Caterpillars: {countType(CARD_TYPE.Caterpillar)}</div>
+      <div>Worms: {countType(CARD_TYPE.Worm)}</div>
     </div>
   );
 };

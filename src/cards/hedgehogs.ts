@@ -2,52 +2,45 @@ import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const hedgehogs: ICard[] = [
   {
-    name: "Crop Thief",
+    name: "Snuffler",
     qty: 2,
     cost: {
-      apples: 0,
-      carrots: 2,
-      berries: 3,
+      apples: 1,
+      carrots: 0,
+      berries: 2,
     },
-    image: "carrot_theif",
-    description: "Action: Steal any 1 crop from a competitor.",
-    type: CARD_TYPE.Hedgehog,
+    image: "rummager",
+    description:
+      "Place a card from your Rival's discard pile on top of their deck.",
     energy: 3,
-    tags: [TAGS.DESTROY_1_CROP, TAGS.GAIN_CROP_1, TAGS.DIVERSE_CROPS],
+    type: CARD_TYPE.Hedgehog,
   },
   {
-    name: "Deviant Hog",
+    name: "Skewer-er",
     qty: 2,
     cost: {
-      apples: 3,
-      carrots: 4,
+      apples: 1,
+      carrots: 3,
       berries: 0,
     },
-    image: "carrot_theif",
-    description: "Action: Steal any 2 crops from a competitor.",
-    type: CARD_TYPE.Hedgehog,
+    image: "rummager",
     energy: 2,
-    tags: [TAGS.DESTROY_2_CROP, TAGS.GAIN_CROP_2, TAGS.DIVERSE_CROPS],
+    description: "Discard one of the top 3 cards of your Rival's deck.",
+    type: CARD_TYPE.Hedgehog,
   },
   {
     name: "The Head Chog",
     qty: 1,
     cost: {
-      apples: 4,
-      carrots: 2,
-      berries: 4,
+      apples: 3,
+      carrots: 1,
+      berries: 3,
     },
-    image: "quilly",
-    description:
-      "Action: Steal any 2 crops from a competitor's stash or work order.",
-    type: CARD_TYPE.Hedgehog,
+    image: "rummager",
     energy: 2,
-    tags: [
-      TAGS.GAIN_CROP_2,
-      TAGS.DIVERSE_CROPS,
-      TAGS.TITULAR,
-      TAGS.DISRUPT_WORK_ORDER_2,
-    ],
+    description:
+      "Put a card from your discard pile on top of your Rival's deck.",
+    type: CARD_TYPE.Hedgehog,
   },
 ];
 

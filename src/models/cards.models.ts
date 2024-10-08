@@ -1,17 +1,16 @@
 export enum CARD_TYPE {
   Item = "Item",
   Seeds = "Seeds",
-  Construct = "Construct",
   Rabbit = "Rabbit",
   Rat = "Rat",
   Mole = "Mole",
   Hedgehog = "Hedgehog",
   Raccoon = "Raccoon",
   Worm = "Worm",
-  Caterpillar = "Caterpillar",
-  BumbleBee = "Bumblebee",
+  Bee = "Bee",
   Action = "Action",
   Reward = "Rewards",
+  Machine = "Machine",
 }
 
 export enum RESOURCE {

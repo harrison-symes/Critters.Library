@@ -2,18 +2,17 @@ import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const rats: ICard[] = [
   {
-    name: "Crop Trader",
+    name: "Middleman",
     qty: 2,
     cost: {
-      apples: 1,
-      carrots: 1,
-      berries: 1,
+      apples: 2,
+      carrots: 0,
+      berries: 2,
     },
-    image: "carrot_trader",
-    description: "Action: Trade 2 of a crop for 2 of another crop.",
-    type: CARD_TYPE.Rat,
+    image: "rummager",
+    description: "Get favour from the shop for free",
     energy: 3,
-    tags: [TAGS.TRADE_1_FOR_1, TAGS.GAIN_CROP_1],
+    type: CARD_TYPE.Rat,
   },
   {
     name: "Courier",
@@ -23,26 +22,24 @@ const rats: ICard[] = [
       carrots: 2,
       berries: 1,
     },
-    image: "carrot_trader",
+    image: "rummager",
     description:
-      "Action: The next card you buy this turn is placed on top of your deck.",
-    type: CARD_TYPE.Rat,
+      "The next Farmer Card you buy this turn is placed on top of your deck.",
     energy: 2,
-    tags: [TAGS.PLACE_ON_TOP_DECK],
+    type: CARD_TYPE.Rat,
   },
   {
     name: "Hermes",
     qty: 1,
     cost: {
-      apples: 2,
-      carrots: 2,
+      apples: 1,
+      carrots: 1,
       berries: 3,
     },
-    image: "hermes",
-    description: "Action: Refund a card from your hand.",
-    type: CARD_TYPE.Rat,
+    image: "rummager",
+    description: "Refund a card from your hand to draw a card.",
     energy: 2,
-    tags: [TAGS.REFUND_FROM_HAND, TAGS.TITULAR],
+    type: CARD_TYPE.Rat,
   },
 ];
 
