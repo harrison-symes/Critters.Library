@@ -5,9 +5,9 @@ const bees: ICard[] = [
     name: "Worker Bee",
     qty: 2,
     cost: {
-      apples: 2,
-      carrots: 2,
-      berries: 2,
+      apples: 3,
+      carrots: 3,
+      berries: 3,
     },
     image: "rummager",
     description: "If you have 3 work orders, gain +1 of each crop.",
@@ -19,8 +19,8 @@ const bees: ICard[] = [
     qty: 2,
     cost: {
       apples: 3,
-      carrots: 2,
-      berries: 2,
+      carrots: 3,
+      berries: 3,
     },
     image: "rummager",
     description: "If you have 3 work orders, draw a card.",
@@ -31,9 +31,9 @@ const bees: ICard[] = [
     name: "Plan Bee",
     qty: 1,
     cost: {
-      apples: 2,
-      carrots: 4,
-      berries: 4,
+      apples: 3,
+      carrots: 3,
+      berries: 3,
     },
     image: "rummager",
     description:

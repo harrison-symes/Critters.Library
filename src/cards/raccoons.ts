@@ -31,7 +31,7 @@ const raccoons: ICard[] = [
     name: "Sticky Fingers",
     qty: 1,
     cost: {
-      apples: 4,
+      apples: 5,
       carrots: 1,
       berries: 1,
     },

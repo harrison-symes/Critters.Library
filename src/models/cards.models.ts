@@ -8,7 +8,7 @@ export enum CARD_TYPE {
   Raccoon = "Raccoon",
   Worm = "Worm",
   Bee = "Bee",
-  Action = "Action",
+  Favour = "Favour",
   Reward = "Rewards",
   Machine = "Machine",
 }

@@ -32,9 +32,9 @@ const worms: ICard[] = [
     name: "Bookworm",
     qty: 1,
     cost: {
-      apples: 3,
-      carrots: 3,
-      berries: 2,
+      apples: 2,
+      carrots: 2,
+      berries: 4,
     },
     image: "rummager",
     description: "Perform the talent of one of your other critters.",

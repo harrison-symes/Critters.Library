@@ -31,14 +31,14 @@ const moles: ICard[] = [
     name: "Wacker Mole",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       carrots: 1,
-      berries: 4,
+      berries: 5,
     },
     image: "rummager",
     description:
       "Add a Zzz counter to each of your Rival's critters. Steal 1 of each crop from them.",
-    energy: 2,
+    energy: 3,
     type: CARD_TYPE.Mole,
   },
 ];

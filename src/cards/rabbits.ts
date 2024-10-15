@@ -3,7 +3,7 @@ import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 const rabbits: ICard[] = [
   {
     name: "Carrot Grower",
-    qty: 3,
+    qty: 2,
     cost: {
       apples: 1,
       carrots: 4,
@@ -16,7 +16,7 @@ const rabbits: ICard[] = [
   },
   {
     name: "Berry Grower",
-    qty: 3,
+    qty: 2,
     cost: {
       apples: 1,
       carrots: 1,
@@ -29,7 +29,7 @@ const rabbits: ICard[] = [
   },
   {
     name: "Apple Grower",
-    qty: 3,
+    qty: 2,
     cost: {
       apples: 4,
       carrots: 1,

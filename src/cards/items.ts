@@ -117,7 +117,7 @@ const items: ICard[] = [
     qty: 1,
     cost: {
       apples: 1,
-      carrots: 2,
+      carrots: 3,
       berries: 1,
     },
     image: "rummager",
@@ -128,7 +128,7 @@ const items: ICard[] = [
     name: "Mole Food",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       carrots: 1,
       berries: 1,
     },
@@ -142,7 +142,7 @@ const items: ICard[] = [
     cost: {
       apples: 1,
       carrots: 1,
-      berries: 2,
+      berries: 3,
     },
     image: "rummager",
     description: "+2 Berries, +1 Apple, +1 Carrot.",
@@ -437,6 +437,72 @@ const items: ICard[] = [
     image: "rummager",
     description:
       "Remove this from the game, and add any Farmer Card from the shop to your hand.",
+    type: CARD_TYPE.Item,
+  },
+  // 5 more items
+  {
+    name: "Phone Book",
+    qty: 1,
+    cost: {
+      apples: 0,
+      carrots: 2,
+      berries: 1,
+    },
+    image: "rummager",
+    description:
+      "Get 2 favours from the shop for free. OR refresh a card in the shop.",
+    type: CARD_TYPE.Item,
+  },
+  {
+    name: "Bingo Card",
+    qty: 1,
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    image: "rummager",
+    description:
+      "Get a random crop: Carrot: gain +1 of each crop. Apple: Draw a card. Berry: return this card to your hand.",
+    type: CARD_TYPE.Item,
+  },
+  {
+    name: "Packing Slip",
+    qty: 1,
+    cost: {
+      apples: 4,
+      carrots: 4,
+      berries: 4,
+    },
+    image: "rummager",
+    description:
+      "If you have 3 Work orders, pack a free crate into each of them. When discarded, get a work order for free.",
+    type: CARD_TYPE.Item,
+  },
+  {
+    name: "Rocking Chair",
+    qty: 1,
+    cost: {
+      apples: 2,
+      carrots: 1,
+      berries: 0,
+    },
+    image: "rummager",
+    description:
+      "Move up to 3 Zzz counters from your Critters onto any of you or your Rival's critters.",
+    type: CARD_TYPE.Item,
+  },
+  {
+    name: "Espresso",
+    qty: 1,
+    cost: {
+      apples: 1,
+      carrots: 0,
+      berries: 2,
+    },
+    image: "rummager",
+    description:
+      "Place this under one of your critters. When they are exhausted, place them on top of your deck. ",
     type: CARD_TYPE.Item,
   },
 ];

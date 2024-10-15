@@ -5,7 +5,7 @@ import cn from "classnames";
 import CardList from "./CardList";
 import { createDeck } from "../cards";
 import { CARD_TYPE, RESOURCE } from "../models/cards.models";
-import actions from "../cards/actions";
+import favours from "../cards/actions";
 import rewards from "../cards/rewards";
 
 const Cards = () => {
@@ -66,7 +66,7 @@ const Cards = () => {
           ))}
         </div>
         <CardList title="Rewards" deck={rewards} cardType={CARD_TYPE.Reward} />
-        <CardList title="Actions" deck={actions} cardType={CARD_TYPE.Action} />
+        <CardList title="Actions" deck={favours} cardType={CARD_TYPE.Favour} />
         <CardList title="Items" deck={filteredDeck} cardType={CARD_TYPE.Item} />
         <CardList
           title="Seeds"

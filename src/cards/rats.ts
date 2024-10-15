@@ -33,8 +33,8 @@ const rats: ICard[] = [
     qty: 1,
     cost: {
       apples: 1,
-      carrots: 1,
-      berries: 3,
+      carrots: 3,
+      berries: 1,
     },
     image: "rummager",
     description: "Refund a card from your hand to draw a card.",

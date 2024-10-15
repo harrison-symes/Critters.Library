@@ -39,7 +39,7 @@ const seeds: ICard[] = [
   },
   {
     name: "Mystery Seeds",
-    qty: 3,
+    qty: 2,
     cost: {
       apples: 1,
       carrots: 1,
@@ -51,7 +51,7 @@ const seeds: ICard[] = [
   },
   {
     name: "Mixed Seeds",
-    qty: 3,
+    qty: 2,
     cost: {
       apples: 1,
       carrots: 1,
