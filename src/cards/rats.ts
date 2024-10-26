@@ -5,9 +5,9 @@ const rats: ICard[] = [
     name: "Middleman",
     qty: 2,
     cost: {
-      apples: 2,
-      carrots: 0,
-      berries: 2,
+      apples: 1,
+      carrots: 2,
+      berries: 1,
     },
     image: "rummager",
     description: "Get favour from the shop for free",
@@ -19,8 +19,8 @@ const rats: ICard[] = [
     qty: 2,
     cost: {
       apples: 1,
-      carrots: 2,
-      berries: 1,
+      carrots: 0,
+      berries: 2,
     },
     image: "rummager",
     description:
@@ -32,7 +32,7 @@ const rats: ICard[] = [
     name: "Hermes",
     qty: 1,
     cost: {
-      apples: 1,
+      apples: 3,
       carrots: 3,
       berries: 1,
     },

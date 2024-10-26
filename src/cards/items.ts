@@ -73,7 +73,7 @@ const items: ICard[] = [
       berries: 3,
     },
     image: "rummager",
-    description: "Gain +3 of each crop. Give your rival 3 random crops.",
+    description: "Gain +3 of each crop. Give your rival 2 random crops.",
     type: CARD_TYPE.Item,
   },
   {
@@ -364,7 +364,7 @@ const items: ICard[] = [
     name: "Megaphone",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 2,
       carrots: 1,
       berries: 0,
     },
@@ -483,7 +483,7 @@ const items: ICard[] = [
     name: "Rocking Chair",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       carrots: 1,
       berries: 0,
     },

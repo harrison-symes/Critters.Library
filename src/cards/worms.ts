@@ -7,7 +7,7 @@ const worms: ICard[] = [
     cost: {
       apples: 0,
       carrots: 1,
-      berries: 2,
+      berries: 3,
     },
     image: "rummager",
     description:
@@ -34,11 +34,11 @@ const worms: ICard[] = [
     cost: {
       apples: 2,
       carrots: 2,
-      berries: 4,
+      berries: 2,
     },
     image: "rummager",
     description: "Perform the talent of one of your other critters.",
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Worm,
   },
 ];
