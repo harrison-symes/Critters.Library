@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ICard } from "../models/cards.models";
-import { estimateCardCost } from "../cards";
 
 interface IProps {
   card: ICard;
@@ -8,7 +7,6 @@ interface IProps {
 }
 
 const ShopCard = ({ card, ...props }: IProps) => {
-  const estCost = estimateCardCost(card);
   const totalCost =
     (card.cost.apples ?? 0) +
     (card.cost.carrots ?? 0) +
@@ -49,15 +47,13 @@ const ShopCard = ({ card, ...props }: IProps) => {
       <div className="card-description">{card.description}</div>
       <div className="card-footer">
         <div className="card-type">{card.type}</div>
+        {card.subtype && <div className="card-type">{card.subtype}</div>}
         {card.energy && (
           <div className="card-durability">
             <span className="card-durability__number">{card.energy}</span>
             <img className="card-durability__icon" src="/images/heart.png" />
           </div>
         )}
-      </div>
-      <div>
-        est: {estCost} {estCost !== totalCost && <b>WRONG COST</b>}
       </div>
     </div>
   );

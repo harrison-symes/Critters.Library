@@ -13,6 +13,7 @@ const moles: ICard[] = [
     description: "Add a Zzz counter to a Rival's critter.",
     energy: 2,
     type: CARD_TYPE.Mole,
+    tags: [TAGS.ENERGY_REMOVE],
   },
   {
     name: "Burrower",
@@ -26,6 +27,7 @@ const moles: ICard[] = [
     description: "Steal a crop from your Rival.",
     energy: 3,
     type: CARD_TYPE.Mole,
+    tags: [TAGS.CROP_STEAL],
   },
   {
     name: "Wacker Mole",
@@ -38,8 +40,9 @@ const moles: ICard[] = [
     image: "rummager",
     description:
       "Add a Zzz counter to each of your Rival's critters. Steal 1 of each crop from them.",
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Mole,
+    tags: [TAGS.CROP_STEAL, TAGS.ENERGY_REMOVE],
   },
 ];
 

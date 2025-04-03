@@ -12,11 +12,12 @@ const hedgehogs: ICard[] = [
     image: "rummager",
     description:
       "Place a card from your Rival's discard pile on top of their deck.",
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Hedgehog,
+    tags: [TAGS.TOP_OF_DECK],
   },
   {
-    name: "Skewer-er",
+    name: "Picky Eater",
     qty: 2,
     cost: {
       apples: 1,
@@ -25,8 +26,9 @@ const hedgehogs: ICard[] = [
     },
     image: "rummager",
     energy: 2,
-    description: "Discard one of the top 3 cards of your Rival's deck.",
+    description: "Shuffle a Treat from your discard pile back into your deck.",
     type: CARD_TYPE.Hedgehog,
+    tags: [TAGS.SHUFFLE_CARDS, TAGS.TREAT_SYNERGY],
   },
   {
     name: "The Head Chog",
@@ -41,6 +43,7 @@ const hedgehogs: ICard[] = [
     description:
       "Put a card from your discard pile on top of your Rival's deck.",
     type: CARD_TYPE.Hedgehog,
+    tags: [TAGS.TOP_OF_DECK, TAGS.GIFT],
   },
 ];
 

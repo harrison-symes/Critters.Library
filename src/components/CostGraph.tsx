@@ -185,6 +185,68 @@ const CostGraph = (props: IProps) => {
     0
   );
 
+  const createComboFreqRecord = () => {
+    const record: Record<string, number> = {};
+    for (let apples = 0; apples < 6; apples++) {
+      for (let carrots = 0; carrots < 6; carrots++) {
+        for (let berries = 0; berries < 6; berries++) {
+          const costKeys = [];
+          if (apples > 0) {
+            costKeys.push(`a${apples}`);
+          }
+          if (carrots > 0) {
+            costKeys.push(`c${carrots}`);
+          }
+          if (berries > 0) {
+            costKeys.push(`b${berries}`);
+          }
+
+          const costKey = costKeys.join(" ");
+
+          record[costKey] = 0;
+        }
+      }
+    }
+  };
+
+  const costComboFreq = filteredDeck.reduce((accum, card) => {
+    const costKeys = [];
+    if (card.cost.apples > 0) {
+      costKeys.push(`a${card.cost.apples}`);
+    }
+    if (card.cost.carrots > 0) {
+      costKeys.push(`c${card.cost.carrots}`);
+    }
+    if (card.cost.berries > 0) {
+      costKeys.push(`b${card.cost.berries}`);
+    }
+
+    // if (costKeys.length <= 1) {
+    //   return accum;
+    // }
+    // if (
+    //   card.cost.berries === card.cost.apples &&
+    //   card.cost.berries === card.cost.berries
+    // ) {
+    //   return accum;
+    // }
+
+    const costKey = costKeys.join(" ");
+
+    if (accum[costKey]) {
+      accum[costKey]++;
+    } else {
+      accum[costKey] = 1;
+    }
+    return accum;
+  }, {} as Record<string, number>);
+
+  const orderedCostComboFreq = Object.keys(costComboFreq).sort((a, b) =>
+    costComboFreq[a] > costComboFreq[b] ? 1 : -1
+  );
+
+  console.log({ costComboFreq });
+
   console.log({ filterState, filteredDeck });
 
   return (
@@ -308,6 +370,28 @@ const CostGraph = (props: IProps) => {
           },
         ]}
       />
+      <div className="costFreqChart">
+        <BarChart
+          width={window.innerWidth / 2}
+          height={700}
+          layout="horizontal"
+          grid={{ vertical: true }}
+          series={[
+            {
+              color: "black",
+              label: "Total",
+              data: orderedCostComboFreq.map((key) => costComboFreq[key]),
+            },
+          ]}
+          yAxis={[
+            {
+              label: "Cost",
+              data: orderedCostComboFreq.map((c) => c.toString()),
+              scaleType: "band",
+            },
+          ]}
+        />
+      </div>
     </div>
   );
 };

@@ -10,9 +10,10 @@ const raccoons: ICard[] = [
       berries: 1,
     },
     image: "rummager",
-    description: "Discard a card to draw a card",
+    description: "Discard a card from your hand to draw a card",
     energy: 3,
     type: CARD_TYPE.Raccoon,
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN],
   },
   {
     name: "Dumpster Diver",
@@ -26,6 +27,7 @@ const raccoons: ICard[] = [
     description: "Refund a starting card from your discard pile.",
     energy: 2,
     type: CARD_TYPE.Raccoon,
+    tags: [TAGS.REFUND, TAGS.REFUND_FROM_DISCARD],
   },
   {
     name: "Sticky Fingers",
@@ -39,6 +41,7 @@ const raccoons: ICard[] = [
     description: "Shuffle a card from your discard pile into your deck.",
     energy: 3,
     type: CARD_TYPE.Raccoon,
+    tags: [TAGS.SHUFFLE_CARDS],
   },
 ];
 

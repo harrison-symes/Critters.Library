@@ -13,6 +13,7 @@ const rabbits: ICard[] = [
     description: "Gain +2 Carrots",
     energy: 3,
     type: CARD_TYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
   },
   {
     name: "Berry Grower",
@@ -26,6 +27,7 @@ const rabbits: ICard[] = [
     description: "+2 Berries",
     energy: 3,
     type: CARD_TYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
   },
   {
     name: "Apple Grower",
@@ -39,6 +41,7 @@ const rabbits: ICard[] = [
     description: "+2 Apples",
     energy: 3,
     type: CARD_TYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
   },
   {
     name: "Agriculturiest",
@@ -52,6 +55,7 @@ const rabbits: ICard[] = [
     description: "Gain 3 random crops",
     energy: 3,
     type: CARD_TYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
     name: "Clodhopper",
@@ -65,6 +69,7 @@ const rabbits: ICard[] = [
     description: "Gain 5 random crops",
     energy: 3,
     type: CARD_TYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
     name: "Crop Picker",
@@ -78,6 +83,7 @@ const rabbits: ICard[] = [
     description: "Gain +2 of a random crop",
     energy: 3,
     type: CARD_TYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
 ];
 

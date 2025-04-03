@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const items: ICard[] = [
   // card draw
@@ -6,49 +6,72 @@ const items: ICard[] = [
     name: "Pot of Feed",
     qty: 1,
     cost: {
-      apples: 2,
-      carrots: 2,
-      berries: 2,
+      apples: 3,
+      carrots: 3,
+      berries: 3,
     },
     image: "rummager",
     description: "Draw 2 cards",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CARD_DRAW],
   },
   {
     name: "Weed Wacker",
     qty: 1,
     cost: {
-      apples: 3,
-      carrots: 2,
+      apples: 4,
+      carrots: 3,
       berries: 0,
     },
     image: "rummager",
     description: "Discard the top 2 cards of your deck, then draw 2 cards.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN],
   },
   {
     name: "Small Backpack",
     qty: 1,
     cost: {
-      apples: 2,
-      carrots: 2,
+      apples: 3,
+      carrots: 3,
       berries: 0,
     },
     image: "rummager",
-    description: "Draw 2 cards, then discard a card.",
+    description: "Draw 2 cards, then discard one of them.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN],
   },
   {
     name: "Rusty Rake",
     qty: 1,
     cost: {
-      apples: 0,
-      carrots: 3,
-      berries: 2,
+      apples: 4,
+      carrots: 0,
+      berries: 3,
     },
     image: "rummager",
-    description: "Shuffle your discard pile into your deck, then draw 2 cards.",
+    description: "Reset your deck, then draw 2 cards.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.CARD_DRAW, TAGS.RESET_DECK],
+  },
+  {
+    name: "Toolbelt",
+    qty: 1,
+    cost: {
+      apples: 0,
+      carrots: 2,
+      berries: 4,
+    },
+    image: "rummager",
+    description:
+      "Discard a card from your hand to draw 2 cards. Any tools discarded are placed back on top of your deck afterwards.",
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN],
   },
   {
     name: "Farm Hand",
@@ -62,6 +85,8 @@ const items: ICard[] = [
     description:
       "Place this under one of your critters. Whenever they use their talent, draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.CARD_DRAW, TAGS.ATTACH],
   },
   // crops
   {
@@ -73,20 +98,24 @@ const items: ICard[] = [
       berries: 3,
     },
     image: "rummager",
-    description: "Gain +3 of each crop. Give your rival 2 random crops.",
+    description: "Gain +2 of each crop.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
   },
   {
     name: "Picnic Basket",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       carrots: 2,
       berries: 2,
     },
     image: "rummager",
     description: "Gain +3 of a random crop. Get +1 of each other crop.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
   },
   {
     name: "Pik'n'mix",
@@ -99,6 +128,8 @@ const items: ICard[] = [
     image: "rummager",
     description: "Gain 3 random crops.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
     name: "Trusty Trowel",
@@ -111,30 +142,36 @@ const items: ICard[] = [
     image: "rummager",
     description: "Gain +3 of a random crop.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
     name: "Worm Food",
     qty: 1,
     cost: {
       apples: 1,
-      carrots: 3,
+      carrots: 4,
       berries: 1,
     },
     image: "rummager",
     description: "Gain +2 Carrots, +1 Apple and +1 Berry.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
   },
   {
     name: "Mole Food",
     qty: 1,
     cost: {
-      apples: 3,
+      apples: 4,
       carrots: 1,
       berries: 1,
     },
     image: "rummager",
     description: "+2 Apples, +1 Carrot, +1 Berry.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
   },
   {
     name: "Hog Food",
@@ -142,11 +179,13 @@ const items: ICard[] = [
     cost: {
       apples: 1,
       carrots: 1,
-      berries: 3,
+      berries: 4,
     },
     image: "rummager",
     description: "+2 Berries, +1 Apple, +1 Carrot.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
   },
   {
     name: "Award Winning Crop",
@@ -154,11 +193,13 @@ const items: ICard[] = [
     cost: {
       apples: 2,
       carrots: 2,
-      berries: 2,
+      berries: 3,
     },
     image: "rummager",
-    description: "Gain +6 of a random crop.",
+    description: "Gain +5 of a random crop.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
     name: "Midnight Snack",
@@ -171,18 +212,27 @@ const items: ICard[] = [
     image: "rummager",
     description: "Gain a random crop and draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.CARD_DRAW,
+      TAGS.CANTRIP,
+    ],
   },
   {
     name: "Goodie Bag",
     qty: 1,
     cost: {
       apples: 2,
-      carrots: 2,
+      carrots: 3,
       berries: 2,
     },
     image: "rummager",
     description: "Gain 5 random crops.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   // Gifts
   {
@@ -191,29 +241,33 @@ const items: ICard[] = [
     cost: {
       apples: 0,
       carrots: 0,
-      berries: 1,
+      berries: 2,
     },
     image: "rummager",
     description: "Gift. This does nothing!.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.GIFT,
+    tags: [TAGS.GIFT],
   },
   {
     name: "Birthday Present",
     qty: 1,
     cost: {
       apples: 0,
-      carrots: 1,
+      carrots: 2,
       berries: 0,
     },
     image: "rummager",
-    description: "Gain 3 random crops, then GIFT this to your Rival.",
+    description: "Gain 4 random crops, then GIFT this to your Rival.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.GIFT,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.GIFT],
   },
   {
     name: "Hot Potato",
     qty: 1,
     cost: {
-      apples: 1,
+      apples: 2,
       carrots: 0,
       berries: 0,
     },
@@ -221,6 +275,8 @@ const items: ICard[] = [
     description:
       "Gift. Destroy 2 crops to gift this to your Rival. When discarded, destroy all your crops and remove this from the game.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.GIFT,
+    tags: [TAGS.GIFT, TAGS.CROP_DESTROY],
   },
   {
     name: "Rotten Crops",
@@ -233,44 +289,38 @@ const items: ICard[] = [
     image: "rummager",
     description: "Gift. Destroy 2 crops to draw a card.",
     type: CARD_TYPE.Item,
-  },
-  {
-    name: "I.O.U",
-    qty: 1,
-    cost: {
-      apples: 1,
-      carrots: 1,
-      berries: 1,
-    },
-    image: "rummager",
-    description:
-      "GIFT. Give your rival a crop. When discarded, place this on top of your deck.",
-    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.GIFT,
+    tags: [TAGS.GIFT, TAGS.CROP_DESTROY, TAGS.CARD_DRAW, TAGS.CANTRIP],
   },
   //refund
   {
     name: "Dustpan",
     qty: 1,
     cost: {
-      apples: 0,
-      carrots: 1,
-      berries: 3,
+      apples: 2,
+      carrots: 2,
+      berries: 0,
     },
     image: "rummager",
     description: "Draw a card. You may refund it this turn.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.REFUND, TAGS.REFUND_FROM_HAND, TAGS.CANTRIP],
   },
   {
     name: "Damaged Goods",
     qty: 1,
     cost: {
       apples: 1,
-      carrots: 0,
-      berries: 3,
+      carrots: 3,
+      berries: 1,
     },
     image: "rummager",
-    description: "Refund a card from your hand or discard pile.",
+    description:
+      "Refund a starter card from your discard pile for double the crops. Or remove a card in your discard pile from the game.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.REFUND, TAGS.REFUND_FROM_HAND, TAGS.REFUND_FROM_DISCARD],
   },
   {
     name: "Receipts",
@@ -283,19 +333,42 @@ const items: ICard[] = [
     image: "rummager",
     description: "Refund a card from your hand. Draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.REFUND, TAGS.REFUND_FROM_HAND, TAGS.CANTRIP],
+  },
+  {
+    name: "Cooked Books",
+    qty: 1,
+    cost: {
+      apples: 1,
+      carrots: 1,
+      berries: 3,
+    },
+    image: "rummager",
+    description:
+      "Refund a card from your hand or discard pile. If it is a Finance card, return it to the top of your deck afterwards.",
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [
+      TAGS.REFUND,
+      TAGS.REFUND_FROM_HAND,
+      TAGS.REFUND_FROM_DISCARD,
+      TAGS.TOP_OF_DECK,
+    ],
   },
   {
     name: "Contrabrand",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       carrots: 2,
       berries: 0,
     },
     image: "rummager",
-    description:
-      "Refund a card from your hand or discard pile, then GIFT it to your Rival.",
+    description: "GIFT a card from your hand or discard pile to your Rival.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.GIFT],
   },
   // discard
   {
@@ -304,24 +377,28 @@ const items: ICard[] = [
     cost: {
       apples: 2,
       carrots: 2,
-      berries: 2,
+      berries: 3,
     },
     image: "rummager",
     description: "Discard a card to gain +2 of each crop.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.DISCARD_OWN, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
   },
   {
     name: "Recycling Bin",
     qty: 1,
     cost: {
       apples: 0,
-      carrots: 3,
-      berries: 1,
+      carrots: 2,
+      berries: 3,
     },
     image: "rummager",
     description:
       "Shuffle a card from your discard pile back into your deck, then draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.SHUFFLE_CARDS, TAGS.CANTRIP],
   },
   {
     name: "Watering Can",
@@ -334,6 +411,8 @@ const items: ICard[] = [
     image: "rummager",
     description: "Place a card from your discard pile on top of your deck.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.TOP_OF_DECK],
   },
   {
     name: "Instruction Manual",
@@ -344,8 +423,11 @@ const items: ICard[] = [
       berries: 2,
     },
     image: "rummager",
-    description: "Discard a card to pack a crate into one of your Work Orders.",
+    description:
+      "Discard a card from your hand to pack a free crate into one of your Work Orders.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.DISCARD_OWN, TAGS.PACK_CRATE],
   },
   // Critter
   {
@@ -357,14 +439,17 @@ const items: ICard[] = [
       berries: 3,
     },
     image: "rummager",
-    description: "Remove all Zzz counters from a critter. Draw a card.",
+    description:
+      "Remove all Zzz counters from one of your critters. Draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.ENERGY_RESTORE, TAGS.CANTRIP],
   },
   {
     name: "Megaphone",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       carrots: 1,
       berries: 0,
     },
@@ -372,6 +457,8 @@ const items: ICard[] = [
     description:
       "Remove a Zzz counter from each of your critters. Add 1 to each of your Rival's critters.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.ENERGY_RESTORE, TAGS.ENERGY_REMOVE],
   },
   // Seeds
   {
@@ -383,9 +470,10 @@ const items: ICard[] = [
       berries: 0,
     },
     image: "rummager",
-    description:
-      "Draw a card. If it is a seeds card, harvest it instantly. If not, place this on top of your deck.",
+    description: "Add 1 sunlight to each of your seeds. Draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.CANTRIP, TAGS.SUNLIGHT_ADD, TAGS.SEED_SYNERGY],
   },
   {
     name: "Companion Crop",
@@ -393,38 +481,43 @@ const items: ICard[] = [
     cost: {
       apples: 2,
       carrots: 0,
-      berries: 1,
+      berries: 2,
     },
     image: "rummager",
     description:
       "Place this under one of your seeds, It's harvest is doubled. When discarded, draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.ATTACH, TAGS.SEED_SYNERGY, TAGS.CANTRIP],
   },
   {
     name: "Plant Food",
     qty: 1,
     cost: {
-      apples: 1,
+      apples: 3,
       carrots: 0,
       berries: 2,
     },
     image: "rummager",
-    description:
-      "Add a seed card from your deck or discard pile to your hand. (Shuffle your deck afterwards).",
+    description: "Add a seed card from your discard pile to your hand.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.CANTRIP, TAGS.SEED_SYNERGY],
   },
   //shop
   {
     name: "Placard",
     qty: 1,
     cost: {
-      apples: 0,
-      carrots: 1,
-      berries: 2,
+      apples: 1,
+      carrots: 3,
+      berries: 0,
     },
     image: "rummager",
-    description: "Refresh a card in the shop. Draw a card.",
+    description: "Refresh a card in the shop. Discount 1. Draw a card.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.REFRESH_SHOP, TAGS.DISCOUNT, TAGS.CANTRIP],
   },
   {
     name: "Gift Card",
@@ -436,8 +529,10 @@ const items: ICard[] = [
     },
     image: "rummager",
     description:
-      "Remove this from the game, and add any Farmer Card from the shop to your hand.",
+      "Put a Farm Card from the shop on top of your deck. Put GIFT CARD back into the shop.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.TOP_OF_DECK, TAGS.FREE_CARD],
   },
   // 5 more items
   {
@@ -449,9 +544,10 @@ const items: ICard[] = [
       berries: 1,
     },
     image: "rummager",
-    description:
-      "Get 2 favours from the shop for free. OR refresh a card in the shop.",
+    description: "Get 2 favours from the shop for free. Discount 1.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [TAGS.DISCOUNT, TAGS.FAVOURS],
   },
   {
     name: "Bingo Card",
@@ -465,19 +561,13 @@ const items: ICard[] = [
     description:
       "Get a random crop: Carrot: gain +1 of each crop. Apple: Draw a card. Berry: return this card to your hand.",
     type: CARD_TYPE.Item,
-  },
-  {
-    name: "Packing Slip",
-    qty: 1,
-    cost: {
-      apples: 4,
-      carrots: 4,
-      berries: 4,
-    },
-    image: "rummager",
-    description:
-      "If you have 3 Work orders, pack a free crate into each of them. When discarded, get a work order for free.",
-    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.FINANCE,
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_ALL,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.CANTRIP,
+    ],
   },
   {
     name: "Rocking Chair",
@@ -489,14 +579,16 @@ const items: ICard[] = [
     },
     image: "rummager",
     description:
-      "Move up to 3 Zzz counters from your Critters onto any of you or your Rival's critters.",
+      "Move up to 2 Zzz counters from your Critters onto ANY other critters.",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TOOL,
+    tags: [TAGS.ENERGY_REMOVE, TAGS.ENERGY_RESTORE],
   },
   {
     name: "Espresso",
     qty: 1,
     cost: {
-      apples: 1,
+      apples: 2,
       carrots: 0,
       berries: 2,
     },
@@ -504,6 +596,8 @@ const items: ICard[] = [
     description:
       "Place this under one of your critters. When they are exhausted, place them on top of your deck. ",
     type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.TREAT,
+    tags: [TAGS.ATTACH, TAGS.TOP_OF_DECK],
   },
 ];
 

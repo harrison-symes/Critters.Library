@@ -13,6 +13,7 @@ const bees: ICard[] = [
     description: "If you have 3 work orders, gain +1 of each crop.",
     energy: 3,
     type: CARD_TYPE.Bee,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.WORK_ORDERS_3],
   },
   {
     name: "Busy Bee",
@@ -26,6 +27,7 @@ const bees: ICard[] = [
     description: "If you have 3 work orders, draw a card.",
     energy: 3,
     type: CARD_TYPE.Bee,
+    tags: [TAGS.CARD_DRAW, TAGS.WORK_ORDERS_3],
   },
   {
     name: "Plan Bee",
@@ -37,9 +39,10 @@ const bees: ICard[] = [
     },
     image: "rummager",
     description:
-      "If you have 3 work orders, steal a crate from one of your Rival's Work Orders and add it to one of yours.",
+      "If you have 3 Work Orders, put a Tool from your discard pile on top of your deck.",
     energy: 2,
     type: CARD_TYPE.Bee,
+    tags: [TAGS.WORK_ORDERS_3],
   },
 ];
 
