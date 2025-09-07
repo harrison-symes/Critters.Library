@@ -9,11 +9,12 @@ interface IProps {
 
 const CardList = (props: IProps) => {
   const cardList = props.deck.filter((c) => c.type === props.cardType);
+  const totalCount = cardList.reduce((accum, card) => accum + card.qty, 0);
 
   return (
     <div>
       <h1>
-        {props.title} ({cardList.length})
+        {props.title} ({cardList.length} unique) ({totalCount} total)
       </h1>
       <div className="card-list">
         {cardList.map((card, i) => (

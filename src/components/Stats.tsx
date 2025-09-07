@@ -1,6 +1,7 @@
 import * as React from "react";
 import { CARD_TYPE, ICard } from "../models/cards.models";
 import { createWorkOrderDeck } from "../cards";
+import ConceptRandomiser from "./ConceptRandomiser";
 
 interface IProps {
   deck: ICard[];
@@ -115,6 +116,7 @@ const Stats = (props: IProps) => {
       <button className="button button__big" onClick={props.recreate}>
         Re-create
       </button>
+      <ConceptRandomiser />
       <div>Deck total: {props.deck.length}</div>
       <div>Deck remaining: {props.shopDeck.length}</div>
       <hr />

@@ -6,11 +6,12 @@ const moles: ICard[] = [
     qty: 2,
     cost: {
       apples: 0,
+      berries: 3,
       carrots: 2,
-      berries: 2,
     },
     image: "rummager",
     description: "Add a Zzz counter to a Rival's critter.",
+    buyBonus: "Put this at the bottom of your deck",
     energy: 2,
     type: CARD_TYPE.Mole,
     tags: [TAGS.ENERGY_REMOVE],
@@ -20,11 +21,12 @@ const moles: ICard[] = [
     qty: 2,
     cost: {
       apples: 3,
-      carrots: 2,
       berries: 0,
+      carrots: 2,
     },
     image: "rummager",
     description: "Steal a crop from your Rival.",
+    onDiscard: "Exhaust a Rival's Critter",
     energy: 3,
     type: CARD_TYPE.Mole,
     tags: [TAGS.CROP_STEAL],
@@ -34,15 +36,14 @@ const moles: ICard[] = [
     qty: 1,
     cost: {
       apples: 3,
-      carrots: 1,
-      berries: 5,
+      berries: 3,
+      carrots: 3,
     },
     image: "rummager",
-    description:
-      "Add a Zzz counter to each of your Rival's critters. Steal 1 of each crop from them.",
+    description: "Add 1 Zzz of each of a Rival's Critters.",
     energy: 2,
     type: CARD_TYPE.Mole,
-    tags: [TAGS.CROP_STEAL, TAGS.ENERGY_REMOVE],
+    tags: [TAGS.CROP_STEAL, TAGS.TITULAR],
   },
 ];
 

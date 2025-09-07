@@ -2,16 +2,16 @@ import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const hedgehogs: ICard[] = [
   {
-    name: "Snuffler",
+    name: "Skewerer",
     qty: 2,
     cost: {
       apples: 1,
-      carrots: 0,
-      berries: 2,
+      berries: 0,
+      carrots: 3,
     },
     image: "rummager",
-    description:
-      "Place a card from your Rival's discard pile on top of their deck.",
+    description: "Put a Tool card from your discard pile on top of your deck.",
+    buyBonus: "Gift a card from your discard pile.",
     energy: 2,
     type: CARD_TYPE.Hedgehog,
     tags: [TAGS.TOP_OF_DECK],
@@ -21,12 +21,13 @@ const hedgehogs: ICard[] = [
     qty: 2,
     cost: {
       apples: 1,
-      carrots: 3,
-      berries: 0,
+      berries: 2,
+      carrots: 0,
     },
     image: "rummager",
     energy: 2,
-    description: "Shuffle a Treat from your discard pile back into your deck.",
+    description: "Fast-track a Treat card.",
+    onDiscard: "Trash a card from your discard pile",
     type: CARD_TYPE.Hedgehog,
     tags: [TAGS.SHUFFLE_CARDS, TAGS.TREAT_SYNERGY],
   },
@@ -35,13 +36,12 @@ const hedgehogs: ICard[] = [
     qty: 1,
     cost: {
       apples: 3,
-      carrots: 1,
       berries: 3,
+      carrots: 1,
     },
     image: "rummager",
     energy: 2,
-    description:
-      "Put a card from your discard pile on top of your Rival's deck.",
+    description: "Gift a card from your discard pile.",
     type: CARD_TYPE.Hedgehog,
     tags: [TAGS.TOP_OF_DECK, TAGS.GIFT],
   },

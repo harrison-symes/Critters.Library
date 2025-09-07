@@ -44,7 +44,16 @@ const ShopCard = ({ card, ...props }: IProps) => {
           <div className="card-cost__item card-cost__any">{card.cost.any}</div>
         )}
       </div>
-      <div className="card-description">{card.description}</div>
+      <div className="card-description">
+        <div>{card.description}</div>
+      </div>
+      {card.sunlight && (
+        <ul className="">
+          {card.sunlight?.one && <li>1 ☀️: {card.sunlight.one}</li>}
+          {card.sunlight?.two && <li>2 ☀️: {card.sunlight.two}</li>}
+          {card.sunlight?.three && <li>3 ☀️: {card.sunlight.three}</li>}
+        </ul>
+      )}
       <div className="card-footer">
         <div className="card-type">{card.type}</div>
         {card.subtype && <div className="card-type">{card.subtype}</div>}

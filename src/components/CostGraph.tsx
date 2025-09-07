@@ -1,7 +1,7 @@
 import * as React from "react";
 // import rd3 from "react-d3-library";
 import * as d3 from "d3";
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard } from "../models/cards.models";
 import { createDeck } from "../cards";
 import { BarChart } from "@mui/x-charts/BarChart";
 import Stats from "./Stats";
@@ -14,8 +14,10 @@ const CostGraph = (props: IProps) => {
   const [filterState, setFilterState] = React.useState<{
     cost?: number;
     cardType: CARD_TYPE[];
+    subType: CARD_SUBTYPE[];
   }>({
     cardType: [],
+    subType: [],
   });
 
   const setCostFilter = (cost?: number) => {
@@ -35,9 +37,19 @@ const CostGraph = (props: IProps) => {
     }));
   };
 
+  const toggleCardSubTypeFilter = (subType: CARD_SUBTYPE) => {
+    setFilterState((state) => ({
+      ...state,
+      subType: state.subType.includes(subType)
+        ? state.subType.filter((c) => c !== subType)
+        : [...state.subType, subType],
+    }));
+  };
+
   const resetFilters = () => {
     setFilterState({
       cardType: [],
+      subType: [],
     });
   };
 
@@ -99,8 +111,16 @@ const CostGraph = (props: IProps) => {
 
   const filteredDeck = props.deck.filter((card) => {
     if (filterState.cardType.length > 0) {
-      console.log(filterState.cardType[0] ?? "none", card.type);
       if (!filterState.cardType.includes(card.type)) {
+        return false;
+      }
+    }
+    if (filterState.subType.length > 0) {
+      if (!card.subtype) {
+        return false;
+      }
+      if (!filterState.subType.includes(card.subtype)) {
+        console.log("filtering out", card.subtype, filterState.subType);
         return false;
       }
     }
@@ -214,11 +234,11 @@ const CostGraph = (props: IProps) => {
     if (card.cost.apples > 0) {
       costKeys.push(`a${card.cost.apples}`);
     }
-    if (card.cost.carrots > 0) {
-      costKeys.push(`c${card.cost.carrots}`);
-    }
     if (card.cost.berries > 0) {
       costKeys.push(`b${card.cost.berries}`);
+    }
+    if (card.cost.carrots > 0) {
+      costKeys.push(`c${card.cost.carrots}`);
     }
 
     // if (costKeys.length <= 1) {
@@ -264,6 +284,22 @@ const CostGraph = (props: IProps) => {
                 type="radio"
                 className="radio"
                 checked={filterState.cardType.includes(c as CARD_TYPE)}
+              />
+            </label>
+          ))}
+        </div>
+        <div className="card-type-filters">
+          {Object.values(CARD_SUBTYPE).map((c) => (
+            <label
+              className="card-type-filter"
+              htmlFor={`${c}-radio`}
+              onClick={() => toggleCardSubTypeFilter(c as CARD_SUBTYPE)}
+            >
+              {c}
+              <input
+                type="radio"
+                className="radio"
+                checked={filterState.subType.includes(c as CARD_SUBTYPE)}
               />
             </label>
           ))}

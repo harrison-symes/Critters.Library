@@ -58,6 +58,13 @@ export enum TAGS {
   CROP_GENERATION_APPLE = "CROP_GENERATION_APPLE",
   TREAT_SYNERGY = "TREAT_SYNERGY",
   WORK_ORDERS_3 = "WORK_ORDERS_3",
+  HOLDABLE = "HOLDABLE",
+  TRASH = "TRASH",
+  FINANCE_SYNERGY = "FINANCE_SYNERGY",
+  DISCARD_RIVAL_DECK = "DISCARD_RIVAL_DECK",
+  TOOL_SYNERGY = "TOOL_SYNERGY",
+  SNATCH_DISCOUNT = "SNATCH_DISCOUNT",
+  TITULAR = "TITULAR",
 }
 
 export interface ICard {
@@ -76,6 +83,13 @@ export interface ICard {
   subtype?: CARD_SUBTYPE;
   energy?: number;
   victoryPoints?: number;
+  buyBonus?: string;
+  onDiscard?: string;
+  sunlight?: {
+    one?: string;
+    two?: string;
+    three?: string;
+  };
 }
 
 export interface IWorkOrder {
