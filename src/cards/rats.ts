@@ -5,8 +5,8 @@ const rats: ICard[] = [
     name: "Aristoc-Rat",
     qty: 2,
     cost: {
-      apples: 3,
-      berries: 2,
+      apples: 2,
+      berries: 3,
       carrots: 0,
     },
     image: "rummager",
@@ -36,8 +36,8 @@ const rats: ICard[] = [
     name: "Hermes",
     qty: 1,
     cost: {
-      apples: 1,
-      berries: 3,
+      apples: 3,
+      berries: 1,
       carrots: 3,
     },
     image: "rummager",

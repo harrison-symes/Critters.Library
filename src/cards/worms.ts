@@ -5,9 +5,9 @@ const worms: ICard[] = [
     name: "Fertiliser",
     qty: 2,
     cost: {
-      apples: 3,
-      berries: 0,
-      carrots: 2,
+      apples: 2,
+      berries: 2,
+      carrots: 0,
     },
     image: "rummager",
     description: "Add 1 Sunlight to each of your seeds",
@@ -21,8 +21,8 @@ const worms: ICard[] = [
     qty: 2,
     cost: {
       apples: 0,
-      berries: 3,
-      carrots: 2,
+      berries: 2,
+      carrots: 3,
     },
     image: "rummager",
     description: "Put a Seeds card from your discard pile into your hand.",

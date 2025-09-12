@@ -5,9 +5,9 @@ const moles: ICard[] = [
     name: "Saboteur",
     qty: 2,
     cost: {
-      apples: 0,
-      berries: 3,
-      carrots: 2,
+      apples: 1,
+      berries: 1,
+      carrots: 1,
     },
     image: "rummager",
     description: "Add a Zzz counter to a Rival's critter.",
@@ -20,8 +20,8 @@ const moles: ICard[] = [
     name: "Burrower",
     qty: 2,
     cost: {
-      apples: 3,
-      berries: 0,
+      apples: 0,
+      berries: 2,
       carrots: 2,
     },
     image: "rummager",

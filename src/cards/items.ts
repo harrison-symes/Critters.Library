@@ -12,11 +12,11 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.CROP_GENERATION_APPLE, TAGS.SHUFFLE_CARDS, TAGS.HOLDABLE],
-    description:
-      "Gain +2 Apples. Shuffle a card from your discard pile into your deck. Holdable.",
+    description: "Gain +2 Apples. Fast-track an Item card. Holdable.",
+    buyBonus: "Discount",
   },
   {
-    name: "Paper Shredder",
+    name: "Closed Sign",
     cost: {
       apples: 3,
       berries: 1,
@@ -26,7 +26,8 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.CROP_GENERATION_CARROT, TAGS.TRASH],
-    description: "Gain +2 Carrots. Trash a card from your discard pile.",
+    description: "Gain +2 Carrots. Add 1 Zzz to EVERY critter.",
+    buyBonus: "Discount",
   },
   {
     name: "Loyalty Card",
@@ -40,7 +41,8 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.CROP_GENERATION_BERRY, TAGS.DISCOUNT, TAGS.SHUFFLE_CARDS],
     description:
-      "Gain +2 Berries. Discount once. The next farm card you buy this turn is shuffled into your deck.",
+      "Gain +2 Berries. Snatch a discounted crop from a card in the Market.",
+    buyBonus: "Discount",
   },
   {
     name: "Cooked Books",
@@ -60,7 +62,7 @@ const items: ICard[] = [
       TAGS.TOP_OF_DECK,
     ],
     description:
-      "Refund a card from your hand or discard pile. If it is a Finance card, put it back on top of your deck.",
+      "Sell a card from your discard pile. If it is a Finance card, put it back on top of your deck after.",
   },
   {
     name: "Instruction manual",
@@ -75,7 +77,6 @@ const items: ICard[] = [
     tags: [TAGS.DISCARD_OWN, TAGS.PACK_CRATE],
     description:
       "Discard a card from hand to pack a free crate into a Work Order.",
-    buyBonus: "Get a free Work Order.",
     onDiscard: "Draw 2 cards.",
   },
   {
@@ -90,7 +91,8 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.REFUND, TAGS.REFUND_FROM_DISCARD, TAGS.TRASH, TAGS.HOLDABLE],
     description:
-      "Refund a card from your discard pile, or Trash 2 cards from your discard pile. Holdable.",
+      "Sell a card from your discard pile -OR- Trash 2 cards from your discard pile. Holdable.",
+    onDiscard: "Gain 1 of each crop",
   },
   {
     name: "Gift Card",
@@ -107,7 +109,7 @@ const items: ICard[] = [
       "Put a Farm card from the shop on top of your deck. Put Gift Card back into the shop.",
   },
   {
-    name: "Closed Sign",
+    name: "Paper Shredder",
     cost: {
       apples: 0,
       berries: 2,
@@ -117,9 +119,8 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.DISCOUNT, TAGS.ENERGY_REMOVE],
-    description:
-      "Discount twice. Add a Zzz counter to EVERY critter. Gain 2 random crops for each Work Order you have.",
-    buyBonus: "Discount once.",
+    description: "Play an Item card from your discard pile, and then Trash it.",
+    buyBonus: "Fast-track a card.",
   },
   {
     name: "Open Sign",
@@ -133,7 +134,8 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.REFRESH_SHOP, TAGS.DISCOUNT, TAGS.CROP_GENERATION_RANDOM],
     description:
-      "Refresh 2 cards in the shop. Discount once. Gain 2 random crops.",
+      "Refresh 2 cards in the Market. Gain 2 random crops. Discount.",
+    buyBonus: "Put this card into your hand.",
   },
   {
     name: "Contrabrand",
@@ -146,8 +148,8 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.GIFT, TAGS.TRASH],
-    description:
-      "Gift a Rival a card from your discard pile. Trash this card if this is still in your hand at the end of your turn.",
+    description: "Gift a card from your discard pile. Unsellable.",
+    onDiscard: "Trash this card",
   },
   {
     name: "Register",
@@ -162,7 +164,7 @@ const items: ICard[] = [
     tags: [TAGS.CROP_STEAL, TAGS.CROP_GENERATION_RANDOM],
     description:
       "Steal one type of crop from a Rival until your have more of that crop than they do.",
-    onDiscard: "Gain 5 random crops.",
+    onDiscard: "Gain 3 random crops.",
   },
   {
     name: "Receipts",
@@ -175,8 +177,8 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.FINANCE,
     tags: [TAGS.REFUND, TAGS.REFUND_FROM_HAND, TAGS.CANTRIP, TAGS.DISCOUNT],
-    description: "Refund a card from your hand. Draw a card. Discount once.",
-    buyBonus: "Discount once.",
+    description: "Sell a card from your hand. Draw a card. Discount.",
+    onDiscard: "Gain +2 of a random crop.",
   },
   {
     name: "Farming Gloves",
@@ -190,20 +192,21 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.CROP_GENERATION_APPLE, TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
     description: "Gain +2 Apples. Add 1 Sunlight to each of your Seeds.",
+    buyBonus: "Fast-track a Seed card.",
   },
   {
     name: "Binoculars",
     cost: {
       apples: 2,
-      berries: 1,
+      berries: 2,
       carrots: 0,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.CROP_GENERATION_CARROT, TAGS.TOP_OF_DECK, TAGS.DISCARD_OWN],
-    description:
-      "Gain +2 Carrots. Look at the top card of ANY deck, you may discard it or put it back.",
+    description: "Gain +2 Carrots. Fast-track a Critter card.",
+    buyBonus: "Refresh a card.",
   },
   {
     name: "Water Cooler",
@@ -217,7 +220,8 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TOOL,
     tags: [],
     description:
-      "Gain +2 Berries. Remove 2 Zzz counters in total from your Critters.",
+      "Gain +2 Berries. Move 1 Zzz from one of your Critters to ANY other Critter.",
+    buyBonus: "Add 1 Zzz to a Critter",
   },
   {
     name: "Small Backpack",
@@ -237,7 +241,7 @@ const items: ICard[] = [
     name: "Convincing Disguise",
     cost: {
       apples: 0,
-      berries: 3,
+      berries: 2,
       carrots: 1,
     },
     qty: 1,
@@ -245,7 +249,8 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.CROP_GENERATION_RANDOM, TAGS.DISCARD_RIVAL_DECK],
     description:
-      "Gain +3 of a random crop. Discard one of the top 3 cards of a Rival's deck.",
+      "Gain +2 of a random crop. Discard one of the top 3 cards of a ANY deck.",
+    onDiscard: "Steal 2 crops from a Rival",
   },
   {
     name: "Watering Can",
@@ -259,21 +264,21 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.TOP_OF_DECK],
     description: "Put a card from your discard pile on top of your deck.",
-    buyBonus: "Put this on top of your deck.",
+    buyBonus: "Put this card on top of your deck.",
   },
   {
     name: "Dustpan",
     cost: {
-      apples: 1,
+      apples: 2,
       berries: 2,
-      carrots: 1,
+      carrots: 2,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.CANTRIP, TAGS.REFUND, TAGS.REFUND_FROM_HAND, TAGS.REFRESH_SHOP],
-    description: "Draw a card. You may Refund it this turn.",
-    onDiscard: "Refresh a row in the shop.",
+    description: "Refresh a row in the Market. Gain 1 of each crop. Discount.",
+    onDiscard: "Reset your deck.",
   },
   {
     name: "Knapsack",
@@ -287,7 +292,8 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.DISCARD_OWN, TAGS.CROP_STEAL],
     description:
-      "Steal 2 crops from a Rival. You may discard a card from hand to steal 1 more.",
+      "Steal 2 crops from a Rival. Discard a card from hand to steal 1 more.",
+    onDiscard: "Gain 3 random crops",
   },
   {
     name: "Compost Bin",
@@ -300,13 +306,15 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.DISCARD_OWN, TAGS.CROP_GENERATION_RANDOM],
-    description: "Discard a card from hand to gain +2 of each crop.",
+    description:
+      "Discard every card from your hand. Gain 1 of each crop for each card discarded.",
+    onDiscard: "Gain 1 of each crop.",
   },
   {
     name: "Toolbelt",
     cost: {
       apples: 1,
-      berries: 2,
+      berries: 3,
       carrots: 0,
     },
     qty: 1,
@@ -320,7 +328,7 @@ const items: ICard[] = [
     ],
     description:
       "Put a Tool from your discard pile on top of your deck. Holdable.",
-    onDiscard: "Shuffle this into your deck.",
+    onDiscard: "Draw a card.",
   },
   {
     name: "Trusty Trowel",
@@ -348,8 +356,8 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TOOL,
     tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT, TAGS.REFRESH_SHOP],
     description:
-      "Discount once, Snatch the discounted crops from a card in the shop, then refresh that card.",
-    buyBonus: "Discount once.",
+      "Discount, Snatch the discounted crops from a card in the Market, then refresh that card.",
+    buyBonus: "Reset your deck.",
   },
   {
     name: "Rat Food",
@@ -362,7 +370,7 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.TREAT,
     tags: [TAGS.CROP_GENERATION_APPLE, TAGS.REFRESH_SHOP],
-    description: "Gain +3 Apples. Refresh 2 cards in the shop.",
+    description: "Gain +3 Apples. Refresh 2 cards.",
   },
   {
     name: "Rabbit Food",
@@ -376,7 +384,7 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TREAT,
     tags: [TAGS.CROP_GENERATION_CARROT, TAGS.ENERGY_RESTORE],
     description:
-      "Gain +3 Carrots. Remove a Zzz counter from each of your Critters.",
+      "Gain +3 Carrots. Remove 1 Zzz counter from 3 of your Critters.",
   },
   {
     name: "Hog Food",
@@ -389,8 +397,7 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.TREAT,
     tags: [TAGS.CROP_GENERATION_BERRY, TAGS.TREAT_SYNERGY, TAGS.SHUFFLE_CARDS],
-    description:
-      "Gain +3 Berries. Shuffle a Treat from your discard pile back into your deck.",
+    description: "Gain +3 Berries. Fast-track this or another Treat.",
   },
   {
     name: "Picnic Basket",
@@ -418,6 +425,7 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TREAT,
     tags: [TAGS.CROP_GENERATION_RANDOM],
     description: "Gain +5 of a random crop.",
+    onDiscard: "Draw 2 cards.",
   },
   {
     name: "Gift Basket",
@@ -445,7 +453,7 @@ const items: ICard[] = [
     subtype: CARD_SUBTYPE.TREAT,
     tags: [TAGS.ENERGY_RESTORE, TAGS.CARD_DRAW],
     description: "Draw 2 cards",
-    buyBonus: "Remove a Zzz counter from each of your Critters.",
+    buyBonus: "Remove 1 Zzz counter from each of your Critters.",
   },
   {
     name: "Midnight Snack",
@@ -489,7 +497,7 @@ const items: ICard[] = [
     onDiscard: "Exhaust a Rival's Critter.",
   },
   {
-    name: "Goodie Bag",
+    name: "Sharing Plate",
     cost: {
       apples: 2,
       berries: 2,
@@ -499,7 +507,8 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.TREAT,
     tags: [TAGS.CROP_GENERATION_RANDOM],
-    description: "Gain 5 random crops. Each Rival gains a random crop.",
+    description:
+      "Gain +4 of a crop of your choosing. Each Rival also gains +1 of that crop.",
   },
   {
     name: "Plant Food",
@@ -518,15 +527,15 @@ const items: ICard[] = [
   {
     name: "Goldfish",
     cost: {
-      apples: 0,
+      apples: 2,
       berries: 2,
-      carrots: 0,
+      carrots: 2,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.GIFT,
     tags: [TAGS.GIFT],
-    description: "This does nothing. Cannot be refunded.",
+    description: "This does nothing. You cannot Sell or Trash this card..",
     buyBonus: "Gift this to a Rival.",
   },
   {
@@ -540,7 +549,7 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.GIFT,
     tags: [TAGS.GIFT, TAGS.CROP_GENERATION_RANDOM],
-    description: "Gain 3 random crops. Gift this to a Rival.",
+    description: "Gain 3 random crops, then gift this to a Rival.",
   },
   {
     name: "Hot Potato",
@@ -553,22 +562,21 @@ const items: ICard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.GIFT,
     tags: [TAGS.GIFT, TAGS.CROP_DESTROY],
-    description:
-      "Destroy 2 of your crops to Gift this to a Rival. Cannot be Refunded.",
+    description: "Destroy 2 of your crops to Gift this to a Rival. Unsellable.",
     buyBonus: "Gift this to a Rival.",
   },
   {
     name: "Rotten Crops",
     cost: {
-      apples: 2,
+      apples: 0,
       berries: 2,
-      carrots: 2,
+      carrots: 0,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.GIFT,
     tags: [TAGS.GIFT, TAGS.CROP_DESTROY],
-    description: "Destroy 2 of your crops to draw a card. Cannot be Refunded.",
+    description: "Destroy 2 of your crops to draw a card. Unsellable.",
     buyBonus: "Gift this to a Rival",
   },
 ];
