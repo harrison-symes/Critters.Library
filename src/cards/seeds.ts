@@ -12,7 +12,7 @@ const seeds: ICard[] = [
     image: "rummager",
     description: "Gains 1 Sunlight at the end of each turn.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.CROP_GENERATION_APPLE],
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
     sunlight: {
       one: "+2 Apples",
       two: "+4 Apples",
@@ -30,7 +30,7 @@ const seeds: ICard[] = [
     image: "rummager",
     description: "Gains 1 Sunlight at the end of each turn.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.CROP_GENERATION_BERRY],
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
     sunlight: {
       one: "+2 Berries",
       two: "+4 Berries",
@@ -48,7 +48,7 @@ const seeds: ICard[] = [
     image: "rummager",
     description: "Gains 1 Sunlight at the end of each turn.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.CROP_GENERATION_CARROT],
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
     sunlight: {
       one: "+2 Carrots",
       two: "+4 Carrots",
@@ -67,7 +67,7 @@ const seeds: ICard[] = [
     description:
       "Gains 1 Sunlight at the end of each turn. 1 Sunlight: 1 random crop. 2 Sunlight: 3 of a random crop. 3 Sunlight: 4 of a random crop.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.CROP_GENERATION_RANDOM],
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     sunlight: {
       one: "+1 of a random crop.",
       two: "+3 of a random crop.",
@@ -86,7 +86,7 @@ const seeds: ICard[] = [
     description:
       "Gains 1 Sunlight at the end of each turn. 1 Sunlight: 2 random crops. 2 Sunlight: 4 random crops. 3 Sunlight: 5 random crops.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.CROP_GENERATION_RANDOM],
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     sunlight: {
       one: "Gain 2 random crops.",
       two: "Gain 4 random crops.",
@@ -121,7 +121,7 @@ const seeds: ICard[] = [
     image: "rummager",
     description: "Gains 1 Sunlight at the end of each turn.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.REFUND, TAGS.REFUND_FROM_DISCARD, TAGS.REFUND_FROM_HAND],
+    tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.SELL_FROM_HAND],
     sunlight: {
       two: "Sell a card from your hand...",
       three: "...or discard pile.",
@@ -138,7 +138,7 @@ const seeds: ICard[] = [
     image: "rummager",
     description: "Gains 1 Sunlight at the end of each turn.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.REFUND, TAGS.REFUND_FROM_DISCARD, TAGS.REFUND_FROM_HAND],
+    tags: [TAGS.SUNLIGHT_ADD, TAGS.TOP_OF_DECK, TAGS.SEED_SYNERGY],
     sunlight: {
       two: "Add 2 Sunlight to each of your Seeds...",
       three: "...And put this card on top of your deck.",
@@ -155,7 +155,7 @@ const seeds: ICard[] = [
     image: "rummager",
     description: "Gains 1 Sunlight at the end of each turn.",
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.FREE_CARD],
+    tags: [TAGS.FREE_CARD, TAGS.TOP_OF_DECK],
     sunlight: {
       two: "Put a Farm card from the Market into your discard pile...",
       three: "...or on top of your deck.",

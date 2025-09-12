@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const hedgehogs: ICard[] = [
   {
@@ -13,8 +13,9 @@ const hedgehogs: ICard[] = [
     description: "Put a Tool card from your discard pile on top of your deck.",
     buyBonus: "Gift a card from your discard pile.",
     energy: 2,
-    type: CARD_TYPE.Hedgehog,
-    tags: [TAGS.TOP_OF_DECK],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.TOP_OF_DECK, TAGS.TOOL_SYNERGY, TAGS.GIFT],
   },
   {
     name: "Picky Eater",
@@ -27,9 +28,10 @@ const hedgehogs: ICard[] = [
     image: "rummager",
     energy: 2,
     description: "Fast-track a Treat card.",
-    onDiscard: "Trash a card from your discard pile",
-    type: CARD_TYPE.Hedgehog,
-    tags: [TAGS.SHUFFLE_CARDS, TAGS.TREAT_SYNERGY],
+    recycle: "Trash a card from your discard pile",
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.FAST_TRACK, TAGS.TREAT_SYNERGY, TAGS.TRASH_FROM_DISCARD],
   },
   {
     name: "The Head Chog",
@@ -42,8 +44,9 @@ const hedgehogs: ICard[] = [
     image: "rummager",
     energy: 2,
     description: "Gift a card from your discard pile.",
-    type: CARD_TYPE.Hedgehog,
-    tags: [TAGS.TOP_OF_DECK, TAGS.GIFT],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.GIFT],
   },
 ];
 

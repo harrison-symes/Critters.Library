@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const moles: ICard[] = [
   {
@@ -11,10 +11,12 @@ const moles: ICard[] = [
     },
     image: "rummager",
     description: "Add a Zzz counter to a Rival's critter.",
-    buyBonus: "Put this at the bottom of your deck",
+    recycle: "Exhaust a Rival's Critter",
+
     energy: 2,
-    type: CARD_TYPE.Mole,
-    tags: [TAGS.ENERGY_REMOVE],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Mole,
+    tags: [TAGS.ADD_ZZZ],
   },
   {
     name: "Burrower",
@@ -26,10 +28,11 @@ const moles: ICard[] = [
     },
     image: "rummager",
     description: "Steal a crop from your Rival.",
-    onDiscard: "Exhaust a Rival's Critter",
+    buyBonus: "Put this at the bottom of your deck",
     energy: 3,
-    type: CARD_TYPE.Mole,
-    tags: [TAGS.CROP_STEAL],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Mole,
+    tags: [TAGS.CROP_STEAL, TAGS.BOTTOM_OF_DECK],
   },
   {
     name: "Wacker Mole",
@@ -42,8 +45,9 @@ const moles: ICard[] = [
     image: "rummager",
     description: "Add 1 Zzz of each of a Rival's Critters.",
     energy: 2,
-    type: CARD_TYPE.Mole,
-    tags: [TAGS.CROP_STEAL, TAGS.TITULAR],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Mole,
+    tags: [TAGS.ADD_ZZZ],
   },
 ];
 

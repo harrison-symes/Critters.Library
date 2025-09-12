@@ -19,11 +19,11 @@ const ShopCard = ({ card, ...props }: IProps) => {
       <h1 className="card-name">
         {card.name} - x{card.qty}
       </h1>
-      <img
+      {/* <img
         className="card-image"
         src={`/images/${card.image}.png`}
         alt={card.name}
-      />
+      /> */}
       <div className="card-cost">
         {card.cost.apples > 0 && (
           <div className="card-cost__item card-cost__apple">
@@ -53,6 +53,12 @@ const ShopCard = ({ card, ...props }: IProps) => {
           {card.sunlight?.two && <li>2 ☀️: {card.sunlight.two}</li>}
           {card.sunlight?.three && <li>3 ☀️: {card.sunlight.three}</li>}
         </ul>
+      )}
+      {card.recycle && (
+        <div className="card-description">♻️: {card.recycle}</div>
+      )}
+      {card.buyBonus && (
+        <div className="card-description">💰: {card.buyBonus}</div>
       )}
       <div className="card-footer">
         <div className="card-type">{card.type}</div>

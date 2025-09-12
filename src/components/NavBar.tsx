@@ -5,13 +5,10 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <Link className="button button__big" to="/">
-        Shop
-      </Link>
-      <Link className="button button__big" to="/cards">
         Cards
       </Link>
-      <Link className="button button__big" to="/cost-graph">
-        Cost Graph
+      <Link className="button button__big" to="/shop">
+        Shop
       </Link>
     </div>
   );

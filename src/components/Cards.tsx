@@ -113,40 +113,40 @@ const Cards = () => {
             <div
               className={cn("cost-filter cost-filter--apple", {
                 "cost-filter--selected": subTypeFilters.includes(
-                  CARD_SUBTYPE.FINANCE
+                  CARD_SUBTYPE.Finance
                 ),
               })}
-              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.FINANCE)}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Finance)}
             >
               Finance
             </div>
             <div
               className={cn("cost-filter cost-filter--carrot", {
                 "cost-filter--selected": subTypeFilters.includes(
-                  CARD_SUBTYPE.TOOL
+                  CARD_SUBTYPE.Tool
                 ),
               })}
-              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.TOOL)}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Tool)}
             >
               Tool
             </div>
             <div
               className={cn("cost-filter cost-filter--berry", {
                 "cost-filter--selected": subTypeFilters.includes(
-                  CARD_SUBTYPE.TREAT
+                  CARD_SUBTYPE.Treat
                 ),
               })}
-              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.TREAT)}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Treat)}
             >
               Treat
             </div>
             <div
               className={cn("cost-filter cost-filter--berry", {
                 "cost-filter--selected": subTypeFilters.includes(
-                  CARD_SUBTYPE.GIFT
+                  CARD_SUBTYPE.Gift
                 ),
               })}
-              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.GIFT)}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Gift)}
             >
               Gift
             </div>
@@ -192,22 +192,38 @@ const Cards = () => {
         <CardList
           title="Rabbits"
           deck={filteredDeck}
-          cardType={CARD_TYPE.Rabbit}
+          cardType={CARD_TYPE.Critter}
         />
         <CardList
           title="Hedgehogs"
           deck={filteredDeck}
-          cardType={CARD_TYPE.Hedgehog}
+          cardType={CARD_TYPE.Critter}
         />
-        <CardList title="Rats" deck={filteredDeck} cardType={CARD_TYPE.Rat} />
-        <CardList title="Moles" deck={filteredDeck} cardType={CARD_TYPE.Mole} />
+        <CardList
+          title="Rats"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
+        <CardList
+          title="Moles"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
         <CardList
           title="Raccoons"
           deck={filteredDeck}
-          cardType={CARD_TYPE.Raccoon}
+          cardType={CARD_TYPE.Critter}
         />
-        <CardList title="Worms" deck={filteredDeck} cardType={CARD_TYPE.Worm} />
-        <CardList title="Bees" deck={filteredDeck} cardType={CARD_TYPE.Bee} />
+        <CardList
+          title="Worms"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
+        <CardList
+          title="Bees"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
       </div>
     </div>
   );

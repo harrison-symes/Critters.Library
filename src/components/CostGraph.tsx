@@ -241,16 +241,6 @@ const CostGraph = (props: IProps) => {
       costKeys.push(`c${card.cost.carrots}`);
     }
 
-    // if (costKeys.length <= 1) {
-    //   return accum;
-    // }
-    // if (
-    //   card.cost.berries === card.cost.apples &&
-    //   card.cost.berries === card.cost.berries
-    // ) {
-    //   return accum;
-    // }
-
     const costKey = costKeys.join(" ");
 
     if (accum[costKey]) {

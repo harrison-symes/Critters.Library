@@ -31,14 +31,6 @@
   grid-template-columns: 70% 30%;
 }
 
-.stats {
-  border: 3px solid orange;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 24px;
-}
-
 .cards {
   margin: auto;
   text-align: center;

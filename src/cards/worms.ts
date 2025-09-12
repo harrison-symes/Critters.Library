@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const worms: ICard[] = [
   {
@@ -13,8 +13,9 @@ const worms: ICard[] = [
     description: "Add 1 Sunlight to each of your seeds",
     buyBonus: "Fast-track a Seed",
     energy: 3,
-    type: CARD_TYPE.Worm,
-    tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SHUFFLE_CARDS],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Worm,
+    tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.FAST_TRACK],
   },
   {
     name: "Top-Soiler",
@@ -26,10 +27,16 @@ const worms: ICard[] = [
     },
     image: "rummager",
     description: "Put a Seeds card from your discard pile into your hand.",
-    onDiscard: "Gain +3 of a random crop.",
+    recycle: "Gain +3 of a random crop.",
     energy: 2,
-    type: CARD_TYPE.Worm,
-    tags: [TAGS.ENERGY_RESTORE],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Worm,
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.SEED_SYNERGY,
+      TAGS.ADD_TO_HAND,
+    ],
   },
   {
     name: "Chloro Phil",
@@ -41,10 +48,16 @@ const worms: ICard[] = [
     },
     image: "rummager",
     description:
-      "Remove all of the sunlight from one of your seeds, gain +2 of a random crop for each sunlight removed.",
+      "Remove all of the sunlight from a seed card, gain a random crop for each sunlight removed. If the Seed was yours, add 2 Sunlight to it.",
     energy: 2,
-    type: CARD_TYPE.Worm,
-    tags: [],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Worm,
+    tags: [
+      TAGS.SEED_SYNERGY,
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.SUNLIGHT_ADD,
+    ],
   },
 ];
 

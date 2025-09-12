@@ -1,16 +1,9 @@
 export enum CARD_TYPE {
   Item = "Item",
   Seeds = "Seeds",
-  Rabbit = "Rabbit",
-  Rat = "Rat",
-  Mole = "Mole",
-  Hedgehog = "Hedgehog",
-  Raccoon = "Raccoon",
-  Worm = "Worm",
-  Bee = "Bee",
+  Critter = "Critter",
   Favour = "Favour",
   Reward = "Rewards",
-  Machine = "Machine",
 }
 
 export enum RESOURCE {
@@ -21,50 +14,56 @@ export enum RESOURCE {
 }
 
 export enum CARD_SUBTYPE {
-  TREAT = "Treat",
-  FINANCE = "Finance",
-  TOOL = "Tool",
-  GIFT = "Gift",
+  Treat = "Treat",
+  Finance = "Finance",
+  Tool = "Tool",
+  Rabbit = "Rabbit",
+  Rat = "Rat",
+  Mole = "Mole",
+  Hedgehog = "Hedgehog",
+  Raccoon = "Raccoon",
+  Worm = "Worm",
+  Bee = "Bee",
+  Gift = "Gift",
 }
 
 export enum TAGS {
-  CARD_DRAW = "CARD_DRAW",
-  CROP_GENERATION = "CROP_GENERATION",
-  DISCARD_OWN = "DISCARD_OWN",
-  DISCOUNT = "DISCOUNT",
-  SHUFFLE_CARDS = "SHUFFLE_CARDS",
-  RESET_DECK = "RESET_DECK",
-  ATTACH = "ATTACH",
-  CROP_GENERATION_ALL = "CROP_GENERATION_ALL",
-  CROP_GENERATION_RANDOM = "CROP_GENERATION_RANDOM",
-  GIFT = "GIFT",
-  CROP_DESTROY = "CROP_DESTROY",
-  CANTRIP = "CANTRIP",
-  CROP_STEAL = "CROP_STEAL",
-  TOP_OF_DECK = "TOP_OF_DECK",
-  REFUND = "REFUND",
-  REFUND_FROM_HAND = "REFUND_FROM_HAND",
-  REFUND_FROM_DISCARD = "REFUND_FROM_DISCARD",
-  PACK_CRATE = "PACK_CRATE",
-  ENERGY_RESTORE = "ENERGY_RESTORE",
-  ENERGY_REMOVE = "ENERGY_REMOVE",
-  SEED_SYNERGY = "SEED_SYNERGY",
-  SUNLIGHT_ADD = "SUNLIGHT_ADD",
-  REFRESH_SHOP = "REFRESH_SHOP",
-  FREE_CARD = "FREE_CARD",
-  FAVOURS = "FAVOURS",
-  CROP_GENERATION_CARROT = "CROP_GENERATION_CARROT",
-  CROP_GENERATION_BERRY = "CROP_GENERATION_BERRY",
-  CROP_GENERATION_APPLE = "CROP_GENERATION_APPLE",
-  TREAT_SYNERGY = "TREAT_SYNERGY",
-  WORK_ORDERS_3 = "WORK_ORDERS_3",
-  HOLDABLE = "HOLDABLE",
-  TRASH = "TRASH",
-  FINANCE_SYNERGY = "FINANCE_SYNERGY",
-  DISCARD_RIVAL_DECK = "DISCARD_RIVAL_DECK",
-  TOOL_SYNERGY = "TOOL_SYNERGY",
-  SNATCH_DISCOUNT = "SNATCH_DISCOUNT",
-  TITULAR = "TITULAR",
+  CARD_DRAW = "Card Draw",
+  CROP_GENERATION = "Crop Gain",
+  DISCARD_OWN = "Discard from hand",
+  DISCOUNT = "Discount",
+  FAST_TRACK = "Fast-track",
+  RESET_DECK = "Reset Deck",
+  CROP_GENERATION_ALL = "Gain all crops",
+  CROP_GENERATION_RANDOM = "Gain random crops",
+  GIFT = "Gift",
+  CROP_DESTROY = "Destroy Crops",
+  CROP_STEAL = "Steal crops",
+  TOP_OF_DECK = "Place on top of deck",
+  SELL = "Sell",
+  SELL_FROM_HAND = "Sell from hand",
+  SELL_FROM_DISCARD = "Sell from discard",
+  FREE_CRATE = "Free Crate",
+  REMOVE_ZZZ = "Remove Zzz",
+  ADD_ZZZ = "Add Zzz",
+  SEED_SYNERGY = "Seed synergy",
+  SUNLIGHT_ADD = "Add Sunlight",
+  REFRESH = "Refresh",
+  FREE_CARD = "Free Card",
+  FREE_FAVOUR = "Free Favour",
+  CROP_GENERATION_CARROT = "Gain Carrots",
+  CROP_GENERATION_BERRY = "Gain Berries",
+  CROP_GENERATION_APPLE = "Gain Apples",
+  WORK_ORDERS_3 = "Requires 3 Work Orders",
+  TRASH = "Trash",
+  TRASH_FROM_HAND = "Trash from hand",
+  TRASH_FROM_DISCARD = "Trash from discard",
+  TREAT_SYNERGY = "Treat synergy",
+  TOOL_SYNERGY = "Tool synergy",
+  FINANCE_SYNERGY = "Finance Synergy",
+  SNATCH_DISCOUNT = "Snatch discounts",
+  BOTTOM_OF_DECK = "Add to bottom of deck",
+  ADD_TO_HAND = "Add to hand",
 }
 
 export interface ICard {
@@ -84,7 +83,10 @@ export interface ICard {
   energy?: number;
   victoryPoints?: number;
   buyBonus?: string;
-  onDiscard?: string;
+  recycle?: string;
+  holdable?: boolean;
+  sellable?: boolean;
+  unsellable?: boolean;
   sunlight?: {
     one?: string;
     two?: string;

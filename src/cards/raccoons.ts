@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const raccoons: ICard[] = [
   {
@@ -13,8 +13,9 @@ const raccoons: ICard[] = [
     description: "Discard a card from your hand to draw a card",
     buyBonus: "Fast-track a Starter card",
     energy: 2,
-    type: CARD_TYPE.Raccoon,
-    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Raccoon,
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
   },
   {
     name: "Dumpster Diver",
@@ -28,8 +29,9 @@ const raccoons: ICard[] = [
     description:
       "Discard a card from hand to Sell a different card from your discard pile.",
     energy: 2,
-    type: CARD_TYPE.Raccoon,
-    tags: [TAGS.REFUND, TAGS.REFUND_FROM_DISCARD, TAGS.DISCARD_OWN],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Raccoon,
+    tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.DISCARD_OWN],
   },
   {
     name: "Sticky Fingers",
@@ -42,10 +44,11 @@ const raccoons: ICard[] = [
     image: "rummager",
     description:
       "Discard a card from hand, then return that card to your hand.",
-    onDiscard: "Return this to your hand.",
+    recycle: "Put this card into your hand.",
     energy: 3,
-    type: CARD_TYPE.Raccoon,
-    tags: [TAGS.SHUFFLE_CARDS, TAGS.DISCARD_OWN],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Raccoon,
+    tags: [TAGS.DISCARD_OWN, TAGS.ADD_TO_HAND],
   },
 ];
 

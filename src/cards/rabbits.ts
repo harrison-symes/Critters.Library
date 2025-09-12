@@ -1,4 +1,4 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const rabbits: ICard[] = [
   {
@@ -12,7 +12,8 @@ const rabbits: ICard[] = [
     image: "rummager",
     description: "Gain +2 Carrots",
     energy: 3,
-    type: CARD_TYPE.Rabbit,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
   },
   {
@@ -26,7 +27,8 @@ const rabbits: ICard[] = [
     image: "rummager",
     description: "+2 Berries",
     energy: 3,
-    type: CARD_TYPE.Rabbit,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
   },
   {
@@ -40,7 +42,8 @@ const rabbits: ICard[] = [
     image: "rummager",
     description: "+2 Apples",
     energy: 3,
-    type: CARD_TYPE.Rabbit,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
   },
   {
@@ -55,7 +58,8 @@ const rabbits: ICard[] = [
     description: "Gain 3 random crops",
     buyBonus: "Each of your Rivals gets a random crop",
     energy: 3,
-    type: CARD_TYPE.Rabbit,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
@@ -70,8 +74,9 @@ const rabbits: ICard[] = [
     description: "Gain +5 of a random crop.",
     buyBonus: "Pack a free crate into each of your work orders.",
     energy: 3,
-    type: CARD_TYPE.Rabbit,
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.FREE_CRATE],
   },
   {
     name: "Crop Picker",
@@ -85,7 +90,8 @@ const rabbits: ICard[] = [
     description: "Gain +2 of a random crop",
     buyBonus: "Each of your Rivals gets a random crop",
     energy: 3,
-    type: CARD_TYPE.Rabbit,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
 ];

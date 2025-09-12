@@ -199,13 +199,13 @@ const Stats = (props: IProps) => {
       <hr />
       <div>Items: {countType(CARD_TYPE.Item)}</div>
       <div>Seeds: {countType(CARD_TYPE.Seeds)}</div>
-      <div>Rabbits: {countType(CARD_TYPE.Rabbit)}</div>
-      <div>Rats: {countType(CARD_TYPE.Rat)}</div>
-      <div>Moles: {countType(CARD_TYPE.Mole)}</div>
-      <div>Hedgehogs: {countType(CARD_TYPE.Hedgehog)}</div>
-      <div>Bees: {countType(CARD_TYPE.Bee)}</div>
-      <div>Raccoons: {countType(CARD_TYPE.Raccoon)}</div>
-      <div>Worms: {countType(CARD_TYPE.Worm)}</div>
+      <div>Rabbits: {countType(CARD_TYPE.Critter)}</div>
+      <div>Rats: {countType(CARD_TYPE.Critter)}</div>
+      <div>Moles: {countType(CARD_TYPE.Critter)}</div>
+      <div>Hedgehogs: {countType(CARD_TYPE.Critter)}</div>
+      <div>Bees: {countType(CARD_TYPE.Critter)}</div>
+      <div>Raccoons: {countType(CARD_TYPE.Critter)}</div>
+      <div>Worms: {countType(CARD_TYPE.Critter)}</div>
     </div>
   );
 };
