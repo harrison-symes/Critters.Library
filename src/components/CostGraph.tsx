@@ -1,7 +1,7 @@
 import * as React from "react";
 // import rd3 from "react-d3-library";
 import * as d3 from "d3";
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard } from "../models/cards.models";
 import { createDeck } from "../cards";
 import { BarChart } from "@mui/x-charts/BarChart";
 import Stats from "./Stats";
@@ -14,8 +14,10 @@ const CostGraph = (props: IProps) => {
   const [filterState, setFilterState] = React.useState<{
     cost?: number;
     cardType: CARD_TYPE[];
+    subType: CARD_SUBTYPE[];
   }>({
     cardType: [],
+    subType: [],
   });
 
   const setCostFilter = (cost?: number) => {
@@ -35,9 +37,19 @@ const CostGraph = (props: IProps) => {
     }));
   };
 
+  const toggleCardSubTypeFilter = (subType: CARD_SUBTYPE) => {
+    setFilterState((state) => ({
+      ...state,
+      subType: state.subType.includes(subType)
+        ? state.subType.filter((c) => c !== subType)
+        : [...state.subType, subType],
+    }));
+  };
+
   const resetFilters = () => {
     setFilterState({
       cardType: [],
+      subType: [],
     });
   };
 
@@ -99,8 +111,16 @@ const CostGraph = (props: IProps) => {
 
   const filteredDeck = props.deck.filter((card) => {
     if (filterState.cardType.length > 0) {
-      console.log(filterState.cardType[0] ?? "none", card.type);
       if (!filterState.cardType.includes(card.type)) {
+        return false;
+      }
+    }
+    if (filterState.subType.length > 0) {
+      if (!card.subtype) {
+        return false;
+      }
+      if (!filterState.subType.includes(card.subtype)) {
+        console.log("filtering out", card.subtype, filterState.subType);
         return false;
       }
     }
@@ -185,6 +205,58 @@ const CostGraph = (props: IProps) => {
     0
   );
 
+  const createComboFreqRecord = () => {
+    const record: Record<string, number> = {};
+    for (let apples = 0; apples < 6; apples++) {
+      for (let carrots = 0; carrots < 6; carrots++) {
+        for (let berries = 0; berries < 6; berries++) {
+          const costKeys = [];
+          if (apples > 0) {
+            costKeys.push(`a${apples}`);
+          }
+          if (carrots > 0) {
+            costKeys.push(`c${carrots}`);
+          }
+          if (berries > 0) {
+            costKeys.push(`b${berries}`);
+          }
+
+          const costKey = costKeys.join(" ");
+
+          record[costKey] = 0;
+        }
+      }
+    }
+  };
+
+  const costComboFreq = filteredDeck.reduce((accum, card) => {
+    const costKeys = [];
+    if (card.cost.apples > 0) {
+      costKeys.push(`a${card.cost.apples}`);
+    }
+    if (card.cost.berries > 0) {
+      costKeys.push(`b${card.cost.berries}`);
+    }
+    if (card.cost.carrots > 0) {
+      costKeys.push(`c${card.cost.carrots}`);
+    }
+
+    const costKey = costKeys.join(" ");
+
+    if (accum[costKey]) {
+      accum[costKey]++;
+    } else {
+      accum[costKey] = 1;
+    }
+    return accum;
+  }, {} as Record<string, number>);
+
+  const orderedCostComboFreq = Object.keys(costComboFreq).sort((a, b) =>
+    costComboFreq[a] > costComboFreq[b] ? 1 : -1
+  );
+
+  console.log({ costComboFreq });
+
   console.log({ filterState, filteredDeck });
 
   return (
@@ -202,6 +274,22 @@ const CostGraph = (props: IProps) => {
                 type="radio"
                 className="radio"
                 checked={filterState.cardType.includes(c as CARD_TYPE)}
+              />
+            </label>
+          ))}
+        </div>
+        <div className="card-type-filters">
+          {Object.values(CARD_SUBTYPE).map((c) => (
+            <label
+              className="card-type-filter"
+              htmlFor={`${c}-radio`}
+              onClick={() => toggleCardSubTypeFilter(c as CARD_SUBTYPE)}
+            >
+              {c}
+              <input
+                type="radio"
+                className="radio"
+                checked={filterState.subType.includes(c as CARD_SUBTYPE)}
               />
             </label>
           ))}
@@ -308,6 +396,28 @@ const CostGraph = (props: IProps) => {
           },
         ]}
       />
+      <div className="costFreqChart">
+        <BarChart
+          width={window.innerWidth / 2}
+          height={700}
+          layout="horizontal"
+          grid={{ vertical: true }}
+          series={[
+            {
+              color: "black",
+              label: "Total",
+              data: orderedCostComboFreq.map((key) => costComboFreq[key]),
+            },
+          ]}
+          yAxis={[
+            {
+              label: "Cost",
+              data: orderedCostComboFreq.map((c) => c.toString()),
+              scaleType: "band",
+            },
+          ]}
+        />
+      </div>
     </div>
   );
 };

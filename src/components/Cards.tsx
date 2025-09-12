@@ -4,29 +4,72 @@ import WorkOrder from "./WorkOrder";
 import cn from "classnames";
 import CardList from "./CardList";
 import { createDeck } from "../cards";
-import { CARD_TYPE, RESOURCE } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  ICard,
+  RESOURCE,
+  TAGS,
+} from "../models/cards.models";
 import favours from "../cards/actions";
 import rewards from "../cards/rewards";
 
 const Cards = () => {
-  const [costFilters, setCostFilters] = React.useState<Array<RESOURCE>>([]);
+  const [resourceFilters, setCostFilters] = React.useState<Array<RESOURCE>>([]);
+  const [subTypeFilters, setSubTypeFilters] = React.useState<
+    Array<CARD_SUBTYPE | undefined>
+  >([]);
+  const [tagFilters, setTagFilters] = React.useState<Array<TAGS>>([]);
   const deck = createDeck(true);
 
   const onCostFilterClick = (resource: RESOURCE) => {
-    if (costFilters.includes(resource)) {
-      setCostFilters(costFilters.filter((c) => c !== resource));
+    if (resourceFilters.includes(resource)) {
+      setCostFilters(resourceFilters.filter((c) => c !== resource));
     } else {
-      setCostFilters([...costFilters, resource]);
+      setCostFilters([...resourceFilters, resource]);
     }
   };
 
-  const filteredDeck = deck.filter((c) => {
-    if (costFilters.length > 0) {
-      return !costFilters.find((resource) => c.cost[resource] === 0);
+  const onSubTypeFilterClick = (subType: CARD_SUBTYPE | undefined) => {
+    if (subTypeFilters.includes(subType)) {
+      setSubTypeFilters(subTypeFilters.filter((c) => c !== subType));
+    } else {
+      setSubTypeFilters([...subTypeFilters, subType]);
     }
+  };
 
-    return true;
-  });
+  const onTagFilterClick = (tag: TAGS) => {
+    if (tagFilters.includes(tag)) {
+      setTagFilters(tagFilters.filter((c) => c !== tag));
+    } else {
+      setTagFilters([...tagFilters, tag]);
+    }
+  };
+
+  const filterDeck = (deck: ICard[]) =>
+    deck.reduce((accum, card) => {
+      if (resourceFilters.some((resource) => card.cost[resource] === 0)) {
+        return accum;
+      }
+
+      if (-1 !== tagFilters.findIndex((tag) => !card.tags?.includes(tag))) {
+        return accum;
+      }
+
+      if (
+        subTypeFilters.length > 0 &&
+        !subTypeFilters.some((subType) => card.subtype === subType)
+      ) {
+        return accum;
+      }
+
+      accum.push(card);
+      return accum;
+    }, [] as ICard[]);
+
+  const filteredDeck = React.useMemo(() => {
+    return filterDeck(deck);
+  }, [resourceFilters, subTypeFilters, tagFilters]);
 
   return (
     <div>
@@ -35,7 +78,9 @@ const Cards = () => {
           <div className="cost-filters">
             <div
               className={cn("cost-filter cost-filter--apple", {
-                "cost-filter--selected": costFilters.includes(RESOURCE.APPLE),
+                "cost-filter--selected": resourceFilters.includes(
+                  RESOURCE.APPLE
+                ),
               })}
               onClick={() => onCostFilterClick(RESOURCE.APPLE)}
             >
@@ -43,7 +88,9 @@ const Cards = () => {
             </div>
             <div
               className={cn("cost-filter cost-filter--carrot", {
-                "cost-filter--selected": costFilters.includes(RESOURCE.CARROT),
+                "cost-filter--selected": resourceFilters.includes(
+                  RESOURCE.CARROT
+                ),
               })}
               onClick={() => onCostFilterClick(RESOURCE.CARROT)}
             >
@@ -51,7 +98,9 @@ const Cards = () => {
             </div>
             <div
               className={cn("cost-filter cost-filter--berry", {
-                "cost-filter--selected": costFilters.includes(RESOURCE.BERRY),
+                "cost-filter--selected": resourceFilters.includes(
+                  RESOURCE.BERRY
+                ),
               })}
               onClick={() => onCostFilterClick(RESOURCE.BERRY)}
             >
@@ -59,14 +108,81 @@ const Cards = () => {
             </div>
           </div>
         </div>
-        <h1>Work Orders ({workOrders.length})</h1>
-        <div className="card-list">
+        <div className="filters">
+          <div className="cost-filters">
+            <div
+              className={cn("cost-filter cost-filter--apple", {
+                "cost-filter--selected": subTypeFilters.includes(
+                  CARD_SUBTYPE.Finance
+                ),
+              })}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Finance)}
+            >
+              Finance
+            </div>
+            <div
+              className={cn("cost-filter cost-filter--carrot", {
+                "cost-filter--selected": subTypeFilters.includes(
+                  CARD_SUBTYPE.Tool
+                ),
+              })}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Tool)}
+            >
+              Tool
+            </div>
+            <div
+              className={cn("cost-filter cost-filter--berry", {
+                "cost-filter--selected": subTypeFilters.includes(
+                  CARD_SUBTYPE.Treat
+                ),
+              })}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Treat)}
+            >
+              Treat
+            </div>
+            <div
+              className={cn("cost-filter cost-filter--berry", {
+                "cost-filter--selected": subTypeFilters.includes(
+                  CARD_SUBTYPE.Gift
+                ),
+              })}
+              onClick={() => onSubTypeFilterClick(CARD_SUBTYPE.Gift)}
+            >
+              Gift
+            </div>
+            <div
+              className={cn("cost-filter cost-filter--berry", {
+                "cost-filter--selected": subTypeFilters.includes(undefined),
+              })}
+              onClick={() => onSubTypeFilterClick(undefined)}
+            >
+              No subtype
+            </div>
+          </div>
+        </div>
+        <div className="filters">
+          <div className="cost-filters">
+            {Object.keys(TAGS).map((tag) => (
+              <div
+                className={cn("cost-filter cost-filter--berry", {
+                  "cost-filter--selected": tagFilters.includes(tag as TAGS),
+                })}
+                onClick={() => onTagFilterClick(tag as TAGS)}
+              >
+                {tag}
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* <h1>Work Orders ({workOrders.length})</h1> */}
+        {/* <div className="card-list">
           {workOrders.map((card) => (
             <WorkOrder order={card} />
           ))}
-        </div>
-        <CardList title="Rewards" deck={rewards} cardType={CARD_TYPE.Reward} />
-        <CardList title="Actions" deck={favours} cardType={CARD_TYPE.Favour} />
+        </div> */}
+        {/* <CardList title="Rewards" deck={rewards} cardType={CARD_TYPE.Reward} /> */}
+        {/* <CardList title="Actions" deck={favours} cardType={CARD_TYPE.Favour} /> */}
+        <h1>Total: {filteredDeck.length}</h1>
         <CardList title="Items" deck={filteredDeck} cardType={CARD_TYPE.Item} />
         <CardList
           title="Seeds"
@@ -76,22 +192,38 @@ const Cards = () => {
         <CardList
           title="Rabbits"
           deck={filteredDeck}
-          cardType={CARD_TYPE.Rabbit}
+          cardType={CARD_TYPE.Critter}
         />
         <CardList
           title="Hedgehogs"
           deck={filteredDeck}
-          cardType={CARD_TYPE.Hedgehog}
+          cardType={CARD_TYPE.Critter}
         />
-        <CardList title="Rats" deck={filteredDeck} cardType={CARD_TYPE.Rat} />
-        <CardList title="Moles" deck={filteredDeck} cardType={CARD_TYPE.Mole} />
+        <CardList
+          title="Rats"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
+        <CardList
+          title="Moles"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
         <CardList
           title="Raccoons"
           deck={filteredDeck}
-          cardType={CARD_TYPE.Raccoon}
+          cardType={CARD_TYPE.Critter}
         />
-        <CardList title="Worms" deck={filteredDeck} cardType={CARD_TYPE.Worm} />
-        <CardList title="Bees" deck={filteredDeck} cardType={CARD_TYPE.Bee} />
+        <CardList
+          title="Worms"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
+        <CardList
+          title="Bees"
+          deck={filteredDeck}
+          cardType={CARD_TYPE.Critter}
+        />
       </div>
     </div>
   );

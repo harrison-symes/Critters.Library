@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ICard } from "../models/cards.models";
-import { estimateCardCost } from "../cards";
 
 interface IProps {
   card: ICard;
@@ -8,7 +7,6 @@ interface IProps {
 }
 
 const ShopCard = ({ card, ...props }: IProps) => {
-  const estCost = estimateCardCost(card);
   const totalCost =
     (card.cost.apples ?? 0) +
     (card.cost.carrots ?? 0) +
@@ -21,11 +19,11 @@ const ShopCard = ({ card, ...props }: IProps) => {
       <h1 className="card-name">
         {card.name} - x{card.qty}
       </h1>
-      <img
+      {/* <img
         className="card-image"
         src={`/images/${card.image}.png`}
         alt={card.name}
-      />
+      /> */}
       <div className="card-cost">
         {card.cost.apples > 0 && (
           <div className="card-cost__item card-cost__apple">
@@ -46,18 +44,31 @@ const ShopCard = ({ card, ...props }: IProps) => {
           <div className="card-cost__item card-cost__any">{card.cost.any}</div>
         )}
       </div>
-      <div className="card-description">{card.description}</div>
+      <div className="card-description">
+        <div>{card.description}</div>
+      </div>
+      {card.sunlight && (
+        <ul className="">
+          {card.sunlight?.one && <li>1 ☀️: {card.sunlight.one}</li>}
+          {card.sunlight?.two && <li>2 ☀️: {card.sunlight.two}</li>}
+          {card.sunlight?.three && <li>3 ☀️: {card.sunlight.three}</li>}
+        </ul>
+      )}
+      {card.recycle && (
+        <div className="card-description">♻️: {card.recycle}</div>
+      )}
+      {card.buyBonus && (
+        <div className="card-description">💰: {card.buyBonus}</div>
+      )}
       <div className="card-footer">
         <div className="card-type">{card.type}</div>
+        {card.subtype && <div className="card-type">{card.subtype}</div>}
         {card.energy && (
           <div className="card-durability">
             <span className="card-durability__number">{card.energy}</span>
             <img className="card-durability__icon" src="/images/heart.png" />
           </div>
         )}
-      </div>
-      <div>
-        est: {estCost} {estCost !== totalCost && <b>WRONG COST</b>}
       </div>
     </div>
   );

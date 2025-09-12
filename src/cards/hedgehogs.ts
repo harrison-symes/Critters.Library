@@ -1,46 +1,52 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
 
 const hedgehogs: ICard[] = [
   {
-    name: "Snuffler",
+    name: "Skewerer",
     qty: 2,
     cost: {
-      apples: 1,
-      carrots: 0,
-      berries: 2,
+      apples: 3,
+      berries: 1,
+      carrots: 1,
     },
     image: "rummager",
-    description:
-      "Place a card from your Rival's discard pile on top of their deck.",
-    energy: 3,
-    type: CARD_TYPE.Hedgehog,
+    description: "Put a Tool card from your discard pile on top of your deck.",
+    buyBonus: "Gift a card from your discard pile.",
+    energy: 2,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.TOP_OF_DECK, TAGS.TOOL_SYNERGY, TAGS.GIFT],
   },
   {
-    name: "Skewer-er",
+    name: "Picky Eater",
     qty: 2,
     cost: {
-      apples: 1,
-      carrots: 3,
+      apples: 2,
       berries: 0,
+      carrots: 2,
     },
     image: "rummager",
     energy: 2,
-    description: "Discard one of the top 3 cards of your Rival's deck.",
-    type: CARD_TYPE.Hedgehog,
+    description: "Fast-track a Treat card.",
+    recycle: "Trash a card from your discard pile",
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.FAST_TRACK, TAGS.TREAT_SYNERGY, TAGS.TRASH_FROM_DISCARD],
   },
   {
     name: "The Head Chog",
     qty: 1,
     cost: {
       apples: 3,
-      carrots: 1,
       berries: 3,
+      carrots: 3,
     },
     image: "rummager",
     energy: 2,
-    description:
-      "Put a card from your discard pile on top of your Rival's deck.",
-    type: CARD_TYPE.Hedgehog,
+    description: "Gift a card from your discard pile.",
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.GIFT],
   },
 ];
 

@@ -1,16 +1,9 @@
 export enum CARD_TYPE {
   Item = "Item",
   Seeds = "Seeds",
-  Rabbit = "Rabbit",
-  Rat = "Rat",
-  Mole = "Mole",
-  Hedgehog = "Hedgehog",
-  Raccoon = "Raccoon",
-  Worm = "Worm",
-  Bee = "Bee",
+  Critter = "Critter",
   Favour = "Favour",
   Reward = "Rewards",
-  Machine = "Machine",
 }
 
 export enum RESOURCE {
@@ -20,63 +13,57 @@ export enum RESOURCE {
   ANY = "any",
 }
 
+export enum CARD_SUBTYPE {
+  Treat = "Treat",
+  Finance = "Finance",
+  Tool = "Tool",
+  Rabbit = "Rabbit",
+  Rat = "Rat",
+  Mole = "Mole",
+  Hedgehog = "Hedgehog",
+  Raccoon = "Raccoon",
+  Worm = "Worm",
+  Bee = "Bee",
+  Gift = "Gift",
+}
+
 export enum TAGS {
-  SEEDS = "seeds",
-  CRITTER = "critter",
-  CRITTER_2_ENERGY = "critter_2_energy",
-  CRITTER_3_ENERGY = "critter_3_energy",
-  DRAW_A_CARD = "draw_a_card",
-  DRAW_2_CARDS = "draw_2_cards",
-  DIVERSE_CROPS = "diverse_crops",
-  GAIN_CROP_1 = "1_CROP",
-  GAIN_CROP_2 = "2_CROP",
-  GAIN_CROP_3 = "3_CROP",
-  GAIN_CROP_4 = "4_CROP",
-  GAIN_CROP_5 = "5_CROP",
-  GAIN_CROP_6 = "6_CROP",
-  GAIN_CROP_9 = "9_CROP",
-  GAIN_CROP_12 = "GAIN_CROP_12",
-  TITULAR = "TITULAR",
-  DESTROY_1_CROP = "DESTROY_1_CROP",
-  DESTROY_2_CROP = "DESTROY_2_CROP",
-  DISRUPT_WORK_ORDER_2 = "DISRUPT_WORK_ORDER_2",
-  DESTROY_3_CROP = "DESTROY_3_CROP",
-  DESTROY_4_CROP = "DESTROY_4_CROP",
-  DESTROY_5_CROP = "DESTROY_5_CROP",
-  DESTROY_6_CROP = "DESTROY_6_CROP",
-  DISRUPT_WORK_ORDER_4 = "DISRUPT_WORK_ORDER_4",
-  REMOVE_ENERGY_1 = "REMOVE_ENERGY_1",
-  REMOVE_ENERGY_2 = "REMOVE_ENERGY_2",
-  REMOVE_ENERGY_3 = "REMOVE_ENERGY_3",
-  DISCARD_OPPONENT_DECK_1 = "DISCARD_OPPONENT_DECK",
-  DISCARD_OPPONENT_HAND_1 = "DISCARD_OPPONENT_HAND_2",
-  DISCARD_FROM_HAND_1 = "DISCARD_FROM_HAND_1",
-  CHOICE = "CHOICE",
-  SHUFFLE_DISCARD_TO_DECK = "SHUFFLE_DISCARD_TO_DECK",
-  DISCARD_FROM_HAND_2 = "DISCARD_FROM_HAND_2",
-  DELAYED = "DELAYED",
-  PLACE_ON_TOP_DECK = "PLACE_ON_TOP_DECK",
-  CONDITIONAL = "CONDITIONAL",
-  CONDITIONAL_MED = "CONDITIONAL_MED",
-  TRADE_1_FOR_1 = "TRADE_2_FOR_3",
-  REFUND_FROM_HAND = "REFUND_FROM_HAND",
-  REFUND_FROM_DISCARD = "REFUND_FROM_DISCARD",
-  PACK_WORK_ORDER_2 = "PACK_WORK_ORDER_2",
-  DESTROY_1_OWN_CROP = "DESTROY_1_OWN_CROP",
-  CONDITIONAL_LRG = "CONDITIONAL_LRG",
-  CONDITIONAL_SML = "CONDITIONAL_SML",
-  DISCARD_FROM_DECK_2 = "DISCARD_FROM_DECK_2",
-  DISCARD_FROM_DECK = "DISCARD_FROM_DECK",
-  RESTORE_ENERGY = "RESTORE_ENERGY",
-  RESTORE_1_ENERGY_TO_ALL = "RESTORE_ENERGY_TO_ALL",
-  RESTORE_ALL_ENERGY = "RESTORE_ALL_ENERGY",
-  REFRESH_SHOP_CARD = "REFRESH_SHOP_CARD",
-  BOMB = "BOMB",
-  EXHAUST = "EXHAUST",
-  DISRUPT_WORK_ORDER_1 = "DISRUPT_WORK_ORDER_1",
-  RESTORE_ALL_ENERGY_TO_ALL = "RESTORE_ALL_ENERGY_TO_ALL",
-  REMOVE_1_ENERGY_FROM_ALL = "REMOVE_1_ENERGY_FROM_ALL",
-  PACK_WORK_ORDER_1 = "PACK_WORK_ORDER_1",
+  CARD_DRAW = "Card Draw",
+  CROP_GENERATION = "Crop Gain",
+  DISCARD_OWN = "Discard from hand",
+  DISCOUNT = "Discount",
+  FAST_TRACK = "Fast-track",
+  RESET_DECK = "Reset Deck",
+  CROP_GENERATION_ALL = "Gain all crops",
+  CROP_GENERATION_RANDOM = "Gain random crops",
+  GIFT = "Gift",
+  CROP_DESTROY = "Destroy Crops",
+  CROP_STEAL = "Steal crops",
+  TOP_OF_DECK = "Place on top of deck",
+  SELL = "Sell",
+  SELL_FROM_HAND = "Sell from hand",
+  SELL_FROM_DISCARD = "Sell from discard",
+  FREE_CRATE = "Free Crate",
+  REMOVE_ZZZ = "Remove Zzz",
+  ADD_ZZZ = "Add Zzz",
+  SEED_SYNERGY = "Seed synergy",
+  SUNLIGHT_ADD = "Add Sunlight",
+  REFRESH = "Refresh",
+  FREE_CARD = "Free Card",
+  FREE_FAVOUR = "Free Favour",
+  CROP_GENERATION_CARROT = "Gain Carrots",
+  CROP_GENERATION_BERRY = "Gain Berries",
+  CROP_GENERATION_APPLE = "Gain Apples",
+  WORK_ORDERS_3 = "Requires 3 Work Orders",
+  TRASH = "Trash",
+  TRASH_FROM_HAND = "Trash from hand",
+  TRASH_FROM_DISCARD = "Trash from discard",
+  TREAT_SYNERGY = "Treat synergy",
+  TOOL_SYNERGY = "Tool synergy",
+  FINANCE_SYNERGY = "Finance Synergy",
+  SNATCH_DISCOUNT = "Snatch discounts",
+  BOTTOM_OF_DECK = "Add to bottom of deck",
+  ADD_TO_HAND = "Add to hand",
 }
 
 export interface ICard {
@@ -92,8 +79,19 @@ export interface ICard {
   };
   tags?: TAGS[];
   type: CARD_TYPE;
+  subtype?: CARD_SUBTYPE;
   energy?: number;
   victoryPoints?: number;
+  buyBonus?: string;
+  recycle?: string;
+  holdable?: boolean;
+  sellable?: boolean;
+  unsellable?: boolean;
+  sunlight?: {
+    one?: string;
+    two?: string;
+    three?: string;
+  };
 }
 
 export interface IWorkOrder {

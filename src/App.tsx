@@ -4,6 +4,7 @@ import ShopPage from "./components/ShopPage";
 import NavBar from "./components/NavBar";
 import Cards from "./components/Cards";
 import Graphs from "./components/Graphs";
+import NewDisplay from "./components/NewDisplay/NewDisplay";
 
 function App() {
   return (
@@ -11,9 +12,9 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" Component={ShopPage} />
-          <Route path="/cards" Component={Cards} />
-          <Route path="/cost-graph" Component={Graphs} />
+          <Route path="/shop" Component={ShopPage} />
+          <Route path="/" Component={NewDisplay} />
+          {/* <Route path="/cost-graph" Component={Graphs} /> */}
         </Routes>
       </BrowserRouter>
     </div>
