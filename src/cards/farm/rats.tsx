@@ -43,8 +43,8 @@ const rats: IFarmCard[] = [
     image: "rummager",
     description: (
       <span>
-        <b>Discount</b>, then snatch the discounted crops from a card in the
-        Market.
+        <b>Discount</b>, then <b>Snatch</b> the discounted crops from a card in
+        the Market.
       </span>
     ),
     buyBonus: (

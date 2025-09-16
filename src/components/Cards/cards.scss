@@ -75,6 +75,12 @@
                 grid-template-columns: 1fr;
             }
 
+            &--special {
+                font-weight: bolder;
+                grid-template-columns: 1fr;
+                flex-grow: 0;
+            }
+
             &--sunlight {
                 display: flex;
                 align-items: center;

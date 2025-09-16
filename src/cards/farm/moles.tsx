@@ -44,7 +44,7 @@ const moles: IFarmCard[] = [
         <b>Steal</b> a crop from a Rival.
       </span>
     ),
-    buyBonus: "Put this at the bottom of your deck",
+    buyBonus: "Put this at the bottom of your deck.",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,

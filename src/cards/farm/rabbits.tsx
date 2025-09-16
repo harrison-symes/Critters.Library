@@ -62,7 +62,7 @@ const rabbits: IFarmCard[] = [
     },
     image: "rummager",
     description: "Gain 3 random crops",
-    buyBonus: "Your Rivals each gain a random crop",
+    buyBonus: "Your Rivals each gain a random crop.",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -78,7 +78,11 @@ const rabbits: IFarmCard[] = [
     },
     image: "rummager",
     description: "Gain +5 of a random crop.",
-    buyBonus: "Pack a 📦 into each of your work orders.",
+    buyBonus: (
+      <span>
+        Pack a <b>📦Crate</b> into each of your work orders.
+      </span>
+    ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -93,9 +97,14 @@ const rabbits: IFarmCard[] = [
       berries: 2,
     },
     image: "rummager",
-    description: "Gain +2 of a random crop",
-    buyBonus: "Your Rivals each gain a random crop",
-    energy: 3,
+    description: (
+      <span>
+        Gain +3 of a random crop. <br />
+        Your Rivals each gain +1 of that same crop.
+      </span>
+    ),
+    buyBonus: "Your Rivals each gain a random crop.",
+    energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],

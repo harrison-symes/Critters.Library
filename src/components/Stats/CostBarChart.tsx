@@ -118,11 +118,6 @@ const CostBarChart = (props: IProps) => {
           height={350}
           series={[
             {
-              color: "orange",
-              label: "Carrots",
-              data: costs.map((cost) => costMap.carrots.freq[cost]),
-            },
-            {
               color: "lightgreen",
               label: "Apples",
               data: costs.map((cost) => costMap.apples.freq[cost]),
@@ -131,6 +126,11 @@ const CostBarChart = (props: IProps) => {
               color: "violet",
               label: "Berries",
               data: costs.map((cost) => costMap.berries.freq[cost]),
+            },
+            {
+              color: "orange",
+              label: "Carrots",
+              data: costs.map((cost) => costMap.carrots.freq[cost]),
             },
           ]}
           xAxis={[
@@ -146,6 +146,7 @@ const CostBarChart = (props: IProps) => {
             <TableCell>Crop</TableCell>
             <TableCell>Median</TableCell>
             <TableCell>Average</TableCell>
+            <TableCell>Total</TableCell>
           </TableHead>
           <TableBody>
             <TableRow>
@@ -156,6 +157,7 @@ const CostBarChart = (props: IProps) => {
               <TableCell>
                 {(costMap.apples.sum / props.deck.length).toFixed(2)}
               </TableCell>
+              <TableCell>{costMap.apples.sum}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>🫐</TableCell>
@@ -165,6 +167,7 @@ const CostBarChart = (props: IProps) => {
               <TableCell>
                 {(costMap.berries.sum / props.deck.length).toFixed(2)}
               </TableCell>
+              <TableCell>{costMap.berries.sum}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>🥕</TableCell>
@@ -174,6 +177,7 @@ const CostBarChart = (props: IProps) => {
               <TableCell>
                 {(costMap.carrots.sum / props.deck.length).toFixed(2)}
               </TableCell>
+              <TableCell>{costMap.carrots.sum}</TableCell>
             </TableRow>
           </TableBody>
         </Table>

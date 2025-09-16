@@ -1,7 +1,6 @@
 import {
   CARD_SUBTYPE,
   CARD_TYPE,
-  ICard,
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
@@ -11,27 +10,37 @@ const items: IFarmCard[] = [
     name: "Recycling Bin",
     cost: {
       apples: 0,
-      berries: 3,
-      carrots: 1,
+      berries: 2,
+      carrots: 2,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    description: "Gain +2 Apples. Fast-track an Item card. Holdable.",
+    description: (
+      <span>
+        Gain +2 🍏. <br /> <b>Fast-track</b> an <b>🎒Item</b>.<br />
+        <b>Discount</b>.
+      </span>
+    ),
     holdable: true,
-    buyBonus: "Discount",
+    buyBonus: (
+      <span>
+        Get a <b>🤝Favour</b> from the Market for free.
+      </span>
+    ),
     tags: [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_APPLE,
       TAGS.FAST_TRACK,
       TAGS.DISCOUNT,
+      TAGS.FREE_FAVOUR,
     ],
   },
   {
     name: "Closed Sign",
     cost: {
-      apples: 3,
-      berries: 1,
+      apples: 2,
+      berries: 2,
       carrots: 0,
     },
     qty: 1,
@@ -42,16 +51,27 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_CARROT,
       TAGS.ADD_ZZZ,
       TAGS.DISCOUNT,
+      TAGS.FREE_FAVOUR,
     ],
-    description: "Gain +2 Carrots. Add 1 Zzz to EVERY critter.",
-    buyBonus: "Discount",
+    description: (
+      <span>
+        Gain +2 🥕. <br />
+        Add 1 💤 to EVERY <b>🐾Critter</b>. <br />
+        <b>Discount</b>.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        Get a <b>🤝Favour</b> from the Market for free.
+      </span>
+    ),
   },
   {
     name: "Loyalty Card",
     cost: {
-      apples: 1,
+      apples: 2,
       berries: 0,
-      carrots: 3,
+      carrots: 2,
     },
     qty: 1,
     type: CARD_TYPE.Item,
@@ -61,10 +81,20 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_BERRY,
       TAGS.DISCOUNT,
       TAGS.SNATCH_DISCOUNT,
+      TAGS.FREE_FAVOUR,
     ],
-    description:
-      "Gain +2 Berries. Snatch a discounted crop from a card in the Market.",
-    buyBonus: "Discount",
+    description: (
+      <span>
+        Gain +2 🫐. <br />
+        <b>Discount</b>.<br />
+        <b>Snatch</b> a discounted crop from a card in the Market.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        Get a <b>🤝Favour</b> from the Market for free.
+      </span>
+    ),
   },
   {
     name: "Cooked Books",
@@ -82,8 +112,13 @@ const items: IFarmCard[] = [
       TAGS.FINANCE_SYNERGY,
       TAGS.TOP_OF_DECK,
     ],
-    description:
-      "Sell a card from your discard pile. If it is a Finance card, put it back on top of your deck after.",
+    description: (
+      <span>
+        <b>Sell</b> a card from your discard pile. <br />
+        If it was a <b>🏦Finance</b> card, put it back onto the top of your deck
+        after.
+      </span>
+    ),
   },
   {
     name: "Instruction manual",
@@ -96,8 +131,12 @@ const items: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
     tags: [TAGS.DISCARD_OWN, TAGS.FREE_CRATE, TAGS.CARD_DRAW],
-    description:
-      "Discard a card from hand to pack a free crate into a Work Order.",
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to pack a free crate into a{" "}
+        <b>Work Order</b>.
+      </span>
+    ),
     recycle: "Draw 2 cards.",
   },
   {
@@ -119,9 +158,23 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_ALL,
     ],
     holdable: true,
-    description:
-      "Sell a card from your discard pile -OR- Trash 2 cards from your discard pile. Holdable.",
-    recycle: "Gain 1 of each crop",
+    description: (
+      <span>
+        <b>Sell</b> a card from your discard pile
+        <br />
+        <b>-OR-</b>
+        <br />
+        <b>Trash</b> 2 cards from your discard pile.
+      </span>
+    ),
+    recycle: (
+      <span>
+        Gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>
+      </span>
+    ),
   },
   {
     name: "Gift Card",
@@ -133,9 +186,14 @@ const items: IFarmCard[] = [
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
+    sellable: true,
     tags: [TAGS.TOP_OF_DECK, TAGS.FREE_CARD],
-    description:
-      "Put a Farm card from the shop on top of your deck. Put Gift Card back into the shop.",
+    description: (
+      <span>
+        Put a Farm card from the Market onto the top of your deck. <br /> Put{" "}
+        <b>Gift Card</b> back into the Market.
+      </span>
+    ),
   },
   {
     name: "Paper Shredder",
@@ -147,14 +205,24 @@ const items: IFarmCard[] = [
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
+    sellable: true,
     tags: [
       TAGS.ADD_TO_HAND,
       TAGS.TRASH,
       TAGS.TRASH_FROM_DISCARD,
       TAGS.FAST_TRACK,
     ],
-    description: "Play an Item card from your discard pile, and then Trash it.",
-    buyBonus: "Fast-track a card.",
+    description: (
+      <span>
+        Play an <b>🎒Item</b> card from your discard pile, and then <b>Trash</b>{" "}
+        it.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Fast-track</b> a card.
+      </span>
+    ),
   },
   {
     name: "Open Sign",
@@ -173,8 +241,13 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_RANDOM,
       TAGS.ADD_TO_HAND,
     ],
-    description:
-      "Refresh 2 cards in the Market. Gain 2 random crops. Discount.",
+    description: (
+      <span>
+        <b>Refresh</b> 2 cards in the Market. <br /> Gain 2 random crops.
+        <br />
+        <b>Discount</b>.
+      </span>
+    ),
     buyBonus: "Put this card into your hand.",
   },
   {
@@ -189,8 +262,16 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Finance,
     tags: [TAGS.GIFT, TAGS.TRASH],
     unsellable: true,
-    description: "Gift a card from your discard pile.",
-    recycle: "Trash this card",
+    description: (
+      <span>
+        <b>Gift</b> a card from your discard pile.
+      </span>
+    ),
+    recycle: (
+      <span>
+        <b>Trash</b> this card.
+      </span>
+    ),
   },
   {
     name: "Register",
@@ -203,8 +284,12 @@ const items: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
     tags: [TAGS.CROP_STEAL, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
-    description:
-      "Steal one type of crop from a Rival until your have more of that crop than they do.",
+    description: (
+      <span>
+        <b>Steal</b> one type of crop from a Rival until you have more of that
+        crop than they do.
+      </span>
+    ),
     recycle: "Gain 3 random crops.",
   },
   {
@@ -225,7 +310,13 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_RANDOM,
       TAGS.DISCOUNT,
     ],
-    description: "Sell a card from your hand. Draw a card. Discount.",
+    description: (
+      <span>
+        <b>Sell</b> a card from your hand. <br />
+        Draw a card.
+        <br /> <b>Discount</b>.
+      </span>
+    ),
     recycle: "Gain +2 of a random crop.",
   },
   {
@@ -245,8 +336,17 @@ const items: IFarmCard[] = [
       TAGS.SUNLIGHT_ADD,
       TAGS.FAST_TRACK,
     ],
-    description: "Gain +2 Apples. Add 1 Sunlight to each of your Seeds.",
-    buyBonus: "Fast-track a Seed card.",
+    description: (
+      <span>
+        Gain +2 🍏.
+        <br /> Add 1 <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Fast-track</b> a <b>🌱Seed</b>.
+      </span>
+    ),
   },
   {
     name: "Binoculars",
@@ -264,8 +364,16 @@ const items: IFarmCard[] = [
       TAGS.FAST_TRACK,
       TAGS.REFRESH,
     ],
-    description: "Gain +2 Carrots. Fast-track a Critter card.",
-    buyBonus: "Refresh a card.",
+    description: (
+      <span>
+        Gain +2 🥕. <br /> <b>Fast-track</b> a <b>🐾Critter</b>.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Refresh</b> a card.
+      </span>
+    ),
   },
   {
     name: "Water Cooler",
@@ -277,15 +385,25 @@ const items: IFarmCard[] = [
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
+    sellable: true,
     tags: [
       TAGS.ADD_ZZZ,
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_BERRY,
       TAGS.REMOVE_ZZZ,
     ],
-    description:
-      "Gain +2 Berries. Move 1 Zzz from one of your Critters to ANY other Critter.",
-    buyBonus: "Add 1 Zzz to a Critter",
+    description: (
+      <span>
+        Gain +2 🫐. <br /> Move 1 💤 from one of your <b>🐾Critters</b> to ANY
+        other
+        <b>🐾Critter</b>.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        Add 1 💤 to a Rival's <b>🐾Critter</b>.
+      </span>
+    ),
   },
   {
     name: "Small Backpack",
@@ -297,35 +415,52 @@ const items: IFarmCard[] = [
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
+    sellable: true,
     tags: [
       TAGS.DISCARD_OWN,
       TAGS.CARD_DRAW,
       TAGS.TRASH,
       TAGS.TRASH_FROM_DISCARD,
     ],
-    description: "Discard a card from hand to draw 2 cards.",
-    buyBonus: "Trash a card from your discard pile.",
+    description: (
+      <span>
+        <b>Discard</b> a card from hand to draw 2 cards.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Trash</b> a card from your <b>discard</b> pile.
+      </span>
+    ),
   },
   {
     name: "Convincing Disguise",
     cost: {
       apples: 0,
-      berries: 2,
+      berries: 3,
       carrots: 1,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_STEAL, TAGS.CROP_GENERATION_RANDOM],
-    description:
-      "Gain a random crop. Steal one of that crop type from each Rival.",
-    recycle: "Steal 2 crops from a Rival",
+    description: (
+      <span>
+        Gain +2 of a random crop.
+        <br /> <b>Steal</b> one of that crop type from each Rival.
+      </span>
+    ),
+    recycle: (
+      <span>
+        <b>Steal</b> 2 crops from a Rival.
+      </span>
+    ),
   },
   {
     name: "Watering Can",
     cost: {
       apples: 0,
-      berries: 2,
+      berries: 1,
       carrots: 2,
     },
     qty: 1,
@@ -333,13 +468,15 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Tool,
     tags: [TAGS.TOP_OF_DECK],
     holdable: true,
-    description: "Put a card from your discard pile on top of your deck.",
-    buyBonus: "Put this card on top of your deck.",
+    description: (
+      <span>Put a card from your discard pile onto the top of your deck.</span>
+    ),
+    buyBonus: "Put this card onto the top of your deck.",
   },
   {
     name: "Dustpan",
     cost: {
-      apples: 2,
+      apples: 3,
       berries: 2,
       carrots: 2,
     },
@@ -353,8 +490,22 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_ALL,
       TAGS.DISCOUNT,
     ],
-    description: "Refresh a row in the Market. Gain 1 of each crop. Discount.",
-    recycle: "Reset your deck.",
+    description: (
+      <span>
+        <b>Refresh</b> a row in the Market.
+        <br /> Gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>.
+        </span>
+        <br />
+        <b>Discount</b>.
+      </span>
+    ),
+    recycle: (
+      <span>
+        <b>Reset</b> your deck.
+      </span>
+    ),
   },
   {
     name: "Knapsack",
@@ -372,9 +523,13 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_RANDOM,
     ],
-    description:
-      "Steal 2 crops from a Rival. Discard a card from hand to steal 1 more.",
-    recycle: "Gain 3 random crops",
+    description: (
+      <span>
+        <b>Steal</b> 2 crops from a Rival. <br /> Discard a card from hand to{" "}
+        <b>Steal</b> 1 more.
+      </span>
+    ),
+    recycle: "Gain 3 random crops.",
   },
   {
     name: "Compost Bin",
@@ -387,9 +542,24 @@ const items: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
     tags: [TAGS.DISCARD_OWN, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
-    description:
-      "Discard every card from your hand. Gain 1 of each crop for each card discarded.",
-    recycle: "Gain 1 of each crop.",
+    description: (
+      <span>
+        <b>Discard</b> every card from your hand. <br /> Gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>{" "}
+        for each card discarded.
+      </span>
+    ),
+    recycle: (
+      <span>
+        Gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>
+        .
+      </span>
+    ),
   },
   {
     name: "Toolbelt",
@@ -403,16 +573,19 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Tool,
     tags: [TAGS.CARD_DRAW, TAGS.TOOL_SYNERGY, TAGS.TOP_OF_DECK],
     holdable: true,
-    description:
-      "Put a Tool from your discard pile on top of your deck. Holdable.",
+    description: (
+      <span>
+        Put a <b>🛠️Tool</b> from your discard pile onto the top of your deck.
+      </span>
+    ),
     recycle: "Draw a card.",
   },
   {
     name: "Trusty Trowel",
     cost: {
       apples: 2,
-      berries: 1,
-      carrots: 2,
+      berries: 2,
+      carrots: 3,
     },
     qty: 1,
     type: CARD_TYPE.Item,
@@ -423,8 +596,12 @@ const items: IFarmCard[] = [
       TAGS.SEED_SYNERGY,
       TAGS.ADD_TO_HAND,
     ],
-    description:
-      "Gain +3 of a random crop. Put a Seed card from your discard pile into your hand.",
+    description: (
+      <span>
+        Gain +3 of a random crop.
+        <br /> Put a <b>🌱Seed</b> from your discard pile into your hand.
+      </span>
+    ),
   },
   {
     name: "Dusty Broom",
@@ -437,9 +614,13 @@ const items: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
     tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT, TAGS.REFRESH, TAGS.RESET_DECK],
-    description:
-      "Discount, Snatch the discounted crops from a card in the Market, then refresh that card.",
-    buyBonus: "Reset your deck.",
+    description: (
+      <span>
+        <b>Discount</b>.<br />
+        <b>Snatch</b> the discounted crops from a card in the Market, then{" "}
+        <b>Refresh</b> that card.
+      </span>
+    ),
   },
   {
     name: "Rat Food",
@@ -453,7 +634,17 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE, TAGS.REFRESH],
     sellable: true,
-    description: "Gain +3 Apples. Refresh 2 cards.",
+    description: (
+      <span>
+        Gain +3🍏. <br />
+        <b>Refresh</b> 2 cards.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Sell</b> a <b>🏠Starter</b> card from your discard pile.
+      </span>
+    ),
   },
   {
     name: "Rabbit Food",
@@ -465,9 +656,19 @@ const items: IFarmCard[] = [
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT, TAGS.REMOVE_ZZZ],
-    description:
-      "Gain +3 Carrots. Remove 1 Zzz counter from 3 of your Critters.",
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_CARROT,
+      TAGS.REMOVE_ZZZ,
+      TAGS.CARD_DRAW,
+    ],
+    description: (
+      <span>
+        Gain +3 🥕. <br />
+        Remove 1 💤 from 3 of your <b>🐾Critters</b>.
+      </span>
+    ),
+    recycle: <span>Draw a card.</span>,
   },
   {
     name: "Hog Food",
@@ -484,8 +685,19 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_BERRY,
       TAGS.TREAT_SYNERGY,
       TAGS.FAST_TRACK,
+      TAGS.TRASH,
+      TAGS.TRASH_FROM_DISCARD,
     ],
-    description: "Gain +3 Berries. Fast-track this or another Treat.",
+    description: (
+      <span>
+        Gain +3 🫐. <br /> <b>Fast-track</b> this or another <b>🧁Treat</b>.
+      </span>
+    ),
+    recycle: (
+      <span>
+        <b>Trash</b> a card from your discard pile.
+      </span>
+    ),
   },
   {
     name: "Picnic Basket",
@@ -502,8 +714,19 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION_ALL,
       TAGS.CROP_GENERATION_RANDOM,
     ],
-    description: "Gain +2 of a random crop. Gain +1 of each other crop.",
-    recycle: "Gain +2 of each crop.",
+    description: (
+      <span>
+        Gain +2 of a random crop. <br /> Gain +1 of each other crop.
+      </span>
+    ),
+    recycle: (
+      <span>
+        Gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>
+      </span>
+    ),
   },
   {
     name: "Award Winning Crop",
@@ -515,6 +738,7 @@ const items: IFarmCard[] = [
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
+    sellable: true,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.CARD_DRAW],
     description: "Gain +5 of a random crop.",
     recycle: "Draw 2 cards.",
@@ -530,8 +754,22 @@ const items: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
-    description: "Gain +2 of each crop.",
-    buyBonus: "Each Rival gets +1 of each crop.",
+    description: (
+      <span>
+        Gain{" "}
+        <span className="nowrap">
+          <b>+2🍏</b>, <b>+2🫐</b>, <b>+2🥕</b>
+        </span>
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        Your Rivals each gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>
+      </span>
+    ),
   },
   {
     name: "Pot of Feed",
@@ -545,7 +783,11 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.REMOVE_ZZZ, TAGS.CARD_DRAW],
     description: "Draw 2 cards",
-    buyBonus: "Remove 1 Zzz from each of your Critters.",
+    buyBonus: (
+      <span>
+        Remove 1 💤 from each of your <b>🐾Critters</b>.
+      </span>
+    ),
   },
   {
     name: "Midnight Snack",
@@ -559,7 +801,7 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CROP_GENERATION, TAGS.CARD_DRAW, TAGS.CROP_GENERATION_RANDOM],
     description: "Gain a random crop. Draw a card.",
-    buyBonus: "Each player gets a random crop",
+    buyBonus: "Each player gains a random crop",
   },
   {
     name: "Pik'n'mix",
@@ -586,8 +828,16 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Treat,
     holdable: true,
     tags: [TAGS.REMOVE_ZZZ],
-    description: "Remove all Zzz counters from one of your Critters. Holdable",
-    recycle: "Exhaust a Rival's Critter.",
+    description: (
+      <span>
+        Remove all 💤 from one of your <b>🐾Critters</b>.
+      </span>
+    ),
+    recycle: (
+      <span>
+        <b>Exhaust</b> a Rival's <b>🐾Critter</b>.
+      </span>
+    ),
   },
   {
     name: "Sharing Plate",
@@ -601,7 +851,12 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     description:
-      "Gain +4 of a crop of your choosing. Each Rival also gains +1 of that crop.",
+      "Gain +4 of a crop of your choosing. Your Rivals each gain +1 of that crop.",
+    buyBonus: (
+      <span>
+        <b>Gift</b> a card from your discard pile.
+      </span>
+    ),
   },
   {
     name: "Plant Food",
@@ -615,8 +870,12 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.SEED_SYNERGY, TAGS.ADD_TO_HAND, TAGS.SUNLIGHT_ADD],
     holdable: true,
-    description:
-      "Plant all Seed cards from your discard pile. Add 1 Sunlight to each of your Seeds. Holdable.",
+    description: (
+      <span>
+        Plant all <b>🌱Seed</b> cards from your discard pile. <br /> Add 1{" "}
+        <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+      </span>
+    ),
   },
   {
     name: "Goldfish",
@@ -630,8 +889,17 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Gift,
     tags: [TAGS.GIFT],
     unsellable: true,
-    description: "This does nothing. You cannot Sell or Trash this card..",
-    buyBonus: "Gift this to a Rival.",
+    description: (
+      <span>
+        This does nothing. <br />
+        You cannot <b>Sell</b> or <b>Trash</b> this card...
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Gift</b> this to a Rival.
+      </span>
+    ),
   },
   {
     name: "Birthday Present",
@@ -645,7 +913,11 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Gift,
     unsellable: true,
     tags: [TAGS.GIFT, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
-    description: "Gain 3 random crops, then gift this to a Rival.",
+    description: (
+      <span>
+        Gain 3 random crops. <br /> <b>Gift</b> this to a Rival.
+      </span>
+    ),
   },
   {
     name: "Hot Potato",
@@ -659,8 +931,16 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Gift,
     tags: [TAGS.GIFT, TAGS.CROP_DESTROY],
     unsellable: true,
-    description: "Destroy 2 of your crops to Gift this to a Rival. Unsellable.",
-    buyBonus: "Gift this to a Rival.",
+    description: (
+      <span>
+        Destroy 2 of your crops to <b>Gift</b> this to a Rival.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Gift</b> this to a Rival.
+      </span>
+    ),
   },
   {
     name: "Rotten Crops",
@@ -674,8 +954,12 @@ const items: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Gift,
     tags: [TAGS.GIFT, TAGS.CROP_DESTROY, TAGS.CARD_DRAW],
     unsellable: true,
-    description: "Destroy 2 of your crops to draw a card. Unsellable.",
-    buyBonus: "Gift this to a Rival",
+    description: <span>Destroy 2 of your crops to draw a card.</span>,
+    buyBonus: (
+      <span>
+        <b>Gift</b> this to a Rival.
+      </span>
+    ),
   },
 ];
 

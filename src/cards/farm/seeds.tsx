@@ -157,12 +157,21 @@ const seeds: IFarmCard[] = [
     type: CARD_TYPE.Seeds,
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.SELL_FROM_HAND],
     sunlight: {
-      two: (
+      one: (
         <span>
-          <b>Sell</b> a card from your hand...
+          <b>Trash</b> a card from your hand.
         </span>
       ),
-      three: "...or discard pile.",
+      two: (
+        <span>
+          <b>Trash</b> a card from your discard pile.
+        </span>
+      ),
+      three: (
+        <span>
+          <b>Sell</b> a card from your discard pile.
+        </span>
+      ),
     },
   },
   {

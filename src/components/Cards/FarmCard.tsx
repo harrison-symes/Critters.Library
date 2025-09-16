@@ -75,6 +75,21 @@ const FarmCard = (props: IProps) => {
         <CropCost card={props.card} crop="carrots" />
       </div>
       <div className="card__description__container">
+        {props.card.holdable && (
+          <div className="card__description__block card__description__block--special">
+            Holdable
+          </div>
+        )}
+        {props.card.sellable && (
+          <div className="card__description__block card__description__block--special">
+            Sellable
+          </div>
+        )}
+        {props.card.unsellable && (
+          <div className="card__description__block card__description__block--special">
+            Unsellable
+          </div>
+        )}
         <div
           className={cn("card__description__block", {
             "card__description__block--solo":

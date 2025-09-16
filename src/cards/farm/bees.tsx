@@ -17,7 +17,7 @@ const bees: IFarmCard[] = [
     image: "rummager",
     description: (
       <span>
-        If you have 3 <b>Work Orders</b>, <b>Gain</b>{" "}
+        If you have 3 <b>Work Orders</b>, Gain{" "}
         <span className="nowrap">
           <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
         </span>

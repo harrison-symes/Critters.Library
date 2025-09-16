@@ -99,6 +99,9 @@ const NewDisplay = () => {
   return (
     <div className="display">
       <Filters />
+      <h1>
+        {filteredDuplicatesDeck.length} cards ({filteredDeck.length} unique)_
+      </h1>
       <div className="display__split">
         <Cards farmDeck={filteredDeck} />
         <Stats deck={filteredDuplicatesDeck} />
