@@ -1,6 +1,11 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const raccoons: ICard[] = [
+const raccoons: IFarmCard[] = [
   {
     name: "Rummager",
     qty: 2,
@@ -10,8 +15,16 @@ const raccoons: ICard[] = [
       carrots: 1,
     },
     image: "rummager",
-    description: "Discard a card from your hand to draw a card",
-    buyBonus: "Fast-track a Starter card",
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to draw a card.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Fast-track</b> a <b>🏠Starter</b> card.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
@@ -26,8 +39,12 @@ const raccoons: ICard[] = [
       carrots: 2,
     },
     image: "rummager",
-    description:
-      "Discard a card from hand to Sell a different card from your discard pile.",
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to <b>Sell</b> a different card
+        from your discard pile.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
@@ -42,8 +59,12 @@ const raccoons: ICard[] = [
       carrots: 3,
     },
     image: "rummager",
-    description:
-      "Discard a card from hand, then return that card to your hand.",
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand, then return that card to your
+        hand.
+      </span>
+    ),
     recycle: "Put this card into your hand.",
     energy: 3,
     type: CARD_TYPE.Critter,

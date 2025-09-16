@@ -1,6 +1,12 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  ICard,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const rabbits: ICard[] = [
+const rabbits: IFarmCard[] = [
   {
     name: "Carrot Grower",
     qty: 2,
@@ -10,7 +16,7 @@ const rabbits: ICard[] = [
       carrots: 4,
     },
     image: "rummager",
-    description: "Gain +2 Carrots",
+    description: "Gain +2 🥕",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -25,7 +31,7 @@ const rabbits: ICard[] = [
       carrots: 2,
     },
     image: "rummager",
-    description: "+2 Berries",
+    description: "Gain +2 🫐",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -40,14 +46,14 @@ const rabbits: ICard[] = [
       carrots: 2,
     },
     image: "rummager",
-    description: "+2 Apples",
+    description: "Gain +2 🍏",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
   },
   {
-    name: "Agriculturiest",
+    name: "Agriculturist",
     qty: 1,
     cost: {
       apples: 3,
@@ -56,7 +62,7 @@ const rabbits: ICard[] = [
     },
     image: "rummager",
     description: "Gain 3 random crops",
-    buyBonus: "Each of your Rivals gets a random crop",
+    buyBonus: "Your Rivals each gain a random crop",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -72,7 +78,7 @@ const rabbits: ICard[] = [
     },
     image: "rummager",
     description: "Gain +5 of a random crop.",
-    buyBonus: "Pack a free crate into each of your work orders.",
+    buyBonus: "Pack a 📦 into each of your work orders.",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -88,7 +94,7 @@ const rabbits: ICard[] = [
     },
     image: "rummager",
     description: "Gain +2 of a random crop",
-    buyBonus: "Each of your Rivals gets a random crop",
+    buyBonus: "Your Rivals each gain a random crop",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,

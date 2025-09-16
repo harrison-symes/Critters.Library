@@ -11,12 +11,12 @@ import {
   getEffectsFilters,
   getFilteredTags,
 } from "../../store/filtersSlice";
-import { ICard, TAGS } from "../../models/cards.models";
+import { ICard, IFarmCard, TAGS } from "../../models/cards.models";
 import Stats from "../Stats/Stats";
 
 const NewDisplay = () => {
-  const deck = createDeck(true);
-  const duplicatesDeck = createDeck();
+  const farmDeck = createDeck(true);
+  const duplicatesFarmDeck = createDeck();
 
   const cardTypeFilter = useAppSelector(getCardTypeFilter);
   const cardSubTypeFilter = useAppSelector(getCardSubTypeFilter);
@@ -24,8 +24,8 @@ const NewDisplay = () => {
   const effectFilters = useAppSelector(getEffectsFilters);
   const tagFilters = useAppSelector(getFilteredTags);
 
-  const filterDeck = React.useCallback(
-    (cards: ICard[]) => {
+  const filterFarmDeck = React.useCallback(
+    (cards: IFarmCard[]) => {
       return cards.filter((card) => {
         if (cardTypeFilter.length && !cardTypeFilter.includes(card.type)) {
           return false;
@@ -87,20 +87,20 @@ const NewDisplay = () => {
   );
 
   const filteredDeck = React.useMemo(
-    () => filterDeck(deck),
-    [deck, filterDeck]
+    () => filterFarmDeck(farmDeck),
+    [farmDeck, filterFarmDeck]
   );
 
   const filteredDuplicatesDeck = React.useMemo(
-    () => filterDeck(duplicatesDeck),
-    [duplicatesDeck, filterDeck]
+    () => filterFarmDeck(duplicatesFarmDeck),
+    [duplicatesFarmDeck, filterFarmDeck]
   );
 
   return (
     <div className="display">
       <Filters />
       <div className="display__split">
-        <Cards deck={filteredDeck} />
+        <Cards farmDeck={filteredDeck} />
         <Stats deck={filteredDuplicatesDeck} />
       </div>
     </div>

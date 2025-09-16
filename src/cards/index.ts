@@ -1,14 +1,20 @@
-import { CARD_TYPE, ICard, IWorkOrder, TAGS } from "../models/cards.models";
-import bees from "./bees";
-import worms from "./worms";
-import hedgehogs from "./hedgehogs";
+import {
+  CARD_TYPE,
+  ICard,
+  IFarmCard,
+  IWorkOrder,
+  TAGS,
+} from "../models/cards.models";
+import bees from "./farm/bees";
+import worms from "./farm/worms";
+import hedgehogs from "./farm/hedgehogs";
 
-import items from "./items";
-import moles from "./moles";
-import rabbits from "./rabbits";
-import raccoons from "./raccoons";
-import rats from "./rats";
-import seeds from "./seeds";
+import items from "./farm/items";
+import moles from "./farm/moles";
+import rabbits from "./farm/rabbits";
+import raccoons from "./farm/raccoons";
+import rats from "./farm/rats";
+import seeds from "./farm/seeds";
 import workOrders from "./workOrders";
 
 const shuffleDeck = (deck: any[]) => {
@@ -39,8 +45,8 @@ const addToDeck = (deck: ICard[], cards: ICard[], noDuplicates: boolean) => {
   });
 };
 
-export const createDeck = (noDuplicates: boolean = false): ICard[] => {
-  const deck: ICard[] = [];
+export const createDeck = (noDuplicates: boolean = false): IFarmCard[] => {
+  const deck: IFarmCard[] = [];
 
   addToDeck(deck, items, noDuplicates);
   addToDeck(deck, seeds, noDuplicates);

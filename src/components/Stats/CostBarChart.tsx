@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ICard } from "../../models/cards.models";
+import { IFarmCard } from "../../models/cards.models";
 import { BarChart } from "@mui/x-charts";
 import {
   Table,
@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 interface IProps {
-  deck: ICard[];
+  deck: IFarmCard[];
 }
 
 export function medianSorted(xs: number[] = []): number {
@@ -28,7 +28,7 @@ interface CostData {
 }
 
 const CostBarChart = (props: IProps) => {
-  const createCostMap = (deck: ICard[]) => {
+  const createCostMap = (deck: IFarmCard[]) => {
     return deck.reduce(
       (accum, card) => {
         const totalCost =
@@ -109,11 +109,6 @@ const CostBarChart = (props: IProps) => {
 
   const costs = new Array(costMap.max).fill(0).map((_, i) => i + 1);
   const totalCosts = new Array(costMap.totalMax).fill(0).map((_, i) => i + 1);
-
-  const averageTotalCost = costMap.total.sum / props.deck.length;
-  const medianTotalCost = medianSorted(costMap.total.list ?? []);
-
-  console.log(costMap);
 
   return (
     <>

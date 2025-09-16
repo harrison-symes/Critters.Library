@@ -1,6 +1,11 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const rats: ICard[] = [
+const rats: IFarmCard[] = [
   {
     name: "Aristoc-Rat",
     qty: 2,
@@ -10,8 +15,18 @@ const rats: ICard[] = [
       carrots: 0,
     },
     image: "rummager",
-    description: "Get a favour from the shop for free. -OR- Discount.",
-    buyBonus: "Refresh a card.",
+    description: (
+      <span>
+        Get a <b>🤝Favour</b> from the Market for free.
+        <br />
+        <b>Discount</b>
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Refresh</b> a card.
+      </span>
+    ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
@@ -26,9 +41,17 @@ const rats: ICard[] = [
       carrots: 3,
     },
     image: "rummager",
-    description:
-      "Discount 1, then steal the discounted crops from a Farm Card in the shop.",
-    buyBonus: "Refresh a card.",
+    description: (
+      <span>
+        <b>Discount</b>, then snatch the discounted crops from a card in the
+        Market.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Refresh</b> a card.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
@@ -43,8 +66,16 @@ const rats: ICard[] = [
       carrots: 3,
     },
     image: "rummager",
-    description: "Sell a card from your hand to draw a card.",
-    buyBonus: "Fast-track a card.",
+    description: (
+      <span>
+        <b>Sell</b> a card from your hand to draw a card.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Fast-track</b> a card.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,

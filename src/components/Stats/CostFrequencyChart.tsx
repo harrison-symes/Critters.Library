@@ -1,8 +1,8 @@
 import { BarChart } from "@mui/x-charts";
-import { ICard } from "../../models/cards.models";
+import { IFarmCard } from "../../models/cards.models";
 
 interface IProps {
-  deck: ICard[];
+  deck: IFarmCard[];
 }
 
 const CostFrequencyChart = (props: IProps) => {

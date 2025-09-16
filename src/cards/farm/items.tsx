@@ -1,6 +1,12 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  ICard,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const items: ICard[] = [
+const items: IFarmCard[] = [
   {
     name: "Recycling Bin",
     cost: {

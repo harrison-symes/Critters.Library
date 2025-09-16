@@ -1,16 +1,16 @@
 import * as React from "react";
 import "./new-display.scss";
-import { CARD_SUBTYPE, ICard } from "../../models/cards.models";
-import ShopCard from "../ShopCard";
+import { CARD_SUBTYPE, IFarmCard } from "../../models/cards.models";
+import FarmCard from "../Cards/FarmCard";
 
 interface IProps {
-  deck: ICard[];
+  farmDeck: IFarmCard[];
   subType: CARD_SUBTYPE | undefined;
 }
 
 const CardSubTypeList = (props: IProps) => {
   const [isHidden, setIsHidden] = React.useState(false);
-  const matchingCards = props.deck.filter(
+  const matchingCards = props.farmDeck.filter(
     (card) => card.subtype === props.subType
   );
   const title = props.subType ?? "No subtype";
@@ -32,7 +32,7 @@ const CardSubTypeList = (props: IProps) => {
       {!isHidden && (
         <div className="card-subtype__list">
           {matchingCards.map((card) => (
-            <ShopCard card={card} key={card.name} />
+            <FarmCard card={card} key={card.name} />
           ))}
         </div>
       )}

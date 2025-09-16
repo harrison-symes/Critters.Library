@@ -28,7 +28,6 @@ const initialState: FilterState = {
     apples: false,
     berries: false,
     carrots: false,
-    any: false,
   },
   effects: {
     Bonus: false,

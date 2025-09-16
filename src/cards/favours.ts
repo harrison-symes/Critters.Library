@@ -1,15 +1,9 @@
-import { CARD_TYPE, ICard } from "../models/cards.models";
+import { CARD_TYPE, ICard, IFavourCard } from "../models/cards.models";
 
-const favours: ICard[] = [
+const favours: IFavourCard[] = [
   {
     name: "Buyback",
     qty: 2,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Refund a card from your hand.",
     type: CARD_TYPE.Favour,
@@ -17,12 +11,6 @@ const favours: ICard[] = [
   {
     name: "Pickpocket",
     qty: 2,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Steal a crop from your Rival.",
     type: CARD_TYPE.Favour,
@@ -30,12 +18,6 @@ const favours: ICard[] = [
   {
     name: "Pester",
     qty: 2,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Add a Zzz counter to a Rival's critter.",
     type: CARD_TYPE.Favour,
@@ -43,12 +25,6 @@ const favours: ICard[] = [
   {
     name: "Fast-track",
     qty: 2,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Shuffle a card from your discard pile into your deck.",
     type: CARD_TYPE.Favour,
@@ -56,12 +32,6 @@ const favours: ICard[] = [
   {
     name: "Set Asidea",
     qty: 2,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description:
       "Place this on a Farmer Card in the shop. Only you can buy it. Refreshing removes this card.",
@@ -70,12 +40,6 @@ const favours: ICard[] = [
   {
     name: "A Helping Hand",
     qty: 2,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description:
       "Gain +3 of a random crop. Your rival gets 1 of that crop too.",
@@ -84,12 +48,6 @@ const favours: ICard[] = [
   {
     name: "A Quick Nap",
     qty: 2,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Remove a Zzz counter from one of your Critters.",
     type: CARD_TYPE.Favour,
@@ -97,12 +55,6 @@ const favours: ICard[] = [
   {
     name: "Harvest",
     qty: 1,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description:
       "Instantly harvest on of your seeds and shuffle it back into your deck.",
@@ -111,12 +63,6 @@ const favours: ICard[] = [
   {
     name: "Tamper",
     qty: 1,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description:
       "Look at the top 3 cards of your Rival's deck. You may discard one of them.",
@@ -125,12 +71,6 @@ const favours: ICard[] = [
   {
     name: "",
     qty: 1,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Refund a Starter card from your discard pile.",
     type: CARD_TYPE.Favour,
@@ -138,12 +78,6 @@ const favours: ICard[] = [
   {
     name: "Restock",
     qty: 1,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Refresh all Farmer Cards in the shop.",
     type: CARD_TYPE.Favour,
@@ -151,12 +85,6 @@ const favours: ICard[] = [
   {
     name: "Headstart",
     qty: 1,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Get a Work Order for free.",
     type: CARD_TYPE.Favour,
@@ -164,12 +92,6 @@ const favours: ICard[] = [
   {
     name: "Advance Pay",
     qty: 1,
-    cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
-      any: 2,
-    },
     image: "rummager",
     description: "Get a random crop, repeat for each Work Order you have.",
     type: CARD_TYPE.Favour,

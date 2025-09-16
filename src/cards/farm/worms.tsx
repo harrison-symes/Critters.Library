@@ -1,6 +1,11 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const worms: ICard[] = [
+const worms: IFarmCard[] = [
   {
     name: "Fertiliser",
     qty: 2,
@@ -10,8 +15,16 @@ const worms: ICard[] = [
       carrots: 0,
     },
     image: "rummager",
-    description: "Add 1 Sunlight to each of your seeds",
-    buyBonus: "Fast-track a Seed",
+    description: (
+      <span>
+        Add 1 <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Fast-track</b> a <b>Seed</b>.
+      </span>
+    ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
@@ -26,7 +39,11 @@ const worms: ICard[] = [
       carrots: 3,
     },
     image: "rummager",
-    description: "Put a Seeds card from your discard pile into your hand.",
+    description: (
+      <span>
+        Put a <b>🌱Seed</b> from your discard pile into your hand.
+      </span>
+    ),
     recycle: "Gain +3 of a random crop.",
     energy: 2,
     type: CARD_TYPE.Critter,
@@ -47,8 +64,12 @@ const worms: ICard[] = [
       carrots: 1,
     },
     image: "rummager",
-    description:
-      "Remove all of the sunlight from a seed card, gain a random crop for each sunlight removed. If the Seed was yours, add 2 Sunlight to it.",
+    description: (
+      <span>
+        Remove 1 <b>☀️Sunlight</b> from ALL <b className="nowrap">🌱Seeds</b>.{" "}
+        <br /> Gain a random crop for each <b>☀️Sunlight</b> removed.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,

@@ -34,7 +34,7 @@ const CropFilter = (props: ICropFilterProps) => {
 const CropFilters = () => {
   return (
     <FiltersGroup title="Crop Cost">
-      {[RESOURCE.APPLE, RESOURCE.BERRY, RESOURCE.CARROT].map((crop) => (
+      {(["apples", "berries", "carrots"] as RESOURCE[]).map((crop) => (
         <CropFilter crop={crop} key={crop} />
       ))}
     </FiltersGroup>

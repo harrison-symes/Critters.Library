@@ -1,6 +1,11 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const bees: ICard[] = [
+const bees: IFarmCard[] = [
   {
     name: "Worker Bee",
     qty: 2,
@@ -10,7 +15,15 @@ const bees: ICard[] = [
       berries: 3,
     },
     image: "rummager",
-    description: "If you have 3 work orders, gain +1 of each crop.",
+    description: (
+      <span>
+        If you have 3 <b>Work Orders</b>, <b>Gain</b>{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>
+        .
+      </span>
+    ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
@@ -25,8 +38,15 @@ const bees: ICard[] = [
       berries: 3,
     },
     image: "rummager",
-    description:
-      "If you have 3 work orders, Steal 1 of each crop from a Rival.",
+    description: (
+      <span>
+        If you have 3 <b>Work Orders</b>, <b>Steal</b>{" "}
+        <span className="nowrap">
+          <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
+        </span>{" "}
+        from a Rival.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
@@ -41,8 +61,12 @@ const bees: ICard[] = [
       berries: 3,
     },
     image: "rummager",
-    description:
-      "If you have 3 Work Orders, Fast-track a Critter, Seed and Item card.",
+    description: (
+      <span>
+        If you have 3 <b>Work Orders</b>, <b>Fast-track</b> a <b>🐾Critter</b>,
+        a <b>🌱Seed</b> and an <b>🎒Item</b>.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,

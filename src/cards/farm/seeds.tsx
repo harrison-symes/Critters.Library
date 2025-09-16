@@ -1,6 +1,6 @@
-import { CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import { CARD_TYPE, IFarmCard, TAGS } from "../../models/cards.models";
 
-const seeds: ICard[] = [
+const seeds: IFarmCard[] = [
   {
     name: "Apple Seeds",
     qty: 3,
@@ -10,13 +10,25 @@ const seeds: ICard[] = [
       berries: 0,
     },
     image: "rummager",
-    description: "Gains 1 Sunlight at the end of each turn.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
     sunlight: {
-      one: "+2 Apples",
-      two: "+4 Apples",
-      three: "+5 Apples",
+      one: (
+        <span className="nowrap">
+          Gain +2 <b>🍏</b>
+        </span>
+      ),
+      two: (
+        <span className="nowrap">
+          Gain +4 <b>🍏</b>
+        </span>
+      ),
+      three: (
+        <span className="nowrap">
+          Gain +5 <b>🍏</b>
+        </span>
+      ),
     },
   },
   {
@@ -28,13 +40,25 @@ const seeds: ICard[] = [
       berries: 3,
     },
     image: "rummager",
-    description: "Gains 1 Sunlight at the end of each turn.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
     sunlight: {
-      one: "+2 Berries",
-      two: "+4 Berries",
-      three: "+5 Berries",
+      one: (
+        <span className="nowrap">
+          Gain +2 <b>🫐</b>
+        </span>
+      ),
+      two: (
+        <span className="nowrap">
+          Gain +4 <b>🫐</b>
+        </span>
+      ),
+      three: (
+        <span className="nowrap">
+          Gain +5 <b>🫐</b>
+        </span>
+      ),
     },
   },
   {
@@ -46,13 +70,25 @@ const seeds: ICard[] = [
       berries: 0,
     },
     image: "rummager",
-    description: "Gains 1 Sunlight at the end of each turn.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
     sunlight: {
-      one: "+2 Carrots",
-      two: "+4 Carrots",
-      three: "+5 Carrots",
+      one: (
+        <span className="nowrap">
+          Gain +2 <b>🥕</b>
+        </span>
+      ),
+      two: (
+        <span className="nowrap">
+          Gain +4 <b>🥕</b>
+        </span>
+      ),
+      three: (
+        <span className="nowrap">
+          Gain +5 <b>🥕</b>
+        </span>
+      ),
     },
   },
   {
@@ -64,14 +100,13 @@ const seeds: ICard[] = [
       berries: 1,
     },
     image: "rummager",
-    description:
-      "Gains 1 Sunlight at the end of each turn. 1 Sunlight: 1 random crop. 2 Sunlight: 3 of a random crop. 3 Sunlight: 4 of a random crop.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     sunlight: {
-      one: "+1 of a random crop.",
-      two: "+3 of a random crop.",
-      three: "+5 of a random crop.",
+      one: "Gain a random crop.",
+      two: "Gain +3 of a random crop.",
+      three: "Gain +4 of a random crop.",
     },
   },
   {
@@ -83,8 +118,7 @@ const seeds: ICard[] = [
       berries: 2,
     },
     image: "rummager",
-    description:
-      "Gains 1 Sunlight at the end of each turn. 1 Sunlight: 2 random crops. 2 Sunlight: 4 random crops. 3 Sunlight: 5 random crops.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     sunlight: {
@@ -102,7 +136,7 @@ const seeds: ICard[] = [
       berries: 2,
     },
     image: "rummager",
-    description: "Gains 1 Sunlight at the end of each turn.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CARD_DRAW],
     sunlight: {
@@ -119,11 +153,15 @@ const seeds: ICard[] = [
       berries: 1,
     },
     image: "rummager",
-    description: "Gains 1 Sunlight at the end of each turn.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.SELL_FROM_HAND],
     sunlight: {
-      two: "Sell a card from your hand...",
+      two: (
+        <span>
+          <b>Sell</b> a card from your hand...
+        </span>
+      ),
       three: "...or discard pile.",
     },
   },
@@ -136,12 +174,16 @@ const seeds: ICard[] = [
       berries: 1,
     },
     image: "rummager",
-    description: "Gains 1 Sunlight at the end of each turn.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.SUNLIGHT_ADD, TAGS.TOP_OF_DECK, TAGS.SEED_SYNERGY],
     sunlight: {
-      two: "Add 2 Sunlight to each of your Seeds...",
-      three: "...And put this card on top of your deck.",
+      two: (
+        <span>
+          Add <b>2 ☀️Sunlight</b> to each of your <b>🌱Seeds</b>...
+        </span>
+      ),
+      three: "...and put this card onto the top of your deck.",
     },
   },
   {
@@ -153,12 +195,12 @@ const seeds: ICard[] = [
       berries: 2,
     },
     image: "rummager",
-    description: "Gains 1 Sunlight at the end of each turn.",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.FREE_CARD, TAGS.TOP_OF_DECK],
     sunlight: {
       two: "Put a Farm card from the Market into your discard pile...",
-      three: "...or on top of your deck.",
+      three: "...or onto the top of your deck.",
     },
   },
 ];

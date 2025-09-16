@@ -1,6 +1,11 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const hedgehogs: ICard[] = [
+const hedgehogs: IFarmCard[] = [
   {
     name: "Skewerer",
     qty: 2,
@@ -10,8 +15,16 @@ const hedgehogs: ICard[] = [
       carrots: 1,
     },
     image: "rummager",
-    description: "Put a Tool card from your discard pile on top of your deck.",
-    buyBonus: "Gift a card from your discard pile.",
+    description: (
+      <span>
+        Put a <b>🛠️Tool</b> from your discard pile onto the top of your deck.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Gift</b> a card from your discard pile.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
@@ -27,8 +40,16 @@ const hedgehogs: ICard[] = [
     },
     image: "rummager",
     energy: 2,
-    description: "Fast-track a Treat card.",
-    recycle: "Trash a card from your discard pile",
+    description: (
+      <span>
+        <b>Fast-track</b> a <b>🧁Treat</b>.
+      </span>
+    ),
+    recycle: (
+      <span>
+        <b>Trash</b> a card from your discard pile.
+      </span>
+    ),
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.FAST_TRACK, TAGS.TREAT_SYNERGY, TAGS.TRASH_FROM_DISCARD],
@@ -43,7 +64,11 @@ const hedgehogs: ICard[] = [
     },
     image: "rummager",
     energy: 2,
-    description: "Gift a card from your discard pile.",
+    description: (
+      <span>
+        <b>Gift</b> a card from your discard pile.
+      </span>
+    ),
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.GIFT],

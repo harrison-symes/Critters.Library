@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ICard } from "../../models/cards.models";
+import { ICard, IFarmCard } from "../../models/cards.models";
 
 import "./stats.scss";
 import CostBarChart from "./CostBarChart";
@@ -7,7 +7,7 @@ import CostFrequencyChart from "./CostFrequencyChart";
 import CropCostBreakdown from "./CropCostBreakdown";
 
 interface IStatsProps {
-  deck: ICard[];
+  deck: IFarmCard[];
 }
 
 const Stats = (props: IStatsProps) => {

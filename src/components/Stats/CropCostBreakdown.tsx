@@ -5,11 +5,10 @@ import {
   TableBody,
   TableRow,
 } from "@mui/material";
-import { ICard, RESOURCE } from "../../models/cards.models";
-import { medianSorted } from "./CostBarChart";
+import { IFarmCard } from "../../models/cards.models";
 
 interface IProps {
-  deck: ICard[];
+  deck: IFarmCard[];
 }
 
 const CropCostBreakdown = (props: IProps) => {

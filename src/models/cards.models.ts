@@ -6,12 +6,7 @@ export enum CARD_TYPE {
   Reward = "Rewards",
 }
 
-export enum RESOURCE {
-  CARROT = "carrots",
-  APPLE = "apples",
-  BERRY = "berries",
-  ANY = "any",
-}
+export type RESOURCE = "apples" | "carrots" | "berries";
 
 export enum CARD_SUBTYPE {
   Treat = "Treat",
@@ -68,30 +63,36 @@ export enum TAGS {
 
 export interface ICard {
   name: string;
-  description?: string;
+  description?: string | React.ReactNode;
   qty: number;
   image?: string;
-  cost: {
-    [RESOURCE.APPLE]: number;
-    [RESOURCE.CARROT]: number;
-    [RESOURCE.BERRY]: number;
-    [RESOURCE.ANY]?: number;
-  };
   tags?: TAGS[];
   type: CARD_TYPE;
+}
+
+export interface IFarmCard extends ICard {
+  cost: Record<RESOURCE, number>;
   subtype?: CARD_SUBTYPE;
-  energy?: number;
-  victoryPoints?: number;
-  buyBonus?: string;
-  recycle?: string;
+  buyBonus?: string | React.ReactNode;
+  recycle?: string | React.ReactNode;
   holdable?: boolean;
   sellable?: boolean;
   unsellable?: boolean;
   sunlight?: {
-    one?: string;
-    two?: string;
-    three?: string;
+    one?: string | React.ReactNode;
+    two?: string | React.ReactNode;
+    three?: string | React.ReactNode;
   };
+  energy?: number;
+  type: CARD_TYPE.Critter | CARD_TYPE.Item | CARD_TYPE.Seeds;
+}
+
+export interface IFavourCard extends ICard {
+  type: CARD_TYPE.Favour;
+}
+
+export interface IRewardCard extends ICard {
+  type: CARD_TYPE.Reward;
 }
 
 export interface IWorkOrder {

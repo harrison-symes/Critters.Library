@@ -1,6 +1,11 @@
-import { CARD_SUBTYPE, CARD_TYPE, ICard, TAGS } from "../models/cards.models";
+import {
+  CARD_SUBTYPE,
+  CARD_TYPE,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
-const moles: ICard[] = [
+const moles: IFarmCard[] = [
   {
     name: "Saboteur",
     qty: 2,
@@ -10,9 +15,16 @@ const moles: ICard[] = [
       carrots: 1,
     },
     image: "rummager",
-    description: "Add a Zzz counter to a Rival's critter.",
-    recycle: "Exhaust a Rival's Critter",
-
+    description: (
+      <span>
+        Add 1 💤 to a Rival's <b className="nowrap">🐾Critter</b>
+      </span>
+    ),
+    recycle: (
+      <span>
+        <b>Exhaust</b> a Rival's <b className="nowrap">🐾Critter</b>
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
@@ -27,7 +39,11 @@ const moles: ICard[] = [
       carrots: 2,
     },
     image: "rummager",
-    description: "Steal a crop from your Rival.",
+    description: (
+      <span>
+        <b>Steal</b> a crop from a Rival.
+      </span>
+    ),
     buyBonus: "Put this at the bottom of your deck",
     energy: 3,
     type: CARD_TYPE.Critter,
@@ -43,7 +59,11 @@ const moles: ICard[] = [
       carrots: 3,
     },
     image: "rummager",
-    description: "Add 1 Zzz of each of a Rival's Critters.",
+    description: (
+      <span>
+        Add 1 💤 to each of a Rival's <b className="nowrap">🐾Critters</b>
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
