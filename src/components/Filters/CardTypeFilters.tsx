@@ -7,11 +7,10 @@ import {
 } from "../../store/filtersSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
-import cn from "classnames";
 import FiltersGroup from "./FiltersGroup";
 import CropFilters from "./CropFilters";
-import { Button } from "@mui/material";
 import FilterButton from "./FilterButton";
+import { getFutureFilterCount } from "../../store/deck.selectors";
 
 interface ICardTypeFilterProps {
   type: CARD_TYPE;
@@ -22,12 +21,23 @@ export const CardTypeFilter = ({ type }: ICardTypeFilterProps) => {
   const filteredTypes = useAppSelector(getCardTypeFilter);
   const isTypeSelected = filteredTypes.includes(type);
 
+  const futureCount = useAppSelector(
+    getFutureFilterCount({
+      types: [type],
+    })
+  );
+
   const onClick = () => {
     dispatch(toggleCardTypeFilter(type));
   };
 
   return (
-    <FilterButton onClick={onClick} isActive={isTypeSelected} text={type} />
+    <FilterButton
+      onClick={onClick}
+      isActive={isTypeSelected}
+      text={type}
+      futureCount={futureCount}
+    />
   );
 };
 
@@ -40,12 +50,23 @@ export const CardSubTypeFilter = ({ type }: ICardSubTypeFilterProps) => {
   const filteredSubTypes = useAppSelector(getCardSubTypeFilter);
   const isTypeSelected = filteredSubTypes.includes(type);
 
+  const futureCount = useAppSelector(
+    getFutureFilterCount({
+      subTypes: [type],
+    })
+  );
+
   const onClick = () => {
     dispatch(toggleCardSubTypeFilter(type));
   };
 
   return (
-    <FilterButton onClick={onClick} isActive={isTypeSelected} text={type} />
+    <FilterButton
+      onClick={onClick}
+      isActive={isTypeSelected}
+      text={type}
+      futureCount={futureCount}
+    />
   );
 };
 

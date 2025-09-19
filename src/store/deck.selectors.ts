@@ -8,7 +8,7 @@ import {
   getFavourDeck,
   getRewardDeck,
 } from "./decksSlice";
-import { appSelector } from "./store";
+import { appSelector, RootState } from "./store";
 
 const filterFarmDeck = (cards: IFarmCard[], filters: IFilterState) => {
   return cards.filter((card) => {
@@ -133,3 +133,37 @@ export const getFilteredDuplicatesRewardDeck = createSelector(
   [getDuplicatesRewardDeck, getFilterState],
   (deck, filters) => filterNonFarmDeck(deck, filters)
 );
+
+export const getFilteredFarmDeckCount = createSelector(
+  [getFilteredFarmDeck],
+  (farmDeck) => farmDeck.length
+);
+export const getFilteredFavourDeckCount = createSelector(
+  [getFilteredFavourDeck],
+  (favours) => favours.length
+);
+export const getFilteredRewardDeckCount = createSelector(
+  [getFilteredRewardDeck],
+  (rewards) => rewards.length
+);
+export const getTotalFilteredCardsCount = createSelector(
+  [
+    getFilteredFarmDeckCount,
+    getFilteredFavourDeckCount,
+    getFilteredRewardDeckCount,
+  ],
+  (farmDeck, favours, rewards) => farmDeck + favours + rewards
+);
+
+export const getFutureFilterCount =
+  (filterOverride: Partial<IFilterState>) => (state: RootState) => {
+    const newState: RootState = {
+      ...state,
+      filters: {
+        ...state.filters,
+        ...filterOverride,
+      },
+    };
+
+    return getTotalFilteredCardsCount(newState);
+  };

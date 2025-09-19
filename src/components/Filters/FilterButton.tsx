@@ -4,6 +4,7 @@ interface IFilterButtonProps {
   text: string;
   isActive: boolean;
   onClick: () => void;
+  futureCount?: number;
 }
 
 const FilterButton = (props: IFilterButtonProps) => {
@@ -16,8 +17,9 @@ const FilterButton = (props: IFilterButtonProps) => {
       disableRipple
       autoCapitalize="false"
       sx={{ textTransform: "none" }}
+      disabled={props.futureCount === 0 && !props.isActive}
     >
-      {props.text}
+      {props.text} ({props.futureCount})
     </Button>
   );
 };

@@ -4,9 +4,8 @@ import { RESOURCE } from "../../models/cards.models";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getCropFilters, toggleCropFilter } from "../../store/filtersSlice";
 
-import cn from "classnames";
-import { Button } from "@mui/material";
 import FilterButton from "./FilterButton";
+import { getFutureFilterCount } from "../../store/deck.selectors";
 
 interface ICropFilterProps {
   crop: RESOURCE;
@@ -17,6 +16,15 @@ const CropFilter = (props: ICropFilterProps) => {
   const filteredCrops = useAppSelector(getCropFilters);
   const isCropFiltered = filteredCrops[props.crop];
 
+  const futureCount = useAppSelector(
+    getFutureFilterCount({
+      crops: {
+        ...filteredCrops,
+        [props.crop]: true,
+      },
+    })
+  );
+
   const onClick = () => {
     dispatch(toggleCropFilter(props.crop));
   };
@@ -26,6 +34,7 @@ const CropFilter = (props: ICropFilterProps) => {
       onClick={onClick}
       text={props.crop}
       isActive={isCropFiltered}
+      futureCount={futureCount}
     />
   );
 };

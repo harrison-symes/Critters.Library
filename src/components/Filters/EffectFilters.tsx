@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import FiltersGroup from "./FiltersGroup";
 import { Button } from "@mui/material";
 import FilterButton from "./FilterButton";
+import { getFutureFilterCount } from "../../store/deck.selectors";
 
 interface ICropFilterProps {
   effect: TEffects;
@@ -17,6 +18,14 @@ const EffectFilter = (props: ICropFilterProps) => {
   const dispatch = useAppDispatch();
   const filteredEffects = useAppSelector(getEffectsFilters);
   const isEffectFiltered = filteredEffects[props.effect];
+  const futureCount = useAppSelector(
+    getFutureFilterCount({
+      effects: {
+        ...filteredEffects,
+        [props.effect]: true,
+      },
+    })
+  );
 
   const onClick = () => {
     dispatch(toggleEffectsFilter(props.effect));
@@ -27,6 +36,7 @@ const EffectFilter = (props: ICropFilterProps) => {
       onClick={onClick}
       isActive={isEffectFiltered}
       text={props.effect}
+      futureCount={futureCount}
     />
   );
 };

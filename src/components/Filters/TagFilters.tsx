@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getFilteredTags, toggleTagFilter } from "../../store/filtersSlice";
 
 import FilterButton from "./FilterButton";
+import { getFutureFilterCount } from "../../store/deck.selectors";
 
 interface ITagFilterProps {
   tag: TAGS;
@@ -15,12 +16,23 @@ const TagFilter = (props: ITagFilterProps) => {
   const filteredTags = useAppSelector(getFilteredTags);
   const isTagFiltered = filteredTags.includes(props.tag);
 
+  const futureCount = useAppSelector(
+    getFutureFilterCount({
+      tags: [...filteredTags, props.tag],
+    })
+  );
+
   const onClick = () => {
     dispatch(toggleTagFilter(props.tag));
   };
 
   return (
-    <FilterButton onClick={onClick} isActive={isTagFiltered} text={props.tag} />
+    <FilterButton
+      onClick={onClick}
+      isActive={isTagFiltered}
+      text={props.tag}
+      futureCount={futureCount}
+    />
   );
 };
 
