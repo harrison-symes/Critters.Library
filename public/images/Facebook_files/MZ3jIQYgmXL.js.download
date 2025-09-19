@@ -1,4 +1,0 @@
-;/*FB_PKG_DELIM*/
-
-__d("ProfileCometRootLeftNavMenuQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="25357491807176909"}),null);
-__d("ProfilePageImprovementsEnabled.relayprovider",["gkx"],(function(a,b,c,d,e,f,g){"use strict";a={get:function(){return c("gkx")("10622")}};g["default"]=a}),98);
