@@ -1,4 +1,5 @@
 import { CARD_TYPE, CARD_SUBTYPE } from "../../models/cards.models";
+import CardSetFilterss from "./CardSetFilters";
 import CardTypeFilters, {
   CardSubTypeFilter,
   CardTypeFilter,
@@ -26,6 +27,7 @@ const Filters = () => {
         </FiltersGroup>
         <CropFilters />
         <EffectFilters />
+        <CardSetFilterss />
       </div>
       <div className="filters__container">
         <TagFilters />

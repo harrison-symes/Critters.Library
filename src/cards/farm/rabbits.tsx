@@ -1,4 +1,5 @@
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   ICard,
@@ -21,6 +22,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
+    set: CARD_SET.BASE,
   },
   {
     name: "Berry Grower",
@@ -36,6 +38,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
+    set: CARD_SET.BASE,
   },
   {
     name: "Apple Grower",
@@ -51,6 +54,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
+    set: CARD_SET.BASE,
   },
   {
     name: "Agriculturist",
@@ -67,6 +71,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    set: CARD_SET.BASE,
   },
   {
     name: "Clodhopper",
@@ -87,6 +92,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.FREE_CRATE],
+    set: CARD_SET.BASE,
   },
   {
     name: "Crop Picker",
@@ -108,6 +114,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    set: CARD_SET.BASE,
   },
 ];
 

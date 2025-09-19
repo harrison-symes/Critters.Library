@@ -1,4 +1,5 @@
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   IFarmCard,
@@ -31,6 +32,7 @@ const rats: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.FREE_FAVOUR, TAGS.DISCOUNT, TAGS.REFRESH],
+    set: CARD_SET.BASE,
   },
   {
     name: "Price Hiker",
@@ -56,6 +58,7 @@ const rats: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT, TAGS.REFRESH],
+    set: CARD_SET.BASE,
   },
   {
     name: "Hermes",
@@ -80,6 +83,7 @@ const rats: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.CARD_DRAW, TAGS.SELL, TAGS.SELL_FROM_HAND, TAGS.FAST_TRACK],
+    set: CARD_SET.BASE,
   },
 ];
 

@@ -1,4 +1,10 @@
-import { CARD_TYPE, ICard, IFavourCard, TAGS } from "../models/cards.models";
+import {
+  CARD_SET,
+  CARD_TYPE,
+  ICard,
+  IFavourCard,
+  TAGS,
+} from "../models/cards.models";
 
 const favours: IFavourCard[] = [
   {
@@ -12,6 +18,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.CROP_STEAL],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Helping Hand",
@@ -25,6 +32,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Delegate",
@@ -42,6 +50,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.ADD_ZZZ, TAGS.REMOVE_ZZZ],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Throw it away",
@@ -54,6 +63,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.TRASH, TAGS.TRASH_FROM_DISCARD],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Sell it off",
@@ -66,6 +76,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.SELL, TAGS.SELL_FROM_HAND],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Rotate Stock",
@@ -78,6 +89,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.REFRESH],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Barter",
@@ -91,6 +103,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.DISCARD_OWN, TAGS.SELL, TAGS.SELL_FROM_DISCARD],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Restock",
@@ -104,6 +117,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.DISCOUNT, TAGS.REFRESH],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Express Delivery",
@@ -116,6 +130,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.FAST_TRACK],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Collect Tips",
@@ -128,6 +143,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Feed the Seeds",
@@ -140,6 +156,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Piggy-back Ride",
@@ -153,6 +170,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.ADD_ZZZ, TAGS.REMOVE_ZZZ],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Exchange",
@@ -169,6 +187,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.DISCARD_OWN, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
   {
     name: "Slim Pickings",
@@ -177,6 +196,7 @@ const favours: IFavourCard[] = [
     description: <span>Gain a crop of your choosing.</span>,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE],
     type: CARD_TYPE.Favour,
+    set: CARD_SET.BASE,
   },
 ];
 

@@ -1,4 +1,5 @@
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   IFarmCard,
@@ -29,6 +30,7 @@ const moles: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.ADD_ZZZ],
+    set: CARD_SET.BASE,
   },
   {
     name: "Burrower",
@@ -49,6 +51,7 @@ const moles: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.CROP_STEAL, TAGS.BOTTOM_OF_DECK],
+    set: CARD_SET.BASE,
   },
   {
     name: "Wacker Mole",
@@ -68,6 +71,7 @@ const moles: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.ADD_ZZZ],
+    set: CARD_SET.BASE,
   },
 ];
 

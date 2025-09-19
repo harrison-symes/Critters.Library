@@ -1,4 +1,9 @@
-import { CARD_TYPE, IFarmCard, TAGS } from "../../models/cards.models";
+import {
+  CARD_SET,
+  CARD_TYPE,
+  IFarmCard,
+  TAGS,
+} from "../../models/cards.models";
 
 const seeds: IFarmCard[] = [
   {
@@ -30,6 +35,7 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Berry Seeds",
@@ -60,6 +66,7 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Carrot Seeds",
@@ -90,6 +97,7 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Mystery Seeds",
@@ -108,6 +116,7 @@ const seeds: IFarmCard[] = [
       two: "Gain +3 of a random crop.",
       three: "Gain +4 of a random crop.",
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Mixed Seeds",
@@ -126,6 +135,7 @@ const seeds: IFarmCard[] = [
       two: "Gain 4 random crops.",
       three: "Gain 5 random crops.",
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Coffee Seeds",
@@ -143,6 +153,7 @@ const seeds: IFarmCard[] = [
       two: "Draw a card.",
       three: "Draw 2 cards.",
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Vanishing Seeds",
@@ -173,6 +184,7 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Sunflower Seeds",
@@ -194,6 +206,7 @@ const seeds: IFarmCard[] = [
       ),
       three: "...and put this card onto the top of your deck.",
     },
+    set: CARD_SET.BASE,
   },
   {
     name: "Magic Seeds",
@@ -211,6 +224,7 @@ const seeds: IFarmCard[] = [
       two: "Put a Farm card from the Market into your discard pile...",
       three: "...or onto the top of your deck.",
     },
+    set: CARD_SET.BASE,
   },
 ];
 

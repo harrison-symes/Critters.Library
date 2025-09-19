@@ -1,4 +1,5 @@
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   IFarmCard,
@@ -29,6 +30,7 @@ const worms: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.FAST_TRACK],
+    set: CARD_SET.BASE,
   },
   {
     name: "Top-Soiler",
@@ -54,6 +56,7 @@ const worms: IFarmCard[] = [
       TAGS.SEED_SYNERGY,
       TAGS.ADD_TO_HAND,
     ],
+    set: CARD_SET.BASE,
   },
   {
     name: "Chloro Phil",
@@ -66,19 +69,20 @@ const worms: IFarmCard[] = [
     image: "rummager",
     description: (
       <span>
-        Remove 1 <b>☀️Sunlight</b> from ALL <b className="nowrap">🌱Seeds</b>.{" "}
-        <br /> Gain a random crop for each <b>☀️Sunlight</b> removed.
+        Remove 1 <b>☀️Sunlight</b> from a <b className="nowrap">🌱Seed</b> to
+        gain +2 of a random crop.
       </span>
     ),
-    energy: 2,
+    energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
     tags: [
       TAGS.SEED_SYNERGY,
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_RANDOM,
-      TAGS.SUNLIGHT_ADD,
+      TAGS.SUNLIGHT_REMOVE,
     ],
+    set: CARD_SET.BASE,
   },
 ];
 

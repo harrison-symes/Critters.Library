@@ -21,6 +21,9 @@ const filterFarmDeck = (cards: IFarmCard[], filters: IFilterState) => {
     ) {
       return false;
     }
+    if (filters.sets.length && !filters.sets.includes(card.set)) {
+      return false;
+    }
     if (filters.crops.apples && card.cost.apples === 0) {
       return false;
     }
@@ -66,6 +69,9 @@ const filterNonFarmDeck = <T extends ICard>(
       return false;
     }
     if (filters.subTypes.length) {
+      return false;
+    }
+    if (filters.sets.length && !filters.sets.includes(card.set)) {
       return false;
     }
     if (filters.crops.apples) {

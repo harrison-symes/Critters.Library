@@ -1,4 +1,5 @@
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   IFarmCard,
@@ -29,6 +30,7 @@ const raccoons: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
+    set: CARD_SET.BASE,
   },
   {
     name: "Dumpster Diver",
@@ -49,6 +51,7 @@ const raccoons: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.DISCARD_OWN],
+    set: CARD_SET.BASE,
   },
   {
     name: "Sticky Fingers",
@@ -70,6 +73,7 @@ const raccoons: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.DISCARD_OWN, TAGS.ADD_TO_HAND],
+    set: CARD_SET.BASE,
   },
 ];
 

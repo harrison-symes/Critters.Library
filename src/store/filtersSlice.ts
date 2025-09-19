@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   RESOURCE,
@@ -20,6 +21,7 @@ export interface IFilterState {
   crops: Record<RESOURCE, boolean>;
   effects: Record<TEffects, boolean>;
   tags: TAGS[];
+  sets: CARD_SET[];
 }
 
 const initialState: IFilterState = {
@@ -38,6 +40,7 @@ const initialState: IFilterState = {
     unsellable: false,
   },
   tags: [],
+  sets: [CARD_SET.BASE],
 };
 
 const filterSlice = createSlice({
@@ -73,6 +76,13 @@ const filterSlice = createSlice({
         state.tags = [...state.tags, action.payload];
       }
     },
+    toggleCardSetFilter: (state, action: PayloadAction<CARD_SET>) => {
+      if (state.sets.includes(action.payload)) {
+        state.sets = state.sets.filter((type) => type !== action.payload);
+      } else {
+        state.sets = [...state.sets, action.payload];
+      }
+    },
   },
   selectors: {},
 });
@@ -83,6 +93,7 @@ export const {
   toggleCropFilter,
   toggleEffectsFilter,
   toggleTagFilter,
+  toggleCardSetFilter,
 } = filterSlice.actions;
 
 export const getFilterState = (state: RootState) => state.filters;
@@ -92,5 +103,6 @@ export const getCardSubTypeFilter = (state: RootState) =>
 export const getCropFilters = (state: RootState) => state.filters.crops;
 export const getEffectsFilters = (state: RootState) => state.filters.effects;
 export const getFilteredTags = (state: RootState) => state.filters.tags;
+export const getFilteredSets = (state: RootState) => state.filters.sets;
 
 export default filterSlice.reducer;

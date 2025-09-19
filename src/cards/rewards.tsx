@@ -1,4 +1,4 @@
-import { CARD_TYPE, IRewardCard, TAGS } from "../models/cards.models";
+import { CARD_SET, CARD_TYPE, IRewardCard, TAGS } from "../models/cards.models";
 
 const rewards: IRewardCard[] = [
   {
@@ -12,6 +12,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE, TAGS.TRADE],
   },
   {
@@ -25,6 +26,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY, TAGS.TRADE],
   },
   {
@@ -38,6 +40,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT, TAGS.TRADE],
   },
   {
@@ -51,6 +54,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD],
   },
   {
@@ -63,6 +67,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.FREE_CARD, TAGS.WORK_ORDER_COMPLETION],
   },
   {
@@ -75,6 +80,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.TOP_OF_DECK, TAGS.WORK_ORDER_COMPLETION],
   },
   {
@@ -87,6 +93,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.WORK_ORDER_COMPLETION, TAGS.GIFT],
   },
   {
@@ -99,6 +106,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.SEED_SYNERGY, TAGS.ADD_TO_HAND],
   },
   {
@@ -111,6 +119,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SELL, TAGS.TRASH],
   },
   {
@@ -123,6 +132,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.SEED_SYNERGY, TAGS.CARD_DRAW],
   },
   {
@@ -134,6 +144,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
   },
   {
@@ -146,6 +157,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.FAST_TRACK],
   },
   {
@@ -157,6 +169,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.RESET_DECK, TAGS.CARD_DRAW],
   },
   {
@@ -169,6 +182,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CARD_DRAW],
   },
   {
@@ -180,6 +194,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CARD_DRAW, TAGS.SELL],
   },
   {
@@ -192,6 +207,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.FAST_TRACK, TAGS.TOP_OF_DECK],
   },
   {
@@ -203,6 +219,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CARD_DRAW, TAGS.TOP_OF_DECK],
   },
   {
@@ -214,6 +231,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.FAST_TRACK],
   },
   {
@@ -226,6 +244,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.TOOL_SYNERGY, TAGS.TRASH, TAGS.TRASH_FROM_DISCARD],
   },
   {
@@ -238,6 +257,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.TOOL_SYNERGY, TAGS.FAST_TRACK],
   },
   {
@@ -250,6 +270,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.REMOVE_ZZZ, TAGS.TREAT_SYNERGY],
   },
   {
@@ -261,6 +282,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CROP_STEAL, TAGS.TREAT_SYNERGY],
   },
   {
@@ -273,6 +295,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TOP_OF_DECK],
   },
   {
@@ -284,6 +307,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [
       TAGS.FINANCE_SYNERGY,
       TAGS.CROP_GENERATION,
@@ -299,6 +323,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.DISCOUNT, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
@@ -310,6 +335,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.DISCARD_OWN, TAGS.CARD_DRAW],
   },
   {
@@ -322,6 +348,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
   },
   {
@@ -334,6 +361,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CARD_DRAW],
   },
   {
@@ -350,6 +378,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.RESET_DECK],
   },
   {
@@ -362,6 +391,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [],
   },
   {
@@ -377,6 +407,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
     tags: [TAGS.ADD_TO_HAND],
   },
 ];

@@ -1,4 +1,5 @@
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   IFarmCard,
@@ -28,6 +29,7 @@ const bees: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.WORK_ORDERS_3],
+    set: CARD_SET.BASE,
   },
   {
     name: "Pesky Bee",
@@ -51,6 +53,7 @@ const bees: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_STEAL, TAGS.WORK_ORDERS_3],
+    set: CARD_SET.BASE,
   },
   {
     name: "Plan Bee",
@@ -71,6 +74,7 @@ const bees: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.WORK_ORDERS_3, TAGS.FAST_TRACK],
+    set: CARD_SET.BASE,
   },
 ];
 

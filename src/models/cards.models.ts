@@ -8,6 +8,11 @@ export enum CARD_TYPE {
 
 export type RESOURCE = "apples" | "carrots" | "berries";
 
+export enum CARD_SET {
+  BASE = "Base",
+  EXP_1 = "Expansion 1",
+}
+
 export enum CARD_SUBTYPE {
   Treat = "Treat",
   Finance = "Finance",
@@ -40,28 +45,29 @@ export enum TAGS {
   SELL_FROM_HAND = "Sell from hand",
   SELL_FROM_DISCARD = "Sell from discard",
   FREE_CRATE = "Free Crate",
-  REMOVE_ZZZ = "Remove Zzz",
-  ADD_ZZZ = "Add Zzz",
-  SEED_SYNERGY = "Seed synergy",
-  SUNLIGHT_ADD = "Add Sunlight",
+  REMOVE_ZZZ = "Remove 💤",
+  ADD_ZZZ = "Add 💤",
+  SEED_SYNERGY = "🌱Seed synergy",
+  SUNLIGHT_ADD = "Add ☀️Sunlight",
+  SUNLIGHT_REMOVE = "Remove ☀️Sunlight",
   REFRESH = "Refresh",
   FREE_CARD = "Free Card",
   FREE_FAVOUR = "Free Favour",
-  CROP_GENERATION_CARROT = "Gain Carrots",
-  CROP_GENERATION_BERRY = "Gain Berries",
-  CROP_GENERATION_APPLE = "Gain Apples",
+  CROP_GENERATION_CARROT = "Gain 🥕",
+  CROP_GENERATION_BERRY = "Gain 🫐",
+  CROP_GENERATION_APPLE = "Gain 🍏",
   WORK_ORDERS_3 = "Requires 3 Work Orders",
   TRASH = "Trash",
   TRASH_FROM_HAND = "Trash from hand",
   TRASH_FROM_DISCARD = "Trash from discard",
-  TREAT_SYNERGY = "Treat synergy",
-  TOOL_SYNERGY = "Tool synergy",
-  FINANCE_SYNERGY = "Finance Synergy",
+  TREAT_SYNERGY = "🧁Treat synergy",
+  TOOL_SYNERGY = "🛠️Tool synergy",
+  FINANCE_SYNERGY = "🏦Finance Synergy",
   SNATCH_DISCOUNT = "Snatch discounts",
   BOTTOM_OF_DECK = "Add to bottom of deck",
   ADD_TO_HAND = "Add to hand",
   TRADE = "Trade",
-  WORK_ORDER_COMPLETION = "WORK_ORDER_COMPLETION",
+  WORK_ORDER_COMPLETION = "On Work Order complete",
 }
 
 export interface ICard {
@@ -71,6 +77,7 @@ export interface ICard {
   image?: string;
   tags?: TAGS[];
   type: CARD_TYPE;
+  set: CARD_SET;
 }
 
 export interface IFarmCard extends ICard {

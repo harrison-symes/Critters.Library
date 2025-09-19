@@ -1,4 +1,5 @@
 import {
+  CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
   IFarmCard,
@@ -29,6 +30,7 @@ const hedgehogs: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.TOP_OF_DECK, TAGS.TOOL_SYNERGY, TAGS.GIFT],
+    set: CARD_SET.BASE,
   },
   {
     name: "Picky Eater",
@@ -53,6 +55,7 @@ const hedgehogs: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.FAST_TRACK, TAGS.TREAT_SYNERGY, TAGS.TRASH_FROM_DISCARD],
+    set: CARD_SET.BASE,
   },
   {
     name: "The Head Chog",
@@ -72,6 +75,7 @@ const hedgehogs: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.GIFT],
+    set: CARD_SET.BASE,
   },
 ];
 
