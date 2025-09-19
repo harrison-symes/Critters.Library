@@ -2,7 +2,7 @@ import * as React from "react";
 import "./new-display.scss";
 import Filters from "../Filters/Filters";
 import Cards from "./Cards";
-import { createDeck } from "../../cards";
+import { createDeck, createFavourDeck, createRewardDeck } from "../../cards";
 import { useAppSelector } from "../../store/hooks";
 import {
   getCardSubTypeFilter,
@@ -23,6 +23,11 @@ const NewDisplay = () => {
   const cropFilters = useAppSelector(getCropFilters);
   const effectFilters = useAppSelector(getEffectsFilters);
   const tagFilters = useAppSelector(getFilteredTags);
+
+  const rewards = createRewardDeck(true);
+  const favours = createFavourDeck(true);
+  const rewardsDuplicates = createRewardDeck(false);
+  const favoursDuplicates = createFavourDeck(false);
 
   const filterFarmDeck = React.useCallback(
     (cards: IFarmCard[]) => {
@@ -96,14 +101,97 @@ const NewDisplay = () => {
     [duplicatesFarmDeck, filterFarmDeck]
   );
 
+  const filterNonFarmCards = React.useCallback(
+    <T extends ICard>(deck: Array<T>): T[] => {
+      return deck.filter((card) => {
+        if (cardTypeFilter.length && !cardTypeFilter.includes(card.type)) {
+          return false;
+        }
+        if (cardSubTypeFilter.length) {
+          return false;
+        }
+        if (cropFilters.apples) {
+          return false;
+        }
+        if (cropFilters.berries) {
+          return false;
+        }
+        if (cropFilters.carrots) {
+          return false;
+        }
+        if (effectFilters.Bonus) {
+          return false;
+        }
+        if (effectFilters.Recycle) {
+          return false;
+        }
+        if (effectFilters.sellable) {
+          return false;
+        }
+        if (effectFilters.unsellable) {
+          return false;
+        }
+        if (effectFilters.holdable) {
+          return false;
+        }
+        const hasMissingTag = tagFilters.find((tag) => {
+          return !card.tags?.includes(tag);
+        });
+
+        if (hasMissingTag) {
+          return false;
+        }
+
+        return true;
+      });
+    },
+    [
+      cardSubTypeFilter.length,
+      cardTypeFilter,
+      cropFilters.apples,
+      cropFilters.berries,
+      cropFilters.carrots,
+      effectFilters.Bonus,
+      effectFilters.Recycle,
+      effectFilters.holdable,
+      effectFilters.sellable,
+      effectFilters.unsellable,
+      tagFilters,
+    ]
+  );
+
+  const filteredRewards = React.useMemo(
+    () => filterNonFarmCards(rewards),
+    [filterNonFarmCards, rewards]
+  );
+  const filteredFavours = React.useMemo(
+    () => filterNonFarmCards(favours),
+    [filterNonFarmCards, favours]
+  );
+  const filteredRewardsDuplicates = React.useMemo(
+    () => filterNonFarmCards(rewardsDuplicates),
+    [filterNonFarmCards, rewardsDuplicates]
+  );
+  const filteredFavoursDuplicates = React.useMemo(
+    () => filterNonFarmCards(favoursDuplicates),
+    [filterNonFarmCards, favoursDuplicates]
+  );
+
   return (
     <div className="display">
       <Filters />
       <h1>
-        {filteredDuplicatesDeck.length} cards ({filteredDeck.length} unique)_
+        {filteredDuplicatesDeck.length} Farm cards ({filteredDeck.length}{" "}
+        unique) - {filteredRewardsDuplicates.length} Rewards (
+        {filteredRewards.length} unique) - {filteredFavoursDuplicates.length}{" "}
+        Favours ({filteredFavours.length} unique)
       </h1>
       <div className="display__split">
-        <Cards farmDeck={filteredDeck} />
+        <Cards
+          farmDeck={filteredDeck}
+          rewards={filteredRewards}
+          favours={filteredFavours}
+        />
         <Stats deck={filteredDuplicatesDeck} />
       </div>
     </div>

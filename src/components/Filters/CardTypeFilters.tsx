@@ -10,6 +10,8 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import cn from "classnames";
 import FiltersGroup from "./FiltersGroup";
 import CropFilters from "./CropFilters";
+import { Button } from "@mui/material";
+import FilterButton from "./FilterButton";
 
 interface ICardTypeFilterProps {
   type: CARD_TYPE;
@@ -25,14 +27,7 @@ export const CardTypeFilter = ({ type }: ICardTypeFilterProps) => {
   };
 
   return (
-    <button
-      onClick={onClick}
-      className={cn("filters__filter", {
-        "filters__filter--active": isTypeSelected,
-      })}
-    >
-      {type}
-    </button>
+    <FilterButton onClick={onClick} isActive={isTypeSelected} text={type} />
   );
 };
 
@@ -50,14 +45,7 @@ export const CardSubTypeFilter = ({ type }: ICardSubTypeFilterProps) => {
   };
 
   return (
-    <button
-      onClick={onClick}
-      className={cn("filters__filter filters__filter--small", {
-        "filters__filter--active": isTypeSelected,
-      })}
-    >
-      {type}
-    </button>
+    <FilterButton onClick={onClick} isActive={isTypeSelected} text={type} />
   );
 };
 

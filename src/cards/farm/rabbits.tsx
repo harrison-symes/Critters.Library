@@ -15,7 +15,7 @@ const rabbits: IFarmCard[] = [
       berries: 2,
       carrots: 4,
     },
-    image: "rummager",
+    image: "/critters/carrot_grower.png",
     description: "Gain +2 🥕",
     energy: 3,
     type: CARD_TYPE.Critter,
@@ -30,7 +30,7 @@ const rabbits: IFarmCard[] = [
       berries: 4,
       carrots: 2,
     },
-    image: "rummager",
+    image: "/critters/berry_grower.png",
     description: "Gain +2 🫐",
     energy: 3,
     type: CARD_TYPE.Critter,
@@ -45,7 +45,7 @@ const rabbits: IFarmCard[] = [
       berries: 2,
       carrots: 2,
     },
-    image: "rummager",
+    image: "/critters/apple_grower.png",
     description: "Gain +2 🍏",
     energy: 3,
     type: CARD_TYPE.Critter,
@@ -60,7 +60,7 @@ const rabbits: IFarmCard[] = [
       carrots: 3,
       berries: 3,
     },
-    image: "rummager",
+    image: "/critters/agriculturist.png",
     description: "Gain 3 random crops",
     buyBonus: "Your Rivals each gain a random crop.",
     energy: 3,
@@ -76,11 +76,11 @@ const rabbits: IFarmCard[] = [
       carrots: 5,
       berries: 5,
     },
-    image: "rummager",
+    image: "/critters/clodhopper.png",
     description: "Gain +5 of a random crop.",
     buyBonus: (
       <span>
-        Pack a <b>📦Crate</b> into each of your work orders.
+        Pack a <b>📦Crate</b> into each of your <b>Work Orders</b>.
       </span>
     ),
     energy: 3,
@@ -96,7 +96,7 @@ const rabbits: IFarmCard[] = [
       carrots: 2,
       berries: 2,
     },
-    image: "rummager",
+    image: "/critters/crop_picker.png",
     description: (
       <span>
         Gain +3 of a random crop. <br />

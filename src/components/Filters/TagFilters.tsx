@@ -4,7 +4,7 @@ import { TAGS } from "../../models/cards.models";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getFilteredTags, toggleTagFilter } from "../../store/filtersSlice";
 
-import cn from "classnames";
+import FilterButton from "./FilterButton";
 
 interface ITagFilterProps {
   tag: TAGS;
@@ -20,14 +20,7 @@ const TagFilter = (props: ITagFilterProps) => {
   };
 
   return (
-    <button
-      onClick={onClick}
-      className={cn("filters__filter filters__filter--small", {
-        "filters__filter--active": isTagFiltered,
-      })}
-    >
-      {props.tag}
-    </button>
+    <FilterButton onClick={onClick} isActive={isTagFiltered} text={props.tag} />
   );
 };
 

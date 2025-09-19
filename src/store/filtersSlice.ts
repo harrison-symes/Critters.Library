@@ -25,9 +25,9 @@ const initialState: FilterState = {
   types: [],
   subTypes: [],
   crops: {
-    apples: false,
-    berries: false,
-    carrots: false,
+    apples: true,
+    berries: true,
+    carrots: true,
   },
   effects: {
     Bonus: false,

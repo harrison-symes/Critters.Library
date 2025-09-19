@@ -5,6 +5,8 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getCropFilters, toggleCropFilter } from "../../store/filtersSlice";
 
 import cn from "classnames";
+import { Button } from "@mui/material";
+import FilterButton from "./FilterButton";
 
 interface ICropFilterProps {
   crop: RESOURCE;
@@ -20,14 +22,11 @@ const CropFilter = (props: ICropFilterProps) => {
   };
 
   return (
-    <button
+    <FilterButton
       onClick={onClick}
-      className={cn("filters__filter filters__filter--small", {
-        "filters__filter--active": isCropFiltered,
-      })}
-    >
-      {props.crop}
-    </button>
+      text={props.crop}
+      isActive={isCropFiltered}
+    />
   );
 };
 

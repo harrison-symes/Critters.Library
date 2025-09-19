@@ -25,7 +25,7 @@ const items: IFarmCard[] = [
     holdable: true,
     buyBonus: (
       <span>
-        Get a <b>🤝Favour</b> from the Market for free.
+        Get a <b>Favour</b> from the Market for free.
       </span>
     ),
     tags: [
@@ -62,7 +62,7 @@ const items: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        Get a <b>🤝Favour</b> from the Market for free.
+        Get a <b>Favour</b> from the Market for free.
       </span>
     ),
   },
@@ -80,19 +80,18 @@ const items: IFarmCard[] = [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_BERRY,
       TAGS.DISCOUNT,
-      TAGS.SNATCH_DISCOUNT,
       TAGS.FREE_FAVOUR,
     ],
     description: (
       <span>
         Gain +2 🫐. <br />
-        <b>Discount</b>.<br />
-        <b>Snatch</b> a discounted crop from a card in the Market.
+        Get a <b>Favour</b> from the <b>Market</b> for free. <br />
+        <b>Discount</b>.
       </span>
     ),
     buyBonus: (
       <span>
-        Get a <b>🤝Favour</b> from the Market for free.
+        Get a <b>Favour</b> from the Market for free.
       </span>
     ),
   },
@@ -214,8 +213,7 @@ const items: IFarmCard[] = [
     ],
     description: (
       <span>
-        Play an <b>🎒Item</b> card from your discard pile, and then <b>Trash</b>{" "}
-        it.
+        Play an <b>🎒Item</b> from your discard pile, and then <b>Trash</b> it.
       </span>
     ),
     buyBonus: (

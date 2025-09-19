@@ -13,21 +13,21 @@
         flex-flow: row wrap;
         margin-top: .5rem;
         width: 100%;
-        gap: 1rem;
+        gap: .5rem;
     }
 
     &__group {
         padding: .25rem;
         margin: .25rem;
-        border: 2px solid black;
+        border: 1px solid black;
         border-radius: .5rem;
         height: 100%;
         
         &__title {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: bold;
             text-align: center;
-            margin-bottom: .5rem;
+            margin-bottom: .25rem;
         }
         
         &__list {
@@ -35,21 +35,7 @@
             flex-flow: row wrap;
             justify-content: center;
             align-items: center;
-        }
-    }
-
-    &__filter {
-        color: black;
-        background-color: lightblue;
-        font-size: 1.25rem;
-        border: 2px solid black;
-        margin: .5rem;
-        padding: .5rem 1rem;
-        cursor: pointer;
-        border-radius: .25rem;
-
-        &--active {
-            background-color: lightcoral;
+            gap: .25rem;
         }
     }
 }

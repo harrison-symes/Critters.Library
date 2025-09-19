@@ -68,28 +68,35 @@ const getSubtypeIcon = (type?: CARD_SUBTYPE) => {
 const FarmCard = (props: IProps) => {
   return (
     <div className="card card--farm-card">
-      <div className="card__name">{props.card.name}</div>
-      <div className="card__cost__container">
-        <CropCost card={props.card} crop="apples" />
-        <CropCost card={props.card} crop="berries" />
-        <CropCost card={props.card} crop="carrots" />
+      <div className="card__name">
+        {props.card.name} {props.card.qty > 1 && <>(x{props.card.qty})</>}
+      </div>
+      <div
+        className={cn("card__image__container", {
+          "card__image__container--overlay":
+            props.card.type === CARD_TYPE.Critter,
+        })}
+      >
+        <img
+          className="card__image"
+          alt={props.card.name}
+          src={`/images${props.card.image}`}
+        />
+      </div>
+      <div className="card__image__spacer"></div>
+      <div className="card__special__container">
+        {props.card.holdable && <div className="card__special">Holdable</div>}
+        {props.card.sellable && <div className="card__special">Sellable</div>}
+        {props.card.unsellable && (
+          <div className="card__special">Unsellable</div>
+        )}
+        <div className="card__cost__container">
+          <CropCost card={props.card} crop="apples" />
+          <CropCost card={props.card} crop="berries" />
+          <CropCost card={props.card} crop="carrots" />
+        </div>
       </div>
       <div className="card__description__container">
-        {props.card.holdable && (
-          <div className="card__description__block card__description__block--special">
-            Holdable
-          </div>
-        )}
-        {props.card.sellable && (
-          <div className="card__description__block card__description__block--special">
-            Sellable
-          </div>
-        )}
-        {props.card.unsellable && (
-          <div className="card__description__block card__description__block--special">
-            Unsellable
-          </div>
-        )}
         <div
           className={cn("card__description__block", {
             "card__description__block--solo":

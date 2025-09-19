@@ -31,6 +31,7 @@ export enum TAGS {
   RESET_DECK = "Reset Deck",
   CROP_GENERATION_ALL = "Gain all crops",
   CROP_GENERATION_RANDOM = "Gain random crops",
+  CROP_GENERATION_CHOOSE = "Gain crop (choose)",
   GIFT = "Gift",
   CROP_DESTROY = "Destroy Crops",
   CROP_STEAL = "Steal crops",
@@ -59,6 +60,8 @@ export enum TAGS {
   SNATCH_DISCOUNT = "Snatch discounts",
   BOTTOM_OF_DECK = "Add to bottom of deck",
   ADD_TO_HAND = "Add to hand",
+  TRADE = "Trade",
+  WORK_ORDER_COMPLETION = "WORK_ORDER_COMPLETION",
 }
 
 export interface ICard {

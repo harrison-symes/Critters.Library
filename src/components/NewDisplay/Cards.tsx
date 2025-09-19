@@ -1,8 +1,17 @@
-import { CARD_TYPE, ICard, IFarmCard } from "../../models/cards.models";
+import {
+  CARD_TYPE,
+  IFarmCard,
+  IFavourCard,
+  IRewardCard,
+} from "../../models/cards.models";
 import CardTypeList from "./CardTypeList";
+import FavourCardList from "./FavourCardList";
+import RewardCardList from "./RewardCardsList";
 
 interface IProps {
   farmDeck: IFarmCard[];
+  rewards: IRewardCard[];
+  favours: IFavourCard[];
 }
 
 const cardTypes = Object.values(CARD_TYPE);
@@ -13,6 +22,8 @@ const Cards = (props: IProps) => {
       {cardTypes.map((type) => (
         <CardTypeList key={type} farmDeck={props.farmDeck} type={type} />
       ))}
+      <RewardCardList rewards={props.rewards} />
+      <FavourCardList rewards={props.favours} />
     </div>
   );
 };

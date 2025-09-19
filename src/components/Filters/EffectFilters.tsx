@@ -6,6 +6,8 @@ import {
 } from "../../store/filtersSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import FiltersGroup from "./FiltersGroup";
+import { Button } from "@mui/material";
+import FilterButton from "./FilterButton";
 
 interface ICropFilterProps {
   effect: TEffects;
@@ -21,14 +23,11 @@ const EffectFilter = (props: ICropFilterProps) => {
   };
 
   return (
-    <button
+    <FilterButton
       onClick={onClick}
-      className={cn("filters__filter filters__filter--small", {
-        "filters__filter--active": isEffectFiltered,
-      })}
-    >
-      {props.effect}
-    </button>
+      isActive={isEffectFiltered}
+      text={props.effect}
+    />
   );
 };
 

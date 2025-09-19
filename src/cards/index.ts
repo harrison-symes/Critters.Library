@@ -2,6 +2,8 @@ import {
   CARD_TYPE,
   ICard,
   IFarmCard,
+  IFavourCard,
+  IRewardCard,
   IWorkOrder,
   TAGS,
 } from "../models/cards.models";
@@ -16,6 +18,8 @@ import raccoons from "./farm/raccoons";
 import rats from "./farm/rats";
 import seeds from "./farm/seeds";
 import workOrders from "./workOrders";
+import favours from "./favours";
+import rewards from "./rewards";
 
 const shuffleDeck = (deck: any[]) => {
   let currentIndex = deck.length;
@@ -61,6 +65,41 @@ export const createDeck = (noDuplicates: boolean = false): IFarmCard[] => {
   if (!noDuplicates) {
     return shuffleDeck(deck);
   }
+
+  return deck;
+};
+
+export const createFavourDeck = (
+  noDuplicates: boolean = false
+): IFavourCard[] => {
+  if (noDuplicates) {
+    return favours;
+  }
+
+  const deck: IFavourCard[] = [];
+
+  favours.forEach((favour) => {
+    for (let i = 0; i < favour.qty; i++) {
+      deck.push({ ...favour });
+    }
+  });
+
+  return deck;
+};
+export const createRewardDeck = (
+  noDuplicates: boolean = false
+): IRewardCard[] => {
+  if (noDuplicates) {
+    return rewards;
+  }
+
+  const deck: IRewardCard[] = [];
+
+  rewards.forEach((reward) => {
+    for (let i = 0; i < reward.qty; i++) {
+      deck.push({ ...reward });
+    }
+  });
 
   return deck;
 };

@@ -14,7 +14,7 @@ const hedgehogs: IFarmCard[] = [
       berries: 1,
       carrots: 1,
     },
-    image: "rummager",
+    image: "/critters/skewerer.jpeg",
     description: (
       <span>
         Put a <b>🛠️Tool</b> from your discard pile onto the top of your deck.

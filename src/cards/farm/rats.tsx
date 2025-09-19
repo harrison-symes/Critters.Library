@@ -40,7 +40,7 @@ const rats: IFarmCard[] = [
       berries: 1,
       carrots: 3,
     },
-    image: "rummager",
+    image: "/critters/price_hiker.jpeg",
     description: (
       <span>
         <b>Discount</b>, then <b>Snatch</b> the discounted crops from a card in
