@@ -1,21 +1,20 @@
-import * as React from "react";
-import { ICard, IFarmCard } from "../../models/cards.models";
-
 import "./stats.scss";
 import CostBarChart from "./CostBarChart";
 import CostFrequencyChart from "./CostFrequencyChart";
 import CropCostBreakdown from "./CropCostBreakdown";
+import { useAppSelector } from "../../store/hooks";
+import { getFilteredDuplicatesFarmDeck } from "../../store/deck.selectors";
 
-interface IStatsProps {
-  deck: IFarmCard[];
-}
+const Stats = () => {
+  const filteredDuplicatesFarmDeck = useAppSelector(
+    getFilteredDuplicatesFarmDeck
+  );
 
-const Stats = (props: IStatsProps) => {
   return (
     <div className="stats">
-      <CostBarChart deck={props.deck} />
-      <CostFrequencyChart deck={props.deck} />
-      <CropCostBreakdown deck={props.deck} />
+      <CostBarChart deck={filteredDuplicatesFarmDeck} />
+      <CostFrequencyChart deck={filteredDuplicatesFarmDeck} />
+      <CropCostBreakdown deck={filteredDuplicatesFarmDeck} />
     </div>
   );
 };

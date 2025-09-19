@@ -1,24 +1,15 @@
 import * as React from "react";
 import "./new-display.scss";
-import {
-  CARD_SUBTYPE,
-  CARD_TYPE,
-  ICard,
-  IFarmCard,
-  IRewardCard,
-} from "../../models/cards.models";
-import CardSubTypeList from "./CardSubTypeList";
 import RewardCard from "../Cards/RewardCard";
+import { useAppSelector } from "../../store/hooks";
+import { getFilteredRewardDeck } from "../../store/deck.selectors";
 
-interface IProps {
-  rewards: IRewardCard[];
-}
-
-const RewardCardList = (props: IProps) => {
+const RewardCardList = () => {
+  const rewards = useAppSelector(getFilteredRewardDeck);
   const [isHidden, setIsHidden] = React.useState(false);
   const title = "Rewards";
 
-  if (props.rewards.length === 0) {
+  if (rewards.length === 0) {
     return null;
   }
 
@@ -26,7 +17,7 @@ const RewardCardList = (props: IProps) => {
     <div className="card-type__container">
       <div className="card-type__title">
         <div>
-          {title} ({props.rewards.length})
+          {title} ({rewards.length})
         </div>
         <button className="button" onClick={() => setIsHidden((h) => !h)}>
           {isHidden ? "Show" : "Hide"}
@@ -34,7 +25,7 @@ const RewardCardList = (props: IProps) => {
       </div>
       {!isHidden && (
         <div className="card-subtype__list">
-          {props.rewards.map((card) => (
+          {rewards.map((card) => (
             <RewardCard card={card} key={card.name} />
           ))}
         </div>

@@ -5,6 +5,7 @@ import {
   RESOURCE,
   TAGS,
 } from "../models/cards.models";
+import { RootState } from "./store";
 
 export type TEffects =
   | "Recycle"
@@ -13,7 +14,7 @@ export type TEffects =
   | "sellable"
   | "unsellable";
 
-interface FilterState {
+export interface IFilterState {
   types: CARD_TYPE[];
   subTypes: CARD_SUBTYPE[];
   crops: Record<RESOURCE, boolean>;
@@ -21,13 +22,13 @@ interface FilterState {
   tags: TAGS[];
 }
 
-const initialState: FilterState = {
+const initialState: IFilterState = {
   types: [],
   subTypes: [],
   crops: {
-    apples: true,
-    berries: true,
-    carrots: true,
+    apples: false,
+    berries: false,
+    carrots: false,
   },
   effects: {
     Bonus: false,
@@ -73,13 +74,7 @@ const filterSlice = createSlice({
       }
     },
   },
-  selectors: {
-    getCardTypeFilter: (state) => state.types,
-    getCardSubTypeFilter: (state) => state.subTypes,
-    getCropFilters: (state) => state.crops,
-    getEffectsFilters: (state) => state.effects,
-    getFilteredTags: (state) => state.tags,
-  },
+  selectors: {},
 });
 
 export const {
@@ -89,11 +84,13 @@ export const {
   toggleEffectsFilter,
   toggleTagFilter,
 } = filterSlice.actions;
-export const {
-  getCardSubTypeFilter,
-  getCardTypeFilter,
-  getCropFilters,
-  getEffectsFilters,
-  getFilteredTags,
-} = filterSlice.selectors;
+
+export const getFilterState = (state: RootState) => state.filters;
+export const getCardTypeFilter = (state: RootState) => state.filters.types;
+export const getCardSubTypeFilter = (state: RootState) =>
+  state.filters.subTypes;
+export const getCropFilters = (state: RootState) => state.filters.crops;
+export const getEffectsFilters = (state: RootState) => state.filters.effects;
+export const getFilteredTags = (state: RootState) => state.filters.tags;
+
 export default filterSlice.reducer;

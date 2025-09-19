@@ -1,23 +1,18 @@
 import * as React from "react";
 import "./new-display.scss";
-import {
-  CARD_SUBTYPE,
-  CARD_TYPE,
-  ICard,
-  IFarmCard,
-} from "../../models/cards.models";
+import { CARD_SUBTYPE, CARD_TYPE } from "../../models/cards.models";
 import CardSubTypeList from "./CardSubTypeList";
+import { useAppSelector } from "../../store/hooks";
+import { getFilteredFarmDeck } from "../../store/deck.selectors";
 
 interface IProps {
-  farmDeck: IFarmCard[];
   type: CARD_TYPE;
 }
 
 const CardTypeList = (props: IProps) => {
   const [isHidden, setIsHidden] = React.useState(false);
-  const matchingCards = props.farmDeck.filter(
-    (card) => card.type === props.type
-  );
+  const farmDeck = useAppSelector(getFilteredFarmDeck);
+  const matchingCards = farmDeck.filter((card) => card.type === props.type);
   const title = props.type;
 
   if (matchingCards.length === 0) {
