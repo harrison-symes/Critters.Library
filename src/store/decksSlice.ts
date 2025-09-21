@@ -1,19 +1,17 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import {
-  CARD_SUBTYPE,
-  CARD_TYPE,
   IFarmCard,
   IFavourCard,
   IRewardCard,
+  IVisitorCard,
   IWorkOrder,
-  RESOURCE,
-  TAGS,
 } from "../models/cards.models";
 import {
   createDeck,
   createFavourDeck,
   createRewardDeck,
   createStarterDeck,
+  createVisitorsDeck,
   createWorkOrderDeck,
 } from "../cards";
 import { RootState } from "./store";
@@ -39,6 +37,7 @@ interface DecksState {
     duplicates: IWorkOrder[];
     noDuplicates: IWorkOrder[];
   };
+  visitorsDeck: IVisitorCard[];
 }
 
 const initialState: DecksState = {
@@ -62,6 +61,7 @@ const initialState: DecksState = {
     duplicates: createWorkOrderDeck(),
     noDuplicates: createWorkOrderDeck(true),
   },
+  visitorsDeck: createVisitorsDeck(),
 };
 
 const decksSlice = createSlice({
@@ -93,5 +93,6 @@ export const getDuplicatesWorkOrderDeck = (state: RootState) =>
   state.decks.workOrderDeck.duplicates;
 export const getWorkOrderDeck = (state: RootState) =>
   state.decks.workOrderDeck.noDuplicates;
+export const getVisitorsDeck = (state: RootState) => state.decks.visitorsDeck;
 
 export default decksSlice.reducer;

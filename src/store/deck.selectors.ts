@@ -11,6 +11,7 @@ import {
   getFavourDeck,
   getRewardDeck,
   getStarterDeck,
+  getVisitorsDeck,
   getWorkOrderDeck,
 } from "./decksSlice";
 import { appSelector, RootState } from "./store";
@@ -64,6 +65,7 @@ const filterFarmDeck = (cards: IFarmCard[], filters: IFilterState) => {
     return true;
   });
 };
+
 const filterWorkOrderDeck = (cards: IWorkOrder[], filters: IFilterState) => {
   return cards.filter((card) => {
     if (filters.types.length && !filters.types.includes(card.type)) {
@@ -208,6 +210,10 @@ export const getFilteredDuplicatesWorkOrderDeck = createSelector(
   [getDuplicatesWorkOrderDeck, getFilterState],
   (deck, filters) => filterWorkOrderDeck(deck, filters)
 );
+export const getFilteredVisitorsDeck = createSelector(
+  [getVisitorsDeck, getFilterState],
+  (deck, filters) => filterNonFarmDeck(deck, filters)
+);
 
 export const getFilteredDuplicatesFarmDeckCount = createSelector(
   [getFilteredDuplicatesFarmDeck],
@@ -229,6 +235,10 @@ export const getFilteredDuplicatesWorkOrderDeckCount = createSelector(
   [getFilteredDuplicatesWorkOrderDeck],
   (workOrders) => workOrders.length
 );
+export const getFilteredVisitorsDeckCount = createSelector(
+  [getFilteredVisitorsDeck],
+  (visitors) => visitors.length
+);
 
 export const getTotalFilteredCardsCount = createSelector(
   [
@@ -237,9 +247,10 @@ export const getTotalFilteredCardsCount = createSelector(
     getFilteredDuplicatesRewardDeckCount,
     getFilteredDuplicatesStarterDeckCount,
     getFilteredDuplicatesWorkOrderDeckCount,
+    getFilteredVisitorsDeckCount,
   ],
-  (farmDeck, favours, rewards, starters, workOrders) =>
-    farmDeck + favours + rewards + starters + workOrders
+  (farmDeck, favours, rewards, starters, workOrders, visitors) =>
+    farmDeck + favours + rewards + starters + workOrders + visitors
 );
 
 export const getFutureFilterCount =

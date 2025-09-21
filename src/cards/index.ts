@@ -4,6 +4,7 @@ import {
   IFarmCard,
   IFavourCard,
   IRewardCard,
+  IVisitorCard,
   IWorkOrder,
   TAGS,
 } from "../models/cards.models";
@@ -21,6 +22,7 @@ import workOrders from "./workOrders";
 import favours from "./favours";
 import rewards from "./rewards";
 import starters from "./items/starter";
+import visitors from "./visitors";
 
 const shuffleDeck = (deck: any[]) => {
   let currentIndex = deck.length;
@@ -130,4 +132,8 @@ export const createWorkOrderDeck = (
   });
 
   return shuffleDeck(deck);
+};
+
+export const createVisitorsDeck = (): IVisitorCard[] => {
+  return visitors;
 };

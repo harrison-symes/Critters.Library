@@ -14,6 +14,7 @@ const mapTypeToColour: Record<CARD_TYPE, string> = {
   [CARD_TYPE.Favour]: "#9DF7E5",
   [CARD_TYPE.Reward]: "#FCF6B1",
   [CARD_TYPE.WorkOrder]: "",
+  [CARD_TYPE.Visitor]: "",
 };
 
 const TypePieChart = () => {

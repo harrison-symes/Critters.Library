@@ -5,6 +5,7 @@ export enum CARD_TYPE {
   Favour = "Favour",
   Reward = "Rewards",
   WorkOrder = "Work Order",
+  Visitor = "Visitor",
 }
 
 export type RESOURCE = "apples" | "carrots" | "berries";
@@ -122,3 +123,5 @@ export interface IWorkOrder extends ICard {
   set: CARD_SET;
   type: CARD_TYPE.WorkOrder;
 }
+
+export interface IVisitorCard extends ICard {}

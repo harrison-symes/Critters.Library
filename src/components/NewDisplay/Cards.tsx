@@ -5,6 +5,7 @@ import CardSubTypeList from "./CardSubTypeList";
 import CardTypeList from "./CardTypeList";
 import FavourCardList from "./FavourCardList";
 import RewardCardList from "./RewardCardsList";
+import VisitorCardList from "./VisitorCardList";
 import WorkOrderCardList from "./WorkOrderCardList";
 
 const cardTypes = Object.values(CARD_TYPE);
@@ -20,6 +21,7 @@ const Cards = () => {
       <FavourCardList />
       <WorkOrderCardList />
       <CardSubTypeList farmDeck={starterCards} subType={CARD_SUBTYPE.Starter} />
+      <VisitorCardList />
     </div>
   );
 };
