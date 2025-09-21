@@ -31,6 +31,7 @@ const worms: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Worm,
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.FAST_TRACK],
     set: CARD_SET.BASE,
+    flavour: "She has a Need for Seeds.",
   },
   {
     name: "Top-Soiler",
@@ -57,6 +58,7 @@ const worms: IFarmCard[] = [
       TAGS.ADD_TO_HAND,
     ],
     set: CARD_SET.BASE,
+    flavour: "He's always soiling himself.",
   },
   {
     name: "Chloro Phil",
@@ -83,6 +85,27 @@ const worms: IFarmCard[] = [
       TAGS.SUNLIGHT_REMOVE,
     ],
     set: CARD_SET.BASE,
+    flavour: `Chlorophyll: It's what makes plants green and helps them absorb Sunlight. Now you know!`,
+  },
+  {
+    name: "Transplanter",
+    cost: {
+      apples: 2,
+      berries: 1,
+      carrots: 2,
+    },
+    qty: 2,
+    set: CARD_SET.CROWD_FUND,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Worm,
+    energy: 3,
+    description: (
+      <span>
+        Move 1 <b>☀️Sunlight</b> from ANY <b className="nowrap">🌱Seed</b> to
+        any other <b className="nowrap">🌱Seed</b>.
+      </span>
+    ),
+    tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SUNLIGHT_REMOVE],
   },
 ];
 

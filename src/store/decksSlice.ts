@@ -5,13 +5,24 @@ import {
   IFarmCard,
   IFavourCard,
   IRewardCard,
+  IWorkOrder,
   RESOURCE,
   TAGS,
 } from "../models/cards.models";
-import { createDeck, createFavourDeck, createRewardDeck } from "../cards";
+import {
+  createDeck,
+  createFavourDeck,
+  createRewardDeck,
+  createStarterDeck,
+  createWorkOrderDeck,
+} from "../cards";
 import { RootState } from "./store";
 
 interface DecksState {
+  starterDeck: {
+    duplicates: IFarmCard[];
+    noDuplicates: IFarmCard[];
+  };
   farmDeck: {
     duplicates: IFarmCard[];
     noDuplicates: IFarmCard[];
@@ -24,9 +35,17 @@ interface DecksState {
     duplicates: IRewardCard[];
     noDuplicates: IRewardCard[];
   };
+  workOrderDeck: {
+    duplicates: IWorkOrder[];
+    noDuplicates: IWorkOrder[];
+  };
 }
 
 const initialState: DecksState = {
+  starterDeck: {
+    duplicates: createStarterDeck(),
+    noDuplicates: createStarterDeck(true),
+  },
   farmDeck: {
     duplicates: createDeck(),
     noDuplicates: createDeck(true),
@@ -38,6 +57,10 @@ const initialState: DecksState = {
   rewardsDeck: {
     duplicates: createRewardDeck(),
     noDuplicates: createRewardDeck(true),
+  },
+  workOrderDeck: {
+    duplicates: createWorkOrderDeck(),
+    noDuplicates: createWorkOrderDeck(true),
   },
 };
 
@@ -62,5 +85,13 @@ export const getDuplicatesFavourDeck = (state: RootState) =>
   state.decks.favourDeck.duplicates;
 export const getFavourDeck = (state: RootState) =>
   state.decks.favourDeck.noDuplicates;
+export const getDuplicatesStarterDeck = (state: RootState) =>
+  state.decks.starterDeck.duplicates;
+export const getStarterDeck = (state: RootState) =>
+  state.decks.starterDeck.noDuplicates;
+export const getDuplicatesWorkOrderDeck = (state: RootState) =>
+  state.decks.workOrderDeck.duplicates;
+export const getWorkOrderDeck = (state: RootState) =>
+  state.decks.workOrderDeck.noDuplicates;
 
 export default decksSlice.reducer;

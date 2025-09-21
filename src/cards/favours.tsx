@@ -84,7 +84,8 @@ const favours: IFavourCard[] = [
     image: "rummager",
     description: (
       <span>
-        <b>Refresh</b> 2 cards in the <b>Market</b>.
+        <b>Refresh</b> 2 cards in the <b>Market</b>. <br />
+        <b>Discount</b>.
       </span>
     ),
     tags: [TAGS.REFRESH],
@@ -193,10 +194,70 @@ const favours: IFavourCard[] = [
     name: "Slim Pickings",
     qty: 1,
     image: "rummager",
-    description: <span>Gain a crop of your choosing.</span>,
+    description: (
+      <span>
+        Gain a crop of your choosing. <br />
+        <b>Discount</b>.
+      </span>
+    ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE],
     type: CARD_TYPE.Favour,
     set: CARD_SET.BASE,
+  },
+  {
+    name: "Collect Donations",
+    qty: 1,
+    image: "rummager",
+    description: (
+      <span>
+        Each of your Rivals must give you a crop. <br /> (If they have any)
+      </span>
+    ),
+    tags: [TAGS.CROP_STEAL],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "Get Organised",
+    qty: 1,
+    image: "rummager",
+    description: (
+      <span>
+        <b>Reset</b> your deck. <br />
+        <b>Discount</b>.
+      </span>
+    ),
+    tags: [TAGS.RESET_DECK, TAGS.DISCOUNT],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "Donate",
+    qty: 1,
+    image: "rummager",
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to <b>Gift</b> a different card
+        from your hand.
+      </span>
+    ),
+    tags: [TAGS.DISCARD_OWN, TAGS.GIFT],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "Fundraise",
+    qty: 2,
+    image: "rummager",
+    description: (
+      <span>
+        <b>Discount</b>. <br />
+        Gain +1 of the discounted crop type.
+      </span>
+    ),
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.DISCOUNT],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.CROWD_FUND,
   },
 ];
 

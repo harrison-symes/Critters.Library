@@ -6,36 +6,11 @@ import {
 } from "../../models/cards.models";
 import cn from "classnames";
 import "./cards.scss";
+import CropCost from "./CropCost";
 
 interface IProps {
   card: IFarmCard;
 }
-
-interface ICropCostProps {
-  crop: RESOURCE;
-  card: IFarmCard;
-}
-
-const mapCropToEmoji: Record<RESOURCE, string> = {
-  apples: "🍏",
-  berries: "🫐",
-  carrots: "🥕",
-};
-
-const CropCost = (props: ICropCostProps) => {
-  const value = props.card.cost[props.crop];
-
-  return (
-    <div
-      className={cn(`card__cost card__cost--${props.crop}`, {
-        "card__cost--faded": value === 0,
-      })}
-    >
-      <div className="card__cost__value">{value}</div>
-      <div className="card__cost__icon">{mapCropToEmoji[props.crop]}</div>
-    </div>
-  );
-};
 
 const getCardTypeIcon = (type: CARD_TYPE) => {
   switch (type) {
@@ -60,6 +35,8 @@ const getSubtypeIcon = (type?: CARD_SUBTYPE) => {
       return "🛠️";
     case CARD_SUBTYPE.Treat:
       return "🧁";
+    case CARD_SUBTYPE.Starter:
+      return "🏠";
     default:
       return "";
   }
@@ -91,9 +68,9 @@ const FarmCard = (props: IProps) => {
           <div className="card__special">Unsellable</div>
         )}
         <div className="card__cost__container">
-          <CropCost card={props.card} crop="apples" />
-          <CropCost card={props.card} crop="berries" />
-          <CropCost card={props.card} crop="carrots" />
+          <CropCost costs={props.card.cost} crop="apples" />
+          <CropCost costs={props.card.cost} crop="berries" />
+          <CropCost costs={props.card.cost} crop="carrots" />
         </div>
       </div>
       <div className="card__description__container">
@@ -154,6 +131,9 @@ const FarmCard = (props: IProps) => {
           <div className="card__type" title={props.card.type}>
             {getCardTypeIcon(props.card.type)}
           </div>
+        </div>
+        <div className="card__footer__middle">
+          <div className="card__footer__flavour">{props.card.flavour}</div>
         </div>
         <div className="card__footer__right">
           {props.card.type === CARD_TYPE.Critter ? (

@@ -71,17 +71,17 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.FREE_CARD, TAGS.WORK_ORDER_COMPLETION],
   },
   {
-    name: "Toolbox",
+    name: "Work Roster",
     qty: 1,
     description: (
       <span>
-        Instantly, and whenever you complete a <b>Work Order</b>, put a card
-        from your discard pile onto the top of your deck.
+        Instantly, and whenever you complete a <b>Work Order</b>, <b>Skewer</b>{" "}
+        a card from your discard pile.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.TOP_OF_DECK, TAGS.WORK_ORDER_COMPLETION],
+    tags: [TAGS.SKEWER, TAGS.WORK_ORDER_COMPLETION],
   },
   {
     name: "Wrapping Paper",
@@ -110,7 +110,7 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.ADD_TO_HAND],
   },
   {
-    name: "Seed Fnd",
+    name: "Seed Fund",
     qty: 1,
     description: (
       <span>
@@ -190,7 +190,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Buy</b> or <b>Sell</b> a Farm card, draw a card.
+        Whenever you <b>Buy</b> or <b>Sell</b> a Farm card, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -202,25 +202,25 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Card that you <b>Fast-track</b> are put onto the top of your deck
+        Whenever you you <b>Fast-track</b> a card, you may <b>Skewer</b> it
         instead.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FAST_TRACK, TAGS.TOP_OF_DECK],
+    tags: [TAGS.FAST_TRACK, TAGS.SKEWER],
   },
   {
     name: "Skewer",
     qty: 1,
     description: (
       <span>
-        Whenever you put a card onto the top of your deck, draw a card.
+        After you <b>Skewer</b> a card, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.CARD_DRAW, TAGS.TOP_OF_DECK],
+    tags: [TAGS.CARD_DRAW, TAGS.SKEWER],
   },
   {
     name: "V.I.P Pass",
@@ -290,20 +290,20 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Sell</b> a <b>🏦Finance</b> card, you may put it back
-        onto the top of your deck.
+        After you <b>Sell</b> or <b>Trash</b> a <b>🏦Finance</b> card, you may{" "}
+        <b>Skewer</b> it.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TOP_OF_DECK],
+    tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TRASH, TAGS.SKEWER],
   },
   {
     name: "Rainy Day Savings",
     qty: 1,
     description: (
       <span>
-        Whenever you play a <b>🏦Finance</b> card, gain +2 of a random crop.
+        After you play a <b>🏦Finance</b> card, gain +2 of a random crop.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -331,7 +331,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Discard</b> a card from your hand, draw a card.
+        Whenever you <b>Discard</b> a card from your hand (during your turn),
+        draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -343,8 +344,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Discard</b> a card from your hand, you may{" "}
-        <b>Fast-track</b> a different card.
+        Whenever you <b>Discard</b> a card from your hand (during your turn),
+        you may <b>Fast-track</b> a different card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -409,6 +410,138 @@ const rewards: IRewardCard[] = [
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
     tags: [TAGS.ADD_TO_HAND],
+  },
+  {
+    name: "Donation Bin",
+    qty: 1,
+    description: (
+      <span>
+        Whenever you <b>Steal</b> a crop from a Rival, that Rival must also give
+        you a crop (If they have any).
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.CROP_STEAL],
+  },
+  {
+    name: "Crowd Fund",
+    qty: 1,
+    description: (
+      <span>
+        Whenever your deck is <b>Reset</b>, each Rival must give you a crop (If
+        they have any).
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.CROP_STEAL, TAGS.RESET_DECK],
+  },
+  {
+    name: "Hand-me-downs",
+    qty: 1,
+    description: (
+      <span>
+        Whenever you <b>Trash</b> a card, you may <b>Gift</b> it instead.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.TRASH, TAGS.GIFT],
+  },
+  {
+    name: "Demo Product",
+    qty: 1,
+    description: (
+      <span>
+        After you <b>Discard</b> a card from your hand (during your turn), you
+        may <b>Trash</b> or <b>Fast-track</b> that card.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.DISCARD_OWN, TAGS.FAST_TRACK, TAGS.TRASH, TAGS.TRASH_FROM_HAND],
+  },
+  {
+    name: "Poor Investment",
+    qty: 1,
+    description: (
+      <span>
+        At the end of your turn, if you have less <b>🏆Rewards</b> than your
+        Rivals, gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.LESS_REWARDS],
+  },
+  {
+    name: "Team Agreement",
+    qty: 1,
+    description: (
+      <span>
+        If you have less <b>🏆Rewards</b> than your Rivals, you don't have to
+        pay any <b>Overtime</b> packing fees.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.LESS_REWARDS],
+  },
+  {
+    name: "Investment Window",
+    qty: 1,
+    description: (
+      <span>
+        If you have less <b>🏆Rewards</b> than your Rivals, your <b>🌱Seeds</b>{" "}
+        gain an extra 1 <b>☀️Sunlight</b> at the end of your turn.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.SEED_SYNERGY, TAGS.LESS_REWARDS, TAGS.SUNLIGHT_ADD],
+  },
+  {
+    name: "Lunchbox",
+    qty: 1,
+    description: (
+      <span>
+        After you <b>Fast-track</b> a <b>🧁Treat</b>, draw a card.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.TREAT_SYNERGY, TAGS.FAST_TRACK, TAGS.CARD_DRAW],
+  },
+  {
+    name: "Fraudulent Documents",
+    qty: 1,
+    description: (
+      <span>
+        Your <b>🏦Finance</b> cards sell for twice as much. <br />
+        Your <b>🛠️Tools</b> and <b>🧁Treats</b> are now also <b>🏦Finance</b>{" "}
+        cards.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.FINANCE_SYNERGY, TAGS.DOUBLE_SELL],
+  },
+  {
+    name: "Box Cart",
+    qty: 1,
+    description: (
+      <span>
+        Once per turn, after you <b>Skewer</b> a <b>Tool</b>, pack a free{" "}
+        <b>Crate</b> into one of your <b>Work Orders</b>.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.TOOL_SYNERGY, TAGS.SKEWER, TAGS.FREE_CRATE],
   },
 ];
 

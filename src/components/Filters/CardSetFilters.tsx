@@ -1,6 +1,6 @@
 import * as React from "react";
 import FiltersGroup from "./FiltersGroup";
-import { CARD_SET, RESOURCE } from "../../models/cards.models";
+import { CARD_SET } from "../../models/cards.models";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 import FilterButton from "./FilterButton";

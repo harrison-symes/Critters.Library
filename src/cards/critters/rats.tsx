@@ -18,7 +18,7 @@ const rats: IFarmCard[] = [
     image: "rummager",
     description: (
       <span>
-        Get a <b>🤝Favour</b> from the Market for free.
+        Get a <b>Favour</b> from the <b>market</b> for free.
         <br />
         <b>Discount</b>
       </span>
@@ -33,6 +33,7 @@ const rats: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.FREE_FAVOUR, TAGS.DISCOUNT, TAGS.REFRESH],
     set: CARD_SET.BASE,
+    flavour: "Say hello to his little friends.",
   },
   {
     name: "Price Hiker",
@@ -59,6 +60,8 @@ const rats: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT, TAGS.REFRESH],
     set: CARD_SET.BASE,
+    flavour:
+      "At the tippy top of the mountain is where the best deals can be found.",
   },
   {
     name: "Hermes",
@@ -84,6 +87,34 @@ const rats: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.CARD_DRAW, TAGS.SELL, TAGS.SELL_FROM_HAND, TAGS.FAST_TRACK],
     set: CARD_SET.BASE,
+    flavour:
+      "The wings on his boots don't make him run faster, but let's not spoil his fun.",
+  },
+  {
+    name: "Tax Collector",
+    qty: 2,
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 1,
+    },
+    image: "rummager",
+    description: (
+      <span>
+        <b>Discount</b>. <br />
+        <b>Steal</b> 1 of the discounted crop type from each Rival.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Fast-track</b> a card.
+      </span>
+    ),
+    energy: 3,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rat,
+    tags: [TAGS.DISCOUNT, TAGS.CROP_STEAL, TAGS.FAST_TRACK],
+    set: CARD_SET.CROWD_FUND,
   },
 ];
 

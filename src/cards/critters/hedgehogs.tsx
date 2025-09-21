@@ -18,7 +18,7 @@ const hedgehogs: IFarmCard[] = [
     image: "/critters/skewerer.jpeg",
     description: (
       <span>
-        Put a <b>🛠️Tool</b> from your discard pile onto the top of your deck.
+        <b>Skewer</b> a <b>🛠️Tool</b> from your discard pile.
       </span>
     ),
     buyBonus: (
@@ -29,8 +29,9 @@ const hedgehogs: IFarmCard[] = [
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
-    tags: [TAGS.TOP_OF_DECK, TAGS.TOOL_SYNERGY, TAGS.GIFT],
+    tags: [TAGS.SKEWER, TAGS.TOOL_SYNERGY, TAGS.GIFT],
     set: CARD_SET.BASE,
+    flavour: "He makes Skewers by Skewering. He's Skewerer.",
   },
   {
     name: "Picky Eater",
@@ -56,6 +57,7 @@ const hedgehogs: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.FAST_TRACK, TAGS.TREAT_SYNERGY, TAGS.TRASH_FROM_DISCARD],
     set: CARD_SET.BASE,
+    flavour: "I guess you can be TOO picky.",
   },
   {
     name: "The Head Chog",
@@ -76,6 +78,33 @@ const hedgehogs: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.GIFT],
     set: CARD_SET.BASE,
+    flavour:
+      "Just in-case you were wondering who was in charge of all those Chogs.",
+  },
+  {
+    name: "Prankster",
+    qty: 1,
+    cost: {
+      apples: 3,
+      berries: 3,
+      carrots: 3,
+    },
+    image: "rummager",
+    energy: 2,
+    description: (
+      <span>
+        <b>Fast-track</b> 2 cards for a Rival (from their discard pile).
+      </span>
+    ),
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.FAST_TRACK],
+    set: CARD_SET.CROWD_FUND,
+    buyBonus: (
+      <span>
+        <b>Gift</b> a card from your discard pile.
+      </span>
+    ),
   },
 ];
 

@@ -30,6 +30,7 @@ const bees: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.WORK_ORDERS_3],
     set: CARD_SET.BASE,
+    flavour: "On Fridays he gets to wear a silly tie.",
   },
   {
     name: "Pesky Bee",
@@ -54,6 +55,7 @@ const bees: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_STEAL, TAGS.WORK_ORDERS_3],
     set: CARD_SET.BASE,
+    flavour: "Don't be scared, he just wants to hug you.",
   },
   {
     name: "Plan Bee",
@@ -75,6 +77,7 @@ const bees: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.WORK_ORDERS_3, TAGS.FAST_TRACK],
     set: CARD_SET.BASE,
+    flavour: "What if we paint the Apples purple? Do you think they'd notice?",
   },
 ];
 

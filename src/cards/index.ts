@@ -7,19 +7,20 @@ import {
   IWorkOrder,
   TAGS,
 } from "../models/cards.models";
-import bees from "./farm/bees";
-import worms from "./farm/worms";
-import hedgehogs from "./farm/hedgehogs";
+import bees from "./critters/bees";
+import worms from "./critters/worms";
+import hedgehogs from "./critters/hedgehogs";
 
-import items from "./farm/items";
-import moles from "./farm/moles";
-import rabbits from "./farm/rabbits";
-import raccoons from "./farm/raccoons";
-import rats from "./farm/rats";
-import seeds from "./farm/seeds";
+import items from "./items/items";
+import moles from "./critters/moles";
+import rabbits from "./critters/rabbits";
+import raccoons from "./critters/raccoons";
+import rats from "./critters/rats";
+import seeds from "./critters/seeds";
 import workOrders from "./workOrders";
 import favours from "./favours";
 import rewards from "./rewards";
+import starters from "./items/starter";
 
 const shuffleDeck = (deck: any[]) => {
   let currentIndex = deck.length;
@@ -62,9 +63,19 @@ export const createDeck = (noDuplicates: boolean = false): IFarmCard[] => {
   addToDeck(deck, hedgehogs, noDuplicates);
   addToDeck(deck, bees, noDuplicates);
 
-  if (!noDuplicates) {
-    return shuffleDeck(deck);
-  }
+  // if (!noDuplicates) {
+  //   return shuffleDeck(deck);
+  // }
+
+  return deck;
+};
+
+export const createStarterDeck = (
+  noDuplicates: boolean = false
+): IFarmCard[] => {
+  const deck: IFarmCard[] = [];
+
+  addToDeck(deck, starters, noDuplicates);
 
   return deck;
 };
@@ -104,7 +115,12 @@ export const createRewardDeck = (
   return deck;
 };
 
-export const createWorkOrderDeck = (): IWorkOrder[] => {
+export const createWorkOrderDeck = (
+  noDuplicates: boolean = false
+): IWorkOrder[] => {
+  if (noDuplicates) {
+    return workOrders;
+  }
   const deck: IWorkOrder[] = [];
 
   workOrders.forEach((card) => {

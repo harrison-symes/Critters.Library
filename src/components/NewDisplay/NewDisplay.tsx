@@ -8,6 +8,7 @@ import {
   getFilteredDuplicatesFarmDeck,
   getFilteredDuplicatesFavourDeck,
   getFilteredDuplicatesRewardDeck,
+  getFilteredFarmDeck,
   getFilteredFavourDeck,
   getFilteredRewardDeck,
 } from "../../store/deck.selectors";
@@ -25,7 +26,7 @@ const NewDisplay = () => {
   const filteredDuplicatesFarmDeck = useAppSelector(
     getFilteredDuplicatesFarmDeck
   );
-  const filteredFarmDeck = useAppSelector(getFilteredDuplicatesFarmDeck);
+  const filteredFarmDeck = useAppSelector(getFilteredFarmDeck);
 
   return (
     <div className="display">

@@ -40,7 +40,7 @@ const initialState: IFilterState = {
     unsellable: false,
   },
   tags: [],
-  sets: [CARD_SET.BASE],
+  sets: [],
 };
 
 const filterSlice = createSlice({

@@ -32,7 +32,11 @@ const CardTypeList = (props: IProps) => {
       {!isHidden && (
         <>
           {[undefined, ...Object.values(CARD_SUBTYPE)].map((subType) => (
-            <CardSubTypeList farmDeck={matchingCards} subType={subType} />
+            <CardSubTypeList
+              farmDeck={matchingCards}
+              subType={subType}
+              key={subType}
+            />
           ))}
         </>
       )}

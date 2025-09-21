@@ -2,7 +2,6 @@ import {
   CARD_SET,
   CARD_SUBTYPE,
   CARD_TYPE,
-  ICard,
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
@@ -23,6 +22,7 @@ const rabbits: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
     set: CARD_SET.BASE,
+    flavour: "He's rooting for you!",
   },
   {
     name: "Berry Grower",
@@ -39,6 +39,7 @@ const rabbits: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
     set: CARD_SET.BASE,
+    flavour: "She's Berry good at her job.",
   },
   {
     name: "Apple Grower",
@@ -55,6 +56,7 @@ const rabbits: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
     set: CARD_SET.BASE,
+    flavour: "How do you like them Apples?",
   },
   {
     name: "Agriculturist",
@@ -72,6 +74,7 @@ const rabbits: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     set: CARD_SET.BASE,
+    flavour: "My manager wouldn't be too happy if I produced random results.",
   },
   {
     name: "Clodhopper",
@@ -93,6 +96,7 @@ const rabbits: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.FREE_CRATE],
     set: CARD_SET.BASE,
+    flavour: "Do you sell these boots in size 100?",
   },
   {
     name: "Crop Picker",
@@ -115,6 +119,35 @@ const rabbits: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     set: CARD_SET.BASE,
+    flavour: "You can't be TOO picky.",
+  },
+  {
+    name: "Volunteer",
+    qty: 2,
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    image: "/critters/crop_picker.png",
+    description: (
+      <span>
+        Gain a crop of your choosing.
+        <br />
+        <b>Discount</b> by that crop type.
+      </span>
+    ),
+    energy: 3,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE, TAGS.FREE_FAVOUR],
+    set: CARD_SET.CROWD_FUND,
+    flavour: "He's here to lend a paw.",
+    recycle: (
+      <span>
+        Get a free <b>Favour</b> from the <b>Market</b>
+      </span>
+    ),
   },
 ];
 

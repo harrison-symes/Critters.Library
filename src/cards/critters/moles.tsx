@@ -31,6 +31,7 @@ const moles: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.ADD_ZZZ],
     set: CARD_SET.BASE,
+    flavour: "Hey, who broke the coffee machine?",
   },
   {
     name: "Burrower",
@@ -52,6 +53,7 @@ const moles: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.CROP_STEAL, TAGS.BOTTOM_OF_DECK],
     set: CARD_SET.BASE,
+    flavour: "Huh? This Apple? I always had it...",
   },
   {
     name: "Wacker Mole",
@@ -72,6 +74,29 @@ const moles: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.ADD_ZZZ],
     set: CARD_SET.BASE,
+    flavour: "Now he holds the mallet.",
+  },
+  {
+    name: "Taskmaster",
+    qty: 2,
+    cost: {
+      apples: 1,
+      berries: 2,
+      carrots: 2,
+    },
+    image: "rummager",
+    description: (
+      <span>
+        Move 1 💤 from one of your <b className="nowrap">🐾Critters</b> to any
+        other <b className="nowrap">🐾Critter</b>.
+      </span>
+    ),
+    energy: 2,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Mole,
+    tags: [TAGS.REMOVE_ZZZ, TAGS.ADD_ZZZ],
+    set: CARD_SET.CROWD_FUND,
+    recycle: <span>Put this at the bottom of your deck.</span>,
   },
 ];
 

@@ -197,14 +197,18 @@ const seeds: IFarmCard[] = [
     image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.SUNLIGHT_ADD, TAGS.TOP_OF_DECK, TAGS.SEED_SYNERGY],
+    tags: [TAGS.SUNLIGHT_ADD, TAGS.SKEWER, TAGS.SEED_SYNERGY],
     sunlight: {
       two: (
         <span>
           Add <b>2 ☀️Sunlight</b> to each of your <b>🌱Seeds</b>...
         </span>
       ),
-      three: "...and put this card onto the top of your deck.",
+      three: (
+        <span>
+          ...and <b>Skewer</b> this card.
+        </span>
+      ),
     },
     set: CARD_SET.BASE,
   },
@@ -219,12 +223,94 @@ const seeds: IFarmCard[] = [
     image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.FREE_CARD, TAGS.TOP_OF_DECK],
+    tags: [TAGS.FREE_CARD, TAGS.SKEWER],
     sunlight: {
-      two: "Put a Farm card from the Market into your discard pile...",
-      three: "...or onto the top of your deck.",
+      two: (
+        <span>
+          Put a Farm card from the <b>Market</b> into your discard pile...
+        </span>
+      ),
+      three: (
+        <span>
+          ...<b>Skewer</b> that card instead.
+        </span>
+      ),
     },
     set: CARD_SET.BASE,
+  },
+  {
+    name: "Rotten Seeds",
+    qty: 2,
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    image: "rummager",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.ADD_ZZZ],
+    sunlight: {
+      one: (
+        <span>
+          Add 1 💤 to a Rival's <b className="nowrap">🐾Critter</b>.
+        </span>
+      ),
+      two: "",
+      three: (
+        <span>
+          Add 1 💤 to each of a Rival's <b className="nowrap">🐾Critters</b>.
+        </span>
+      ),
+    },
+    set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "Shiny Seeds",
+    qty: 2,
+    cost: {
+      apples: 1,
+      carrots: 1,
+      berries: 1,
+    },
+    image: "rummager",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT],
+    sunlight: {
+      two: (
+        <span>
+          <b>Discount</b>...
+        </span>
+      ),
+      three: (
+        <span>
+          ...and snatch the discounted crops from a card in the <b>Market</b>.
+        </span>
+      ),
+    },
+    set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "Flower Seeds",
+    qty: 1,
+    cost: {
+      apples: 3,
+      carrots: 3,
+      berries: 3,
+    },
+    image: "rummager",
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.FREE_CRATE],
+    sunlight: {
+      three: (
+        <span>
+          Pack a free crate into one of your <b>Work Orders</b>.
+        </span>
+      ),
+    },
+    set: CARD_SET.CROWD_FUND,
   },
 ];
 

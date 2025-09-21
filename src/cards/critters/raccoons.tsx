@@ -31,6 +31,7 @@ const raccoons: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
     set: CARD_SET.BASE,
+    flavour: "Maybe the card you need is just behind that Berry Bush.",
   },
   {
     name: "Dumpster Diver",
@@ -52,6 +53,7 @@ const raccoons: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.DISCARD_OWN],
     set: CARD_SET.BASE,
+    flavour: "One Critter's trash is another Raccoon's treasure.",
   },
   {
     name: "Sticky Fingers",
@@ -74,6 +76,29 @@ const raccoons: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.DISCARD_OWN, TAGS.ADD_TO_HAND],
     set: CARD_SET.BASE,
+    flavour: "Be sure to wash your hands after playing this card.",
+  },
+  {
+    name: "Vandal",
+    qty: 1,
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    // image: "/critters/sticky_fingers.jpeg",
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand. Each Rival must also discard a
+        card from their hand.
+      </span>
+    ),
+    energy: 2,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Raccoon,
+    tags: [TAGS.DISCARD_OWN, TAGS.DISCARD_RIVAL],
+    set: CARD_SET.CROWD_FUND,
+    recycle: <span>Put this card into your hand.</span>,
   },
 ];
 
