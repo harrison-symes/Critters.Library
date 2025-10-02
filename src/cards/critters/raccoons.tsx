@@ -5,17 +5,19 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import FastTrack from "../text/FastTrack";
 
 const raccoons: IFarmCard[] = [
   {
     name: "Rummager",
+    notes:
+      "A raccoon digging through a trashcan. An empty open trashbag is lying on the ground.",
     qty: 2,
     cost: {
       apples: 1,
       berries: 3,
       carrots: 1,
     },
-    image: "rummager",
     description: (
       <span>
         <b>Discard</b> a card from your hand to draw a card.
@@ -23,7 +25,7 @@ const raccoons: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <b>Fast-track</b> a <b>🏠Starter</b> card.
+        <FastTrack /> a <b>🏠Starter</b> card.
       </span>
     ),
     energy: 2,
@@ -35,13 +37,14 @@ const raccoons: IFarmCard[] = [
   },
   {
     name: "Dumpster Diver",
+    notes:
+      "A raccoon is poking out of a pile a trash in a dumpster. He is holding up a trowel that he found.",
     qty: 2,
     cost: {
       apples: 3,
       berries: 0,
       carrots: 2,
     },
-    image: "rummager",
     description: (
       <span>
         <b>Discard</b> a card from your hand to <b>Sell</b> a different card
@@ -63,7 +66,7 @@ const raccoons: IFarmCard[] = [
       berries: 3,
       carrots: 3,
     },
-    image: "/critters/sticky_fingers.jpeg",
+    image: "/sticky_fingers.jpeg",
     description: (
       <span>
         <b>Discard</b> a card from your hand, then return that card to your
@@ -86,11 +89,10 @@ const raccoons: IFarmCard[] = [
       berries: 1,
       carrots: 1,
     },
-    // image: "/critters/sticky_fingers.jpeg",
     description: (
       <span>
-        <b>Discard</b> a card from your hand. Each Rival must also discard a
-        card from their hand.
+        <b>Discard</b> a card from your hand. Each Rival must also{" "}
+        <b>Discard</b> a card from their hand.
       </span>
     ),
     energy: 2,

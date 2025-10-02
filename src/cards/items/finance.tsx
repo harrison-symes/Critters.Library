@@ -5,6 +5,10 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Discount from "../text/Discount";
+import FastTrack from "../text/FastTrack";
+import Skewer from "../text/Skewer";
+import Sleepy from "../text/Sleepy";
 
 const finance: IFarmCard[] = [
   {
@@ -14,20 +18,22 @@ const finance: IFarmCard[] = [
       berries: 2,
       carrots: 2,
     },
+    image: "/recycling_bin.jpeg",
+    ai_image: "/ai/recycling_bin.png",
     qty: 1,
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
     description: (
       <span>
-        Gain +2 🍏. <br /> <b>Fast-track</b> an <b>🎒Item</b>.<br />
-        <b>Discount</b>.
+        Gain +2 🍏. <br /> <FastTrack /> an <b>🎒Item</b>.<br />
+        <Discount />.
       </span>
     ),
     holdable: true,
     buyBonus: (
       <span>
-        Get a <b>Favour</b> from the <b>market</b> for free.
+        Get a <b>Favour</b> from the <b>Market</b> for free.
       </span>
     ),
     tags: [
@@ -40,6 +46,7 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Closed Sign",
+    notes: "A fold up sign with the word 'closed' written on it",
     cost: {
       apples: 2,
       berries: 2,
@@ -59,18 +66,20 @@ const finance: IFarmCard[] = [
     description: (
       <span>
         Gain +2 🥕. <br />
-        Add 1 💤 to EVERY <b>🐾Critter</b>. <br />
-        <b>Discount</b>.
+        Add 1 <Sleepy /> to EVERY <b>🐾Critter</b>. <br />
+        <Discount />.
       </span>
     ),
     buyBonus: (
       <span>
-        Get a <b>Favour</b> from the <b>market</b> for free.
+        Get a <b>Favour</b> from the <b>Market</b> for free.
       </span>
     ),
   },
   {
     name: "Loyalty Card",
+    notes:
+      "A punch card with a cartoon rat face and 6 circles with berries on them. Some of them are punched out (like a coffee loyalty card).",
     cost: {
       apples: 2,
       berries: 0,
@@ -90,17 +99,18 @@ const finance: IFarmCard[] = [
       <span>
         Gain +2 🫐. <br />
         Get a <b>Favour</b> from the <b>Market</b> for free. <br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     buyBonus: (
       <span>
-        Get a <b>Favour</b> from the <b>market</b> for free.
+        Get a <b>Favour</b> from the <b>Market</b> for free.
       </span>
     ),
   },
   {
     name: "Cooked Books",
+    notes: "A thick open book resting in a pot of boiling water",
     cost: {
       apples: 1,
       berries: 3,
@@ -119,12 +129,14 @@ const finance: IFarmCard[] = [
     description: (
       <span>
         <b>Sell</b> a card from your discard pile. <br />
-        If it was a <b>🏦Finance</b> card, <b>Skewer</b> it afterwards.
+        If it was a <b>🏦Finance</b> card, <Skewer /> it afterwards.
       </span>
     ),
   },
   {
     name: "Instruction manual",
+    notes:
+      "A sheet similar to lego instructions, with numbered steps 1 2 and 3. The steps show how to put and apple into a crate",
     cost: {
       apples: 1,
       berries: 2,
@@ -145,6 +157,7 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Damaged Goods",
+    notes: "A worn down opened top crate, with rotten crops inside",
     cost: {
       apples: 3,
       berries: 1,
@@ -183,6 +196,8 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Gift Card",
+    notes:
+      "A gift card with a cartoon rat face and the word 'FREE!' written on it.",
     cost: {
       apples: 2,
       berries: 2,
@@ -196,13 +211,14 @@ const finance: IFarmCard[] = [
     tags: [TAGS.SKEWER, TAGS.FREE_CARD],
     description: (
       <span>
-        <b>Skewer</b> a Farm card from the <b>Market</b>.
+        <Skewer /> a Farm card from the <b>Market</b>.
         <br /> Put <b>Gift Card</b> back into the <b>Market</b>.
       </span>
     ),
   },
   {
     name: "Paper Shredder",
+    notes: "A paper shredder that is shredding receipts",
     cost: {
       apples: 0,
       berries: 2,
@@ -229,6 +245,7 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Open Sign",
+    notes: "A fold out sign with the word 'OPEN' on it",
     cost: {
       apples: 3,
       berries: 0,
@@ -249,13 +266,14 @@ const finance: IFarmCard[] = [
       <span>
         <b>Refresh</b> 2 cards in the Market. <br /> Gain 2 random crops.
         <br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     buyBonus: "Put this card into your hand.",
   },
   {
     name: "Contrabrand",
+    notes: "A purple carrot and a red apple",
     cost: {
       apples: 2,
       berries: 3,
@@ -280,6 +298,8 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Register",
+    notes:
+      "A cash register with a pull lever on the side. 3 buttons with icons for each crop type. The draw is open and there are various crops in little compartments",
     cost: {
       apples: 2,
       berries: 1,
@@ -300,6 +320,8 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Receipts",
+    notes:
+      "A bundle of receipts, the text is eligible squiggly lines. Possibly a rubber band around them.",
     cost: {
       apples: 1,
       berries: 1,
@@ -321,7 +343,7 @@ const finance: IFarmCard[] = [
       <span>
         <b>Sell</b> a card from your hand. <br />
         Draw a card.
-        <br /> <b>Discount</b>.
+        <br /> <Discount />.
       </span>
     ),
     recycle: "Gain +2 of a random crop.",

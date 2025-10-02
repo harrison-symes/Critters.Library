@@ -5,10 +5,15 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Discount from "../text/Discount";
+import FastTrack from "../text/FastTrack";
+import Skewer from "../text/Skewer";
+import Sleepy from "../text/Sleepy";
 
 const tools: IFarmCard[] = [
   {
     name: "Farming Gloves",
+    notes: "A pair of thick gloves.",
     cost: {
       apples: 0,
       berries: 2,
@@ -33,13 +38,14 @@ const tools: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <b>Fast-track</b> a <b>🌱Seed</b>.
+        <FastTrack /> a <b>🌱Seed</b>.
       </span>
     ),
     flavour: "So you don't get dirt on your paws.",
   },
   {
     name: "Binoculars",
+    notes: "A classic pair of binoculars",
     cost: {
       apples: 2,
       berries: 2,
@@ -57,7 +63,7 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        Gain +2 🥕. <br /> <b>Fast-track</b> a <b>🐾Critter</b>.
+        Gain +2 🥕. <br /> <FastTrack /> a <b>🐾Critter</b>.
       </span>
     ),
     buyBonus: (
@@ -70,6 +76,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Water Cooler",
+    notes:
+      "A water cooler with a single nozzle. A paper cut sits on the lip. Maybe a drop of water coming from the spout?",
     cost: {
       apples: 2,
       berries: 0,
@@ -88,8 +96,8 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        Gain +2 🫐. <br /> Move 1 💤 from one of your <b>🐾Critters</b> to ANY
-        other
+        Gain +2 🫐. <br /> Move 1 <Sleepy /> from one of your <b>🐾Critters</b>{" "}
+        to ANY other
         <b>🐾Critter</b>.
       </span>
     ),
@@ -97,6 +105,7 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Small Backpack",
+    notes: "",
     cost: {
       apples: 3,
       berries: 0,
@@ -152,6 +161,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Watering Can",
+    image: "/watering_can.png",
+    ai_image: "/ai/watering_can.png",
     cost: {
       apples: 0,
       berries: 1,
@@ -165,12 +176,12 @@ const tools: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <b>Skewer</b> a card from your discard pile.
+        <Skewer /> a card from your discard pile.
       </span>
     ),
     buyBonus: (
       <span>
-        <b>Skewer</b> this card
+        <Skewer /> this card
       </span>
     ),
     flavour: "You're watering your Compost Bin? Well, okay then...",
@@ -201,7 +212,7 @@ const tools: IFarmCard[] = [
           <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>.
         </span>
         <br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     recycle: (
@@ -284,7 +295,7 @@ const tools: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <b>Skewer</b> a <b>🛠️Tool</b> from your discard pile.
+        <Skewer /> a <b>🛠️Tool</b> from your discard pile.
       </span>
     ),
     recycle: "Draw a card.",
@@ -292,6 +303,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Trusty Trowel",
+    image: "/trusty_trowel.png",
+    ai_image: "/ai/trusty_trowel.png",
     cost: {
       apples: 2,
       berries: 2,
@@ -329,7 +342,7 @@ const tools: IFarmCard[] = [
     tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT, TAGS.REFRESH, TAGS.RESET_DECK],
     description: (
       <span>
-        <b>Discount</b>.<br />
+        <Discount />.<br />
         <b>Snatch</b> the discounted crops from a card in the Market, then{" "}
         <b>Refresh</b> that card.
       </span>
@@ -357,7 +370,7 @@ const tools: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <b>Skewer</b> this card.
+        <Skewer /> this card.
       </span>
     ),
     flavour: "Somewhere to store all your donations.",
@@ -383,7 +396,7 @@ const tools: IFarmCard[] = [
     sellable: true,
     description: (
       <span>
-        <b>Fast-track</b> a card.
+        <FastTrack /> a card.
         <br />
         If you have less <b>🏆Rewards</b> than your Rivals, put the card into
         your hand instead.
@@ -414,7 +427,7 @@ const tools: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <b>Skewer</b> an <b>🎒Item</b> from your discard pile.
+        <Skewer /> an <b>🎒Item</b> from your discard pile.
         <br />
         If it was a <b>🛠️Tool</b>, draw it.
       </span>

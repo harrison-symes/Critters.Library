@@ -4,6 +4,9 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Discount from "../text/Discount";
+import Skewer from "../text/Skewer";
+import Sleepy from "../text/Sleepy";
 
 const seeds: IFarmCard[] = [
   {
@@ -14,7 +17,6 @@ const seeds: IFarmCard[] = [
       carrots: 0,
       berries: 0,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
@@ -45,7 +47,6 @@ const seeds: IFarmCard[] = [
       carrots: 0,
       berries: 3,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
@@ -76,7 +77,6 @@ const seeds: IFarmCard[] = [
       carrots: 3,
       berries: 0,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
@@ -107,7 +107,6 @@ const seeds: IFarmCard[] = [
       carrots: 1,
       berries: 1,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
@@ -126,7 +125,6 @@ const seeds: IFarmCard[] = [
       carrots: 2,
       berries: 2,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
@@ -145,7 +143,6 @@ const seeds: IFarmCard[] = [
       carrots: 2,
       berries: 2,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CARD_DRAW],
@@ -163,7 +160,6 @@ const seeds: IFarmCard[] = [
       carrots: 1,
       berries: 1,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.SELL_FROM_HAND],
@@ -194,7 +190,6 @@ const seeds: IFarmCard[] = [
       carrots: 1,
       berries: 1,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.SUNLIGHT_ADD, TAGS.SKEWER, TAGS.SEED_SYNERGY],
@@ -206,7 +201,7 @@ const seeds: IFarmCard[] = [
       ),
       three: (
         <span>
-          ...and <b>Skewer</b> this card.
+          ...and <Skewer /> this card.
         </span>
       ),
     },
@@ -220,7 +215,6 @@ const seeds: IFarmCard[] = [
       carrots: 2,
       berries: 2,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.FREE_CARD, TAGS.SKEWER],
@@ -232,7 +226,8 @@ const seeds: IFarmCard[] = [
       ),
       three: (
         <span>
-          ...<b>Skewer</b> that card instead.
+          ...
+          <Skewer /> that card instead.
         </span>
       ),
     },
@@ -246,20 +241,20 @@ const seeds: IFarmCard[] = [
       carrots: 2,
       berries: 2,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.ADD_ZZZ],
     sunlight: {
       one: (
         <span>
-          Add 1 💤 to a Rival's <b className="nowrap">🐾Critter</b>.
+          Add 1 <Sleepy /> to a Rival's <b className="nowrap">🐾Critter</b>.
         </span>
       ),
       two: "",
       three: (
         <span>
-          Add 1 💤 to each of a Rival's <b className="nowrap">🐾Critters</b>.
+          Add 1 <Sleepy /> to each of a Rival's{" "}
+          <b className="nowrap">🐾Critters</b>.
         </span>
       ),
     },
@@ -273,14 +268,14 @@ const seeds: IFarmCard[] = [
       carrots: 1,
       berries: 1,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT],
     sunlight: {
       two: (
         <span>
-          <b>Discount</b>...
+          <Discount />
+          ...
         </span>
       ),
       three: (
@@ -299,7 +294,6 @@ const seeds: IFarmCard[] = [
       carrots: 3,
       berries: 3,
     },
-    image: "rummager",
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
     tags: [TAGS.FREE_CRATE],

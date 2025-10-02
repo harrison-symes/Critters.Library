@@ -1,14 +1,18 @@
 import { CARD_TYPE, CARD_SUBTYPE } from "../../models/cards.models";
+import AiColouredImagesToggle from "./AiColouredImagesToggle";
 import CardSetFilterss from "./CardSetFilters";
 import CardTypeFilters, {
   CardSubTypeFilter,
   CardTypeFilter,
 } from "./CardTypeFilters";
 import CropFilters from "./CropFilters";
+import DesignNotesToggle from "./DesignNotesToggle";
 import EffectFilters from "./EffectFilters";
 
 import "./filters.scss";
 import FiltersGroup from "./FiltersGroup";
+import HideCompletedArtCardsToggle from "./HideCardsWithArtToggle";
+import ShowStatsToggle from "./ShowStatsToggle";
 import TagFilters from "./TagFilters";
 
 const Filters = () => {
@@ -31,6 +35,12 @@ const Filters = () => {
       </div>
       <div className="filters__container">
         <TagFilters />
+      </div>
+      <div className="filters__container">
+        <DesignNotesToggle />
+        <HideCompletedArtCardsToggle />
+        <AiColouredImagesToggle />
+        <ShowStatsToggle />
       </div>
     </div>
   );

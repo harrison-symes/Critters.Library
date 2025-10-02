@@ -20,6 +20,8 @@ const gifts: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Gift,
     tags: [TAGS.GIFT],
     unsellable: true,
+    image: "/goldfish.jpeg",
+    ai_image: "/ai/goldfish.png",
     description: (
       <span>
         This does nothing. <br />
@@ -40,6 +42,8 @@ const gifts: IFarmCard[] = [
       carrots: 2,
     },
     qty: 1,
+    image: "/birthday_present.jpeg",
+    ai_image: "/ai/birthday_present.png",
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Gift,
@@ -58,6 +62,8 @@ const gifts: IFarmCard[] = [
       berries: 0,
       carrots: 0,
     },
+    notes:
+      "A potato with drawn on eyes (with long eyelashes and eyeliner) and seductive lips ;)",
     qty: 1,
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
@@ -82,6 +88,7 @@ const gifts: IFarmCard[] = [
       berries: 2,
       carrots: 0,
     },
+    notes: "A pile of rotten berries.",
     qty: 1,
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,

@@ -48,8 +48,8 @@ export enum TAGS {
   SELL_FROM_HAND = "Sell from hand",
   SELL_FROM_DISCARD = "Sell from discard",
   FREE_CRATE = "Free Crate",
-  REMOVE_ZZZ = "Remove 💤",
-  ADD_ZZZ = "Add 💤",
+  REMOVE_ZZZ = "Remove 💤Sleepy",
+  ADD_ZZZ = "Add 💤Sleepy",
   SEED_SYNERGY = "🌱Seed synergy",
   SUNLIGHT_ADD = "Add ☀️Sunlight",
   SUNLIGHT_REMOVE = "Remove ☀️Sunlight",
@@ -82,10 +82,12 @@ export interface ICard {
   description?: string | React.ReactNode;
   qty: number;
   image?: string;
+  ai_image?: string;
   tags?: TAGS[];
   type: CARD_TYPE;
   set: CARD_SET;
   flavour?: string;
+  notes?: string;
 }
 
 export interface IFarmCard extends ICard {

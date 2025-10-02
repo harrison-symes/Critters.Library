@@ -5,17 +5,18 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import FastTrack from "../text/FastTrack";
 
 const bees: IFarmCard[] = [
   {
     name: "Worker Bee",
+    notes: "A Bee wearing a suit and tie, holding a briefcase",
     qty: 2,
     cost: {
       apples: 3,
       carrots: 3,
       berries: 3,
     },
-    image: "rummager",
     description: (
       <span>
         If you have 3 <b>Work Orders</b>, Gain{" "}
@@ -34,13 +35,13 @@ const bees: IFarmCard[] = [
   },
   {
     name: "Pesky Bee",
+    notes: "",
     qty: 2,
     cost: {
       apples: 3,
       carrots: 3,
       berries: 3,
     },
-    image: "rummager",
     description: (
       <span>
         If you have 3 <b>Work Orders</b>, <b>Steal</b>{" "}
@@ -59,17 +60,17 @@ const bees: IFarmCard[] = [
   },
   {
     name: "Plan Bee",
+    notes: "A bee wearing glasses, holding up and looking at some blueprints.",
     qty: 1,
     cost: {
       apples: 3,
       carrots: 3,
       berries: 3,
     },
-    image: "rummager",
     description: (
       <span>
-        If you have 3 <b>Work Orders</b>, <b>Fast-track</b> a <b>🐾Critter</b>,
-        a <b>🌱Seed</b> and an <b>🎒Item</b>.
+        If you have 3 <b>Work Orders</b>, <FastTrack /> a <b>🐾Critter</b>, a{" "}
+        <b>🌱Seed</b> and an <b>🎒Item</b>.
       </span>
     ),
     energy: 2,

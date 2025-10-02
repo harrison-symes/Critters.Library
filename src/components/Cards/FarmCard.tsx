@@ -7,6 +7,11 @@ import {
 import cn from "classnames";
 import "./cards.scss";
 import CropCost from "./CropCost";
+import { useAppSelector } from "../../store/hooks";
+import {
+  getAreDesignNotesVisible,
+  getShouldShowAiColouredImages,
+} from "../../store/filtersSlice";
 
 interface IProps {
   card: IFarmCard;
@@ -43,23 +48,38 @@ const getSubtypeIcon = (type?: CARD_SUBTYPE) => {
 };
 
 const FarmCard = (props: IProps) => {
+  const areDesignNotesVisible = useAppSelector(getAreDesignNotesVisible);
+  const shouldShowAiColouredImages = useAppSelector(
+    getShouldShowAiColouredImages
+  );
+  const image =
+    shouldShowAiColouredImages && props.card.ai_image
+      ? props.card.ai_image
+      : props.card.image;
+
   return (
     <div className="card card--farm-card">
       <div className="card__name">
         {props.card.name} {props.card.qty > 1 && <>(x{props.card.qty})</>}
       </div>
-      <div
-        className={cn("card__image__container", {
-          "card__image__container--overlay":
-            props.card.type === CARD_TYPE.Critter,
-        })}
-      >
-        <img
-          className="card__image"
-          alt={props.card.name}
-          src={`/images${props.card.image}`}
-        />
-      </div>
+      {areDesignNotesVisible && props.card.notes && !image ? (
+        <div className="card__notes__container">
+          <div className="card__notes__text">{props.card.notes}</div>
+        </div>
+      ) : (
+        <div
+          className={cn("card__image__container", {
+            "card__image__container--overlay":
+              props.card.type === CARD_TYPE.Critter,
+          })}
+        >
+          <img
+            className="card__image"
+            alt={image}
+            src={`/images/${props.card.type.toLowerCase()}${image}`}
+          />
+        </div>
+      )}
       <div className="card__image__spacer"></div>
       <div className="card__special__container">
         {props.card.holdable && <div className="card__special">Holdable</div>}

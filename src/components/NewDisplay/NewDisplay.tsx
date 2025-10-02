@@ -13,6 +13,9 @@ import {
   getFilteredRewardDeck,
 } from "../../store/deck.selectors";
 
+import cn from "classnames";
+import { getShouldShowStats } from "../../store/filtersSlice";
+
 const NewDisplay = () => {
   const filteredRewards = useAppSelector(getFilteredRewardDeck);
   const filteredRewardsDuplicates = useAppSelector(
@@ -27,6 +30,7 @@ const NewDisplay = () => {
     getFilteredDuplicatesFarmDeck
   );
   const filteredFarmDeck = useAppSelector(getFilteredFarmDeck);
+  const shouldShowStats = useAppSelector(getShouldShowStats);
 
   return (
     <div className="display">
@@ -38,9 +42,13 @@ const NewDisplay = () => {
         {filteredFavoursDuplicates.length} Favours ({filteredFavours.length}{" "}
         unique)
       </h1>
-      <div className="display__split">
+      <div
+        className={cn("display__content", {
+          "display__content--split": shouldShowStats,
+        })}
+      >
         <Cards />
-        <Stats />
+        {shouldShowStats && <Stats />}
       </div>
     </div>
   );

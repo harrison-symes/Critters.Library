@@ -22,9 +22,17 @@ export interface IFilterState {
   effects: Record<TEffects, boolean>;
   tags: TAGS[];
   sets: CARD_SET[];
+  areDesignNotesVisible: boolean;
+  shouldHideCompletedArtCards: boolean;
+  showAiColouredImages: boolean;
+  showStats: boolean;
 }
 
 const initialState: IFilterState = {
+  areDesignNotesVisible: true,
+  shouldHideCompletedArtCards: false,
+  showAiColouredImages: false,
+  showStats: false,
   types: [],
   subTypes: [],
   crops: {
@@ -40,7 +48,7 @@ const initialState: IFilterState = {
     unsellable: false,
   },
   tags: [],
-  sets: [],
+  sets: [CARD_SET.BASE],
 };
 
 const filterSlice = createSlice({
@@ -83,6 +91,18 @@ const filterSlice = createSlice({
         state.sets = [...state.sets, action.payload];
       }
     },
+    toggleDesignNotesVisible: (state) => {
+      state.areDesignNotesVisible = !state.areDesignNotesVisible;
+    },
+    toggleShowCompletedArtCards: (state) => {
+      state.shouldHideCompletedArtCards = !state.shouldHideCompletedArtCards;
+    },
+    toggleShowAiColouredImages: (state) => {
+      state.showAiColouredImages = !state.showAiColouredImages;
+    },
+    toggleShowStats: (state) => {
+      state.showStats = !state.showStats;
+    },
   },
   selectors: {},
 });
@@ -94,6 +114,10 @@ export const {
   toggleEffectsFilter,
   toggleTagFilter,
   toggleCardSetFilter,
+  toggleDesignNotesVisible,
+  toggleShowCompletedArtCards,
+  toggleShowAiColouredImages,
+  toggleShowStats,
 } = filterSlice.actions;
 
 export const getFilterState = (state: RootState) => state.filters;
@@ -104,5 +128,12 @@ export const getCropFilters = (state: RootState) => state.filters.crops;
 export const getEffectsFilters = (state: RootState) => state.filters.effects;
 export const getFilteredTags = (state: RootState) => state.filters.tags;
 export const getFilteredSets = (state: RootState) => state.filters.sets;
+export const getAreDesignNotesVisible = (state: RootState) =>
+  state.filters.areDesignNotesVisible;
+export const getShouldHideCompletedArtCards = (state: RootState) =>
+  state.filters.shouldHideCompletedArtCards;
+export const getShouldShowAiColouredImages = (state: RootState) =>
+  state.filters.showAiColouredImages;
+export const getShouldShowStats = (state: RootState) => state.filters.showStats;
 
 export default filterSlice.reducer;

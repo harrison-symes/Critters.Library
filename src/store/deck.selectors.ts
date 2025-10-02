@@ -18,6 +18,9 @@ import { appSelector, RootState } from "./store";
 
 const filterFarmDeck = (cards: IFarmCard[], filters: IFilterState) => {
   return cards.filter((card) => {
+    if (filters.shouldHideCompletedArtCards && card.image) {
+      return false;
+    }
     if (filters.types.length && !filters.types.includes(card.type)) {
       return false;
     }

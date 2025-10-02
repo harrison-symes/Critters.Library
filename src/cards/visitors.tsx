@@ -4,6 +4,8 @@ import {
   IVisitorCard,
   TAGS,
 } from "../models/cards.models";
+import Discount from "./text/Discount";
+import Sleepy from "./text/Sleepy";
 
 const visitors: IVisitorCard[] = [
   {
@@ -13,7 +15,7 @@ const visitors: IVisitorCard[] = [
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When <b>PH</b> arrives, <b>Discount</b> twice.
+        When <b>PH</b> arrives, <Discount /> twice.
       </span>
     ),
     tags: [TAGS.DISCOUNT],
@@ -38,7 +40,7 @@ const visitors: IVisitorCard[] = [
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When <b>Jemima</b> arrives, remove all 💤 from all
+        When <b>Jemima</b> arrives, remove all <Sleepy /> from all
         <b className="nowrap">🐾Critters</b>.
       </span>
     ),

@@ -5,17 +5,18 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import FastTrack from "../text/FastTrack";
 
 const worms: IFarmCard[] = [
   {
     name: "Fertiliser",
+    notes: "A worm wearing a sunhat, looking at a sprouted seedling proudly.",
     qty: 2,
     cost: {
       apples: 2,
       berries: 2,
       carrots: 0,
     },
-    image: "rummager",
     description: (
       <span>
         Add 1 <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
@@ -23,7 +24,7 @@ const worms: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <b>Fast-track</b> a <b>Seed</b>.
+        <FastTrack /> a <b>Seed</b>.
       </span>
     ),
     energy: 3,
@@ -35,13 +36,14 @@ const worms: IFarmCard[] = [
   },
   {
     name: "Top-Soiler",
+    notes:
+      "A worm holding a shovel with the end of his tail. Standing over some soil mounds.",
     qty: 2,
     cost: {
       apples: 0,
       berries: 2,
       carrots: 3,
     },
-    image: "rummager",
     description: (
       <span>
         Put a <b>🌱Seed</b> from your discard pile into your hand.
@@ -62,13 +64,13 @@ const worms: IFarmCard[] = [
   },
   {
     name: "Chloro Phil",
+    notes: "A big worm taking a bite out of a Sunflower",
     qty: 1,
     cost: {
       apples: 3,
       berries: 3,
       carrots: 1,
     },
-    image: "rummager",
     description: (
       <span>
         Remove 1 <b>☀️Sunlight</b> from a <b className="nowrap">🌱Seed</b> to

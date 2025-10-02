@@ -1,4 +1,8 @@
 import { CARD_SET, CARD_TYPE, IRewardCard, TAGS } from "../models/cards.models";
+import Discount from "./text/Discount";
+import FastTrack from "./text/FastTrack";
+import Skewer from "./text/Skewer";
+import Sleepy from "./text/Sleepy";
 
 const rewards: IRewardCard[] = [
   {
@@ -75,8 +79,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Instantly, and whenever you complete a <b>Work Order</b>, <b>Skewer</b>{" "}
-        a card from your discard pile.
+        Instantly, and whenever you complete a <b>Work Order</b>, <Skewer /> a
+        card from your discard pile.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -101,8 +105,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Harvest</b> a <b>🌱Seed</b> with 3 <b>☀️Sunlight</b>,
-        put a different <b>🌱Seed</b> from your discard pile into your hand.
+        After you <b>Harvest</b> a <b>🌱Seed</b> with 3 <b>☀️Sunlight</b>, put a
+        different <b>🌱Seed</b> from your discard pile into your hand.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -114,8 +118,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Sell</b> or <b>Trash</b> a card, add 1 <b>☀️Sunlight</b>{" "}
-        to each of your <b>🌱Seeds</b>.
+        After you <b>Sell</b> or <b>Trash</b> a card, add 1 <b>☀️Sunlight</b> to
+        each of your <b>🌱Seeds</b>.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -127,8 +131,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Harvest</b> a <b>🌱Seed</b> with 3 <b>☀️Sunlight</b>,
-        draw a card.
+        After you <b>Harvest</b> a <b>🌱Seed</b> with 3 <b>☀️Sunlight</b>, draw
+        a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -152,8 +156,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Fast-track</b> a <b>🐾Critter</b>, you may also{" "}
-        <b>Fast-track</b> an <b>🎒Item</b>.
+        Whenever you <FastTrack /> a <b>🐾Critter</b>, you may also{" "}
+        <FastTrack /> an <b>🎒Item</b>.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -165,7 +169,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you deck is <b>Reset</b>, draw a card.
+        After you deck is <b>Reset</b>, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -190,7 +194,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Buy</b> or <b>Sell</b> a Farm card, draw a card.
+        After you <b>Buy</b> or <b>Sell</b> a Farm card, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -202,8 +206,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you you <b>Fast-track</b> a card, you may <b>Skewer</b> it
-        instead.
+        Whenever you you <FastTrack /> a card, you may <Skewer /> it instead.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -215,7 +218,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Skewer</b> a card, draw a card.
+        After you <Skewer /> a card, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -227,7 +230,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Buy</b> a Farm card, <b>Fast-track</b> it.
+        After you <b>Buy</b> a Farm card, <FastTrack /> it.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -239,7 +242,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you play a <b>🛠️Tool</b>, you may <b>Trash</b> a card from your
+        After you play a <b>🛠️Tool</b>, you may <b>Trash</b> a card from your
         discard pile.
       </span>
     ),
@@ -252,8 +255,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you play a <b>🛠️Tool</b>, you may <b>Fast-track</b> a different
-        card.
+        After you play a <b>🛠️Tool</b>, you may <FastTrack /> a different card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -265,7 +267,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you play a <b>🧁Treat</b>, remove 1 💤 from one of your{" "}
+        After you play a <b>🧁Treat</b>, remove 1 <Sleepy /> from one of your{" "}
         <b>🐾Critters</b>.
       </span>
     ),
@@ -278,7 +280,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you play a <b>🧁Treat</b>, <b>Steal</b> a crop from a Rival.
+        After you play a <b>🧁Treat</b>, <b>Steal</b> a crop from a Rival.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -291,7 +293,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         After you <b>Sell</b> or <b>Trash</b> a <b>🏦Finance</b> card, you may{" "}
-        <b>Skewer</b> it.
+        <Skewer /> it.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -319,7 +321,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Discount</b>, gain +2 of the discounted crop type.
+        After you <Discount />, gain +2 of the discounted crop type.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -331,8 +333,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Discard</b> a card from your hand (during your turn),
-        draw a card.
+        After you <b>Discard</b> a card from your hand (during your turn), draw
+        a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -344,8 +346,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Discard</b> a card from your hand (during your turn),
-        you may <b>Fast-track</b> a different card.
+        After you <b>Discard</b> a card from your hand (during your turn), you
+        may <FastTrack /> a different card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -371,7 +373,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         You draw 1 less card at the end of your turns. <br />
-        Whenever your deck is <b>Reset</b>, gain{" "}
+        After your deck is <b>Reset</b>, gain{" "}
         <span className="nowrap">
           <b>+2🍏</b>, <b>+2🫐</b>, <b>+2🥕</b>
         </span>
@@ -455,7 +457,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         After you <b>Discard</b> a card from your hand (during your turn), you
-        may <b>Trash</b> or <b>Fast-track</b> that card.
+        may <b>Trash</b> or <FastTrack /> that card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -509,7 +511,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Fast-track</b> a <b>🧁Treat</b>, draw a card.
+        After you <FastTrack /> a <b>🧁Treat</b>, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -535,7 +537,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Once per turn, after you <b>Skewer</b> a <b>Tool</b>, pack a free{" "}
+        Once per turn, after you <Skewer /> a <b>Tool</b>, pack a free{" "}
         <b>Crate</b> into one of your <b>Work Orders</b>.
       </span>
     ),

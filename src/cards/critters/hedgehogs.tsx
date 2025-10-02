@@ -5,6 +5,8 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import FastTrack from "../text/FastTrack";
+import Skewer from "../text/Skewer";
 
 const hedgehogs: IFarmCard[] = [
   {
@@ -15,10 +17,10 @@ const hedgehogs: IFarmCard[] = [
       berries: 1,
       carrots: 1,
     },
-    image: "/critters/skewerer.jpeg",
+    image: "/skewerer.jpeg",
     description: (
       <span>
-        <b>Skewer</b> a <b>🛠️Tool</b> from your discard pile.
+        <Skewer /> a <b>🛠️Tool</b> from your discard pile.
       </span>
     ),
     buyBonus: (
@@ -41,11 +43,12 @@ const hedgehogs: IFarmCard[] = [
       berries: 0,
       carrots: 2,
     },
-    image: "rummager",
+    notes:
+      "A hedgehog holding a skewer with ONLY berries on it. He is holding it up to his mouth about to eat.",
     energy: 2,
     description: (
       <span>
-        <b>Fast-track</b> a <b>🧁Treat</b>.
+        <FastTrack /> a <b>🧁Treat</b>.
       </span>
     ),
     recycle: (
@@ -61,13 +64,14 @@ const hedgehogs: IFarmCard[] = [
   },
   {
     name: "The Head Chog",
+    notes:
+      "A big hedgehog wearing a top hat. Some of his quills are poking through the top hat. A skewer lays in front of him.",
     qty: 1,
     cost: {
       apples: 3,
       berries: 3,
       carrots: 3,
     },
-    image: "rummager",
     energy: 2,
     description: (
       <span>
@@ -89,11 +93,10 @@ const hedgehogs: IFarmCard[] = [
       berries: 3,
       carrots: 3,
     },
-    image: "rummager",
     energy: 2,
     description: (
       <span>
-        <b>Fast-track</b> 2 cards for a Rival (from their discard pile).
+        <FastTrack /> 2 cards for a Rival (from their discard pile).
       </span>
     ),
     type: CARD_TYPE.Critter,

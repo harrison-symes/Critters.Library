@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Sleepy from "../text/Sleepy";
 
 const moles: IFarmCard[] = [
   {
@@ -15,10 +16,11 @@ const moles: IFarmCard[] = [
       berries: 1,
       carrots: 1,
     },
-    image: "rummager",
+    notes:
+      "A mole emerging from a holde. Wearing a bandit mask (like the hamburglar) and holding a spanner. He looks like he is scheming.",
     description: (
       <span>
-        Add 1 💤 to a Rival's <b className="nowrap">🐾Critter</b>
+        Add 1 <Sleepy /> to a Rival's <b className="nowrap">🐾Critter</b>
       </span>
     ),
     recycle: (
@@ -41,7 +43,8 @@ const moles: IFarmCard[] = [
       berries: 2,
       carrots: 2,
     },
-    image: "rummager",
+    image: "/burrower.png",
+    ai_image: "/ai/burrower.png",
     description: (
       <span>
         <b>Steal</b> a crop from a Rival.
@@ -57,16 +60,18 @@ const moles: IFarmCard[] = [
   },
   {
     name: "Wacker Mole",
+    notes:
+      "A big mole, wearing a blindfold and holding a big cartoonish mallet (very looney toons).",
     qty: 1,
     cost: {
       apples: 3,
       berries: 3,
       carrots: 3,
     },
-    image: "rummager",
     description: (
       <span>
-        Add 1 💤 to each of a Rival's <b className="nowrap">🐾Critters</b>
+        Add 1 <Sleepy /> to each of a Rival's{" "}
+        <b className="nowrap">🐾Critters</b>
       </span>
     ),
     energy: 2,
@@ -84,11 +89,10 @@ const moles: IFarmCard[] = [
       berries: 2,
       carrots: 2,
     },
-    image: "rummager",
     description: (
       <span>
-        Move 1 💤 from one of your <b className="nowrap">🐾Critters</b> to any
-        other <b className="nowrap">🐾Critter</b>.
+        Move 1 <Sleepy /> from one of your <b className="nowrap">🐾Critters</b>{" "}
+        to any other <b className="nowrap">🐾Critter</b>.
       </span>
     ),
     energy: 2,

@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Discount from "../text/Discount";
 
 const starter: IFarmCard[] = [
   {
@@ -14,6 +15,7 @@ const starter: IFarmCard[] = [
       berries: 0,
       carrots: 0,
     },
+    notes: "An apple tree with lots of green apples on it",
     set: CARD_SET.BASE,
     description: <span>Gain +1 🍏.</span>,
     qty: 8,
@@ -23,6 +25,7 @@ const starter: IFarmCard[] = [
   },
   {
     name: "Berry Bush",
+    notes: "A berry bush with lots of purple berries on it",
     cost: {
       apples: 0,
       berries: 2,
@@ -37,6 +40,7 @@ const starter: IFarmCard[] = [
   },
   {
     name: "Carrot Patch",
+    notes: "A carrot patch with lots of grown carrots poking out",
     cost: {
       apples: 0,
       berries: 0,
@@ -51,6 +55,8 @@ const starter: IFarmCard[] = [
   },
   {
     name: "Friendship Charm",
+    notes:
+      "A heart shaped necklace with two letters enscribed. 8 combinations of letters. R+P. D+C. A+H. Z+S. A+P. T+M. M+R. H+I.",
     cost: {
       apples: 1,
       berries: 1,
@@ -69,6 +75,8 @@ const starter: IFarmCard[] = [
   },
   {
     name: "Pick of the Crop",
+    notes:
+      "A picnic table with one of each crop laid out, like professor oak's table in pokemon.",
     cost: {
       apples: 1,
       berries: 1,
@@ -79,7 +87,7 @@ const starter: IFarmCard[] = [
       <span>
         Gain 2 random crops.
         <br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     qty: 4,

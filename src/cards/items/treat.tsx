@@ -5,10 +5,13 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import FastTrack from "../text/FastTrack";
+import Sleepy from "../text/Sleepy";
 
 const treats: IFarmCard[] = [
   {
     name: "Rat Food",
+    notes: "A plate of 3 apples",
     cost: {
       apples: 3,
       berries: 1,
@@ -34,6 +37,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Rabbit Food",
+    notes: "A plate of 3 carrots",
     cost: {
       apples: 1,
       berries: 1,
@@ -52,13 +56,14 @@ const treats: IFarmCard[] = [
     description: (
       <span>
         Gain +3 🥕. <br />
-        Remove 1 💤 from 3 of your <b>🐾Critters</b>.
+        Remove 1 <Sleepy /> from 3 of your <b>🐾Critters</b>.
       </span>
     ),
     recycle: <span>Draw a card.</span>,
   },
   {
     name: "Hog Food",
+    notes: "A plate of 3 berries",
     cost: {
       apples: 1,
       berries: 3,
@@ -78,7 +83,7 @@ const treats: IFarmCard[] = [
     ],
     description: (
       <span>
-        Gain +3 🫐. <br /> <b>Fast-track</b> this or another <b>🧁Treat</b>.
+        Gain +3 🫐. <br /> <FastTrack /> this or another <b>🧁Treat</b>.
       </span>
     ),
     recycle: (
@@ -89,6 +94,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Picnic Basket",
+    notes: "A closed picnic basket on a picnic blanket",
     cost: {
       apples: 2,
       berries: 3,
@@ -119,6 +125,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Award Winning Crop",
+    notes: "A giant carrot with an award ribbon on it with the text '#1.",
     cost: {
       apples: 3,
       berries: 2,
@@ -135,6 +142,8 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Gift Basket",
+    image: "/gift_basket.png",
+    ai_image: "/ai/gift_basket.png",
     cost: {
       apples: 4,
       berries: 4,
@@ -164,6 +173,8 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Pot of Feed",
+    notes:
+      "A clay pot filled with grain. Etchings of a toothy grin face on it (like Pot of Greed Yugioh card).",
     cost: {
       apples: 3,
       berries: 3,
@@ -178,6 +189,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Midnight Snack",
+    notes: "A slice of frosted cake with a berry on top",
     cost: {
       apples: 2,
       berries: 1,
@@ -193,6 +205,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Pik'n'mix",
+    notes: "An open paper bag with 1 of each crop inside",
     cost: {
       apples: 0,
       berries: 3,
@@ -212,6 +225,8 @@ const treats: IFarmCard[] = [
       berries: 2,
       carrots: 0,
     },
+    image: "/morning_cuppa.png",
+    ai_image: "/ai/morning_cuppa.png",
     qty: 1,
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
@@ -220,7 +235,7 @@ const treats: IFarmCard[] = [
     tags: [TAGS.REMOVE_ZZZ],
     description: (
       <span>
-        Remove all 💤 from one of your <b>🐾Critters</b>.
+        Remove all <Sleepy /> from one of your <b>🐾Critters</b>.
       </span>
     ),
     recycle: (
@@ -231,6 +246,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Sharing Plate",
+    notes: "A glad-wrapped plate with lots of apples on it",
     cost: {
       apples: 2,
       berries: 2,
@@ -251,6 +267,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Plant Food",
+    notes: "A plate with a bag sitting on it. The bag says 'Potting Mix'",
     cost: {
       apples: 3,
       berries: 0,
@@ -272,6 +289,7 @@ const treats: IFarmCard[] = [
   {
     set: CARD_SET.CROWD_FUND,
     name: "Energy Drink",
+    // notes: "An aluminium can with a lightning bolt logo on it",
     cost: {
       apples: 2,
       berries: 0,
@@ -310,13 +328,13 @@ const treats: IFarmCard[] = [
     tags: [TAGS.TREAT_SYNERGY, TAGS.FAST_TRACK],
     description: (
       <span>
-        <b>Fast-track</b> this card, and every other <b>🧁Treat</b> from your
+        <FastTrack /> this card, and every other <b>🧁Treat</b> from your
         discard pile.
       </span>
     ),
     buyBonus: (
       <span>
-        Remove 1 💤 from one of your <b>🐾Critters</b>.
+        Remove 1 <Sleepy /> from one of your <b>🐾Critters</b>.
       </span>
     ),
   },

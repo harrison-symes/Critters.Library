@@ -2,6 +2,10 @@
     white-space: nowrap;
 }
 
+.tooltip {
+    cursor: pointer;
+}
+
 .card {
     width: calc(250px * 1.1);
     min-height: calc(350px * 1.1);
@@ -27,22 +31,45 @@
         grid-template-rows: auto auto 1fr;
     }
 
+    &__notes {
+        &__container {
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+            padding: .25rem .5rem;
+            text-align: center;
+            border-radius: .25rem;
+        }
+    }
+
     &__image {
         overflow: hidden;
         max-width: 100%;
+        position: relative;
+        top: -50px;
 
         &__container {
-            display: none;
             // width: 100%;
             // height: 100%;
+            border: 1px solid black;
+            border-radius: .25rem;
+            overflow: hidden;
+            height: 200px;
 
             &--overlay {
+                border: none;
+                border-radius: .25rem;
                 display: block;
                 z-index: 1;
                 overflow: hidden;
                 position: absolute;
+                top: 0px;
                 width: 100%;
                 height: 100%;
+
+                .card__image {
+                    position: initial;
+                }
                 // border-radius: .5rem;
                 // background-position-y: bottom-center;
             }

@@ -5,22 +5,25 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Discount from "../text/Discount";
+import FastTrack from "../text/FastTrack";
 
 const rats: IFarmCard[] = [
   {
     name: "Aristoc-Rat",
+    notes:
+      "A rat lying on a beach chair. He has sunglasses and a silk gown on. Eating berries out of his hand very royally.",
     qty: 2,
     cost: {
       apples: 2,
       berries: 3,
       carrots: 0,
     },
-    image: "rummager",
     description: (
       <span>
-        Get a <b>Favour</b> from the <b>market</b> for free.
+        Get a <b>Favour</b> from the <b>Market</b> for free.
         <br />
-        <b>Discount</b>
+        <Discount />
       </span>
     ),
     buyBonus: (
@@ -43,11 +46,11 @@ const rats: IFarmCard[] = [
       berries: 1,
       carrots: 3,
     },
-    image: "/critters/price_hiker.jpeg",
+    image: "/price_hiker.jpeg",
     description: (
       <span>
-        <b>Discount</b>, then <b>Snatch</b> the discounted crops from a card in
-        the Market.
+        <Discount />, then <b>Snatch</b> the discounted crops from a card in the
+        Market.
       </span>
     ),
     buyBonus: (
@@ -65,13 +68,14 @@ const rats: IFarmCard[] = [
   },
   {
     name: "Hermes",
+    notes:
+      "A black and white rat is running fast, holding a parcel. He has winged shoes on.",
     qty: 1,
     cost: {
       apples: 3,
       berries: 1,
       carrots: 3,
     },
-    image: "rummager",
     description: (
       <span>
         <b>Sell</b> a card from your hand to draw a card.
@@ -79,7 +83,7 @@ const rats: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <b>Fast-track</b> a card.
+        <FastTrack /> a card.
       </span>
     ),
     energy: 2,
@@ -98,16 +102,15 @@ const rats: IFarmCard[] = [
       berries: 2,
       carrots: 1,
     },
-    image: "rummager",
     description: (
       <span>
-        <b>Discount</b>. <br />
+        <Discount />. <br />
         <b>Steal</b> 1 of the discounted crop type from each Rival.
       </span>
     ),
     buyBonus: (
       <span>
-        <b>Fast-track</b> a card.
+        <FastTrack /> a card.
       </span>
     ),
     energy: 3,

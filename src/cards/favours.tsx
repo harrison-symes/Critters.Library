@@ -1,16 +1,14 @@
-import {
-  CARD_SET,
-  CARD_TYPE,
-  ICard,
-  IFavourCard,
-  TAGS,
-} from "../models/cards.models";
+import { CARD_SET, CARD_TYPE, IFavourCard, TAGS } from "../models/cards.models";
+import Discount from "./text/Discount";
+import FastTrack from "./text/FastTrack";
+import Sleepy from "./text/Sleepy";
 
 const favours: IFavourCard[] = [
   {
     name: "Pickpocket",
+    notes:
+      "A mole (Burrower) is grabbing a carrot out of the back pocket of a Rabbit (Berry Grower) who is looking the other way",
     qty: 2,
-    image: "rummager",
     description: (
       <span>
         <b>Steal</b> a crop from a Rival.
@@ -22,8 +20,9 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Helping Hand",
+    notes:
+      "A rabbit farmer (Apple Grower) is handing an apple from their basket full of apples to a worm (Top Soiler)",
     qty: 2,
-    image: "rummager",
     description: (
       <span>
         Gain +3 of a random crop. <br />
@@ -36,15 +35,16 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Delegate",
+    notes:
+      "A bee holding a noteboard (Plan Bee) is pointing at a rabbit. The rabbit (Carrot Grower) is sad. There is also a mole (Sabateur) who is not being pointed at, he is happy.",
     qty: 2,
-    image: "rummager",
     description: (
       <span>
-        Add 1 💤 to a Rival's <b>🐾Critter</b>
+        Add 1 <Sleepy /> to a Rival's <b>🐾Critter</b>
         <br />
         <b>-OR-</b>
         <br />
-        Remove 1 💤 from one of your <b>🐾Critters</b>
+        Remove 1 <Sleepy /> from one of your <b>🐾Critters</b>
         <br />
       </span>
     ),
@@ -54,8 +54,8 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Throw it away",
+    notes: "A raccoon (Sticky fingers) throwing an empty jam jar in the trash.",
     qty: 2,
-    image: "rummager",
     description: (
       <span>
         <b>Trash</b> a card from your discard pile.
@@ -67,8 +67,9 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Sell it off",
+    notes:
+      "A raccoon (Dumpster Diver) is handing a trowel to a Rat merchant (Price Hiker).",
     qty: 2,
-    image: "rummager",
     description: (
       <span>
         <b>Sell</b> a card from your hand.
@@ -80,12 +81,13 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Rotate Stock",
+    notes:
+      "A Rat merchant (Price hiker) is putting a new item (a bag of seeds) on an empty shelf.",
     qty: 2,
-    image: "rummager",
     description: (
       <span>
         <b>Refresh</b> 2 cards in the <b>Market</b>. <br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     tags: [TAGS.REFRESH],
@@ -94,8 +96,9 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Barter",
+    notes:
+      "A hedgehog (The Head Chog) is offering a Skewer to a Rat Merchant (Price Hiker) in exchange for a Birthday Present.",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
         <b>Discard</b> a card from your hand to <b>Sell</b> a different card
@@ -108,12 +111,13 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Restock",
+    notes:
+      "A rat merchant is standing proudly in front of a shelf of 4 items, with a sign saying 'NEW!'.",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
         <b>Refresh</b> a row in the <b>Market</b>.<br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     tags: [TAGS.DISCOUNT, TAGS.REFRESH],
@@ -122,11 +126,11 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Express Delivery",
+    notes: "Hermes is handing you a package",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
-        <b>Fast-track</b> a card.
+        <FastTrack /> a card.
       </span>
     ),
     tags: [TAGS.FAST_TRACK],
@@ -135,8 +139,9 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Collect Tips",
+    notes:
+      "A bee (Worker Bee) is reaching his hand into a jar filled with crops.",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
         Gain a random crop for each <b>Work Order</b> you have.
@@ -148,8 +153,9 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Feed the Seeds",
+    notes:
+      "A worm (Fertilizer) is watering a seedling sprout with a watering can (held by his 'tail')",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
         Add 1 <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
@@ -161,11 +167,12 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Piggy-back Ride",
+    notes:
+      "A hedgehog (Skewerer) is being given a piggy back ride by a Rabbit (Clodhopper)",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
-        Move 1 💤 from one of your <b>🐾Critters</b> to any other{" "}
+        Move 1 <Sleepy /> from one of your <b>🐾Critters</b> to any other{" "}
         <b>🐾Critter</b>.
       </span>
     ),
@@ -176,7 +183,8 @@ const favours: IFavourCard[] = [
   {
     name: "Exchange",
     qty: 1,
-    image: "rummager",
+    notes:
+      "A raccoon (Rummager) and a bee (Pesky bee) are making a trade for a crate of crops.",
     description: (
       <span>
         <b>Discard</b> a card from your hand to gain{" "}
@@ -191,13 +199,14 @@ const favours: IFavourCard[] = [
     set: CARD_SET.BASE,
   },
   {
-    name: "Slim Pickings",
+    name: "Hand out",
     qty: 1,
-    image: "rummager",
+    notes:
+      "A barrel has one of each crop in it. They look a bit sad. A sign says 'FREE'",
     description: (
       <span>
         Gain a crop of your choosing. <br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE],
@@ -207,7 +216,6 @@ const favours: IFavourCard[] = [
   {
     name: "Collect Donations",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
         Each of your Rivals must give you a crop. <br /> (If they have any)
@@ -220,11 +228,10 @@ const favours: IFavourCard[] = [
   {
     name: "Get Organised",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
         <b>Reset</b> your deck. <br />
-        <b>Discount</b>.
+        <Discount />.
       </span>
     ),
     tags: [TAGS.RESET_DECK, TAGS.DISCOUNT],
@@ -234,7 +241,6 @@ const favours: IFavourCard[] = [
   {
     name: "Donate",
     qty: 1,
-    image: "rummager",
     description: (
       <span>
         <b>Discard</b> a card from your hand to <b>Gift</b> a different card
@@ -248,10 +254,9 @@ const favours: IFavourCard[] = [
   {
     name: "Fundraise",
     qty: 2,
-    image: "rummager",
     description: (
       <span>
-        <b>Discount</b>. <br />
+        <Discount />. <br />
         Gain +1 of the discounted crop type.
       </span>
     ),

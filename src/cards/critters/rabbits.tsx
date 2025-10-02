@@ -5,17 +5,19 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Discount from "../text/Discount";
 
 const rabbits: IFarmCard[] = [
   {
     name: "Carrot Grower",
+    notes:
+      "A rabbit in overalls picking a carrot from a carrot patch. Could be struggling to pull it out.",
     qty: 2,
     cost: {
       apples: 2,
       berries: 2,
       carrots: 4,
     },
-    image: "/critters/carrot_grower.png",
     description: "Gain +2 🥕",
     energy: 3,
     type: CARD_TYPE.Critter,
@@ -26,13 +28,14 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Berry Grower",
+    notes:
+      "A rabbit in a vintage dress picking berries from a berry bush. Holding a basket.",
     qty: 2,
     cost: {
       apples: 2,
       berries: 4,
       carrots: 2,
     },
-    image: "/critters/berry_grower.png",
     description: "Gain +2 🫐",
     energy: 3,
     type: CARD_TYPE.Critter,
@@ -43,13 +46,14 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Apple Grower",
+    notes:
+      "A rabbit wearing a farm hat, standing on a step ladder to reach an apple from a tree",
     qty: 2,
     cost: {
       apples: 4,
       berries: 2,
       carrots: 2,
     },
-    image: "/critters/apple_grower.png",
     description: "Gain +2 🍏",
     energy: 3,
     type: CARD_TYPE.Critter,
@@ -60,13 +64,14 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Agriculturist",
+    notes:
+      "A rabbit in a farm hat and overalls, holding a basket with all 3 crops in it",
     qty: 1,
     cost: {
       apples: 3,
       carrots: 3,
       berries: 3,
     },
-    image: "/critters/agriculturist.png",
     description: "Gain 3 random crops",
     buyBonus: "Your Rivals each gain a random crop.",
     energy: 3,
@@ -78,13 +83,13 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Clodhopper",
+    notes: "A large rabbit in overalls. He has MASSIVE gumboots on",
     qty: 1,
     cost: {
       apples: 5,
       carrots: 5,
       berries: 5,
     },
-    image: "/critters/clodhopper.png",
     description: "Gain +5 of a random crop.",
     buyBonus: (
       <span>
@@ -100,13 +105,14 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Crop Picker",
+    notes:
+      "A rabbit in a vintage dress, holding an empty basket. In motion / walking somewhere.",
     qty: 2,
     cost: {
       apples: 2,
       carrots: 2,
       berries: 2,
     },
-    image: "/critters/crop_picker.png",
     description: (
       <span>
         Gain +3 of a random crop. <br />
@@ -129,12 +135,11 @@ const rabbits: IFarmCard[] = [
       carrots: 2,
       berries: 2,
     },
-    image: "/critters/crop_picker.png",
     description: (
       <span>
         Gain a crop of your choosing.
         <br />
-        <b>Discount</b> by that crop type.
+        <Discount /> by that crop type.
       </span>
     ),
     energy: 3,
