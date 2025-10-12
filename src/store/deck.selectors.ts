@@ -124,6 +124,12 @@ const filterNonFarmDeck = <T extends ICard>(
   filters: IFilterState
 ): T[] => {
   return deck.filter((card) => {
+    if (filters.cardsWithArtFilter === "artOnly" && !card.image) {
+      return false;
+    }
+    if (filters.cardsWithArtFilter === "withoutArtOnly" && card.image) {
+      return false;
+    }
     if (filters.types.length && !filters.types.includes(card.type)) {
       return false;
     }
