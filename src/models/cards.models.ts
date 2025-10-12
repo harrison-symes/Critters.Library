@@ -75,6 +75,7 @@ export enum TAGS {
   DISCARD_RIVAL = "Discard Rival card",
   BUY_FARM_CARD = "On Farm Card buy",
   DOUBLE_SELL = "Double Sell Value",
+  CHOOSE_ONE = "Choose one",
 }
 
 export interface ICard {

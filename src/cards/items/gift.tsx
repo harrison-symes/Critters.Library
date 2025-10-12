@@ -20,7 +20,7 @@ const gifts: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Gift,
     tags: [TAGS.GIFT],
     unsellable: true,
-    image: "/goldfish.jpeg",
+    image: "/goldfish.png",
     ai_image: "/ai/goldfish.png",
     description: (
       <span>
@@ -42,7 +42,7 @@ const gifts: IFarmCard[] = [
       carrots: 2,
     },
     qty: 1,
-    image: "/birthday_present.jpeg",
+    image: "/birthday_present.png",
     ai_image: "/ai/birthday_present.png",
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,

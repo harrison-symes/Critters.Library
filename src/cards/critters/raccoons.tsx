@@ -66,7 +66,7 @@ const raccoons: IFarmCard[] = [
       berries: 3,
       carrots: 3,
     },
-    image: "/sticky_fingers.jpeg",
+    image: "/sticky_fingers.png",
     description: (
       <span>
         <b>Discard</b> a card from your hand, then return that card to your

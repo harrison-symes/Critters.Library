@@ -5,8 +5,10 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Critter from "../text/Critter";
 import Discount from "../text/Discount";
 import FastTrack from "../text/FastTrack";
+import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
 
@@ -45,6 +47,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Binoculars",
+    image: "/binoculars.png",
+    ai_image: "/ai/binoculars.png",
     notes: "A classic pair of binoculars",
     cost: {
       apples: 2,
@@ -63,7 +67,7 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        Gain +2 🥕. <br /> <FastTrack /> a <b>🐾Critter</b>.
+        Gain +2 🥕. <br /> <FastTrack /> a <b>🐾Critter</b> or a <Seed />.
       </span>
     ),
     buyBonus: (
@@ -105,7 +109,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Small Backpack",
-    notes: "",
+    notes:
+      "A colourful backpack, like for a school kid. The bag is too full of contents that the zipper won't close. Put various things inside the bag.",
     cost: {
       apples: 3,
       berries: 0,
@@ -135,7 +140,9 @@ const tools: IFarmCard[] = [
     flavour: `Worms and Bees just call this a "backpack"`,
   },
   {
-    name: "Convincing Disguise",
+    name: "Care Package",
+    notes:
+      "A delivery package, with postage stamps and tape. Etchings of a heart on one side (kinda like the companion cube from portal)",
     cost: {
       apples: 0,
       berries: 3,
@@ -145,49 +152,47 @@ const tools: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_STEAL, TAGS.CROP_GENERATION_RANDOM],
+    tags: [TAGS.FAST_TRACK, TAGS.SELL, TAGS.SELL_FROM_DISCARD],
     description: (
       <span>
-        Gain +2 of a random crop.
-        <br /> <b>Steal</b> one of that crop type from each Rival.
+        <FastTrack /> 2 cards.
       </span>
     ),
     recycle: (
       <span>
-        <b>Steal</b> 2 crops from a Rival.
+        <b>Sell</b> a card from your discard pile.
       </span>
     ),
-    flavour: "Grandma! What a big nose you have!",
+    flavour: "Hermes wants you to know how much he cares.",
   },
   {
     name: "Watering Can",
     image: "/watering_can.png",
     ai_image: "/ai/watering_can.png",
     cost: {
-      apples: 0,
-      berries: 1,
-      carrots: 2,
+      apples: 1,
+      berries: 3,
+      carrots: 0,
     },
     qty: 1,
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    tags: [TAGS.SKEWER],
+    tags: [TAGS.SKEWER, TAGS.ADD_TO_HAND, TAGS.CHOOSE_ONE],
     holdable: true,
     description: (
       <span>
-        <Skewer /> a card from your discard pile.
-      </span>
-    ),
-    buyBonus: (
-      <span>
-        <Skewer /> this card
+        <Skewer /> a card from your discard pile. <br />
+        <b>-OR-</b>
+        <br />
+        Put 2 <b>🏠Starter</b> cards from your discard pile into your hand.
       </span>
     ),
     flavour: "You're watering your Compost Bin? Well, okay then...",
   },
   {
     name: "Dustpan",
+    notes: "A classic dustpan, not much else to say",
     cost: {
       apples: 3,
       berries: 2,
@@ -206,7 +211,7 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        <b>Refresh</b> a row in the Market.
+        <b>Refresh</b> a row in the <b>Market</b>.
         <br /> Gain{" "}
         <span className="nowrap">
           <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>.
@@ -224,6 +229,7 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Knapsack",
+    notes: "A sack with a drawstring. Avoid making it look like leather.",
     cost: {
       apples: 3,
       berries: 0,
@@ -250,6 +256,7 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Compost Bin",
+    notes: "An open bin filled with soil and old crops.",
     cost: {
       apples: 1,
       berries: 3,
@@ -262,7 +269,8 @@ const tools: IFarmCard[] = [
     tags: [TAGS.DISCARD_OWN, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
     description: (
       <span>
-        <b>Discard</b> every card from your hand. <br /> Gain{" "}
+        <b>Discard</b> every card from your hand. <br />
+        Gain{" "}
         <span className="nowrap">
           <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
         </span>{" "}
@@ -282,10 +290,11 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Toolbelt",
+    notes: "A belt with a hammer, a trowel and a garden fork in little slots",
     cost: {
-      apples: 1,
-      berries: 3,
-      carrots: 0,
+      apples: 0,
+      berries: 1,
+      carrots: 2,
     },
     qty: 1,
     set: CARD_SET.BASE,
@@ -330,6 +339,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Dusty Broom",
+    notes:
+      "A wooden broom with thick bristles. Lines and spots indicating it is covered in dust",
     cost: {
       apples: 2,
       berries: 1,
@@ -345,6 +356,11 @@ const tools: IFarmCard[] = [
         <Discount />.<br />
         <b>Snatch</b> the discounted crops from a card in the Market, then{" "}
         <b>Refresh</b> that card.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Refresh</b> a card in the <b>Market</b>.
       </span>
     ),
     flavour:

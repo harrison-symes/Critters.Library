@@ -23,7 +23,9 @@ const rats: IFarmCard[] = [
       <span>
         Get a <b>Favour</b> from the <b>Market</b> for free.
         <br />
-        <Discount />
+        <b>-OR-</b>
+        <br />
+        <Discount />.
       </span>
     ),
     buyBonus: (
@@ -34,7 +36,7 @@ const rats: IFarmCard[] = [
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
-    tags: [TAGS.FREE_FAVOUR, TAGS.DISCOUNT, TAGS.REFRESH],
+    tags: [TAGS.FREE_FAVOUR, TAGS.DISCOUNT, TAGS.REFRESH, TAGS.CHOOSE_ONE],
     set: CARD_SET.BASE,
     flavour: "Say hello to his little friends.",
   },

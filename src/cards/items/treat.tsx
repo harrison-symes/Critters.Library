@@ -5,12 +5,15 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Critter from "../text/Critter";
 import FastTrack from "../text/FastTrack";
 import Sleepy from "../text/Sleepy";
 
 const treats: IFarmCard[] = [
   {
     name: "Rat Food",
+    image: "/rat_food.png",
+    ai_image: "/ai/rat_food.png",
     notes: "A plate of 3 apples",
     cost: {
       apples: 3,
@@ -37,6 +40,8 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Rabbit Food",
+    image: "/rabbit_food.png",
+    ai_image: "/ai/rabbit_food.png",
     notes: "A plate of 3 carrots",
     cost: {
       apples: 1,
@@ -56,13 +61,15 @@ const treats: IFarmCard[] = [
     description: (
       <span>
         Gain +3 🥕. <br />
-        Remove 1 <Sleepy /> from 3 of your <b>🐾Critters</b>.
+        Remove 1 <Sleepy /> from one of your <b>🐾Critters</b>.
       </span>
     ),
     recycle: <span>Draw a card.</span>,
   },
   {
     name: "Hog Food",
+    image: "/hog_food.png",
+    ai_image: "/ai/hog_food.png",
     notes: "A plate of 3 berries",
     cost: {
       apples: 1,
@@ -83,7 +90,7 @@ const treats: IFarmCard[] = [
     ],
     description: (
       <span>
-        Gain +3 🫐. <br /> <FastTrack /> this or another <b>🧁Treat</b>.
+        Gain +3 🫐. <br /> <FastTrack /> a <b>🧁Treat</b>.
       </span>
     ),
     recycle: (
@@ -94,6 +101,8 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Picnic Basket",
+    image: "/picnic_basket.png",
+    ai_image: "/ai/picnic_basket.png",
     notes: "A closed picnic basket on a picnic blanket",
     cost: {
       apples: 2,
@@ -125,6 +134,8 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Award Winning Crop",
+    image: "/award_winning_crop.png",
+    ai_image: "/ai/award_winning_crop.png",
     notes: "A giant carrot with an award ribbon on it with the text '#1.",
     cost: {
       apples: 3,
@@ -185,10 +196,12 @@ const treats: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CARD_DRAW],
-    description: "Draw 2 cards",
+    description: <span>Draw 2 cards.</span>,
   },
   {
     name: "Midnight Snack",
+    image: "/midnight_snack.png",
+    ai_image: "/ai/midnight_snack.png",
     notes: "A slice of frosted cake with a berry on top",
     cost: {
       apples: 2,
@@ -200,11 +213,17 @@ const treats: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CROP_GENERATION, TAGS.CARD_DRAW, TAGS.CROP_GENERATION_RANDOM],
-    description: "Gain a random crop. Draw a card.",
+    description: (
+      <span>
+        Gain a random crop. <br /> Draw a card.
+      </span>
+    ),
     buyBonus: "Each player gains a random crop",
   },
   {
     name: "Pik'n'mix",
+    image: "/pik_n_mix.png",
+    ai_image: "/ai/pik_n_mix.png",
     notes: "An open paper bag with 1 of each crop inside",
     cost: {
       apples: 0,
@@ -215,8 +234,20 @@ const treats: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
-    description: "Gain 3 random crops, then gain a crop of your choosing.",
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.CROP_GENERATION_CHOOSE,
+      TAGS.CHOOSE_ONE,
+    ],
+    description: (
+      <span>
+        Gain 3 random crops <br />
+        <b>-OR-</b>
+        <br />
+        Gain +3 of a crop of your choosing.
+      </span>
+    ),
   },
   {
     name: "Morning Cuppa'",
@@ -235,7 +266,7 @@ const treats: IFarmCard[] = [
     tags: [TAGS.REMOVE_ZZZ],
     description: (
       <span>
-        Remove all <Sleepy /> from one of your <b>🐾Critters</b>.
+        Remove 1 <Sleepy /> from 2 of your <b>🐾Critters</b>.
       </span>
     ),
     recycle: (
@@ -246,6 +277,8 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Sharing Plate",
+    image: "/sharing_plate.png",
+    ai_image: "/ai/sharing_plate.png",
     notes: "A glad-wrapped plate with lots of apples on it",
     cost: {
       apples: 2,
@@ -267,6 +300,8 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Plant Food",
+    image: "/plant_food.png",
+    ai_image: "/ai/plant_food.png",
     notes: "A plate with a bag sitting on it. The bag says 'Potting Mix'",
     cost: {
       apples: 3,

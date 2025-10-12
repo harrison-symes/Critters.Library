@@ -5,7 +5,10 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Critter from "../text/Critter";
 import FastTrack from "../text/FastTrack";
+import Item from "../text/Item";
+import Seed from "../text/Seed";
 
 const bees: IFarmCard[] = [
   {
@@ -69,8 +72,8 @@ const bees: IFarmCard[] = [
     },
     description: (
       <span>
-        If you have 3 <b>Work Orders</b>, <FastTrack /> a <b>🐾Critter</b>, a{" "}
-        <b>🌱Seed</b> and an <b>🎒Item</b>.
+        If you have 3 <b>Work Orders</b>, <FastTrack /> a <Critter />, a{" "}
+        <Seed /> and an <Item />.
       </span>
     ),
     energy: 2,

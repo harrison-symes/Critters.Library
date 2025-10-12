@@ -46,12 +46,14 @@
         overflow: hidden;
         max-width: 100%;
         position: relative;
-        top: -50px;
+        background-color: white;
+        // top: -50px;
 
         &__container {
             // width: 100%;
             // height: 100%;
             border: 1px solid black;
+            background-color: white;
             border-radius: .25rem;
             overflow: hidden;
             height: 200px;

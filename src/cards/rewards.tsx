@@ -1,12 +1,21 @@
 import { CARD_SET, CARD_TYPE, IRewardCard, TAGS } from "../models/cards.models";
+import Critter from "./text/Critter";
 import Discount from "./text/Discount";
 import FastTrack from "./text/FastTrack";
+import Finance from "./text/Finance";
+import Item from "./text/Item";
+import Seed from "./text/Seed";
 import Skewer from "./text/Skewer";
 import Sleepy from "./text/Sleepy";
+import Sunlight from "./text/Sunlight";
+import Tool from "./text/Tool";
+import Treat from "./text/Treat";
 
 const rewards: IRewardCard[] = [
   {
     name: "Apple Stall",
+    notes:
+      "A market stall with a sign with apples on it. A crate filled with apples is behind the stall.",
     qty: 2,
     description: (
       <span>
@@ -21,6 +30,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Berry Stall",
+    notes:
+      "A market stall with a sign with berries on it. A crate filled with berries is sitting on the stall counter.",
     qty: 2,
     description: (
       <span>
@@ -35,6 +46,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Carrot Stall",
+    notes:
+      "A market stall with a sign with carrots on it. A crate filled with carrots is behind the stall.",
     qty: 2,
     description: (
       <span>
@@ -49,6 +62,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Gold Locket",
+    notes:
+      "A golden locket in the shape of a heart. The locket is closed. It has a chain to be worn around a neck. It has a little keyhole on the side. Indication of it sparkling.",
     qty: 1,
     description: (
       <span>
@@ -62,20 +77,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD],
   },
   {
-    name: "To-do List",
-    qty: 1,
-    description: (
-      <span>
-        Instantly, and whenever you complete a <b>Work Order</b>, get a free{" "}
-        <b>Work Order</b>.
-      </span>
-    ),
-    type: CARD_TYPE.Reward,
-    set: CARD_SET.BASE,
-    tags: [TAGS.FREE_CARD, TAGS.WORK_ORDER_COMPLETION],
-  },
-  {
     name: "Work Roster",
+    notes:
+      "A piece of paper pinned to a wall. It has a calendar like layout (for one week only). On each day a rough sketch of a different animal's face. Monday and Wednesday are a rabbit. Tuesday and Saturday are a rat. Thursday Friday and Sunday are bees.",
     qty: 1,
     description: (
       <span>
@@ -88,7 +92,24 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SKEWER, TAGS.WORK_ORDER_COMPLETION],
   },
   {
+    name: "Blueprints",
+    notes:
+      "Unfolded blueprints on a table. White lines showing the plans for a new plot of land, broken down by sections for different crops.",
+    qty: 1,
+    description: (
+      <span>
+        Instantly, and whenever you complete a <b>Work Order</b>, <FastTrack />{" "}
+        a <Critter />, a <Seed /> and an <Item />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
+    tags: [TAGS.FAST_TRACK, TAGS.WORK_ORDER_COMPLETION],
+  },
+  {
     name: "Wrapping Paper",
+    notes:
+      "Refer to Birthday present card. Wrapping paper colours and pattern should match. This wrapping paper will be a slightly unrolled roll of paper. Untied ribbons sitting off to the side. Maybe scizzors and tape in frame?",
     qty: 1,
     description: (
       <span>
@@ -101,25 +122,44 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.WORK_ORDER_COMPLETION, TAGS.GIFT],
   },
   {
-    name: "Greenhouse",
+    name: "Espresso Machine",
+    notes:
+      "Classic single head espresso machine, but make it look clunky/rustic. Bag of coffee beans to the side?",
     qty: 1,
     description: (
       <span>
-        After you <b>Harvest</b> a <b>🌱Seed</b> with 3 <b>☀️Sunlight</b>, put a
-        different <b>🌱Seed</b> from your discard pile into your hand.
+        At the end of your turn, if you have at least 3 <Critter plural />,
+        remove 1 <Sleepy /> from one of them.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.SEED_SYNERGY, TAGS.ADD_TO_HAND],
+    tags: [TAGS.REMOVE_ZZZ],
   },
   {
-    name: "Seed Fund",
+    name: "Greenhouse",
+    notes:
+      "A simple small greenhouse. Inside you can see a row of sprouted seedlings.",
     qty: 1,
     description: (
       <span>
-        After you <b>Sell</b> or <b>Trash</b> a card, add 1 <b>☀️Sunlight</b> to
-        each of your <b>🌱Seeds</b>.
+        At the end of your turn, if you have at least 3 planted <Seed plural />,
+        each of your <Seed plural /> gain +1 <Sunlight />
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.BASE,
+    tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
+  },
+  {
+    name: "Seed Fund",
+    notes:
+      "A tip jar (with a coin slot in the lid) but it is filled with seeds. Maybe a label with a seed sprout logo on it",
+    qty: 1,
+    description: (
+      <span>
+        After you <b>Sell</b> or <b>Trash</b> a card, add 1 <Sunlight /> to each
+        of your <Seed plural />.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -128,11 +168,13 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Coffee Grinds",
+    notes:
+      "A bag filled with throwaway coffee grinds. They should have spilled a little bit and left marks on the bag",
     qty: 1,
     description: (
       <span>
-        After you <b>Harvest</b> a <b>🌱Seed</b> with 3 <b>☀️Sunlight</b>, draw
-        a card.
+        After you <b>Harvest</b> a <b>🌱Seed</b> with 3 <Sunlight />, draw a
+        card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -144,7 +186,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Your <b>🌱Seeds</b> gain 1 <b>☀️Sunlight</b> when planted.
+        Your <Seed plural /> gain 1 <Sunlight /> when planted.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -152,17 +194,17 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
   },
   {
-    name: "Utility Belt",
+    name: "Pot Plant",
     qty: 1,
     description: (
       <span>
-        Whenever you <FastTrack /> a <b>🐾Critter</b>, you may also{" "}
-        <FastTrack /> an <b>🎒Item</b>.
+        At the end of your turn, if you have only 1 planted <Seed /> AND that{" "}
+        <Seed /> has 3 <Sunlight />, gain 2 random crops.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FAST_TRACK],
+    tags: [TAGS.SEED_SYNERGY, TAGS.CARD_DRAW],
   },
   {
     name: "Rusty Rake",
@@ -206,7 +248,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you you <FastTrack /> a card, you may <Skewer /> it instead.
+        Whenever you you <FastTrack /> a <Critter /> or <Seed />, you may{" "}
+        <Skewer /> it instead.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -226,24 +269,12 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CARD_DRAW, TAGS.SKEWER],
   },
   {
-    name: "V.I.P Pass",
-    qty: 1,
-    description: (
-      <span>
-        After you <b>Buy</b> a Farm card, <FastTrack /> it.
-      </span>
-    ),
-    type: CARD_TYPE.Reward,
-    set: CARD_SET.BASE,
-    tags: [TAGS.FAST_TRACK],
-  },
-  {
     name: "Feather Duster",
     qty: 1,
     description: (
       <span>
-        After you play a <b>🛠️Tool</b>, you may <b>Trash</b> a card from your
-        discard pile.
+        After you play a <Tool />, you may <b>Trash</b> a card from your discard
+        pile.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -255,7 +286,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you play a <b>🛠️Tool</b>, you may <FastTrack /> a different card.
+        After you play a <Tool />, you may <FastTrack /> a different card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -267,8 +298,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you play a <b>🧁Treat</b>, remove 1 <Sleepy /> from one of your{" "}
-        <b>🐾Critters</b>.
+        After you play a <Treat />, remove 1 <Sleepy /> from one of your{" "}
+        <Critter plural />.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -280,7 +311,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you play a <b>🧁Treat</b>, <b>Steal</b> a crop from a Rival.
+        After you play a <Treat />, <b>Steal</b> a crop from a Rival.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -292,20 +323,20 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Sell</b> or <b>Trash</b> a <b>🏦Finance</b> card, you may{" "}
-        <Skewer /> it.
+        After you <b>Sell</b> or <b>Trash</b> a <Finance /> card, you may{" "}
+        <FastTrack /> it.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TRASH, TAGS.SKEWER],
+    tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TRASH, TAGS.FAST_TRACK],
   },
   {
     name: "Rainy Day Savings",
     qty: 1,
     description: (
       <span>
-        After you play a <b>🏦Finance</b> card, gain +2 of a random crop.
+        After you play a <Finance /> card, gain +2 of a random crop.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -321,7 +352,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <Discount />, gain +2 of the discounted crop type.
+        Whenever you <Discount />, gain +2 of the discounted crop type.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -389,13 +420,13 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Your <b>Friendship Charm</b> cards can instead copy the <b>⤵️Talent</b>{" "}
-        of one of your <b>🐾Critters</b>.
+        If you have only 1 <Critter /> in play, <FastTrack /> them whenever they
+        are <b>Exhausted</b>.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [],
+    tags: [TAGS.FREE_FAVOUR],
   },
   {
     name: "Tip Jar",
@@ -404,7 +435,7 @@ const rewards: IRewardCard[] = [
       <span>
         Whenever you <b>Buy</b> a Farm card, you may pay{" "}
         <span className="nowrap">
-          <b>1🍏</b> <b>1🫐</b> <b>1🥕</b>
+          <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
         </span>{" "}
         to put that card into you hand.
       </span>
@@ -498,8 +529,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        If you have less <b>🏆Rewards</b> than your Rivals, your <b>🌱Seeds</b>{" "}
-        gain an extra 1 <b>☀️Sunlight</b> at the end of your turn.
+        If you have less <b>🏆Rewards</b> than your Rivals, your <Seed plural />{" "}
+        gain an extra 1 <Sunlight /> at the end of your turn.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -511,7 +542,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <FastTrack /> a <b>🧁Treat</b>, draw a card.
+        After you <FastTrack /> a <Treat />, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -523,9 +554,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Your <b>🏦Finance</b> cards sell for twice as much. <br />
-        Your <b>🛠️Tools</b> and <b>🧁Treats</b> are now also <b>🏦Finance</b>{" "}
-        cards.
+        Your <Finance /> cards sell for twice as much. <br />
+        Your <b>🛠️Tools</b> and <b>🧁Treats</b> are now also <Finance /> cards.
       </span>
     ),
     type: CARD_TYPE.Reward,

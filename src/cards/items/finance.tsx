@@ -7,6 +7,7 @@ import {
 } from "../../models/cards.models";
 import Discount from "../text/Discount";
 import FastTrack from "../text/FastTrack";
+import Item from "../text/Item";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
 
@@ -18,7 +19,7 @@ const finance: IFarmCard[] = [
       berries: 2,
       carrots: 2,
     },
-    image: "/recycling_bin.jpeg",
+    image: "/recycling_bin.png",
     ai_image: "/ai/recycling_bin.png",
     qty: 1,
     set: CARD_SET.BASE,
@@ -146,14 +147,18 @@ const finance: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    tags: [TAGS.DISCARD_OWN, TAGS.FREE_CRATE, TAGS.CARD_DRAW],
+    tags: [TAGS.DISCARD_OWN, TAGS.FREE_CRATE, TAGS.FREE_CARD],
     description: (
       <span>
         <b>Discard</b> a card from your hand to pack a free crate into a{" "}
         <b>Work Order</b>.
       </span>
     ),
-    recycle: "Draw 2 cards.",
+    recycle: (
+      <span>
+        Get a free <b>Work Order</b>.
+      </span>
+    ),
   },
   {
     name: "Damaged Goods",
@@ -174,6 +179,7 @@ const finance: IFarmCard[] = [
       TAGS.TRASH_FROM_DISCARD,
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_ALL,
+      TAGS.CHOOSE_ONE,
     ],
     holdable: true,
     description: (
@@ -264,7 +270,7 @@ const finance: IFarmCard[] = [
     ],
     description: (
       <span>
-        <b>Refresh</b> 2 cards in the Market. <br /> Gain 2 random crops.
+        <b>Refresh</b> 2 cards in the <b>Market</b>. <br /> Gain 2 random crops.
         <br />
         <Discount />.
       </span>
@@ -283,18 +289,14 @@ const finance: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    tags: [TAGS.GIFT, TAGS.TRASH],
+    tags: [TAGS.GIFT],
     unsellable: true,
     description: (
       <span>
         <b>Gift</b> a card from your discard pile.
       </span>
     ),
-    recycle: (
-      <span>
-        <b>Trash</b> this card.
-      </span>
-    ),
+    recycle: <span>Put this at the bottom of your deck.</span>,
   },
   {
     name: "Register",
@@ -346,7 +348,11 @@ const finance: IFarmCard[] = [
         <br /> <Discount />.
       </span>
     ),
-    recycle: "Gain +2 of a random crop.",
+    recycle: (
+      <span>
+        <FastTrack /> an <Item />.
+      </span>
+    ),
   },
   {
     set: CARD_SET.CROWD_FUND,

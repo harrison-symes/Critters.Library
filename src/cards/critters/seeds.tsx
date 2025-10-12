@@ -11,6 +11,8 @@ import Sleepy from "../text/Sleepy";
 const seeds: IFarmCard[] = [
   {
     name: "Apple Seeds",
+    notes:
+      "A big open canvas bag of seeds, with an apple logo on the front. The seeds are light.",
     qty: 3,
     cost: {
       apples: 3,
@@ -41,6 +43,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Berry Seeds",
+    notes:
+      "A big open canvas bag of seeds, with a berry logo on the front. The seeds are dark.",
     qty: 3,
     cost: {
       apples: 0,
@@ -71,6 +75,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Carrot Seeds",
+    notes:
+      "A big open canvas bag of seeds, with a carrot logo on the front, the seeds are shaded.",
     qty: 3,
     cost: {
       apples: 0,
@@ -101,6 +107,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Mystery Seeds",
+    notes:
+      "A big closed canvas bag of seeds, with big question mark on the front",
     qty: 2,
     cost: {
       apples: 1,
@@ -119,6 +127,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Mixed Seeds",
+    notes:
+      "A big open canvas bag of seeds, with an circle logo split into thirds the front. Inside each third is an icon of carrot, berry and apple. The seeds are 3 different shades. Light, shaded and dark.",
     qty: 2,
     cost: {
       apples: 2,
@@ -137,6 +147,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Coffee Seeds",
+    notes:
+      "A big open canvas bag of seeds, with an coffe mug logo on the front. The seeds are dark brown, like coffee beans.",
     qty: 2,
     cost: {
       apples: 2,
@@ -153,7 +165,9 @@ const seeds: IFarmCard[] = [
     set: CARD_SET.BASE,
   },
   {
-    name: "Vanishing Seeds",
+    name: "Golden Seeds",
+    notes:
+      "A big open canvas bag of seeds, with a $ logo on the front. The seeds are shiny.",
     qty: 2,
     cost: {
       apples: 1,
@@ -184,6 +198,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Sunflower Seeds",
+    notes: "A big canvas bag of seeds, with a Sunflower logo on the front",
     qty: 2,
     cost: {
       apples: 1,
@@ -209,6 +224,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Magic Seeds",
+    notes:
+      "A big canvas bag of seeds, with no logo on the front. The bag is open and the seeds are glowing.",
     qty: 1,
     cost: {
       apples: 2,
