@@ -1,4 +1,4 @@
-import { IFarmCard, IRewardCard } from "../../models/cards.models";
+import { IRewardCard } from "../../models/cards.models";
 import "./cards.scss";
 
 interface IProps {

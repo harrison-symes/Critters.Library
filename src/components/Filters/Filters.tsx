@@ -11,7 +11,7 @@ import EffectFilters from "./EffectFilters";
 
 import "./filters.scss";
 import FiltersGroup from "./FiltersGroup";
-import HideCompletedArtCardsToggle from "./HideCardsWithArtToggle";
+import ShowCardWithArtSwitch from "./HideCardsWithArtToggle";
 import ShowStatsToggle from "./ShowStatsToggle";
 import TagFilters from "./TagFilters";
 
@@ -38,7 +38,7 @@ const Filters = () => {
       </div>
       <div className="filters__container">
         <DesignNotesToggle />
-        <HideCompletedArtCardsToggle />
+        <ShowCardWithArtSwitch />
         <AiColouredImagesToggle />
         <ShowStatsToggle />
       </div>

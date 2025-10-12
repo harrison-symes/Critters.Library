@@ -183,6 +183,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Magnifying Glass",
+    notes:
+      "A magnifying glass refracting sunlight (large sunbeam into an acute sunbeam. The end of the sunbeam can have a little burnmark where it touches the ground",
     qty: 1,
     description: (
       <span>
@@ -195,6 +197,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Pot Plant",
+    notes: "A clay pot filled with soil with a single seed sproutling inside",
     qty: 1,
     description: (
       <span>
@@ -208,6 +211,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Rusty Rake",
+    notes:
+      "A rake (leaning against a wall). The ends of the prongs are rusted, and a bit wonky/bent",
     qty: 1,
     description: (
       <span>
@@ -220,6 +225,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Vault",
+    notes:
+      "A small metal safe. A bit battered. It has a keyhole and a turnwheel on the front door",
     qty: 1,
     description: (
       <span>
@@ -233,6 +240,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Tax Return",
+    notes:
+      "A piece of paper. Squiggly lines indicating text. Maybe icons for the 3 crops with random % values next to them? (Apple 10%, Carrot 15%, Berry 5%)",
     qty: 1,
     description: (
       <span>
@@ -245,6 +254,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Broken Compass",
+    notes:
+      "An open pocket compass. Not sure how to convey that it doesn't work, but go nuts",
     qty: 1,
     description: (
       <span>
@@ -258,6 +269,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Skewer",
+    notes: "A wooden stick with a few berries skewered on it",
     qty: 1,
     description: (
       <span>
@@ -270,6 +282,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Feather Duster",
+    notes: "Different coloured feathers on the end of a stick",
     qty: 1,
     description: (
       <span>
@@ -283,6 +296,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Tool Shed",
+    notes:
+      "A worn down wooden shed. The door is a bit wonky and open slightly. Inside you can see a rake and a pitchfork",
     qty: 1,
     description: (
       <span>
@@ -295,6 +310,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Coffee Mug",
+    notes: "An empty wide mug. It has cheesey text on it saying '#1 Farmer'",
     qty: 1,
     description: (
       <span>
@@ -308,6 +324,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Satchel",
+    notes:
+      "A rustic brown satchel. Put whatever you feel like in the side pockets",
     qty: 1,
     description: (
       <span>
@@ -320,6 +338,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Burnt Ledger",
+    notes:
+      "Like the book from Cooked Books card, but it is singed / has burn marks",
     qty: 1,
     description: (
       <span>
@@ -333,6 +353,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Rainy Day Savings",
+    notes: "A coinpurse filled with Berries",
     qty: 1,
     description: (
       <span>
@@ -349,6 +370,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Merchant Scales",
+    notes: "Price hikers scales",
     qty: 1,
     description: (
       <span>
@@ -361,6 +383,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Black Gloves",
+    notes: "The gloves that Rummager is wearing",
     qty: 1,
     description: (
       <span>
@@ -374,6 +397,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Jam Jar",
+    notes: "Sticky fingers' jar of jam",
     qty: 1,
     description: (
       <span>
@@ -387,6 +411,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Packing Slip",
+    notes:
+      "A clipboard with a piece of paper on it. Squiggly lines indicating text with ticked boxes on each row. A section for a signature is at the bottom, and it has Sticky Fingers' pawprint as a signature",
     qty: 1,
     description: (
       <span>
@@ -400,6 +426,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Heavy Bushel",
+    notes: "A bushel overfilled with Apples",
     qty: 1,
     description: (
       <span>
@@ -417,6 +444,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Friendship Bracelet",
+    notes:
+      "A bracelet made of various beads, with a heart shaped bead at the center.",
     qty: 1,
     description: (
       <span>
@@ -430,6 +459,8 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Tip Jar",
+    notes:
+      "A glass jar with a coin slot in the lid. It has a label with the text 'Tips' on it. ",
     qty: 1,
     description: (
       <span>

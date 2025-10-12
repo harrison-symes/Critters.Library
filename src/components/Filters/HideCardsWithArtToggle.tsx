@@ -1,25 +1,45 @@
-import { Switch } from "@mui/material";
-import FiltersGroup from "./FiltersGroup";
+import { Button, ButtonGroup, Switch } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
-  getShouldHideCompletedArtCards,
-  toggleShowCompletedArtCards,
+  getCardsWithArtFilter,
+  setCardsWithArtFilter,
+  TCardsWithArtFilter,
 } from "../../store/filtersSlice";
+import FiltersGroup from "./FiltersGroup";
 
-const HideCompletedArtCardsToggle = () => {
-  const shouldHideCompletedArtCards = useAppSelector(
-    getShouldHideCompletedArtCards
-  );
+const ShowCardWithArtSwitch = () => {
+  const cardsWithArtFilter = useAppSelector(getCardsWithArtFilter);
   const dispatch = useAppDispatch();
-  const onClick = () => {
-    dispatch(toggleShowCompletedArtCards());
+  const onClick = (filter: TCardsWithArtFilter) => {
+    dispatch(setCardsWithArtFilter(filter));
   };
 
   return (
-    <FiltersGroup title="Hide Cards With Images">
-      <Switch value={shouldHideCompletedArtCards} onClick={onClick} />
+    <FiltersGroup title="Filter cards with art">
+      <ButtonGroup title="Filter cards with art">
+        <Button
+          variant={cardsWithArtFilter === "all" ? "contained" : "outlined"}
+          onClick={() => onClick("all")}
+        >
+          All
+        </Button>
+        <Button
+          variant={cardsWithArtFilter === "artOnly" ? "contained" : "outlined"}
+          onClick={() => onClick("artOnly")}
+        >
+          With Art
+        </Button>
+        <Button
+          variant={
+            cardsWithArtFilter === "withoutArtOnly" ? "contained" : "outlined"
+          }
+          onClick={() => onClick("withoutArtOnly")}
+        >
+          Without Art
+        </Button>
+      </ButtonGroup>
     </FiltersGroup>
   );
 };
 
-export default HideCompletedArtCardsToggle;
+export default ShowCardWithArtSwitch;

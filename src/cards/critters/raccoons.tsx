@@ -11,7 +11,7 @@ const raccoons: IFarmCard[] = [
   {
     name: "Rummager",
     notes:
-      "A raccoon digging through a trashcan. An empty open trashbag is lying on the ground.",
+      "A raccoon digging through a trashcan. He is wearing black gloves. An empty open trashbag is lying on the ground.",
     qty: 2,
     cost: {
       apples: 1,
