@@ -12,6 +12,7 @@ import Sleepy from "../text/Sleepy";
 const seeds: IFarmCard[] = [
   {
     name: "Apple Seeds",
+    flavour: "If you thought Apples were crunchy, wait until you try these!",
     notes:
       "A big open canvas bag of seeds, with an apple logo on the front. The seeds are light.",
     qty: 3,
@@ -44,6 +45,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Berry Seeds",
+    flavour: "You must be Berry patient with these",
     notes:
       "A big open canvas bag of seeds, with a berry logo on the front. The seeds are dark.",
     qty: 3,
@@ -76,6 +78,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Carrot Seeds",
+    flavour: "Otherwise known as baby baby Carrots",
     notes:
       "A big open canvas bag of seeds, with a carrot logo on the front, the seeds are shaded.",
     qty: 3,
@@ -108,6 +111,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Mystery Seeds",
+    flavour: "When you're as blind as a Mole, all seeds are Mystery Seeds",
     notes:
       "A big closed canvas bag of seeds, with big question mark on the front",
     qty: 2,
@@ -120,7 +124,6 @@ const seeds: IFarmCard[] = [
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     sunlight: {
-      one: "Gain a random crop.",
       two: "Gain +3 of a random crop.",
       three: "Gain +4 of a random crop.",
     },
@@ -128,6 +131,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Mixed Seeds",
+    flavour: "These seeds are like a box of chocolates...",
     notes:
       "A big open canvas bag of seeds, with an circle logo split into thirds the front. Inside each third is an icon of carrot, berry and apple. The seeds are 3 different shades. Light, shaded and dark.",
     qty: 2,
@@ -140,14 +144,16 @@ const seeds: IFarmCard[] = [
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     sunlight: {
-      one: "Gain 2 random crops.",
-      two: "Gain 4 random crops.",
-      three: "Gain 5 random crops.",
+      one: "Gain +2 of a random crop.",
+      two: "Gain +2 of a random crop, twice.",
+      three: "Gain +2 of a random crop, thrice.",
     },
     set: CARD_SET.BASE,
   },
   {
     name: "Coffee Seeds",
+    flavour:
+      "You plant Coffee Seeds to grow Coffee BEANS. Why are you planting the beans?",
     notes:
       "A big open canvas bag of seeds, with an coffe mug logo on the front. The seeds are dark brown, like coffee beans.",
     qty: 2,
@@ -167,6 +173,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Golden Seeds",
+    flavour: "What do they grow into? Deals!",
     notes:
       "A big open canvas bag of seeds, with a $ logo on the front. The seeds are shiny.",
     qty: 2,
@@ -179,11 +186,6 @@ const seeds: IFarmCard[] = [
     type: CARD_TYPE.Seeds,
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD, TAGS.SELL_FROM_HAND],
     sunlight: {
-      one: (
-        <span>
-          <b>Trash</b> a card from your hand.
-        </span>
-      ),
       two: (
         <span>
           <b>Trash</b> a card from your discard pile.
@@ -199,6 +201,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Sunflower Seeds",
+    flavour: "A certain Worm's favourite snack.",
     notes: "A big canvas bag of seeds, with a Sunflower logo on the front",
     qty: 2,
     cost: {
@@ -217,7 +220,7 @@ const seeds: IFarmCard[] = [
       ),
       three: (
         <span>
-          ...and <Skewer /> this card.
+          ...and then <Skewer /> this card.
         </span>
       ),
     },
@@ -225,6 +228,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Magic Seeds",
+    flavour: "You could trade a Cow for these, if you had one...",
     notes:
       "A big canvas bag of seeds, with no logo on the front. The bag is open and the seeds are glowing.",
     qty: 1,
@@ -237,15 +241,9 @@ const seeds: IFarmCard[] = [
     type: CARD_TYPE.Seeds,
     tags: [TAGS.FREE_CARD, TAGS.SKEWER],
     sunlight: {
-      two: (
-        <span>
-          Put a Farm card from the <b>Market</b> into your discard pile...
-        </span>
-      ),
       three: (
         <span>
-          ...
-          <Skewer /> that card instead.
+          <Skewer /> a Farm card from the <b>Market</b>.
         </span>
       ),
     },

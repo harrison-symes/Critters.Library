@@ -28,7 +28,7 @@ const finance: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Finance,
     description: (
       <span>
-        Gain +2 🍏. <br /> <FastTrack /> an <b>🎒Item</b>.<br />
+        Gain +2 🍏. <br /> <FastTrack /> a <b>🎒Item</b>.<br />
         <Discount />.
       </span>
     ),
@@ -68,7 +68,7 @@ const finance: IFarmCard[] = [
     description: (
       <span>
         Gain +2 🥕. <br />
-        Add 1 <Sleepy /> to EVERY <Critter />. <br />
+        Add 1 <Sleepy /> to a Rival's <Critter />. <br />
         <Discount />.
       </span>
     ),
@@ -91,6 +91,7 @@ const finance: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
+    refundable: true,
     tags: [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_BERRY,
@@ -214,7 +215,7 @@ const finance: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    sellable: true,
+    refundable: true,
     tags: [TAGS.SKEWER, TAGS.FREE_CARD],
     description: (
       <span>
@@ -235,7 +236,7 @@ const finance: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    sellable: true,
+    refundable: true,
     tags: [
       TAGS.ADD_TO_HAND,
       TAGS.TRASH,
@@ -315,8 +316,11 @@ const finance: IFarmCard[] = [
     tags: [TAGS.CROP_STEAL, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     description: (
       <span>
-        <b>Steal</b> one type of crop from a Rival until you have more of that
-        crop than they do.
+        <b>Steal</b>{" "}
+        <span className="nowrap">
+          <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
+        </span>{" "}
+        from a Rival.
       </span>
     ),
     recycle: "Gain 3 random crops.",
@@ -359,22 +363,23 @@ const finance: IFarmCard[] = [
     set: CARD_SET.CROWD_FUND,
     name: "Bargain Bin",
     cost: {
-      apples: 1,
-      berries: 1,
-      carrots: 1,
+      apples: 3,
+      berries: 3,
+      carrots: 3,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
     description: (
       <span>
-        You may <b>Buy</b> a card from ANY <b>Market</b> discard pile{" "}
-        <b>this turn</b>.
+        <Skewer /> a Farm card from the <b>Market</b>. <br />
+        <Discount /> twice.
       </span>
     ),
     buyBonus: (
       <span>
-        Get a free <b>Favour</b> from the <b>Market</b>
+        <FastTrack /> this and every <b>🏠Starter</b> card from your discard
+        pile.
       </span>
     ),
   },
@@ -421,7 +426,7 @@ const finance: IFarmCard[] = [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_RANDOM,
     ],
-    sellable: true,
+    refundable: true,
     description: (
       <span>
         <b>Sell</b> a card from your discard pile. <br />

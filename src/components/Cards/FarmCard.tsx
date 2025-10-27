@@ -83,7 +83,9 @@ const FarmCard = (props: IProps) => {
       <div className="card__image__spacer"></div>
       <div className="card__special__container">
         {props.card.holdable && <div className="card__special">Holdable</div>}
-        {props.card.sellable && <div className="card__special">Sellable</div>}
+        {props.card.refundable && (
+          <div className="card__special">Refundable</div>
+        )}
         {props.card.unsellable && (
           <div className="card__special">Unsellable</div>
         )}

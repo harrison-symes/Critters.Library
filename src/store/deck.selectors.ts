@@ -51,7 +51,7 @@ const filterFarmDeck = (cards: IFarmCard[], filters: IFilterState) => {
     if (filters.effects.Recycle && !card.recycle) {
       return false;
     }
-    if (filters.effects.sellable && !card.sellable) {
+    if (filters.effects.refundable && !card.refundable) {
       return false;
     }
     if (filters.effects.unsellable && !card.unsellable) {
@@ -98,7 +98,7 @@ const filterWorkOrderDeck = (cards: IWorkOrder[], filters: IFilterState) => {
     if (filters.effects.Recycle) {
       return false;
     }
-    if (filters.effects.sellable) {
+    if (filters.effects.refundable) {
       return false;
     }
     if (filters.effects.unsellable) {
@@ -154,7 +154,7 @@ const filterNonFarmDeck = <T extends ICard>(
     if (filters.effects.Recycle) {
       return false;
     }
-    if (filters.effects.sellable) {
+    if (filters.effects.refundable) {
       return false;
     }
     if (filters.effects.unsellable) {

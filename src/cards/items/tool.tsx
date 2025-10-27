@@ -91,7 +91,7 @@ const tools: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    sellable: true,
+    refundable: true,
     tags: [
       TAGS.ADD_ZZZ,
       TAGS.CROP_GENERATION,
@@ -119,7 +119,7 @@ const tools: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    sellable: true,
+    refundable: true,
     tags: [
       TAGS.DISCARD_OWN,
       TAGS.CARD_DRAW,
@@ -408,7 +408,7 @@ const tools: IFarmCard[] = [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_ALL,
     ],
-    sellable: true,
+    refundable: true,
     description: (
       <span>
         <FastTrack /> a card.

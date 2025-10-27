@@ -97,7 +97,7 @@ export interface IFarmCard extends ICard {
   buyBonus?: string | React.ReactNode;
   recycle?: string | React.ReactNode;
   holdable?: boolean;
-  sellable?: boolean;
+  refundable?: boolean;
   unsellable?: boolean;
   sunlight?: {
     one?: string | React.ReactNode;

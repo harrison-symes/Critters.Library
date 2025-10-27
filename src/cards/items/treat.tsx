@@ -25,7 +25,7 @@ const treats: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE, TAGS.REFRESH],
-    sellable: true,
+    refundable: true,
     description: (
       <span>
         Gain +3🍏. <br />
@@ -146,7 +146,7 @@ const treats: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
-    sellable: true,
+    refundable: true,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.CARD_DRAW],
     description: "Gain +5 of a random crop.",
     recycle: "Draw 2 cards.",
@@ -339,7 +339,7 @@ const treats: IFarmCard[] = [
       TAGS.LESS_REWARDS,
       TAGS.CARD_DRAW,
     ],
-    sellable: true,
+    refundable: true,
     description: (
       <span>
         Gain 3 random crops. <br />

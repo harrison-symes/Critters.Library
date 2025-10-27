@@ -45,7 +45,13 @@ const EffectFilters = () => {
   return (
     <FiltersGroup title="Card Effects">
       {(
-        ["Bonus", "Recycle", "holdable", "sellable", "unsellable"] as TEffects[]
+        [
+          "Bonus",
+          "Recycle",
+          "holdable",
+          "refundable",
+          "unsellable",
+        ] as TEffects[]
       ).map((effect: TEffects) => (
         <EffectFilter effect={effect} key={effect} />
       ))}

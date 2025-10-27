@@ -14,9 +14,9 @@ const rabbits: IFarmCard[] = [
       "A rabbit in overalls picking a carrot from a carrot patch. Could be struggling to pull it out.",
     qty: 2,
     cost: {
-      apples: 2,
+      apples: 1,
       berries: 2,
-      carrots: 4,
+      carrots: 1,
     },
     description: "Gain +2 🥕",
     energy: 3,
@@ -32,9 +32,9 @@ const rabbits: IFarmCard[] = [
       "A rabbit in a vintage dress picking berries from a berry bush. Holding a basket.",
     qty: 2,
     cost: {
-      apples: 2,
+      apples: 1,
       berries: 4,
-      carrots: 2,
+      carrots: 1,
     },
     description: "Gain +2 🫐",
     energy: 3,
@@ -51,8 +51,8 @@ const rabbits: IFarmCard[] = [
     qty: 2,
     cost: {
       apples: 4,
-      berries: 2,
-      carrots: 2,
+      berries: 1,
+      carrots: 1,
     },
     description: "Gain +2 🍏",
     energy: 3,
@@ -93,7 +93,7 @@ const rabbits: IFarmCard[] = [
     description: "Gain +5 of a random crop.",
     buyBonus: (
       <span>
-        Pack a <b>📦Crate</b> into each of your <b>Work Orders</b>.
+        Pack a free <b>📦Crate</b> into each of your <b>Work Orders</b>.
       </span>
     ),
     energy: 3,
@@ -119,7 +119,6 @@ const rabbits: IFarmCard[] = [
         Your Rivals each gain +1 of that same crop.
       </span>
     ),
-    buyBonus: "Your Rivals each gain a random crop.",
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,

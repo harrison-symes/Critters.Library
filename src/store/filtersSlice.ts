@@ -12,7 +12,7 @@ export type TEffects =
   | "Recycle"
   | "Bonus"
   | "holdable"
-  | "sellable"
+  | "refundable"
   | "unsellable";
 
 export type TCardsWithArtFilter = "all" | "artOnly" | "withoutArtOnly";
@@ -46,7 +46,7 @@ const initialState: IFilterState = {
     Bonus: false,
     Recycle: false,
     holdable: false,
-    sellable: false,
+    refundable: false,
     unsellable: false,
   },
   tags: [],
