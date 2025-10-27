@@ -1,4 +1,5 @@
 import { CARD_SET, CARD_TYPE, IFavourCard, TAGS } from "../models/cards.models";
+import Critter from "./text/Critter";
 import Discount from "./text/Discount";
 import FastTrack from "./text/FastTrack";
 import Sleepy from "./text/Sleepy";
@@ -40,11 +41,11 @@ const favours: IFavourCard[] = [
     qty: 2,
     description: (
       <span>
-        Add 1 <Sleepy /> to a Rival's <b>🐾Critter</b>
+        Add 1 <Sleepy /> to a Rival's <Critter />.
         <br />
         <b>-OR-</b>
         <br />
-        Remove 1 <Sleepy /> from one of your <b>🐾Critters</b>
+        Remove 1 <Sleepy /> from a friendly <Critter />.
         <br />
       </span>
     ),
@@ -172,8 +173,7 @@ const favours: IFavourCard[] = [
     qty: 1,
     description: (
       <span>
-        Move 1 <Sleepy /> from one of your <b>🐾Critters</b> to any other{" "}
-        <b>🐾Critter</b>.
+        Move 1 <Sleepy /> from a friendly <Critter /> to any other <Critter />.
       </span>
     ),
     tags: [TAGS.ADD_ZZZ, TAGS.REMOVE_ZZZ],

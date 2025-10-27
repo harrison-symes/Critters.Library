@@ -4,6 +4,7 @@ import {
   IVisitorCard,
   TAGS,
 } from "../models/cards.models";
+import Critter from "./text/Critter";
 import Discount from "./text/Discount";
 import Sleepy from "./text/Sleepy";
 
@@ -41,7 +42,7 @@ const visitors: IVisitorCard[] = [
     description: (
       <span>
         When <b>Jemima</b> arrives, remove all <Sleepy /> from all
-        <b className="nowrap">🐾Critters</b>.
+        <Critter plural />.
       </span>
     ),
     tags: [TAGS.REMOVE_ZZZ],

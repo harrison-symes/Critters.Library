@@ -314,8 +314,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you play a <Treat />, remove 1 <Sleepy /> from one of your{" "}
-        <Critter plural />.
+        After you play a <Treat />, remove 1 <Sleepy /> from a friendly{" "}
+        <Critter />.
       </span>
     ),
     type: CARD_TYPE.Reward,

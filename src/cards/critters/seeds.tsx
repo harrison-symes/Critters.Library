@@ -4,6 +4,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Critter from "../text/Critter";
 import Discount from "../text/Discount";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
@@ -264,14 +265,13 @@ const seeds: IFarmCard[] = [
     sunlight: {
       one: (
         <span>
-          Add 1 <Sleepy /> to a Rival's <b className="nowrap">🐾Critter</b>.
+          Add 1 <Sleepy /> to a Rival's <Critter />.
         </span>
       ),
       two: "",
       three: (
         <span>
-          Add 1 <Sleepy /> to each of a Rival's{" "}
-          <b className="nowrap">🐾Critters</b>.
+          Add 1 <Sleepy /> to each of a Rival's <Critter plural />.
         </span>
       ),
     },

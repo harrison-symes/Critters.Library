@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Critter from "../text/Critter";
 import Sleepy from "../text/Sleepy";
 
 const moles: IFarmCard[] = [
@@ -20,12 +21,12 @@ const moles: IFarmCard[] = [
       "A mole emerging from a holde. Wearing a bandit mask (like the hamburglar) and holding a spanner. He looks like he is scheming.",
     description: (
       <span>
-        Add 1 <Sleepy /> to a Rival's <b className="nowrap">🐾Critter</b>
+        Add 1 <Sleepy /> to a Rival's <Critter />.
       </span>
     ),
     recycle: (
       <span>
-        <b>Exhaust</b> a Rival's <b className="nowrap">🐾Critter</b>
+        <b>Exhaust</b> a Rival's <Critter />.
       </span>
     ),
     energy: 2,
@@ -70,8 +71,7 @@ const moles: IFarmCard[] = [
     },
     description: (
       <span>
-        Add 1 <Sleepy /> to each of a Rival's{" "}
-        <b className="nowrap">🐾Critters</b>
+        Add 1 <Sleepy /> to each of a Rival's <Critter plural />.
       </span>
     ),
     energy: 2,
@@ -91,8 +91,7 @@ const moles: IFarmCard[] = [
     },
     description: (
       <span>
-        Move 1 <Sleepy /> from one of your <b className="nowrap">🐾Critters</b>{" "}
-        to any other <b className="nowrap">🐾Critter</b>.
+        Move 1 <Sleepy /> from a friendly <Critter /> to any other <Critter />.
       </span>
     ),
     energy: 2,

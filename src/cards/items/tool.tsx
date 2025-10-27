@@ -67,7 +67,7 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        Gain +2 🥕. <br /> <FastTrack /> a <b>🐾Critter</b> or a <Seed />.
+        Gain +2 🥕. <br /> <FastTrack /> a <Critter /> or a <Seed />.
       </span>
     ),
     buyBonus: (
@@ -100,9 +100,8 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        Gain +2 🫐. <br /> Move 1 <Sleepy /> from one of your <b>🐾Critters</b>{" "}
-        to ANY other
-        <b>🐾Critter</b>.
+        Gain +2 🫐. <br /> Move 1 <Sleepy /> from a friendly <Critter /> to any
+        other <Critter />.
       </span>
     ),
     flavour: "It's the talk of the town.",

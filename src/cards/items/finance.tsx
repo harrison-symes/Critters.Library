@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Critter from "../text/Critter";
 import Discount from "../text/Discount";
 import FastTrack from "../text/FastTrack";
 import Item from "../text/Item";
@@ -67,7 +68,7 @@ const finance: IFarmCard[] = [
     description: (
       <span>
         Gain +2 🥕. <br />
-        Add 1 <Sleepy /> to EVERY <b>🐾Critter</b>. <br />
+        Add 1 <Sleepy /> to EVERY <Critter />. <br />
         <Discount />.
       </span>
     ),

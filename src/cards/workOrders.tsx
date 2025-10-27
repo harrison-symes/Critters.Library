@@ -6,8 +6,8 @@ const workOrders: IWorkOrder[] = [
     qty: 2,
     cost: {
       apples: 2,
-      berries: 2,
-      carrots: 2,
+      berries: 1,
+      carrots: 1,
     },
     crateCost: {
       apples: 1,
@@ -23,9 +23,9 @@ const workOrders: IWorkOrder[] = [
     name: "Berry Snack",
     qty: 2,
     cost: {
-      apples: 2,
+      apples: 1,
       berries: 2,
-      carrots: 2,
+      carrots: 1,
     },
     crateCost: {
       apples: 0,
@@ -41,8 +41,8 @@ const workOrders: IWorkOrder[] = [
     name: "Carrot Snack",
     qty: 2,
     cost: {
-      apples: 2,
-      berries: 2,
+      apples: 1,
+      berries: 1,
       carrots: 2,
     },
     crateCost: {
@@ -167,7 +167,7 @@ const workOrders: IWorkOrder[] = [
     name: "Ample Apples",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       berries: 2,
       carrots: 2,
     },
@@ -186,7 +186,7 @@ const workOrders: IWorkOrder[] = [
     qty: 1,
     cost: {
       apples: 2,
-      berries: 2,
+      berries: 3,
       carrots: 2,
     },
     crateCost: {
@@ -205,7 +205,7 @@ const workOrders: IWorkOrder[] = [
     cost: {
       apples: 2,
       berries: 2,
-      carrots: 2,
+      carrots: 3,
     },
     crateCost: {
       apples: 0,
@@ -221,7 +221,7 @@ const workOrders: IWorkOrder[] = [
     name: "Apple Crumble",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       berries: 2,
       carrots: 2,
     },
@@ -239,7 +239,7 @@ const workOrders: IWorkOrder[] = [
     name: "Big Brekkie",
     qty: 1,
     cost: {
-      apples: 2,
+      apples: 3,
       berries: 2,
       carrots: 2,
     },
@@ -258,7 +258,7 @@ const workOrders: IWorkOrder[] = [
     qty: 1,
     cost: {
       apples: 2,
-      berries: 2,
+      berries: 3,
       carrots: 2,
     },
     crateCost: {
@@ -276,7 +276,7 @@ const workOrders: IWorkOrder[] = [
     qty: 1,
     cost: {
       apples: 2,
-      berries: 2,
+      berries: 3,
       carrots: 2,
     },
     crateCost: {
@@ -295,7 +295,7 @@ const workOrders: IWorkOrder[] = [
     cost: {
       apples: 2,
       berries: 2,
-      carrots: 2,
+      carrots: 3,
     },
     crateCost: {
       apples: 1,
@@ -313,7 +313,7 @@ const workOrders: IWorkOrder[] = [
     cost: {
       apples: 2,
       berries: 2,
-      carrots: 2,
+      carrots: 3,
     },
     crateCost: {
       apples: 0,
@@ -347,9 +347,9 @@ const workOrders: IWorkOrder[] = [
     name: "Apple Fundraiser",
     qty: 1,
     cost: {
-      apples: 3,
-      berries: 2,
-      carrots: 2,
+      apples: 2,
+      berries: 3,
+      carrots: 3,
     },
     crateCost: {
       apples: 3,
@@ -365,9 +365,9 @@ const workOrders: IWorkOrder[] = [
     name: "Berry Fundraiser",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 3,
-      carrots: 2,
+      apples: 3,
+      berries: 2,
+      carrots: 3,
     },
     crateCost: {
       apples: 3,
@@ -383,9 +383,9 @@ const workOrders: IWorkOrder[] = [
     name: "Carrot Fundraiser",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 2,
-      carrots: 3,
+      apples: 3,
+      berries: 3,
+      carrots: 2,
     },
     crateCost: {
       apples: 1,

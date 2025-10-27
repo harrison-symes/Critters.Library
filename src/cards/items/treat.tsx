@@ -61,7 +61,7 @@ const treats: IFarmCard[] = [
     description: (
       <span>
         Gain +3 🥕. <br />
-        Remove 1 <Sleepy /> from one of your <b>🐾Critters</b>.
+        Remove 1 <Sleepy /> from a friendly <Critter />.
       </span>
     ),
     recycle: <span>Draw a card.</span>,
@@ -266,12 +266,12 @@ const treats: IFarmCard[] = [
     tags: [TAGS.REMOVE_ZZZ],
     description: (
       <span>
-        Remove 1 <Sleepy /> from 2 of your <b>🐾Critters</b>.
+        Remove 1 <Sleepy /> from 2 of your <Critter plural />.
       </span>
     ),
     recycle: (
       <span>
-        <b>Exhaust</b> a Rival's <b>🐾Critter</b>.
+        <b>Exhaust</b> a Rival's <Critter />.
       </span>
     ),
   },
@@ -369,7 +369,7 @@ const treats: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        Remove 1 <Sleepy /> from one of your <b>🐾Critters</b>.
+        Remove 1 <Sleepy /> from a friendly <Critter />
       </span>
     ),
   },
