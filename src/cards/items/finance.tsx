@@ -84,6 +84,8 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Loyalty Card",
+    image: "/loyalty_card.png",
+    ai_image: "/ai/loyalty_card.png",
     flavour: "You're my favourite customer!",
     notes:
       "A punch card with a cartoon rat face and 6 circles with berries on them. Some of them are punched out (like a coffee loyalty card).",
@@ -146,6 +148,8 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Instruction manual",
+    image: "/instruction_manual",
+    ai_image: "/ai/instruction_manual",
     notes:
       "A sheet similar to lego instructions, with numbered steps 1 2 and 3. The steps show how to put and apple into a crate",
     flavour: "Step 1: Get Apples. Step 2: ???. Step 3: Profit!",
@@ -216,6 +220,8 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Gift Card",
+    image: "/gift_card.png",
+    ai_image: "/ai/gift_card.png",
     flavour: "For when you're out of ideas.",
     notes:
       "A gift card with a cartoon rat face and the word 'FREE!' written on it.",
