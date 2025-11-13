@@ -22,6 +22,7 @@ const finance: IFarmCard[] = [
     },
     image: "/recycling_bin.png",
     ai_image: "/ai/recycling_bin.png",
+    flavour: "Reduce waste, play that card again!",
     qty: 1,
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
@@ -48,6 +49,9 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Closed Sign",
+    image: "/closed_sign.png",
+    ai_image: "/ai/closed_sign.png",
+    flavour: "Come back in the morning.",
     notes: "A fold up sign with the word 'closed' written on it",
     cost: {
       apples: 2,
@@ -80,6 +84,7 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Loyalty Card",
+    flavour: "You're my favourite customer!",
     notes:
       "A punch card with a cartoon rat face and 6 circles with berries on them. Some of them are punched out (like a coffee loyalty card).",
     cost: {
@@ -113,6 +118,9 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Cooked Books",
+    image: "/cooked_books.png",
+    ai_image: "/ai/cooked_books.png",
+    flavour: "A delicious meal, unless you're an Auditor.",
     notes: "A thick open book resting in a pot of boiling water",
     cost: {
       apples: 1,
@@ -140,6 +148,7 @@ const finance: IFarmCard[] = [
     name: "Instruction manual",
     notes:
       "A sheet similar to lego instructions, with numbered steps 1 2 and 3. The steps show how to put and apple into a crate",
+    flavour: "Step 1: Get Apples. Step 2: ???. Step 3: Profit!",
     cost: {
       apples: 1,
       berries: 2,
@@ -152,8 +161,8 @@ const finance: IFarmCard[] = [
     tags: [TAGS.DISCARD_OWN, TAGS.FREE_CRATE, TAGS.FREE_CARD],
     description: (
       <span>
-        <b>Discard</b> a card from your hand to pack a free crate into a{" "}
-        <b>Work Order</b>.
+        <b>Discard</b> a card from your hand to pack a free <b>📦Crate</b> into
+        a <b>Work Order</b>.
       </span>
     ),
     recycle: (
@@ -164,6 +173,9 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Damaged Goods",
+    image: "/damaged_goods.png",
+    ai_image: "/ai/damaged_goods.png",
+    flavour: "It was broken when I bought it.",
     notes: "A worn down opened top crate, with rotten crops inside",
     cost: {
       apples: 3,
@@ -204,6 +216,7 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Gift Card",
+    flavour: "For when you're out of ideas.",
     notes:
       "A gift card with a cartoon rat face and the word 'FREE!' written on it.",
     cost: {
@@ -226,6 +239,9 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Paper Shredder",
+    flavour: "Carrot patch? You mean shredded Carrots?",
+    image: "/paper_shredder.png",
+    ai_image: "/ai/paper_shredder.png",
     notes: "A paper shredder that is shredding receipts",
     cost: {
       apples: 0,
@@ -253,6 +269,9 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Open Sign",
+    flavour: "Excuse me, do you work here?",
+    image: "/open_sign.png",
+    ai_image: "/ai/open_sign.png",
     notes: "A fold out sign with the word 'OPEN' on it",
     cost: {
       apples: 3,
@@ -281,7 +300,10 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Contrabrand",
+    image: "/contrabrand.png",
+    ai_image: "/ai/contrabrand.png",
     notes: "A purple carrot and a red apple",
+    flavour: "Red Apples? Purple Carrots? Are these allowed?",
     cost: {
       apples: 2,
       berries: 3,
@@ -302,6 +324,9 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Register",
+    image: "/register.png",
+    ai_image: "/ai/register.png",
+    flavour: "Will that be Crops or Card?",
     notes:
       "A cash register with a pull lever on the side. 3 buttons with icons for each crop type. The draw is open and there are various crops in little compartments",
     cost: {
@@ -327,6 +352,9 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Receipts",
+    flavour: "You've been keeping track of your purchases, right?",
+    image: "/receipts.png",
+    ai_image: "/ai/receipts.png",
     notes:
       "A bundle of receipts, the text is eligible squiggly lines. Possibly a rubber band around them.",
     cost: {

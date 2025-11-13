@@ -62,6 +62,8 @@ const gifts: IFarmCard[] = [
       berries: 0,
       carrots: 0,
     },
+    image: "/hot_potato.png",
+    ai_image: "/ai/hot_potato.png",
     notes:
       "A potato with drawn on eyes (with long eyelashes and eyeliner) and seductive lips ;)",
     qty: 1,
@@ -88,6 +90,8 @@ const gifts: IFarmCard[] = [
       berries: 2,
       carrots: 0,
     },
+    image: "/rotten_crops.png",
+    ai_image: "/ai/rotten_crops.png",
     notes: "A pile of rotten berries.",
     qty: 1,
     set: CARD_SET.BASE,

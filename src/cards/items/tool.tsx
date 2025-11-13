@@ -15,6 +15,8 @@ import Sleepy from "../text/Sleepy";
 const tools: IFarmCard[] = [
   {
     name: "Farming Gloves",
+    image: "/farming_gloves.png",
+    ai_image: "/ai/farming_gloves.png",
     notes: "A pair of thick gloves.",
     cost: {
       apples: 0,
@@ -80,6 +82,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Water Cooler",
+    image: "/water_cooler.png",
+    ai_image: "/ai/water_cooler.png",
     notes:
       "A water cooler with a single nozzle. A paper cut sits on the lip. Maybe a drop of water coming from the spout?",
     cost: {
@@ -108,6 +112,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Small Backpack",
+    image: "/small_backpack.png",
+    ai_image: "/ai/small_backpack.png",
     notes:
       "A colourful backpack, like for a school kid. The bag is too full of contents that the zipper won't close. Put various things inside the bag.",
     cost: {
@@ -140,6 +146,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Care Package",
+    image: "/care_package.png",
+    ai_image: "/ai/care_package.png",
     notes:
       "A delivery package, with postage stamps and tape. Etchings of a heart on one side (kinda like the companion cube from portal)",
     cost: {
@@ -191,6 +199,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Dustpan",
+    image: "/dustpan.png",
+    ai_image: "/ai/dustpan.png",
     notes: "A classic dustpan, not much else to say",
     cost: {
       apples: 3,
@@ -228,6 +238,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Knapsack",
+    image: "/knapsack.png",
+    ai_image: "/ai/knapsack.png",
     notes: "A sack with a drawstring. Avoid making it look like leather.",
     cost: {
       apples: 3,
@@ -255,6 +267,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Compost Bin",
+    image: "/compost_bin.png",
+    ai_image: "/ai/compost_bin.png",
     notes: "An open bin filled with soil and old crops.",
     cost: {
       apples: 1,
@@ -289,6 +303,8 @@ const tools: IFarmCard[] = [
   },
   {
     name: "Toolbelt",
+    image: "/toolbelt.png",
+    ai_image: "/ai/toolbelt.png",
     notes: "A belt with a hammer, a trowel and a garden fork in little slots",
     cost: {
       apples: 0,
@@ -331,13 +347,15 @@ const tools: IFarmCard[] = [
     description: (
       <span>
         Gain +3 of a random crop.
-        <br /> Put a <b>🌱Seed</b> from your discard pile into your hand.
+        <br /> Plant all <Seed plural /> from your discard pile.
       </span>
     ),
     flavour: "This Trowel can keep a secret.",
   },
   {
     name: "Dusty Broom",
+    image: "/dusty_broom.png",
+    ai_image: "/ai/dusty_broom.png",
     notes:
       "A wooden broom with thick bristles. Lines and spots indicating it is covered in dust",
     cost: {
@@ -359,7 +377,7 @@ const tools: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <b>Refresh</b> a card in the <b>Market</b>.
+        <b>Refresh</b> a card.
       </span>
     ),
     flavour:

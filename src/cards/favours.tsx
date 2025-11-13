@@ -87,7 +87,7 @@ const favours: IFavourCard[] = [
     qty: 2,
     description: (
       <span>
-        <b>Refresh</b> 2 cards in the <b>Market</b>. <br />
+        <b>Refresh</b> 2 cards. <br />
         <Discount />.
       </span>
     ),

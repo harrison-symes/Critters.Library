@@ -23,6 +23,10 @@
 
     &--reward {
         grid-template-rows: auto 1fr auto;
+
+        .card__footer {
+            grid-template-columns: 1fr 100px;
+        }
     }
     &--favour {
         grid-template-rows: auto 1fr;

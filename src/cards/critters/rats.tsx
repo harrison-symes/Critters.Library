@@ -11,6 +11,8 @@ import FastTrack from "../text/FastTrack";
 const rats: IFarmCard[] = [
   {
     name: "Aristoc-Rat",
+    image: "/aristoc_rat.png",
+    ai_image: "/ai/aristoc_rat.png",
     notes:
       "A rat lying on a beach chair. He has sunglasses and a silk gown on. Eating berries out of his hand very royally.",
     qty: 2,
@@ -52,7 +54,7 @@ const rats: IFarmCard[] = [
     description: (
       <span>
         <Discount />, then <b>Snatch</b> the discounted crops from a card in the
-        Market.
+        <b>Market</b>.
       </span>
     ),
     buyBonus: (

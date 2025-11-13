@@ -28,7 +28,7 @@ const raccoons: IFarmCard[] = [
         <FastTrack /> a <b>🏠Starter</b> card.
       </span>
     ),
-    energy: 2,
+    energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN, TAGS.FAST_TRACK],

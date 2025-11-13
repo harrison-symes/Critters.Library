@@ -12,6 +12,8 @@ import Sleepy from "../text/Sleepy";
 const seeds: IFarmCard[] = [
   {
     name: "Apple Seeds",
+    image: "/apple_seeds.png",
+    ai_image: "/ai/apple_seeds.png",
     flavour: "If you thought Apples were crunchy, wait until you try these!",
     notes:
       "A big open canvas bag of seeds, with an apple logo on the front. The seeds are light.",
@@ -45,6 +47,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Berry Seeds",
+    image: "/berry_seeds.png",
+    ai_image: "/ai/berry_seeds.png",
     flavour: "You must be Berry patient with these",
     notes:
       "A big open canvas bag of seeds, with a berry logo on the front. The seeds are dark.",
@@ -78,6 +82,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Carrot Seeds",
+    image: "/carrot_seeds.png",
+    ai_image: "/ai/carrot_seeds.png",
     flavour: "Otherwise known as baby baby Carrots",
     notes:
       "A big open canvas bag of seeds, with a carrot logo on the front, the seeds are shaded.",
@@ -111,6 +117,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Mystery Seeds",
+    image: "/mystery_seeds.png",
+    ai_image: "/ai/mystery_seeds.png",
     flavour: "When you're as blind as a Mole, all seeds are Mystery Seeds",
     notes:
       "A big closed canvas bag of seeds, with big question mark on the front",
@@ -131,6 +139,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Mixed Seeds",
+    image: "/mixed_seeds.png",
+    ai_image: "/ai/mixed_seeds.png",
     flavour: "These seeds are like a box of chocolates...",
     notes:
       "A big open canvas bag of seeds, with an circle logo split into thirds the front. Inside each third is an icon of carrot, berry and apple. The seeds are 3 different shades. Light, shaded and dark.",
@@ -152,6 +162,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Coffee Seeds",
+    image: "/coffee_seeds.png",
+    ai_image: "/ai/coffee_seeds.png",
     flavour:
       "You plant Coffee Seeds to grow Coffee BEANS. Why are you planting the beans?",
     notes:
@@ -173,6 +185,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Golden Seeds",
+    image: "/golden_seeds.png",
+    ai_image: "/ai/golden_seeds.png",
     flavour: "What do they grow into? Deals!",
     notes:
       "A big open canvas bag of seeds, with a $ logo on the front. The seeds are shiny.",
@@ -201,6 +215,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Sunflower Seeds",
+    image: "/sunflower_seeds.png",
+    ai_image: "/ai/sunflower_seeds.png",
     flavour: "A certain Worm's favourite snack.",
     notes: "A big canvas bag of seeds, with a Sunflower logo on the front",
     qty: 2,
@@ -228,6 +244,8 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Magic Seeds",
+    image: "/magic_seeds.png",
+    ai_image: "/ai/magic_seeds.png",
     flavour: "You could trade a Cow for these, if you had one...",
     notes:
       "A big canvas bag of seeds, with no logo on the front. The bag is open and the seeds are glowing.",

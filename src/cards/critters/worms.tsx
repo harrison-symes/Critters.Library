@@ -6,6 +6,7 @@ import {
   TAGS,
 } from "../../models/cards.models";
 import FastTrack from "../text/FastTrack";
+import Seed from "../text/Seed";
 
 const worms: IFarmCard[] = [
   {
@@ -24,7 +25,7 @@ const worms: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <FastTrack /> a <b>Seed</b>.
+        <FastTrack /> a <Seed />.
       </span>
     ),
     energy: 3,
@@ -46,7 +47,7 @@ const worms: IFarmCard[] = [
     },
     description: (
       <span>
-        Put a <b>🌱Seed</b> from your discard pile into your hand.
+        <b>Plant</b> a <Seed /> from your discard pile.
       </span>
     ),
     recycle: "Gain +3 of a random crop.",

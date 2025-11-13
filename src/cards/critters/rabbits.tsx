@@ -15,8 +15,8 @@ const rabbits: IFarmCard[] = [
     qty: 2,
     cost: {
       apples: 1,
-      berries: 2,
-      carrots: 1,
+      berries: 1,
+      carrots: 4,
     },
     description: "Gain +2 🥕",
     energy: 3,

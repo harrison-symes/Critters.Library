@@ -14,6 +14,7 @@ import Treat from "./text/Treat";
 const rewards: IRewardCard[] = [
   {
     name: "Apple Stall",
+    flavour: "Orange really is the new Black.",
     notes:
       "A market stall with a sign with apples on it. A crate filled with apples is behind the stall.",
     qty: 2,
@@ -30,6 +31,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Berry Stall",
+    flavour: "That's a Berry good deal!",
     notes:
       "A market stall with a sign with berries on it. A crate filled with berries is sitting on the stall counter.",
     qty: 2,
@@ -46,6 +48,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Carrot Stall",
+    flavour: "2 Apples a day keeps the Apples away.",
     notes:
       "A market stall with a sign with carrots on it. A crate filled with carrots is behind the stall.",
     qty: 2,
@@ -61,9 +64,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT, TAGS.TRADE],
   },
   {
-    name: "Gold Locket",
-    notes:
-      "A golden locket in the shape of a heart. The locket is closed. It has a chain to be worn around a neck. It has a little keyhole on the side. Indication of it sparkling.",
+    name: "Pawn Shop",
+    flavour: "Where you can buy a Chess set with only half the pieces.",
+    notes: "A popup shop with various trinkets on display.",
     qty: 1,
     description: (
       <span>
@@ -77,9 +80,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SELL, TAGS.SELL_FROM_DISCARD],
   },
   {
-    name: "Work Roster",
-    notes:
-      "A piece of paper pinned to a wall. It has a calendar like layout (for one week only). On each day a rough sketch of a different animal's face. Monday and Wednesday are a rabbit. Tuesday and Saturday are a rat. Thursday Friday and Sunday are bees.",
+    name: "Notice Board",
+    flavour: "Have you ever noticed?",
+    notes: "A bulliton board with things pinned to it in the village square.",
     qty: 1,
     description: (
       <span>
@@ -92,9 +95,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SKEWER, TAGS.WORK_ORDER_COMPLETION],
   },
   {
-    name: "Blueprints",
-    notes:
-      "Unfolded blueprints on a table. White lines showing the plans for a new plot of land, broken down by sections for different crops.",
+    name: "Work Bench",
+    flavour: "It's all Work Bench and no Play bench.",
+    notes: "Unfolded blueprints on a wooden workbench.",
     qty: 1,
     description: (
       <span>
@@ -107,9 +110,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.FAST_TRACK, TAGS.WORK_ORDER_COMPLETION],
   },
   {
-    name: "Wrapping Paper",
-    notes:
-      "Refer to Birthday present card. Wrapping paper colours and pattern should match. This wrapping paper will be a slightly unrolled roll of paper. Untied ribbons sitting off to the side. Maybe scizzors and tape in frame?",
+    name: "Gift Shop",
+    flavour: "You have to pass through here on your way out of the Market.",
+    notes: "A small stall with presents on display.",
     qty: 1,
     description: (
       <span>
@@ -122,9 +125,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.WORK_ORDER_COMPLETION, TAGS.GIFT],
   },
   {
-    name: "Espresso Machine",
+    name: "Coffee Cart",
+    flavour: "You get great Coffee Art from this Coffee Cart.",
     notes:
-      "Classic single head espresso machine, but make it look clunky/rustic. Bag of coffee beans to the side?",
+      "A little cart with a big coffee pot sitting in it. A sign with an espresso on it.",
     qty: 1,
     description: (
       <span>
@@ -138,13 +142,14 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Greenhouse",
+    flavour: "The house is green from all the Chlorophyll.",
     notes:
       "A simple small greenhouse. Inside you can see a row of sprouted seedlings.",
     qty: 1,
     description: (
       <span>
         At the end of your turn, if you have at least 3 planted <Seed plural />,
-        each of your <Seed plural /> gain +1 <Sunlight />
+        add 1 <Sunlight /> to each of your <Seed plural />.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -152,9 +157,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
   },
   {
-    name: "Seed Fund",
+    name: "Rich Plot",
+    flavour: "The other plots didn't work as hard, and bought too much coffee.",
     notes:
-      "A tip jar (with a coin slot in the lid) but it is filled with seeds. Maybe a label with a seed sprout logo on it",
+      "A plot of land with lots of seedlings sprouting from the soil. The soil is dark.",
     qty: 1,
     description: (
       <span>
@@ -167,9 +173,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SELL, TAGS.TRASH],
   },
   {
-    name: "Coffee Grinds",
-    notes:
-      "A bag filled with throwaway coffee grinds. They should have spilled a little bit and left marks on the bag",
+    name: "Bountiful Plot",
+    flavour: "There's a bounty out for this Plot.",
+    notes: "A plot of land with lots of lush bush.",
     qty: 1,
     description: (
       <span>
@@ -182,9 +188,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.CARD_DRAW],
   },
   {
-    name: "Magnifying Glass",
-    notes:
-      "A magnifying glass refracting sunlight (large sunbeam into an acute sunbeam. The end of the sunbeam can have a little burnmark where it touches the ground",
+    name: "Sunny Plot",
+    flavour: "The perfect spot for Sunflowers.",
+    notes: "A empty plot of land, nothing is planted, but the sun is shining",
     qty: 1,
     description: (
       <span>
@@ -197,11 +203,12 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Pot Plant",
+    flavour: "Harvest him? But he is my friend!",
     notes: "A clay pot filled with soil with a single seed sproutling inside",
     qty: 1,
     description: (
       <span>
-        At the end of your turn, if you have only 1 planted <Seed /> AND that{" "}
+        At the start of your turn, if you have only 1 planted <Seed /> AND that{" "}
         <Seed /> has 3 <Sunlight />, gain 2 random crops.
       </span>
     ),
@@ -210,9 +217,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.CARD_DRAW],
   },
   {
-    name: "Rusty Rake",
-    notes:
-      "A rake (leaning against a wall). The ends of the prongs are rusted, and a bit wonky/bent",
+    name: "Clocktower",
+    flavour:
+      "The Roosters have been real quiet ever since this Clocktower showed up.",
+    notes: "A big Cuckoo Clock in the middle of the town square.",
     qty: 1,
     description: (
       <span>
@@ -224,9 +232,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.RESET_DECK, TAGS.CARD_DRAW],
   },
   {
-    name: "Vault",
-    notes:
-      "A small metal safe. A bit battered. It has a keyhole and a turnwheel on the front door",
+    name: "Freezer",
+    flavour: "You can sell those Berries for more during the off-season.",
+    notes: "An open box freezer with lots of crops inside.",
     qty: 1,
     description: (
       <span>
@@ -239,9 +247,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CARD_DRAW],
   },
   {
-    name: "Tax Return",
+    name: "Toll Booth",
+    flavour: "Do not pass. Do not collect 200 Carrots.",
     notes:
-      "A piece of paper. Squiggly lines indicating text. Maybe icons for the 3 crops with random % values next to them? (Apple 10%, Carrot 15%, Berry 5%)",
+      "A stall at the market, but with a big toll gate (being held by the Raccoon inside the stall)",
     qty: 1,
     description: (
       <span>
@@ -253,9 +262,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CARD_DRAW, TAGS.SELL],
   },
   {
-    name: "Broken Compass",
+    name: "Weather Vane",
+    flavour: "They used to employ real Roosters to sit on these all day.",
     notes:
-      "An open pocket compass. Not sure how to convey that it doesn't work, but go nuts",
+      "A classic weather vane, with compass directions and a big metal rooster on top",
     qty: 1,
     description: (
       <span>
@@ -268,8 +278,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.FAST_TRACK, TAGS.SKEWER],
   },
   {
-    name: "Skewer",
-    notes: "A wooden stick with a few berries skewered on it",
+    name: "Skewer Cart",
+    flavour: "Skewer? I hardly know her!",
+    notes: "A hedgehog is selling skewers (kebobs) at the cart.",
     qty: 1,
     description: (
       <span>
@@ -281,8 +292,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CARD_DRAW, TAGS.SKEWER],
   },
   {
-    name: "Feather Duster",
-    notes: "Different coloured feathers on the end of a stick",
+    name: "Junkyard",
+    flavour: "Elephant's have a LOT of junk in their trunks.",
+    notes: "A pile of old tools and various items",
     qty: 1,
     description: (
       <span>
@@ -296,6 +308,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Tool Shed",
+    flavour: "Snakes also shed sometimes.",
     notes:
       "A worn down wooden shed. The door is a bit wonky and open slightly. Inside you can see a rake and a pitchfork",
     qty: 1,
@@ -309,8 +322,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.TOOL_SYNERGY, TAGS.FAST_TRACK],
   },
   {
-    name: "Coffee Mug",
-    notes: "An empty wide mug. It has cheesey text on it saying '#1 Farmer'",
+    name: "Breakroom",
+    flavour: "Please don't actually break anything.",
+    notes:
+      "A cozy room with a table with a coffee mug on it. Maybe a beanbag in the corner.",
     qty: 1,
     description: (
       <span>
@@ -323,9 +338,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.REMOVE_ZZZ, TAGS.TREAT_SYNERGY],
   },
   {
-    name: "Satchel",
-    notes:
-      "A rustic brown satchel. Put whatever you feel like in the side pockets",
+    name: "Snack Cart",
+    flavour: "Beavers think that the Cart is a snack too.",
+    notes: "A wooden cart with lots of plated cakes and cupcakes.",
     qty: 1,
     description: (
       <span>
@@ -338,6 +353,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Burnt Ledger",
+    flavour: "Hey! Who cooked the books?",
     notes:
       "Like the book from Cooked Books card, but it is singed / has burn marks",
     qty: 1,
@@ -352,8 +368,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TRASH, TAGS.FAST_TRACK],
   },
   {
-    name: "Rainy Day Savings",
-    notes: "A coinpurse filled with Berries",
+    name: "Vault",
+    flavour: "Store your crops to gain Compost Interest.",
+    notes: "A large safe, with a metal wheel to open it.",
     qty: 1,
     description: (
       <span>
@@ -369,8 +386,9 @@ const rewards: IRewardCard[] = [
     ],
   },
   {
-    name: "Merchant Scales",
-    notes: "Price hikers scales",
+    name: "Trading Post",
+    flavour: "Where you can get the rarest trading cards.",
+    notes: "A popup stall with a big SALE sign. All 3 crops on display.",
     qty: 1,
     description: (
       <span>
@@ -382,8 +400,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.DISCOUNT, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
   },
   {
-    name: "Black Gloves",
-    notes: "The gloves that Rummager is wearing",
+    name: "Dumpster",
+    flavour: "'NO DIVING!'",
+    notes: "A big dumpster filled with garbage bags and various items.",
     qty: 1,
     description: (
       <span>
@@ -396,8 +415,9 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.DISCARD_OWN, TAGS.CARD_DRAW],
   },
   {
-    name: "Jam Jar",
-    notes: "Sticky fingers' jar of jam",
+    name: "Lost & Found",
+    flavour: "But what if this ever gets lost?",
+    notes: "A box with the label 'Lost & Found' with various things inside.",
     qty: 1,
     description: (
       <span>
@@ -410,9 +430,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
   },
   {
-    name: "Packing Slip",
+    name: "Billboard",
+    flavour: "Need a job done? Call Clodhopper!",
     notes:
-      "A clipboard with a piece of paper on it. Squiggly lines indicating text with ticked boxes on each row. A section for a signature is at the bottom, and it has Sticky Fingers' pawprint as a signature",
+      "A billboard advertising Clodhopper's services. (A big rabbit with big boots)",
     qty: 1,
     description: (
       <span>
@@ -425,13 +446,14 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CARD_DRAW],
   },
   {
-    name: "Heavy Bushel",
-    notes: "A bushel overfilled with Apples",
+    name: "Grain Silo",
+    flavour: "When it is the only silo you have, its a solo silo.",
+    notes: "A large silo on a farm with grain spilling out.",
     qty: 1,
     description: (
       <span>
         You draw 1 less card at the end of your turns. <br />
-        After your deck is <b>Reset</b>, gain{" "}
+        Whenever your deck is <b>Reset</b>, gain{" "}
         <span className="nowrap">
           <b>+2🍏</b>, <b>+2🫐</b>, <b>+2🥕</b>
         </span>
@@ -443,9 +465,10 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.RESET_DECK],
   },
   {
-    name: "Friendship Bracelet",
+    name: "Companion Crate",
+    flavour: "The Carrot Cake is a lie.",
     notes:
-      "A bracelet made of various beads, with a heart shaped bead at the center.",
+      "A wooden crate with a pink heart on it (like the companion cube from portal)",
     qty: 1,
     description: (
       <span>
@@ -459,8 +482,9 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Tip Jar",
+    flavour: "You'll want to collect them before they start rotting.",
     notes:
-      "A glass jar with a coin slot in the lid. It has a label with the text 'Tips' on it. ",
+      "A glass jar with a coin slot in the lid. It has a label with the text 'Tips' on it. Has some berries in it.",
     qty: 1,
     description: (
       <span>
@@ -468,7 +492,7 @@ const rewards: IRewardCard[] = [
         <span className="nowrap">
           <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
         </span>{" "}
-        to put that card into you hand.
+        to put that card into your hand.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -502,7 +526,7 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CROP_STEAL, TAGS.RESET_DECK],
   },
   {
-    name: "Hand-me-downs",
+    name: "Second-Hand Store",
     qty: 1,
     description: (
       <span>
@@ -514,7 +538,7 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.TRASH, TAGS.GIFT],
   },
   {
-    name: "Demo Product",
+    name: "Sample Stand",
     qty: 1,
     description: (
       <span>

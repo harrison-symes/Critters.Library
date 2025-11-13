@@ -45,7 +45,7 @@ const RewardCard = (props: IProps) => {
         </div>
       </div>
       <div className="card__footer">
-        <div className="card__footer__left"></div>
+        <div className="card__footer__flavour">{props.card.flavour}</div>
         <div className="card__footer__right">+1 🏆</div>
       </div>
     </div>

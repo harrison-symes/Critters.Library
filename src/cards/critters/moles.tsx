@@ -21,7 +21,7 @@ const moles: IFarmCard[] = [
       "A mole emerging from a holde. Wearing a bandit mask (like the hamburglar) and holding a spanner. He looks like he is scheming.",
     description: (
       <span>
-        Add 1 <Sleepy /> to a Rival's <Critter />.
+        Add 1 <Sleepy /> to a <Critter />.
       </span>
     ),
     recycle: (
@@ -61,6 +61,8 @@ const moles: IFarmCard[] = [
   },
   {
     name: "Wacker Mole",
+    image: "/whacker_mole.png",
+    ai_image: "/ai/whacker_mole.png",
     notes:
       "A big mole, wearing a blindfold and holding a big cartoonish mallet (very looney toons).",
     qty: 1,

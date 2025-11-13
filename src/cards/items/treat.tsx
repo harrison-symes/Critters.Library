@@ -7,11 +7,13 @@ import {
 } from "../../models/cards.models";
 import Critter from "../text/Critter";
 import FastTrack from "../text/FastTrack";
+import Seed from "../text/Seed";
 import Sleepy from "../text/Sleepy";
 
 const treats: IFarmCard[] = [
   {
     name: "Rat Food",
+    flavour: "They love the way the Apples feel on their teeth.",
     image: "/rat_food.png",
     ai_image: "/ai/rat_food.png",
     notes: "A plate of 3 apples",
@@ -40,6 +42,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Rabbit Food",
+    flavour: "I don't need to explain this one to you.",
     image: "/rabbit_food.png",
     ai_image: "/ai/rabbit_food.png",
     notes: "A plate of 3 carrots",
@@ -68,6 +71,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Hog Food",
+    flavour: "Berries skewer very nicely.",
     image: "/hog_food.png",
     ai_image: "/ai/hog_food.png",
     notes: "A plate of 3 berries",
@@ -101,6 +105,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Picnic Basket",
+    flavour: "Bring a little extra of your favourite.",
     image: "/picnic_basket.png",
     ai_image: "/ai/picnic_basket.png",
     notes: "A closed picnic basket on a picnic blanket",
@@ -134,6 +139,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Award Winning Crop",
+    flavour: "Is a really large Apple still only worth 1 Apple in value?",
     image: "/award_winning_crop.png",
     ai_image: "/ai/award_winning_crop.png",
     notes: "A giant carrot with an award ribbon on it with the text '#1.",
@@ -153,6 +159,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Gift Basket",
+    flavour: "And you get to keep the basket.",
     image: "/gift_basket.png",
     ai_image: "/ai/gift_basket.png",
     cost: {
@@ -184,6 +191,9 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Pot of Feed",
+    image: "/pot_of_feed.png",
+    ai_image: "/pot_of_feed.png",
+    flavour: "You can play this card to draw 2 cards.",
     notes:
       "A clay pot filled with grain. Etchings of a toothy grin face on it (like Pot of Greed Yugioh card).",
     cost: {
@@ -200,6 +210,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Midnight Snack",
+    flavour: "C'mon, it's just one Apple.",
     image: "/midnight_snack.png",
     ai_image: "/ai/midnight_snack.png",
     notes: "A slice of frosted cake with a berry on top",
@@ -222,6 +233,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Pik'n'mix",
+    flavour: "Maybe this should be called 'Pick'or'Mix'.",
     image: "/pik_n_mix.png",
     ai_image: "/ai/pik_n_mix.png",
     notes: "An open paper bag with 1 of each crop inside",
@@ -251,6 +263,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Morning Cuppa'",
+    flavour: "Locally sourced and fair trade.",
     cost: {
       apples: 1,
       berries: 2,
@@ -277,6 +290,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Sharing Plate",
+    flavour: "Everybody bring a plate.",
     image: "/sharing_plate.png",
     ai_image: "/ai/sharing_plate.png",
     notes: "A glad-wrapped plate with lots of apples on it",
@@ -300,6 +314,7 @@ const treats: IFarmCard[] = [
   },
   {
     name: "Plant Food",
+    flavour: "I'm on a Plant Food diet. I plant food and then I eat it.",
     image: "/plant_food.png",
     ai_image: "/ai/plant_food.png",
     notes: "A plate with a bag sitting on it. The bag says 'Potting Mix'",
@@ -316,8 +331,8 @@ const treats: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        Plant all <b>🌱Seed</b> cards from your discard pile. <br /> Add 1{" "}
-        <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+        Plant all <Seed plural /> from your discard pile. <br /> Add 1{" "}
+        <b>☀️Sunlight</b> to each of your <Seed plural />.
       </span>
     ),
   },
