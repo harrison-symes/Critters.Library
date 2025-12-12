@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import Discount from "../text/Discount";
 
 const rabbits: IFarmCard[] = [
@@ -152,6 +153,25 @@ const rabbits: IFarmCard[] = [
         Get a free <b>Favour</b> from the <b>Market</b>
       </span>
     ),
+  },
+  {
+    name: "Wood Worker",
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    qty: 1,
+    set: CARD_SET.WOOD_WORK,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [TAGS.CHEW, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    description: (
+      <span>
+        <Chew count={3} />, then gain a random crop for each card chewed.
+      </span>
+    ),
+    energy: 2,
   },
 ];
 

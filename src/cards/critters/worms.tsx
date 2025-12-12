@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import FastTrack from "../text/FastTrack";
 import Seed from "../text/Seed";
 
@@ -58,7 +59,7 @@ const worms: IFarmCard[] = [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_RANDOM,
       TAGS.SEED_SYNERGY,
-      TAGS.ADD_TO_HAND,
+      TAGS.PLANT_FROM_DISCARD,
     ],
     set: CARD_SET.BASE,
     flavour: "He's always soiling himself.",
@@ -109,6 +110,25 @@ const worms: IFarmCard[] = [
       </span>
     ),
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SUNLIGHT_REMOVE],
+  },
+  {
+    name: "Wood Worm",
+    cost: {
+      apples: 0,
+      carrots: 0,
+      berries: 0,
+    },
+    qty: 1,
+    set: CARD_SET.WOOD_WORK,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Worm,
+    tags: [TAGS.CHEW, TAGS.SEED_SYNERGY, TAGS.PLANT_FROM_DISCARD],
+    description: (
+      <span>
+        <Chew count={3} />, then <b>Plant</b> any chewed <Seed plural />.
+      </span>
+    ),
+    energy: 2,
   },
 ];
 

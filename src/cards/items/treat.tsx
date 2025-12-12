@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import Critter from "../text/Critter";
 import FastTrack from "../text/FastTrack";
 import Seed from "../text/Seed";
@@ -327,11 +328,11 @@ const treats: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
-    tags: [TAGS.SEED_SYNERGY, TAGS.ADD_TO_HAND, TAGS.SUNLIGHT_ADD],
+    tags: [TAGS.SEED_SYNERGY, TAGS.PLANT_FROM_DISCARD, TAGS.SUNLIGHT_ADD],
     holdable: true,
     description: (
       <span>
-        Plant all <Seed plural /> from your discard pile. <br /> Add 1{" "}
+        <b>Plant</b> all <Seed plural /> from your discard pile. <br /> Add 1{" "}
         <b>☀️Sunlight</b> to each of your <Seed plural />.
       </span>
     ),
@@ -404,6 +405,68 @@ const treats: IFarmCard[] = [
       <span>
         Gain +3 of a random crop. <br />
         Your Rivals each gain +1 of that crop type.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Maple Syrup",
+    cost: {
+      apples: 3,
+      berries: 3,
+      carrots: 3,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [TAGS.REMOVE_ZZZ],
+    description: (
+      <span>
+        Perform a friendly <Critter plural /> <b>Talent</b> until they are{" "}
+        <b>Exhausted</b>, then return them to your hand.
+      </span>
+    ),
+    buyBonus: <span>Draw a card.</span>,
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Pinecone",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    holdable: true,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.ADD_TO_HAND],
+    description: <span>Gain a random crop.</span>,
+    recycle: (
+      <span>
+        Gain 3 random crops. <br />
+        <b>-OR-</b>
+        <br />
+        Add this to your hand.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Beaver Food",
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [TAGS.CHEW, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
+    description: (
+      <span>
+        <Chew count={2} />. <br />
+        Gain <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>.
       </span>
     ),
   },

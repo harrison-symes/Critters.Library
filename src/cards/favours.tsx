@@ -1,7 +1,9 @@
 import { CARD_SET, CARD_TYPE, IFavourCard, TAGS } from "../models/cards.models";
+import Chew from "./text/Chew";
 import Critter from "./text/Critter";
 import Discount from "./text/Discount";
 import FastTrack from "./text/FastTrack";
+import Seed from "./text/Seed";
 import Sleepy from "./text/Sleepy";
 
 const favours: IFavourCard[] = [
@@ -263,6 +265,55 @@ const favours: IFavourCard[] = [
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.DISCOUNT],
     type: CARD_TYPE.Favour,
     set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "TIMBER!",
+    qty: 1,
+    description: (
+      <span>
+        <b>Refresh</b> a column in the <b>Market</b>.
+      </span>
+    ),
+    tags: [TAGS.REFRESH],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.WOOD_WORK,
+  },
+  {
+    name: "Gnaw",
+    qty: 2,
+    description: (
+      <span>
+        <Chew count={2} />. <br />
+        Gain a random crop for each card chewed.
+      </span>
+    ),
+    tags: [TAGS.CHEW, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.WOOD_WORK,
+  },
+  {
+    name: "Nibble",
+    qty: 1,
+    description: (
+      <span>
+        <Chew count={3} />, then <b>Trash</b> one of the chewed cards.
+      </span>
+    ),
+    tags: [TAGS.CHEW, TAGS.TRASH],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.WOOD_WORK,
+  },
+  {
+    name: "Sprinkle the Seeds",
+    qty: 1,
+    description: (
+      <span>
+        <b>Plant</b> a <Seed /> from your discard pile.
+      </span>
+    ),
+    tags: [TAGS.SEED_SYNERGY, TAGS.PLANT_FROM_DISCARD],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.WOOD_WORK,
   },
 ];
 

@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 
 const gifts: IFarmCard[] = [
   {
@@ -123,6 +124,31 @@ const gifts: IFarmCard[] = [
       <span>
         Remove 1 <b>☀️Sunlight</b> from one of your <b>🌱Seeds</b> to draw a
         card.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Gift</b> this to a Rival.
+      </span>
+    ),
+  },
+  {
+    name: "Plank",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    set: CARD_SET.WOOD_WORK,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Gift,
+    tags: [TAGS.GIFT, TAGS.CHEW, TAGS.CARD_DRAW],
+    unsellable: true,
+    description: (
+      <span>
+        <Chew count={2} />. <br />
+        Draw a card.
       </span>
     ),
     buyBonus: (

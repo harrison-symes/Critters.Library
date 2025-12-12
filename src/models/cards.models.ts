@@ -13,6 +13,7 @@ export type RESOURCE = "apples" | "carrots" | "berries";
 export enum CARD_SET {
   BASE = "Base",
   CROWD_FUND = "Crowd Fund",
+  WOOD_WORK = "Wood Work",
 }
 
 export enum CARD_SUBTYPE {
@@ -27,6 +28,7 @@ export enum CARD_SUBTYPE {
   Raccoon = "Raccoon",
   Worm = "Worm",
   Bee = "Bee",
+  Beaver = "Beaver",
   Starter = "Starter",
 }
 
@@ -51,6 +53,7 @@ export enum TAGS {
   REMOVE_ZZZ = "Remove 💤Sleepy",
   ADD_ZZZ = "Add 💤Sleepy",
   SEED_SYNERGY = "🌱Seed synergy",
+  PLANT_FROM_DISCARD = "Plant 🌱Seed from discard",
   SUNLIGHT_ADD = "Add ☀️Sunlight",
   SUNLIGHT_REMOVE = "Remove ☀️Sunlight",
   REFRESH = "Refresh",
@@ -76,6 +79,7 @@ export enum TAGS {
   BUY_FARM_CARD = "On Farm Card buy",
   DOUBLE_SELL = "Double Sell Value",
   CHOOSE_ONE = "Choose one",
+  CHEW = "Chew",
 }
 
 export interface ICard {

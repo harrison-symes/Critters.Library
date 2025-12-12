@@ -4,10 +4,13 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
+import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
+import Sunlight from "../text/Sunlight";
 
 const seeds: IFarmCard[] = [
   {
@@ -338,6 +341,82 @@ const seeds: IFarmCard[] = [
       ),
     },
     set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "Oak Seeds",
+    qty: 2,
+    cost: {
+      apples: 1,
+      carrots: 1,
+      berries: 1,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.PLANT_FROM_DISCARD],
+    sunlight: {
+      one: (
+        <span>
+          <b>Plant</b> a <Seed /> from your discard pile...
+        </span>
+      ),
+      three: (
+        <span>
+          ...and add 2 <Sunlight /> to it.
+        </span>
+      ),
+    },
+    set: CARD_SET.WOOD_WORK,
+  },
+  {
+    name: "Birch Seeds",
+    qty: 2,
+    cost: {
+      apples: 1,
+      carrots: 1,
+      berries: 1,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.CHEW, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    sunlight: {
+      one: (
+        <span>
+          <Chew count={3} />, gain 3 random crops.
+        </span>
+      ),
+      two: (
+        <span>
+          <Chew count={2} />, gain 3 random crops.
+        </span>
+      ),
+      three: (
+        <span>
+          <Chew count={1} />, gain 3 random crops.
+        </span>
+      ),
+    },
+    set: CARD_SET.WOOD_WORK,
+  },
+  {
+    name: "Maple Seeds",
+    qty: 1,
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [],
+    sunlight: {
+      three: (
+        <span>
+          Perform a friendly <Critter plural /> <b>Talent</b> until they are{" "}
+          <b>Exhausted</b>, then return them to your hand.
+        </span>
+      ),
+    },
+    set: CARD_SET.WOOD_WORK,
   },
 ];
 

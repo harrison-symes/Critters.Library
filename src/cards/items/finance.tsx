@@ -5,12 +5,15 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
 import FastTrack from "../text/FastTrack";
 import Item from "../text/Item";
+import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
+import Sunlight from "../text/Sunlight";
 
 const finance: IFarmCard[] = [
   {
@@ -469,6 +472,80 @@ const finance: IFarmCard[] = [
       </span>
     ),
     recycle: <span>Gain +3 of a random crop.</span>,
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Money Tree",
+    cost: {
+      apples: 3,
+      berries: 1,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    holdable: true,
+    tags: [
+      TAGS.SELL,
+      TAGS.SELL_FROM_HAND,
+      TAGS.SEED_SYNERGY,
+      TAGS.SUNLIGHT_ADD,
+      TAGS.DISCOUNT,
+    ],
+    description: (
+      <span>
+        <b>Sell</b> a card from your hand. <br />
+        Add 1 <Sunlight /> to each of your <Seed plural />. <br />
+        <Discount />.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <FastTrack /> this card.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Birdhouse",
+    cost: {
+      apples: 2,
+      berries: 3,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [TAGS.CHEW, TAGS.SELL, TAGS.DISCOUNT],
+    description: (
+      <span>
+        <Chew count={3} />, then <b>Sell</b> one of the chewed cards. <br />
+        <Discount />
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Hand-made Crate",
+    cost: {
+      apples: 1,
+      berries: 2,
+      carrots: 3,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [TAGS.FREE_CRATE, TAGS.BOTTOM_OF_DECK],
+    description: (
+      <span>
+        Place this card at the bottom of your deck. <br /> Draw a card.
+      </span>
+    ),
+    recycle: (
+      <span>
+        Pack a free <b>📦Crate</b> into a <b>Work Order</b>.
+      </span>
+    ),
   },
 ];
 

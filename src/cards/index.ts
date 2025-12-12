@@ -23,6 +23,7 @@ import favours from "./favours";
 import rewards from "./rewards";
 import starters from "./items/starter";
 import visitors from "./visitors";
+import beavers from "./critters/beavers";
 
 const shuffleDeck = (deck: any[]) => {
   let currentIndex = deck.length;
@@ -64,6 +65,7 @@ export const createDeck = (noDuplicates: boolean = false): IFarmCard[] => {
   addToDeck(deck, raccoons, noDuplicates);
   addToDeck(deck, hedgehogs, noDuplicates);
   addToDeck(deck, bees, noDuplicates);
+  addToDeck(deck, beavers, noDuplicates);
 
   // if (!noDuplicates) {
   //   return shuffleDeck(deck);

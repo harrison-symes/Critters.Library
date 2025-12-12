@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
 import FastTrack from "../text/FastTrack";
@@ -342,12 +343,12 @@ const tools: IFarmCard[] = [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_RANDOM,
       TAGS.SEED_SYNERGY,
-      TAGS.ADD_TO_HAND,
+      TAGS.PLANT_FROM_DISCARD,
     ],
     description: (
       <span>
         Gain +3 of a random crop.
-        <br /> Plant all <Seed plural /> from your discard pile.
+        <br /> <b>Plant</b> all <Seed plural /> from your discard pile.
       </span>
     ),
     flavour: "This Trowel can keep a secret.",
@@ -463,6 +464,72 @@ const tools: IFarmCard[] = [
         <Skewer /> an <b>🎒Item</b> from your discard pile.
         <br />
         If it was a <b>🛠️Tool</b>, draw it.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Sandpaper",
+    cost: {
+      apples: 2,
+      berries: 1,
+      carrots: 3,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [TAGS.CHEW, TAGS.ADD_TO_HAND],
+    description: (
+      <span>
+        <Chew count={3} />, then add one of the chewed cards to your hand.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Trash</b> a card from your discard pile.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Chisel",
+    cost: {
+      apples: 1,
+      berries: 3,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [TAGS.FAST_TRACK, TAGS.SKEWER],
+    description: (
+      <span>
+        <FastTrack /> a card, then <Skewer /> a card from your discard pile.
+      </span>
+    ),
+    recycle: (
+      <span>
+        <Chew count={2} /> from a Rival's deck.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Measuring Tape",
+    cost: {
+      apples: 3,
+      berries: 2,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [TAGS.CARD_DRAW],
+    holdable: true,
+    description: (
+      <span>
+        Draw a card. If you have less than 3 cards in your deck, draw another
+        card.
       </span>
     ),
   },

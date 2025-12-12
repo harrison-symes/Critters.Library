@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import Discount from "../text/Discount";
 import FastTrack from "../text/FastTrack";
 
@@ -122,6 +123,25 @@ const rats: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.DISCOUNT, TAGS.CROP_STEAL, TAGS.FAST_TRACK],
     set: CARD_SET.CROWD_FUND,
+  },
+  {
+    name: "Wood Chipper",
+    cost: {
+      apples: 0,
+      carrots: 0,
+      berries: 0,
+    },
+    qty: 1,
+    set: CARD_SET.WOOD_WORK,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rat,
+    tags: [TAGS.CHEW, TAGS.SELL],
+    description: (
+      <span>
+        <Chew count={1} />. You may then <b>Sell</b> the chewed card.
+      </span>
+    ),
+    energy: 3,
   },
 ];
 

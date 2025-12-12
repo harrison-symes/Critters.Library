@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Chew from "../text/Chew";
 import FastTrack from "../text/FastTrack";
 import Skewer from "../text/Skewer";
 
@@ -108,6 +109,26 @@ const hedgehogs: IFarmCard[] = [
         <b>Gift</b> a card from your discard pile.
       </span>
     ),
+  },
+  {
+    name: "Splinter",
+    cost: {
+      apples: 0,
+      carrots: 0,
+      berries: 0,
+    },
+    qty: 1,
+    set: CARD_SET.WOOD_WORK,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.CHEW, TAGS.SKEWER, TAGS.GIFT],
+    description: (
+      <span>
+        <Chew count={2} />, then <Skewer /> or <b>Gift</b> one of the chewed
+        cards.
+      </span>
+    ),
+    energy: 2,
   },
 ];
 
