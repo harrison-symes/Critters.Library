@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Burrow from "../text/Burrow";
 import Critter from "../text/Critter";
 import Sleepy from "../text/Sleepy";
 
@@ -51,11 +52,15 @@ const moles: IFarmCard[] = [
         <b>Steal</b> a crop from a Rival.
       </span>
     ),
-    buyBonus: "Put this at the bottom of your deck.",
+    buyBonus: (
+      <span>
+        <Burrow /> this card.
+      </span>
+    ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
-    tags: [TAGS.CROP_STEAL, TAGS.BOTTOM_OF_DECK],
+    tags: [TAGS.CROP_STEAL, TAGS.BURROW],
     set: CARD_SET.BASE,
     flavour: "Huh? This Apple? I always had it...",
   },
@@ -93,7 +98,8 @@ const moles: IFarmCard[] = [
     },
     description: (
       <span>
-        Move 1 <Sleepy /> from a friendly <Critter /> to any other <Critter />.
+        Move 1 <Sleepy /> from another friendly <Critter /> to any other{" "}
+        <Critter />.
       </span>
     ),
     energy: 2,

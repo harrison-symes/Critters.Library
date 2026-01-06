@@ -52,7 +52,7 @@ const gifts: IFarmCard[] = [
     tags: [TAGS.GIFT, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     description: (
       <span>
-        Gain 3 random crops. <br /> <b>Gift</b> this to a Rival.
+        Gain 3 random crops. <br /> <b>Gift</b> this card.
       </span>
     ),
   },

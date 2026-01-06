@@ -89,6 +89,7 @@ const FarmCard = (props: IProps) => {
         {props.card.unsellable && (
           <div className="card__special">Unsellable</div>
         )}
+        {props.card.debris && <div className="card__special">Debris</div>}
         <div className="card__cost__container">
           <CropCost costs={props.card.cost} crop="apples" />
           <CropCost costs={props.card.cost} crop="berries" />

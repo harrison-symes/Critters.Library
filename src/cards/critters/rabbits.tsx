@@ -117,7 +117,7 @@ const rabbits: IFarmCard[] = [
     description: (
       <span>
         Gain +3 of a random crop. <br />
-        Your Rivals each gain +1 of that same crop.
+        Each other player gain +1 of the same crop.
       </span>
     ),
     energy: 2,
@@ -137,12 +137,11 @@ const rabbits: IFarmCard[] = [
     },
     description: (
       <span>
-        Gain a crop of your choosing.
-        <br />
-        <Discount /> by that crop type.
+        <Discount />. <br />
+        Gain +2 of the discounted crop type.
       </span>
     ),
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE, TAGS.FREE_FAVOUR],

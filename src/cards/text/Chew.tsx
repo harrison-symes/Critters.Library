@@ -1,7 +1,7 @@
 import { Tooltip } from "@mui/material";
 
 interface IProps {
-  count: number;
+  count?: number;
 }
 
 const Chew = (props: IProps) => {
@@ -17,7 +17,7 @@ const Chew = (props: IProps) => {
       placement="top"
       className="tooltip"
     >
-      <b>Chew {props.count}</b>
+      <b>Chew {props.count ? props.count : ""}</b>
     </Tooltip>
   );
 };

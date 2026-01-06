@@ -28,7 +28,7 @@ const rats: IFarmCard[] = [
         <br />
         <b>-OR-</b>
         <br />
-        <Discount />.
+        <b>Sell</b> a card from your hand.
       </span>
     ),
     buyBonus: (
@@ -36,10 +36,16 @@ const rats: IFarmCard[] = [
         <b>Refresh</b> a card.
       </span>
     ),
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
-    tags: [TAGS.FREE_FAVOUR, TAGS.DISCOUNT, TAGS.REFRESH, TAGS.CHOOSE_ONE],
+    tags: [
+      TAGS.FREE_FAVOUR,
+      TAGS.SELL,
+      TAGS.SELL_FROM_HAND,
+      TAGS.REFRESH,
+      TAGS.CHOOSE_ONE,
+    ],
     set: CARD_SET.BASE,
     flavour: "Say hello to his little friends.",
   },
@@ -54,7 +60,7 @@ const rats: IFarmCard[] = [
     image: "/price_hiker.jpeg",
     description: (
       <span>
-        <Discount />, then <b>Snatch</b> the discounted crops from a card in the
+        <Discount />, then <b>Snatch</b> the discounted crops from a card in the{" "}
         <b>Market</b>.
       </span>
     ),
@@ -125,11 +131,11 @@ const rats: IFarmCard[] = [
     set: CARD_SET.CROWD_FUND,
   },
   {
-    name: "Wood Chipper",
+    name: "Mole Rat",
     cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
+      apples: 4,
+      carrots: 4,
+      berries: 4,
     },
     qty: 1,
     set: CARD_SET.WOOD_WORK,
@@ -138,10 +144,11 @@ const rats: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.SELL],
     description: (
       <span>
-        <Chew count={1} />. You may then <b>Sell</b> the chewed card.
+        <Chew count={1} />. <br />
+        Gain crops equal to the price of the chewed card.
       </span>
     ),
-    energy: 3,
+    energy: 2,
   },
 ];
 

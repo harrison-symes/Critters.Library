@@ -1,4 +1,6 @@
 import { CARD_SET, CARD_TYPE, IRewardCard, TAGS } from "../models/cards.models";
+import Burrow from "./text/Burrow";
+import Chew from "./text/Chew";
 import Critter from "./text/Critter";
 import Discount from "./text/Discount";
 import FastTrack from "./text/FastTrack";
@@ -181,6 +183,7 @@ const rewards: IRewardCard[] = [
       <span>
         After you <b>Harvest</b> a <b>🌱Seed</b> with 3 <Sunlight />, draw a
         card.
+        <br /> (Once per turn.)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -254,7 +257,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Buy</b> or <b>Sell</b> a Farm card, draw a card.
+        After you <b>Buy</b> or <b>Sell</b> a Farm card, draw a card. <br />{" "}
+        (Once per turn.)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -314,12 +318,12 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you play a <Tool />, you may <FastTrack /> a different card.
+        After you play a <Tool />, you may <Burrow /> a different card.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.TOOL_SYNERGY, TAGS.FAST_TRACK],
+    tags: [TAGS.TOOL_SYNERGY, TAGS.BURROW],
   },
   {
     name: "Breakroom",
@@ -330,7 +334,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         After you play a <Treat />, remove 1 <Sleepy /> from a friendly{" "}
-        <Critter />.
+        <Critter />. <br /> (Once per turn.)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -392,7 +396,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <Discount />, gain +2 of the discounted crop type.
+        Whenever you <Discount />, gain +1 of the discounted crop type.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -406,8 +410,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Discard</b> a card from your hand (during your turn), draw
-        a card.
+        After you <b>Discard</b> a card from your hand, draw a card. <br />
+        (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -421,8 +425,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Discard</b> a card from your hand (during your turn), you
-        may <FastTrack /> a different card.
+        After you <b>Discard</b> a card from your hand, you may <Burrow /> that
+        card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -465,20 +469,19 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.RESET_DECK],
   },
   {
-    name: "Companion Crate",
-    flavour: "The Carrot Cake is a lie.",
-    notes:
-      "A wooden crate with a pink heart on it (like the companion cube from portal)",
+    name: "The Burrows",
+    flavour: "",
+    notes: "A hole in the ground",
     qty: 1,
     description: (
       <span>
-        If you have only 1 <Critter /> in play, <FastTrack /> them whenever they
+        If you have only 1 <Critter /> in play, <Burrow /> them whenever they
         are <b>Exhausted</b>.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FREE_FAVOUR],
+    tags: [TAGS.BURROW],
   },
   {
     name: "Tip Jar",
@@ -488,11 +491,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Buy</b> a Farm card, you may pay{" "}
-        <span className="nowrap">
-          <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
-        </span>{" "}
-        to put that card into your hand.
+        After you <b>Buy</b> a Farm card, <b>Discount</b> and gain +1 of the
+        discounted crop type.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -504,7 +504,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <b>Steal</b> a crop from a Rival, that Rival must also give
+        After you <b>Steal</b> a crop from a Rival, that Rival must also give
         you a crop (If they have any).
       </span>
     ),
@@ -517,7 +517,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever your deck is <b>Reset</b>, each Rival must give you a crop (If
+        After your deck is <b>Reset</b>, each Rival must give you a crop (If
         they have any).
       </span>
     ),
@@ -538,28 +538,12 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.TRASH, TAGS.GIFT],
   },
   {
-    name: "Sample Stand",
-    qty: 1,
-    description: (
-      <span>
-        After you <b>Discard</b> a card from your hand (during your turn), you
-        may <b>Trash</b> or <FastTrack /> that card.
-      </span>
-    ),
-    type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
-    tags: [TAGS.DISCARD_OWN, TAGS.FAST_TRACK, TAGS.TRASH, TAGS.TRASH_FROM_HAND],
-  },
-  {
     name: "Poor Investment",
     qty: 1,
     description: (
       <span>
         At the end of your turn, if you have less <b>🏆Rewards</b> than your
-        Rivals, gain{" "}
-        <span className="nowrap">
-          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
-        </span>
+        Rivals, gain 2 random crops.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -567,7 +551,7 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.LESS_REWARDS],
   },
   {
-    name: "Team Agreement",
+    name: "Meeting Room",
     qty: 1,
     description: (
       <span>
@@ -593,11 +577,12 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.LESS_REWARDS, TAGS.SUNLIGHT_ADD],
   },
   {
-    name: "Lunchbox",
+    name: "Sample Stand",
     qty: 1,
     description: (
       <span>
-        After you <FastTrack /> a <Treat />, draw a card.
+        After you <FastTrack /> a <Treat />, draw a card. <br /> (Once per
+        turn.)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -609,8 +594,8 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Your <Finance /> cards sell for twice as much. <br />
-        Your <b>🛠️Tools</b> and <b>🧁Treats</b> are now also <Finance /> cards.
+        Your <Tool plural /> and <Treat plural /> are now also <Finance />{" "}
+        cards. <br /> After you <b>Sell</b> a <Finance /> card, draw a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -618,17 +603,128 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.FINANCE_SYNERGY, TAGS.DOUBLE_SELL],
   },
   {
-    name: "Box Cart",
+    name: "Warehouse",
     qty: 1,
     description: (
       <span>
-        Once per turn, after you <Skewer /> a <b>Tool</b>, pack a free{" "}
-        <b>Crate</b> into one of your <b>Work Orders</b>.
+        After you <Skewer /> a <Tool />, gain{" "}
+        <span className="nowrap">
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
+        </span>
+        .
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.CROWD_FUND,
     tags: [TAGS.TOOL_SYNERGY, TAGS.SKEWER, TAGS.FREE_CRATE],
+  },
+  {
+    name: "Oak Tree",
+    qty: 1,
+    description: (
+      <span>
+        After you <Chew /> or <b>Discard</b> a <Seed />, <b>Plant</b> it.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [TAGS.CHEW, TAGS.PLANT_FROM_DISCARD],
+  },
+  {
+    name: "Birch Tree",
+    qty: 1,
+    description: (
+      <span>
+        After you <Chew /> or <b>Discard</b> a <Critter />, draw a card.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [TAGS.CHEW],
+  },
+  {
+    name: "Maple Tree",
+    qty: 1,
+    description: (
+      <span>
+        Whenever you remove a <Sleepy /> from a friendly <Critter />, instantly
+        perform their <b>Talent</b>. (Without adding a <Sleepy />)
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [TAGS.SUGAR_RUSH],
+  },
+  {
+    name: "Beaver Dam",
+    qty: 1,
+    description: (
+      <span>
+        Instantly, and whenever you complete a <b>Work Order</b>,{" "}
+        <Chew count={3} /> and add one of the chewed cards to your hand.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [TAGS.CHEW, TAGS.SKEWER],
+  },
+  {
+    name: "Wittle House",
+    qty: 1,
+    description: (
+      <span>
+        Instantly, and whenever you complete a <b>Work Order</b>, get a random{" "}
+        <b>Wittle Critter</b>.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [TAGS.CHEW, TAGS.CARD_DRAW],
+  },
+  {
+    name: "Sawmill",
+    qty: 1,
+    description: (
+      <span>
+        After you <b>Buy</b> a <b>Favour</b>, <Chew count={2} /> and draw a
+        card. <br /> (Once per turn.)
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [TAGS.CHEW],
+  },
+  {
+    name: "Farm Gate",
+    qty: 1,
+    description: (
+      <span>
+        Whenever your deck is <b>Reset</b>, remove 1 <Sleepy /> from a friendly{" "}
+        <Critter />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [TAGS.RESET_DECK, TAGS.REMOVE_ZZZ],
+  },
+  {
+    name: "Lush Forest",
+    qty: 1,
+    description: (
+      <span>
+        Whenever your deck is <b>Reset</b>, first <b>plant</b> a <Seed /> from
+        your discard pile and add 1 <Sunlight /> to each of your <Seed plural />
+        .
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.WOOD_WORK,
+    tags: [
+      TAGS.SEED_SYNERGY,
+      TAGS.RESET_DECK,
+      TAGS.SUNLIGHT_ADD,
+      TAGS.PLANT_FROM_DISCARD,
+    ],
   },
 ];
 

@@ -21,7 +21,7 @@ const hedgehogs: IFarmCard[] = [
     image: "/skewerer.jpeg",
     description: (
       <span>
-        <Skewer /> a <b>🛠️Tool</b> from your discard pile.
+        <Skewer /> a <b>🛠️Tool</b>.
       </span>
     ),
     buyBonus: (
@@ -113,9 +113,9 @@ const hedgehogs: IFarmCard[] = [
   {
     name: "Splinter",
     cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
+      apples: 2,
+      berries: 1,
+      carrots: 1,
     },
     qty: 1,
     set: CARD_SET.WOOD_WORK,

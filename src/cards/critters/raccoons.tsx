@@ -28,7 +28,7 @@ const raccoons: IFarmCard[] = [
         <FastTrack /> a <b>🏠Starter</b> card.
       </span>
     ),
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
@@ -91,7 +91,7 @@ const raccoons: IFarmCard[] = [
     },
     description: (
       <span>
-        <b>Discard</b> a card from your hand. Each Rival must also{" "}
+        <b>Discard</b> a card from your hand. <br /> Each Rival must also{" "}
         <b>Discard</b> a card from their hand.
       </span>
     ),

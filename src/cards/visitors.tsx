@@ -41,7 +41,7 @@ const visitors: IVisitorCard[] = [
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When <b>Jemima</b> arrives, remove all <Sleepy /> from all
+        When <b>Jemima</b> arrives, remove 1 <Sleepy /> from each
         <Critter plural />.
       </span>
     ),
@@ -106,8 +106,24 @@ const visitors: IVisitorCard[] = [
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When <b>PH</b> arrives, each player can pack a free <b>Crate</b> into
-        one of their <b>Work Orders</b>.
+        When <b>PH</b> arrives, each player can get a free <b>Work Order</b>.{" "}
+        <br /> (In turn order)
+      </span>
+    ),
+    tags: [TAGS.FREE_CRATE],
+  },
+  {
+    name: "<PH>, Generous Donor",
+    qty: 1,
+    set: CARD_SET.CROWD_FUND,
+    type: CARD_TYPE.Visitor,
+    description: (
+      <span>
+        When <b>PH</b> arrives, each player gains{" "}
+        <span className="nowrap">
+          <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
+        </span>
+        .
       </span>
     ),
     tags: [TAGS.FREE_CRATE],

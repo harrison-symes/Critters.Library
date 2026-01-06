@@ -17,20 +17,20 @@ const bees: IFarmCard[] = [
     notes: "A Bee wearing a suit and tie, holding a briefcase",
     qty: 2,
     cost: {
-      apples: 3,
-      carrots: 3,
-      berries: 3,
+      apples: 2,
+      carrots: 2,
+      berries: 2,
     },
     description: (
       <span>
-        If you have 3 <b>Work Orders</b>, Gain{" "}
+        If you have 2 or more <b>Work Orders</b>, Gain{" "}
         <span className="nowrap">
           <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
         </span>
         .
       </span>
     ),
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.WORK_ORDERS_3],
@@ -42,20 +42,20 @@ const bees: IFarmCard[] = [
     notes: "",
     qty: 2,
     cost: {
-      apples: 3,
-      carrots: 3,
-      berries: 3,
+      apples: 2,
+      carrots: 2,
+      berries: 2,
     },
     description: (
       <span>
-        If you have 3 <b>Work Orders</b>, <b>Steal</b>{" "}
+        If you have 2 or more <b>Work Orders</b>, <b>Steal</b>{" "}
         <span className="nowrap">
           <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
         </span>{" "}
         from a Rival.
       </span>
     ),
-    energy: 2,
+    energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_STEAL, TAGS.WORK_ORDERS_3],
@@ -67,13 +67,13 @@ const bees: IFarmCard[] = [
     notes: "A bee wearing glasses, holding up and looking at some blueprints.",
     qty: 1,
     cost: {
-      apples: 3,
-      carrots: 3,
-      berries: 3,
+      apples: 2,
+      carrots: 2,
+      berries: 2,
     },
     description: (
       <span>
-        If you have 3 <b>Work Orders</b>, <FastTrack /> a <Critter />, a{" "}
+        If you have 2 or more <b>Work Orders</b>, <FastTrack /> a <Critter />, a{" "}
         <Seed /> and an <Item />.
       </span>
     ),

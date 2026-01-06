@@ -6,6 +6,7 @@ export enum CARD_TYPE {
   Reward = "Rewards",
   WorkOrder = "Work Order",
   Visitor = "Visitor",
+  STUMP = "STUMP",
 }
 
 export type RESOURCE = "apples" | "carrots" | "berries";
@@ -30,6 +31,7 @@ export enum CARD_SUBTYPE {
   Bee = "Bee",
   Beaver = "Beaver",
   Starter = "Starter",
+  Wittled = "Wittled",
 }
 
 export enum TAGS {
@@ -37,7 +39,6 @@ export enum TAGS {
   CROP_GENERATION = "Crop Gain",
   DISCARD_OWN = "Discard from hand",
   DISCOUNT = "Discount",
-  FAST_TRACK = "Fast-track",
   RESET_DECK = "Reset Deck",
   CROP_GENERATION_ALL = "Gain all crops",
   CROP_GENERATION_RANDOM = "Gain random crops",
@@ -45,10 +46,16 @@ export enum TAGS {
   GIFT = "Gift",
   CROP_DESTROY = "Destroy Crops",
   CROP_STEAL = "Steal crops",
+  FAST_TRACK = "Fast-track",
   SKEWER = "Skewer",
+  BURROW = "Burrow",
+  ADD_TO_HAND = "Add to hand",
   SELL = "Sell",
   SELL_FROM_HAND = "Sell from hand",
   SELL_FROM_DISCARD = "Sell from discard",
+  TRASH = "Trash",
+  TRASH_FROM_HAND = "Trash from hand",
+  TRASH_FROM_DISCARD = "Trash from discard",
   FREE_CRATE = "Free Crate",
   REMOVE_ZZZ = "Remove 💤Sleepy",
   ADD_ZZZ = "Add 💤Sleepy",
@@ -63,15 +70,11 @@ export enum TAGS {
   CROP_GENERATION_BERRY = "Gain 🫐",
   CROP_GENERATION_APPLE = "Gain 🍏",
   WORK_ORDERS_3 = "Requires 3 Work Orders",
-  TRASH = "Trash",
-  TRASH_FROM_HAND = "Trash from hand",
-  TRASH_FROM_DISCARD = "Trash from discard",
+
   TREAT_SYNERGY = "🧁Treat synergy",
   TOOL_SYNERGY = "🛠️Tool synergy",
   FINANCE_SYNERGY = "🏦Finance Synergy",
   SNATCH_DISCOUNT = "Snatch discounts",
-  BOTTOM_OF_DECK = "Add to bottom of deck",
-  ADD_TO_HAND = "Add to hand",
   TRADE = "Trade",
   WORK_ORDER_COMPLETION = "On Work Order complete",
   LESS_REWARDS = "If less rewards",
@@ -80,6 +83,7 @@ export enum TAGS {
   DOUBLE_SELL = "Double Sell Value",
   CHOOSE_ONE = "Choose one",
   CHEW = "Chew",
+  SUGAR_RUSH = "SUGAR_RUSH",
 }
 
 export interface ICard {
@@ -103,13 +107,14 @@ export interface IFarmCard extends ICard {
   holdable?: boolean;
   refundable?: boolean;
   unsellable?: boolean;
+  debris?: boolean;
   sunlight?: {
     one?: string | React.ReactNode;
     two?: string | React.ReactNode;
     three?: string | React.ReactNode;
   };
   energy?: number;
-  type: CARD_TYPE.Critter | CARD_TYPE.Item | CARD_TYPE.Seeds;
+  type: CARD_TYPE.Critter | CARD_TYPE.Item | CARD_TYPE.Seeds | CARD_TYPE.STUMP;
 }
 
 export interface IFavourCard extends ICard {

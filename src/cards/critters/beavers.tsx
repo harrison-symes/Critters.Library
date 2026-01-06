@@ -14,9 +14,9 @@ const beavers: IFarmCard[] = [
   {
     name: "Nibblot",
     cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
+      apples: 1,
+      berries: 3,
+      carrots: 1,
     },
     qty: 2,
     set: CARD_SET.WOOD_WORK,
@@ -25,17 +25,18 @@ const beavers: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.TRASH],
     description: (
       <span>
-        <Chew count={3} />, then <b>Trash</b> one of the chewed cards.
+        <Chew count={3} />, then <b>Sell</b> one of the chewed cards.
       </span>
     ),
+    recycle: <span></span>,
     energy: 2,
   },
   {
     name: "Gnawer",
     cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
+      apples: 1,
+      berries: 1,
+      carrots: 2,
     },
     qty: 2,
     set: CARD_SET.WOOD_WORK,
@@ -53,8 +54,8 @@ const beavers: IFarmCard[] = [
     name: "Ava",
     cost: {
       apples: 3,
+      berries: 1,
       carrots: 3,
-      berries: 3,
     },
     qty: 1,
     set: CARD_SET.WOOD_WORK,

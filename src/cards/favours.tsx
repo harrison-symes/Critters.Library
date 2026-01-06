@@ -1,4 +1,5 @@
 import { CARD_SET, CARD_TYPE, IFavourCard, TAGS } from "../models/cards.models";
+import Burrow from "./text/Burrow";
 import Chew from "./text/Chew";
 import Critter from "./text/Critter";
 import Discount from "./text/Discount";
@@ -29,7 +30,7 @@ const favours: IFavourCard[] = [
     description: (
       <span>
         Gain +3 of a random crop. <br />
-        Each Rival gains 1 of the same crop.
+        Each other player gains +1 of the same crop.
       </span>
     ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
@@ -141,16 +142,15 @@ const favours: IFavourCard[] = [
     set: CARD_SET.BASE,
   },
   {
-    name: "Collect Tips",
-    notes:
-      "A bee (Worker Bee) is reaching his hand into a jar filled with crops.",
+    name: "Bury Treasure",
+    notes: "A mole (Burrower) is digging a hole",
     qty: 1,
     description: (
       <span>
-        Gain a random crop for each <b>Work Order</b> you have.
+        <Burrow /> a card.
       </span>
     ),
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    tags: [TAGS.BURROW],
     type: CARD_TYPE.Favour,
     set: CARD_SET.BASE,
   },
@@ -208,7 +208,6 @@ const favours: IFavourCard[] = [
     description: (
       <span>
         Gain a crop of your choosing. <br />
-        <Discount />.
       </span>
     ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE],
@@ -228,7 +227,7 @@ const favours: IFavourCard[] = [
     set: CARD_SET.CROWD_FUND,
   },
   {
-    name: "Get Organised",
+    name: "Tidy Up",
     qty: 1,
     description: (
       <span>
@@ -296,7 +295,7 @@ const favours: IFavourCard[] = [
     qty: 1,
     description: (
       <span>
-        <Chew count={3} />, then <b>Trash</b> one of the chewed cards.
+        <Chew count={3} />. <br /> You may <b>Trash</b> one of the chewed cards.
       </span>
     ),
     tags: [TAGS.CHEW, TAGS.TRASH],

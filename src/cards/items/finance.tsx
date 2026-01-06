@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Burrow from "../text/Burrow";
 import Chew from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
@@ -39,7 +40,7 @@ const finance: IFarmCard[] = [
     holdable: true,
     buyBonus: (
       <span>
-        Get a <b>Favour</b> from the <b>Market</b> for free.
+        <b>Trash</b> a <b>🏠Starter</b> card from your discard pile.
       </span>
     ),
     tags: [
@@ -47,7 +48,8 @@ const finance: IFarmCard[] = [
       TAGS.CROP_GENERATION_APPLE,
       TAGS.FAST_TRACK,
       TAGS.DISCOUNT,
-      TAGS.FREE_FAVOUR,
+      TAGS.TRASH,
+      TAGS.TRASH_FROM_DISCARD,
     ],
   },
   {
@@ -71,6 +73,8 @@ const finance: IFarmCard[] = [
       TAGS.ADD_ZZZ,
       TAGS.DISCOUNT,
       TAGS.FREE_FAVOUR,
+      TAGS.TRASH,
+      TAGS.TRASH_FROM_DISCARD,
     ],
     description: (
       <span>
@@ -81,7 +85,7 @@ const finance: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        Get a <b>Favour</b> from the <b>Market</b> for free.
+        <b>Trash</b> a <b>🏠Starter</b> card from your discard pile.
       </span>
     ),
   },
@@ -107,6 +111,8 @@ const finance: IFarmCard[] = [
       TAGS.CROP_GENERATION_BERRY,
       TAGS.DISCOUNT,
       TAGS.FREE_FAVOUR,
+      TAGS.TRASH_FROM_DISCARD,
+      TAGS.TRASH,
     ],
     description: (
       <span>
@@ -117,7 +123,7 @@ const finance: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        Get a <b>Favour</b> from the <b>Market</b> for free.
+        <b>Trash</b> a <b>🏠Starter</b> card from your discard pile.
       </span>
     ),
   },
@@ -165,7 +171,7 @@ const finance: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    tags: [TAGS.DISCARD_OWN, TAGS.FREE_CRATE, TAGS.FREE_CARD],
+    tags: [TAGS.DISCARD_OWN, TAGS.FREE_CRATE, TAGS.BURROW],
     description: (
       <span>
         <b>Discard</b> a card from your hand to pack a free <b>📦Crate</b> into
@@ -174,7 +180,7 @@ const finance: IFarmCard[] = [
     ),
     recycle: (
       <span>
-        Get a free <b>Work Order</b>.
+        <Burrow /> a card.
       </span>
     ),
   },
@@ -205,11 +211,11 @@ const finance: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <b>Sell</b> a card from your discard pile
+        <b>Sell</b> a card from your hand.
         <br />
         <b>-OR-</b>
         <br />
-        <b>Trash</b> 2 cards from your discard pile.
+        <b>Trash</b> a card from your discard pile.
       </span>
     ),
     recycle: (
@@ -267,12 +273,13 @@ const finance: IFarmCard[] = [
       TAGS.TRASH,
       TAGS.TRASH_FROM_DISCARD,
       TAGS.FINANCE_SYNERGY,
+      TAGS.BURROW,
     ],
     description: (
       <span>
         Play an <b>🎒Item</b> from your discard pile, and then <b>Trash</b> it.
         <br />
-        If it was a <b>🏦Finance</b> card, return it to your discard pile.
+        If it was a <b>🏦Finance</b> card, <Burrow /> it.
       </span>
     ),
   },
@@ -322,14 +329,18 @@ const finance: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    tags: [TAGS.GIFT],
+    tags: [TAGS.GIFT, TAGS.BURROW],
     unsellable: true,
     description: (
       <span>
         <b>Gift</b> a card from your discard pile.
       </span>
     ),
-    recycle: <span>Put this at the bottom of your deck.</span>,
+    recycle: (
+      <span>
+        <Burrow /> this card.
+      </span>
+    ),
   },
   {
     name: "Register",
@@ -466,7 +477,7 @@ const finance: IFarmCard[] = [
     refundable: true,
     description: (
       <span>
-        <b>Sell</b> a card from your discard pile. <br />
+        <b>Sell</b> an <b>🎒Item</b> from your discard pile. <br />
         If you have less <b>🏆Rewards</b> than your Rivals, it sells for twice
         as much.
       </span>
@@ -477,7 +488,7 @@ const finance: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     name: "Money Tree",
     cost: {
-      apples: 3,
+      apples: 2,
       berries: 1,
       carrots: 2,
     },
@@ -509,9 +520,9 @@ const finance: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     name: "Birdhouse",
     cost: {
-      apples: 2,
-      berries: 3,
-      carrots: 1,
+      apples: 0,
+      berries: 2,
+      carrots: 2,
     },
     qty: 1,
     type: CARD_TYPE.Item,
@@ -528,17 +539,17 @@ const finance: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     name: "Hand-made Crate",
     cost: {
-      apples: 1,
+      apples: 3,
       berries: 2,
-      carrots: 3,
+      carrots: 1,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
-    tags: [TAGS.FREE_CRATE, TAGS.BOTTOM_OF_DECK],
+    tags: [TAGS.FREE_CRATE, TAGS.BURROW],
     description: (
       <span>
-        Place this card at the bottom of your deck. <br /> Draw a card.
+        <Burrow /> this card. <br /> Draw a card.
       </span>
     ),
     recycle: (

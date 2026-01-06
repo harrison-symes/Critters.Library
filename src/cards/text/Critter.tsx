@@ -1,6 +1,6 @@
 import { Tooltip } from "@mui/material";
 
-const Critter = (props: { plural?: boolean }) => {
+const Critter = (props: { plural?: boolean; ownership?: boolean }) => {
   return (
     <Tooltip
       title={
@@ -11,7 +11,10 @@ const Critter = (props: { plural?: boolean }) => {
       placement="top"
       className="tooltip"
     >
-      <b>🐾Critter{props.plural && "s"}</b>
+      <b>
+        🐾Critter{props.plural && "s"}
+        {props.ownership && "'s"}
+      </b>
     </Tooltip>
   );
 };

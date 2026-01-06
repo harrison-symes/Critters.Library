@@ -230,16 +230,16 @@ const seeds: IFarmCard[] = [
     },
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
-    tags: [TAGS.SUNLIGHT_ADD, TAGS.SKEWER, TAGS.SEED_SYNERGY],
+    tags: [TAGS.SUNLIGHT_ADD, TAGS.SEED_SYNERGY],
     sunlight: {
       two: (
         <span>
-          Add <b>2 ☀️Sunlight</b> to each of your <b>🌱Seeds</b>...
+          Add <b>1 ☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
         </span>
       ),
       three: (
         <span>
-          ...and then <Skewer /> this card.
+          Add <b>2 ☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
         </span>
       ),
     },
@@ -274,9 +274,9 @@ const seeds: IFarmCard[] = [
     name: "Rotten Seeds",
     qty: 2,
     cost: {
-      apples: 2,
-      carrots: 2,
-      berries: 2,
+      apples: 1,
+      carrots: 1,
+      berries: 1,
     },
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
@@ -284,13 +284,17 @@ const seeds: IFarmCard[] = [
     sunlight: {
       one: (
         <span>
-          Add 1 <Sleepy /> to a Rival's <Critter />.
+          Add 1 <Sleepy /> to a <Critter />.
         </span>
       ),
-      two: "",
+      two: (
+        <span>
+          Add 2 <Sleepy /> to a <Critter />.
+        </span>
+      ),
       three: (
         <span>
-          Add 1 <Sleepy /> to each of a Rival's <Critter plural />.
+          Add 3 <Sleepy /> to a <Critter />.
         </span>
       ),
     },
@@ -326,9 +330,9 @@ const seeds: IFarmCard[] = [
     name: "Flower Seeds",
     qty: 1,
     cost: {
-      apples: 3,
-      carrots: 3,
-      berries: 3,
+      apples: 2,
+      carrots: 2,
+      berries: 2,
     },
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
@@ -407,12 +411,12 @@ const seeds: IFarmCard[] = [
     },
     description: <span>Gains 1 ☀️ at the end of your turn.</span>,
     type: CARD_TYPE.Seeds,
-    tags: [],
+    tags: [TAGS.SUGAR_RUSH],
     sunlight: {
       three: (
         <span>
-          Perform a friendly <Critter plural /> <b>Talent</b> until they are{" "}
-          <b>Exhausted</b>, then return them to your hand.
+          Perform a friendly <Critter ownership /> <b>Talent</b> twice. <br />
+          (Without adding any <Sleepy />)
         </span>
       ),
     },

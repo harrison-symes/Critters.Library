@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Burrow from "../text/Burrow";
 import Chew from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
@@ -65,12 +66,12 @@ const tools: IFarmCard[] = [
     tags: [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_CARROT,
-      TAGS.FAST_TRACK,
       TAGS.REFRESH,
+      TAGS.BURROW,
     ],
     description: (
       <span>
-        Gain +2 🥕. <br /> <FastTrack /> a <Critter /> or a <Seed />.
+        Gain +2 🥕. <br /> <Burrow /> a <Critter /> and a <Seed />.
       </span>
     ),
     buyBonus: (
@@ -190,7 +191,7 @@ const tools: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <Skewer /> a card from your discard pile. <br />
+        <Skewer /> a card. <br />
         <b>-OR-</b>
         <br />
         Put 2 <b>🏠Starter</b> cards from your discard pile into your hand.
@@ -280,7 +281,12 @@ const tools: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    tags: [TAGS.DISCARD_OWN, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL],
+    tags: [
+      TAGS.DISCARD_OWN,
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_ALL,
+      TAGS.BURROW,
+    ],
     description: (
       <span>
         <b>Discard</b> every card from your hand. <br />
@@ -293,11 +299,7 @@ const tools: IFarmCard[] = [
     ),
     recycle: (
       <span>
-        Gain{" "}
-        <span className="nowrap">
-          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
-        </span>
-        .
+        <Burrow /> a card.
       </span>
     ),
     flavour: "Sure, compost that entire Apple Tree. Go right ahead.",
@@ -320,7 +322,7 @@ const tools: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <Skewer /> a <b>🛠️Tool</b> from your discard pile.
+        <Skewer /> a <b>🛠️Tool</b>.
       </span>
     ),
     recycle: "Draw a card.",
@@ -348,7 +350,7 @@ const tools: IFarmCard[] = [
     description: (
       <span>
         Gain +3 of a random crop.
-        <br /> <b>Plant</b> all <Seed plural /> from your discard pile.
+        <br /> <b>Plant</b> 2 <Seed plural /> from your discard pile.
       </span>
     ),
     flavour: "This Trowel can keep a secret.",
@@ -421,7 +423,7 @@ const tools: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
     tags: [
-      TAGS.FAST_TRACK,
+      TAGS.BURROW,
       TAGS.LESS_REWARDS,
       TAGS.ADD_TO_HAND,
       TAGS.CROP_GENERATION,
@@ -430,7 +432,7 @@ const tools: IFarmCard[] = [
     refundable: true,
     description: (
       <span>
-        <FastTrack /> a card.
+        <Burrow /> a card.
         <br />
         If you have less <b>🏆Rewards</b> than your Rivals, put the card into
         your hand instead.
@@ -461,7 +463,7 @@ const tools: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <Skewer /> an <b>🎒Item</b> from your discard pile.
+        <Skewer /> an <b>🎒Item</b>.
         <br />
         If it was a <b>🛠️Tool</b>, draw it.
       </span>
@@ -473,7 +475,7 @@ const tools: IFarmCard[] = [
     cost: {
       apples: 2,
       berries: 1,
-      carrots: 3,
+      carrots: 2,
     },
     qty: 1,
     type: CARD_TYPE.Item,
@@ -492,19 +494,20 @@ const tools: IFarmCard[] = [
   },
   {
     set: CARD_SET.WOOD_WORK,
-    name: "Chisel",
+    name: "Clamps",
     cost: {
-      apples: 1,
-      berries: 3,
-      carrots: 2,
+      apples: 2,
+      berries: 2,
+      carrots: 0,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    tags: [TAGS.FAST_TRACK, TAGS.SKEWER],
+    tags: [TAGS.BURROW, TAGS.SKEWER],
     description: (
       <span>
-        <FastTrack /> a card, then <Skewer /> a card from your discard pile.
+        <Burrow /> a card. <br />
+        <b>Discard</b> a card from hand to <Skewer /> a different card.
       </span>
     ),
     recycle: (
@@ -517,9 +520,9 @@ const tools: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     name: "Measuring Tape",
     cost: {
-      apples: 3,
+      apples: 1,
       berries: 2,
-      carrots: 1,
+      carrots: 3,
     },
     qty: 1,
     type: CARD_TYPE.Item,

@@ -76,7 +76,7 @@ const worms: IFarmCard[] = [
     description: (
       <span>
         Remove 1 <b>☀️Sunlight</b> from a <b className="nowrap">🌱Seed</b> to
-        gain +2 of a random crop.
+        gain +3 of a random crop.
       </span>
     ),
     energy: 3,
@@ -105,8 +105,8 @@ const worms: IFarmCard[] = [
     energy: 3,
     description: (
       <span>
-        Move 1 <b>☀️Sunlight</b> from ANY <b className="nowrap">🌱Seed</b> to
-        any other <b className="nowrap">🌱Seed</b>.
+        Move 1 <b>☀️Sunlight</b> from ANY one <b className="nowrap">🌱Seed</b>{" "}
+        to any other <b className="nowrap">🌱Seed</b>.
       </span>
     ),
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SUNLIGHT_REMOVE],
@@ -114,9 +114,9 @@ const worms: IFarmCard[] = [
   {
     name: "Wood Worm",
     cost: {
-      apples: 0,
-      carrots: 0,
-      berries: 0,
+      apples: 2,
+      berries: 1,
+      carrots: 1,
     },
     qty: 1,
     set: CARD_SET.WOOD_WORK,

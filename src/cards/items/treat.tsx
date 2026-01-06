@@ -285,7 +285,7 @@ const treats: IFarmCard[] = [
     ),
     recycle: (
       <span>
-        <b>Exhaust</b> a Rival's <Critter />.
+        Add 1 <Sleepy /> to a Rival's <Critter />.
       </span>
     ),
   },
@@ -305,8 +305,12 @@ const treats: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
-    description:
-      "Gain +4 of a crop of your choosing. Your Rivals each gain +1 of that crop.",
+    description: (
+      <span>
+        Gain +4 of a crop of your choosing. <br /> Each other player gains +1 of
+        the same crop.
+      </span>
+    ),
     buyBonus: (
       <span>
         <b>Gift</b> a card from your discard pile.
@@ -332,14 +336,14 @@ const treats: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <b>Plant</b> all <Seed plural /> from your discard pile. <br /> Add 1{" "}
+        <b>Plant</b> a <Seed /> from your discard pile. <br /> Add 1{" "}
         <b>☀️Sunlight</b> to each of your <Seed plural />.
       </span>
     ),
   },
   {
     set: CARD_SET.CROWD_FUND,
-    name: "Energy Drink",
+    name: "Lucky Dip",
     // notes: "An aluminium can with a lightning bolt logo on it",
     cost: {
       apples: 2,
@@ -404,7 +408,7 @@ const treats: IFarmCard[] = [
     description: (
       <span>
         Gain +3 of a random crop. <br />
-        Your Rivals each gain +1 of that crop type.
+        Each other player gains +1 of the same crop.
       </span>
     ),
   },
@@ -412,51 +416,43 @@ const treats: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     name: "Maple Syrup",
     cost: {
-      apples: 3,
-      berries: 3,
-      carrots: 3,
-    },
-    qty: 1,
-    type: CARD_TYPE.Item,
-    subtype: CARD_SUBTYPE.Treat,
-    tags: [TAGS.REMOVE_ZZZ],
-    description: (
-      <span>
-        Perform a friendly <Critter plural /> <b>Talent</b> until they are{" "}
-        <b>Exhausted</b>, then return them to your hand.
-      </span>
-    ),
-    buyBonus: <span>Draw a card.</span>,
-  },
-  {
-    set: CARD_SET.WOOD_WORK,
-    name: "Pinecone",
-    cost: {
-      apples: 1,
-      berries: 1,
+      apples: 2,
+      berries: 2,
       carrots: 1,
     },
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
-    holdable: true,
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.ADD_TO_HAND],
-    description: <span>Gain a random crop.</span>,
-    recycle: (
+    tags: [TAGS.SUGAR_RUSH],
+    description: (
       <span>
-        Gain 3 random crops. <br />
-        <b>-OR-</b>
-        <br />
-        Add this to your hand.
+        Perform a friendly <Critter ownership /> <b>Talent</b>. <br />
+        (Without adding any <Sleepy />)
       </span>
     ),
   },
   {
     set: CARD_SET.WOOD_WORK,
-    name: "Beaver Food",
+    name: "Walnut",
     cost: {
       apples: 2,
-      berries: 2,
+      berries: 0,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    holdable: true,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
+    description: <span>Gain a random crop.</span>,
+    recycle: <span>Gain 3 random crops.</span>,
+  },
+  {
+    set: CARD_SET.WOOD_WORK,
+    name: "Beaver Food",
+    cost: {
+      apples: 1,
+      berries: 3,
       carrots: 2,
     },
     qty: 1,
@@ -467,6 +463,11 @@ const treats: IFarmCard[] = [
       <span>
         <Chew count={2} />. <br />
         Gain <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <Chew count={3} />
       </span>
     ),
   },
