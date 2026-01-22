@@ -9,10 +9,11 @@ import Burrow from "../text/Burrow";
 import Chew from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
-import FastTrack from "../text/FastTrack";
+import Shuffle from "../text/Shuffle";
 import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
+import Item from "../text/Item";
 
 const tools: IFarmCard[] = [
   {
@@ -34,7 +35,7 @@ const tools: IFarmCard[] = [
       TAGS.CROP_GENERATION_APPLE,
       TAGS.SEED_SYNERGY,
       TAGS.SUNLIGHT_ADD,
-      TAGS.FAST_TRACK,
+      TAGS.SHUFFLE,
     ],
     description: (
       <span>
@@ -44,7 +45,7 @@ const tools: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <FastTrack /> a <b>🌱Seed</b>.
+        <Shuffle /> a <b>🌱Seed</b>.
       </span>
     ),
     flavour: "So you don't get dirt on your paws.",
@@ -161,10 +162,10 @@ const tools: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    tags: [TAGS.FAST_TRACK, TAGS.SELL, TAGS.SELL_FROM_DISCARD],
+    tags: [TAGS.SHUFFLE, TAGS.SELL, TAGS.SELL_FROM_DISCARD],
     description: (
       <span>
-        <FastTrack /> 2 cards.
+        <Shuffle /> a <Critter />, a <Seed /> and an <Item />.
       </span>
     ),
     recycle: (
@@ -511,12 +512,12 @@ const tools: IFarmCard[] = [
     description: (
       <span>
         <Burrow /> a card. <br />
-        <b>Discard</b> a card from hand to <Skewer /> a different card.
+        <Skewer /> a card.
       </span>
     ),
     recycle: (
       <span>
-        <Chew count={2} /> from a Rival's deck.
+        <Shuffle /> a card.
       </span>
     ),
   },

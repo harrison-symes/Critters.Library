@@ -3,9 +3,10 @@ import Burrow from "./text/Burrow";
 import Chew from "./text/Chew";
 import Critter from "./text/Critter";
 import Discount from "./text/Discount";
-import FastTrack from "./text/FastTrack";
+import Shuffle from "./text/Shuffle";
 import Seed from "./text/Seed";
 import Sleepy from "./text/Sleepy";
+import Skewer from "./text/Skewer";
 
 const favours: IFavourCard[] = [
   {
@@ -134,10 +135,10 @@ const favours: IFavourCard[] = [
     qty: 1,
     description: (
       <span>
-        <FastTrack /> a card.
+        <Shuffle /> a card.
       </span>
     ),
-    tags: [TAGS.FAST_TRACK],
+    tags: [TAGS.SHUFFLE],
     type: CARD_TYPE.Favour,
     set: CARD_SET.BASE,
   },
@@ -215,11 +216,12 @@ const favours: IFavourCard[] = [
     set: CARD_SET.BASE,
   },
   {
-    name: "Collect Donations",
+    name: "Broker a deal",
     qty: 1,
     description: (
       <span>
-        Each of your Rivals must give you a crop. <br /> (If they have any)
+        Each of your Rivals must give you a crop or <b>Discard</b> a card from
+        their hand.
       </span>
     ),
     tags: [TAGS.CROP_STEAL],
@@ -227,15 +229,14 @@ const favours: IFavourCard[] = [
     set: CARD_SET.CHARITY_DRIVE,
   },
   {
-    name: "Tidy Up",
+    name: "Lend a hand",
     qty: 1,
     description: (
       <span>
-        <b>Reset</b> your deck. <br />
-        <Discount />.
+        <Skewer /> a card for a Rival. <br /> (from their discard pile)
       </span>
     ),
-    tags: [TAGS.RESET_DECK, TAGS.DISCOUNT],
+    tags: [TAGS.SKEWER],
     type: CARD_TYPE.Favour,
     set: CARD_SET.CHARITY_DRIVE,
   },

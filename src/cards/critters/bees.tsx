@@ -6,7 +6,10 @@ import {
   TAGS,
 } from "../../models/cards.models";
 import Chew from "../text/Chew";
-import FastTrack from "../text/FastTrack";
+import Critter from "../text/Critter";
+import Shuffle from "../text/Shuffle";
+import Item from "../text/Item";
+import Seed from "../text/Seed";
 
 const bees: IFarmCard[] = [
   {
@@ -14,16 +17,16 @@ const bees: IFarmCard[] = [
     notes: "A Bee wearing a suit and tie, holding a briefcase",
     qty: 2,
     cost: {
-      apples: 2,
-      carrots: 2,
-      berries: 2,
+      apples: 3,
+      carrots: 3,
+      berries: 3,
     },
     description: (
       <span>
-        Gain a random crop for each <b>Work Order</b> you have.
+        Gain 1 random crop for each <b>Work Order</b> you have.
       </span>
     ),
-    energy: 2,
+    energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.WORK_ORDERS_3],
@@ -62,13 +65,13 @@ const bees: IFarmCard[] = [
     },
     description: (
       <span>
-        <FastTrack /> a card for each <b>Work Order</b> you have.
+        <Shuffle /> a card for each <b>Work Order</b> you have.
       </span>
     ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
-    tags: [TAGS.WORK_ORDERS_3, TAGS.FAST_TRACK],
+    tags: [TAGS.WORK_ORDERS_3, TAGS.SHUFFLE],
     set: CARD_SET.BASE,
     flavour: "What if we paint the Apples purple? Do you think they'd notice?",
   },
@@ -86,8 +89,8 @@ const bees: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.WORK_ORDERS_3, TAGS.CARD_DRAW],
     description: (
       <span>
-        <Chew count={2} />, then draw a card. <br />
-        If you have 3 <b>Work Orders</b>, don't <b>Chew</b>.
+        <Chew count={3} />, then draw a card. <br />
+        <Chew /> one less card for each <b>Work Order</b> you have.
       </span>
     ),
     energy: 2,

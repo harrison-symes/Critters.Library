@@ -5,7 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
-import Chew from "../text/Chew";
+import Chew, { Chewed } from "../text/Chew";
 import Discount from "../text/Discount";
 
 const rabbits: IFarmCard[] = [
@@ -167,7 +167,7 @@ const rabbits: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     description: (
       <span>
-        <Chew count={3} />, then gain a random crop for each card chewed.
+        <Chew count={3} />. <br /> Gain a random crop for each card <Chewed />.
       </span>
     ),
     energy: 2,

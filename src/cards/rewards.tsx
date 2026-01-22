@@ -3,7 +3,7 @@ import Burrow from "./text/Burrow";
 import Chew from "./text/Chew";
 import Critter from "./text/Critter";
 import Discount from "./text/Discount";
-import FastTrack from "./text/FastTrack";
+import Shuffle from "./text/Shuffle";
 import Finance from "./text/Finance";
 import Item from "./text/Item";
 import Seed from "./text/Seed";
@@ -103,13 +103,13 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Instantly, and whenever you complete a <b>Work Order</b>, <FastTrack />{" "}
-        a <Critter />, a <Seed /> and an <Item />.
+        Instantly, and whenever you complete a <b>Work Order</b>, <Shuffle /> a{" "}
+        <Critter />, a <Seed /> and an <Item />.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FAST_TRACK, TAGS.WORK_ORDER_COMPLETION],
+    tags: [TAGS.SHUFFLE, TAGS.WORK_ORDER_COMPLETION],
   },
   {
     name: "Gift Shop",
@@ -273,13 +273,13 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you you <FastTrack /> or <Burrow /> a <Critter /> or <Seed />,
+        Whenever you you <Shuffle /> or <Burrow /> a <Critter /> or <Seed />,
         you may <Skewer /> it instead.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FAST_TRACK, TAGS.BURROW, TAGS.SKEWER],
+    tags: [TAGS.SHUFFLE, TAGS.BURROW, TAGS.SKEWER],
   },
   {
     name: "Skewer Cart",
@@ -364,12 +364,12 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         After you <b>Sell</b> or <b>Trash</b> a <Finance /> card, you may{" "}
-        <FastTrack /> it.
+        <Shuffle /> it.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TRASH, TAGS.FAST_TRACK],
+    tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.TRASH, TAGS.SHUFFLE],
   },
   {
     name: "Vault",
@@ -431,7 +431,7 @@ const rewards: IRewardCard[] = [
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
+    tags: [TAGS.DISCARD_OWN, TAGS.SHUFFLE],
   },
   {
     name: "Billboard",
@@ -536,7 +536,7 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.TRASH, TAGS.GIFT],
   },
   {
-    name: "Poor Investment",
+    name: "Advertisement",
     qty: 1,
     description: (
       <span>
@@ -546,7 +546,11 @@ const rewards: IRewardCard[] = [
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.CHARITY_DRIVE,
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.LESS_REWARDS],
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.LESS_REWARDS,
+    ],
   },
   {
     name: "Meeting Room",
@@ -567,7 +571,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         If you have less <b>🏆Rewards</b> than your Rivals, your <Seed plural />{" "}
-        gain an extra 1 <Sunlight /> at the end of your turn.
+        gain 2 <Sunlight /> at the end of your turn.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -579,13 +583,12 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <FastTrack /> a <Treat />, draw a card. <br /> (Once per
-        turn.)
+        After you <Shuffle /> a <Treat />, draw a card. <br /> (Once per turn.)
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.CHARITY_DRIVE,
-    tags: [TAGS.TREAT_SYNERGY, TAGS.FAST_TRACK, TAGS.CARD_DRAW],
+    tags: [TAGS.TREAT_SYNERGY, TAGS.SHUFFLE, TAGS.CARD_DRAW],
   },
   {
     name: "Fraudulent Documents",
@@ -598,7 +601,7 @@ const rewards: IRewardCard[] = [
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.CHARITY_DRIVE,
-    tags: [TAGS.FINANCE_SYNERGY, TAGS.DOUBLE_SELL],
+    tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.CARD_DRAW],
   },
   {
     name: "Warehouse",
@@ -614,7 +617,7 @@ const rewards: IRewardCard[] = [
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.CHARITY_DRIVE,
-    tags: [TAGS.TOOL_SYNERGY, TAGS.SKEWER, TAGS.FREE_CRATE],
+    tags: [TAGS.TOOL_SYNERGY, TAGS.SKEWER],
   },
   {
     name: "Oak Tree",

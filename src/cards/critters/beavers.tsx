@@ -6,7 +6,7 @@ import {
   TAGS,
 } from "../../models/cards.models";
 import Burrow from "../text/Burrow";
-import Chew from "../text/Chew";
+import Chew, { Chewed } from "../text/Chew";
 import Skewer from "../text/Skewer";
 
 const beavers: IFarmCard[] = [
@@ -21,13 +21,18 @@ const beavers: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Beaver,
-    tags: [TAGS.CHEW, TAGS.TRASH],
+    tags: [TAGS.CHEW, TAGS.SELL],
     description: (
       <span>
-        <Chew count={3} />, then <b>Sell</b> one of the chewed cards.
+        <Chew count={3} />. <br /> You may <b>Sell</b> one of the <Chewed />{" "}
+        cards.
       </span>
     ),
-    recycle: <span></span>,
+    buyBonus: (
+      <span>
+        <b>Gift</b> a card.
+      </span>
+    ),
     energy: 2,
   },
   {
@@ -44,10 +49,16 @@ const beavers: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.BURROW],
     description: (
       <span>
-        <Chew count={3} />, then <Burrow /> one of the chewed cards.
+        <Chew count={3} />. <br />
+        <Burrow /> one of the <Chewed /> cards.
       </span>
     ),
-    energy: 2,
+    recycle: (
+      <span>
+        <Skewer /> a card.
+      </span>
+    ),
+    energy: 3,
   },
   {
     name: "Ava",

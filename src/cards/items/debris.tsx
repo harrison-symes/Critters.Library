@@ -5,7 +5,9 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Burrow from "../text/Burrow";
 import Chew from "../text/Chew";
+import Critter from "../text/Critter";
 
 const debris: IFarmCard[] = [
   // {
@@ -39,8 +41,7 @@ const debris: IFarmCard[] = [
     debris: true,
     description: (
       <span>
-        When you <b>Buy</b> or <b>Refresh</b> this card, get a random{" "}
-        <b>Wittle Critter</b> and <b>Trash</b> this card.
+        <b>Trash</b> this card. <br /> <Burrow /> a random <Critter wittle />.
       </span>
     ),
   },

@@ -5,8 +5,8 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
-import Chew from "../text/Chew";
-import FastTrack from "../text/FastTrack";
+import Chew, { Chewed } from "../text/Chew";
+import Shuffle from "../text/Shuffle";
 import Seed from "../text/Seed";
 
 const worms: IFarmCard[] = [
@@ -26,13 +26,13 @@ const worms: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <FastTrack /> a <Seed />.
+        <Shuffle /> a <Seed />.
       </span>
     ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
-    tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.FAST_TRACK],
+    tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SHUFFLE],
     set: CARD_SET.BASE,
     flavour: "She has a Need for Seeds.",
   },
@@ -76,7 +76,7 @@ const worms: IFarmCard[] = [
     description: (
       <span>
         Remove 1 <b>☀️Sunlight</b> from ANY one <b className="nowrap">🌱Seed</b>{" "}
-        to gain +3 of a random crop.
+        to gain +2 of a random crop.
       </span>
     ),
     energy: 3,
@@ -122,13 +122,19 @@ const worms: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
-    tags: [TAGS.CHEW, TAGS.SEED_SYNERGY, TAGS.PLANT_FROM_DISCARD],
+    tags: [TAGS.CHEW, TAGS.SEED_SYNERGY, TAGS.PLANT_FROM_DISCARD, TAGS.SHUFFLE],
     description: (
       <span>
-        <Chew count={3} />, then <b>Plant</b> any chewed <Seed plural />.
+        <Chew count={2} />. <br /> <b>Plant</b> any <Seed plural /> that were{" "}
+        <Chewed />.
       </span>
     ),
-    energy: 2,
+    recycle: (
+      <span>
+        <Shuffle /> a <Seed />.
+      </span>
+    ),
+    energy: 3,
   },
 ];
 

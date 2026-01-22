@@ -17,9 +17,16 @@ const Chew = (props: IProps) => {
       placement="top"
       className="tooltip"
     >
-      <b>Chew {props.count ? props.count : ""}</b>
+      <span>
+        <b>Chew</b> {props.count ? props.count : ""}
+        {props.count && (props.count !== 1 ? " cards" : " card")}
+      </span>
     </Tooltip>
   );
+};
+
+export const Chewed = () => {
+  return <span>chewed</span>;
 };
 
 export default Chew;

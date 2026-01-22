@@ -310,7 +310,8 @@ const seeds: IFarmCard[] = [
       ),
       three: (
         <span>
-          ...and snatch the discounted crops from a card in the <b>Market</b>.
+          ...and then <b>Snatch</b> the discounted crops from a card in the{" "}
+          <b>Market</b>.
         </span>
       ),
     },

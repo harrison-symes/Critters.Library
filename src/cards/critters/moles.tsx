@@ -105,9 +105,13 @@ const moles: IFarmCard[] = [
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
-    tags: [TAGS.REMOVE_ZZZ, TAGS.ADD_ZZZ],
+    tags: [TAGS.REMOVE_ZZZ, TAGS.ADD_ZZZ, TAGS.BURROW, TAGS.MOVE_ZZZ],
     set: CARD_SET.CHARITY_DRIVE,
-    recycle: <span>Put this at the bottom of your deck.</span>,
+    recycle: (
+      <span>
+        <Burrow /> this card.
+      </span>
+    ),
   },
 ];
 

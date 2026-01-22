@@ -6,10 +6,12 @@ import {
   TAGS,
 } from "../../models/cards.models";
 import Burrow from "../text/Burrow";
-import Chew from "../text/Chew";
+import Chew, { Chewed } from "../text/Chew";
 import Discount from "../text/Discount";
-import FastTrack from "../text/FastTrack";
+import Shuffle from "../text/Shuffle";
 import Finance from "../text/Finance";
+import Sleepy from "../text/Sleepy";
+import Critter from "../text/Critter";
 
 const rats: IFarmCard[] = [
   {
@@ -57,8 +59,7 @@ const rats: IFarmCard[] = [
     image: "/price_hiker.jpeg",
     description: (
       <span>
-        <Discount />, then <b>Snatch</b> 3 discounted crops from a card in the{" "}
-        <b>Market</b>.
+        <b>Snatch</b> the discounted crops from a card in the <b>Market</b>.
       </span>
     ),
     buyBonus: (
@@ -69,7 +70,7 @@ const rats: IFarmCard[] = [
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
-    tags: [TAGS.DISCOUNT, TAGS.SNATCH_DISCOUNT, TAGS.REFRESH],
+    tags: [TAGS.SNATCH_DISCOUNT, TAGS.REFRESH],
     set: CARD_SET.BASE,
     flavour:
       "At the tippy top of the mountain is where the best deals can be found.",
@@ -87,13 +88,13 @@ const rats: IFarmCard[] = [
     description: (
       <span>
         <b>Sell</b> a card from your hand to draw a card. <br />
-        If it was a <Finance /> card, <Burrow /> it after.
+        If a <Finance /> card was sold, <Burrow /> it after. <br />
       </span>
     ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
-    tags: [TAGS.CARD_DRAW, TAGS.SELL, TAGS.SELL_FROM_HAND, TAGS.FAST_TRACK],
+    tags: [TAGS.CARD_DRAW, TAGS.SELL, TAGS.SELL_FROM_HAND, TAGS.SHUFFLE],
     set: CARD_SET.BASE,
     flavour:
       "The wings on his boots don't make him run faster, but let's not spoil his fun.",
@@ -114,13 +115,13 @@ const rats: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <FastTrack /> a card.
+        <Shuffle /> a card.
       </span>
     ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
-    tags: [TAGS.DISCOUNT, TAGS.CROP_STEAL, TAGS.FAST_TRACK],
+    tags: [TAGS.DISCOUNT, TAGS.CROP_STEAL, TAGS.SHUFFLE],
     set: CARD_SET.CHARITY_DRIVE,
   },
   {
@@ -134,11 +135,16 @@ const rats: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
-    tags: [TAGS.CHEW, TAGS.SELL],
+    tags: [TAGS.CHEW, TAGS.SELL, TAGS.ADD_ZZZ],
     description: (
       <span>
         <Chew count={1} />. <br />
-        Gain crops equal to the price of the chewed card.
+        Gain crops equal to the price of the <Chewed /> card.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        Add 1 <Sleepy /> to each of a Rival's <Critter plural />.
       </span>
     ),
     energy: 2,

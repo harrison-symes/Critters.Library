@@ -5,8 +5,8 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
-import Chew from "../text/Chew";
-import FastTrack from "../text/FastTrack";
+import Chew, { Chewed } from "../text/Chew";
+import Shuffle from "../text/Shuffle";
 import Skewer from "../text/Skewer";
 
 const hedgehogs: IFarmCard[] = [
@@ -49,7 +49,7 @@ const hedgehogs: IFarmCard[] = [
     energy: 2,
     description: (
       <span>
-        <FastTrack /> a <b>🧁Treat</b>.
+        <Shuffle /> a <b>🧁Treat</b>.
       </span>
     ),
     recycle: (
@@ -59,7 +59,7 @@ const hedgehogs: IFarmCard[] = [
     ),
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
-    tags: [TAGS.FAST_TRACK, TAGS.TREAT_SYNERGY, TAGS.TRASH_FROM_DISCARD],
+    tags: [TAGS.SHUFFLE, TAGS.TREAT_SYNERGY, TAGS.TRASH_FROM_DISCARD],
     set: CARD_SET.BASE,
     flavour: "I guess you can be TOO picky.",
   },
@@ -92,7 +92,7 @@ const hedgehogs: IFarmCard[] = [
       "Just in-case you were wondering who was in charge of all those Chogs.",
   },
   {
-    name: "Prankster",
+    name: "Hedge-Funder",
     qty: 1,
     cost: {
       apples: 3,
@@ -102,12 +102,12 @@ const hedgehogs: IFarmCard[] = [
     energy: 3,
     description: (
       <span>
-        <FastTrack /> 2 cards for a Rival (from their discard pile).
+        <Shuffle /> 2 cards for a Rival (from their discard pile).
       </span>
     ),
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
-    tags: [TAGS.FAST_TRACK],
+    tags: [TAGS.SHUFFLE],
     set: CARD_SET.CHARITY_DRIVE,
     buyBonus: (
       <span>
@@ -129,11 +129,16 @@ const hedgehogs: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.SKEWER, TAGS.GIFT],
     description: (
       <span>
-        <Chew count={2} />, then <Skewer /> or <b>Gift</b> one of the chewed
-        cards.
+        <Chew count={1} />. <br /> <Skewer /> or <b>Gift</b> the <Chewed />{" "}
+        card.
       </span>
     ),
-    energy: 2,
+    buyBonus: (
+      <span>
+        <Skewer /> this card.
+      </span>
+    ),
+    energy: 3,
   },
 ];
 

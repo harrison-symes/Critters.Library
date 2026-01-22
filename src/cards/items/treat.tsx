@@ -7,9 +7,11 @@ import {
 } from "../../models/cards.models";
 import Chew from "../text/Chew";
 import Critter from "../text/Critter";
-import FastTrack from "../text/FastTrack";
+import Shuffle from "../text/Shuffle";
 import Seed from "../text/Seed";
 import Sleepy from "../text/Sleepy";
+import Treat from "../text/Treat";
+import Burrow from "../text/Burrow";
 
 const treats: IFarmCard[] = [
   {
@@ -89,13 +91,13 @@ const treats: IFarmCard[] = [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_BERRY,
       TAGS.TREAT_SYNERGY,
-      TAGS.FAST_TRACK,
+      TAGS.SHUFFLE,
       TAGS.TRASH,
       TAGS.TRASH_FROM_DISCARD,
     ],
     description: (
       <span>
-        Gain +3 🫐. <br /> <FastTrack /> a <b>🧁Treat</b>.
+        Gain +3 🫐. <br /> <Shuffle /> a <b>🧁Treat</b>.
       </span>
     ),
     recycle: (
@@ -356,6 +358,7 @@ const treats: IFarmCard[] = [
     tags: [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_RANDOM,
+      TAGS.CROP_GENERATION_CHOOSE,
       TAGS.LESS_REWARDS,
       TAGS.CARD_DRAW,
     ],
@@ -381,16 +384,17 @@ const treats: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
     holdable: true,
-    tags: [TAGS.TREAT_SYNERGY, TAGS.FAST_TRACK],
+    tags: [TAGS.TREAT_SYNERGY, TAGS.SHUFFLE, TAGS.DISCARD_OWN],
     description: (
       <span>
-        <FastTrack /> this card, and every other <b>🧁Treat</b> from your
-        discard pile.
+        <Shuffle /> a <Treat />. <br />
+        <b>Discard</b> a card from your hand to <Shuffle /> ALL of your{" "}
+        <Treat plural /> instead.
       </span>
     ),
     buyBonus: (
       <span>
-        Remove 1 <Sleepy /> from a friendly <Critter />
+        Remove 1 <Sleepy /> from a friendly <Critter />.
       </span>
     ),
   },
@@ -434,7 +438,7 @@ const treats: IFarmCard[] = [
   },
   {
     set: CARD_SET.WOOD_WORK,
-    name: "Walnut",
+    name: "Acorn",
     cost: {
       apples: 2,
       berries: 0,
@@ -444,8 +448,12 @@ const treats: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Treat,
     holdable: true,
-    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
-    description: <span>Gain a random crop.</span>,
+    tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.BURROW],
+    description: (
+      <span>
+        Gain a random crop. <br /> <Burrow /> this card.{" "}
+      </span>
+    ),
     recycle: <span>Gain 3 random crops.</span>,
   },
   {

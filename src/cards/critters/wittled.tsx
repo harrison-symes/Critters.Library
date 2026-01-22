@@ -5,7 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
-import Chew from "../text/Chew";
+import Chew, { Chewed } from "../text/Chew";
 import Discount from "../text/Discount";
 import Seed from "../text/Seed";
 import Sunlight from "../text/Sunlight";
@@ -26,8 +26,7 @@ const wittled: IFarmCard[] = [
     energy: 1,
     description: (
       <span>
-        <b>Refresh</b> a row in the <b>Market</b>. <br />
-        Draw a card.
+        <b>Sell</b> a card from your discard pile.
       </span>
     ),
   },
@@ -126,7 +125,8 @@ const wittled: IFarmCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
     description: (
       <span>
-        Add 3 <Sunlight /> to a <Seed />.
+        <b>Plant</b> a <Seed /> from your discard pile. <br />
+        Add 2 <Sunlight /> to that <Seed />.
       </span>
     ),
   },
@@ -146,7 +146,8 @@ const wittled: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.ADD_TO_HAND],
     description: (
       <span>
-        <Chew count={3} />, then add one of the chewed cards to your hand.
+        <Chew count={3} />. <br /> Put one of the <Chewed /> cards into your
+        hand.
       </span>
     ),
   },

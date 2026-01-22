@@ -5,7 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
-import FastTrack from "../text/FastTrack";
+import Shuffle from "../text/Shuffle";
 
 const raccoons: IFarmCard[] = [
   {
@@ -25,13 +25,13 @@ const raccoons: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <FastTrack /> a <b>🏠Starter</b> card.
+        <Shuffle /> a <b>🏠Starter</b> card.
       </span>
     ),
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
-    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN, TAGS.FAST_TRACK],
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN, TAGS.SHUFFLE],
     set: CARD_SET.BASE,
     flavour: "Maybe the card you need is just behind that Berry Bush.",
   },
@@ -82,12 +82,12 @@ const raccoons: IFarmCard[] = [
     flavour: "Be sure to wash your hands after playing this card.",
   },
   {
-    name: "Vandal",
+    name: "Broker",
     qty: 1,
     cost: {
-      apples: 1,
-      berries: 1,
-      carrots: 1,
+      apples: 2,
+      berries: 2,
+      carrots: 2,
     },
     description: (
       <span>
@@ -95,7 +95,7 @@ const raccoons: IFarmCard[] = [
         <b>Discard</b> a card from their hand.
       </span>
     ),
-    energy: 2,
+    energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.DISCARD_OWN, TAGS.DISCARD_RIVAL],

@@ -6,10 +6,10 @@ import {
   TAGS,
 } from "../../models/cards.models";
 import Burrow from "../text/Burrow";
-import Chew from "../text/Chew";
+import Chew, { Chewed } from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
-import FastTrack from "../text/FastTrack";
+import Shuffle from "../text/Shuffle";
 import Item from "../text/Item";
 import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
@@ -33,7 +33,7 @@ const finance: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Finance,
     description: (
       <span>
-        Gain +2 🍏. <br /> <FastTrack /> a <b>🎒Item</b>.<br />
+        Gain +2 🍏. <br /> <Shuffle /> a <b>🎒Item</b>.<br />
         <Discount />.
       </span>
     ),
@@ -46,7 +46,7 @@ const finance: IFarmCard[] = [
     tags: [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_APPLE,
-      TAGS.FAST_TRACK,
+      TAGS.SHUFFLE,
       TAGS.DISCOUNT,
       TAGS.TRASH,
       TAGS.TRASH_FROM_DISCARD,
@@ -403,7 +403,7 @@ const finance: IFarmCard[] = [
     ),
     recycle: (
       <span>
-        <FastTrack /> an <Item />.
+        <Shuffle /> an <Item />.
       </span>
     ),
   },
@@ -418,22 +418,22 @@ const finance: IFarmCard[] = [
     qty: 1,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
+    tags: [TAGS.FREE_CARD, TAGS.SHUFFLE, TAGS.DISCOUNT],
     description: (
       <span>
-        <Skewer /> a Farm card from the <b>Market</b>. <br />
-        <Discount /> twice.
+        <Shuffle /> a Farm card from the <b>Market</b>. <br />
+        <Shuffle /> every <b>🏠Starter</b> card from your discard pile too.
       </span>
     ),
     buyBonus: (
       <span>
-        <FastTrack /> this and every <b>🏠Starter</b> card from your discard
-        pile.
+        <Discount />.
       </span>
     ),
   },
   {
     set: CARD_SET.CHARITY_DRIVE,
-    name: "Money Sink",
+    name: "Crop Sink",
     cost: {
       apples: 3,
       berries: 0,
@@ -477,9 +477,9 @@ const finance: IFarmCard[] = [
     refundable: true,
     description: (
       <span>
-        <b>Sell</b> an <b>🎒Item</b> from your discard pile. <br />
-        If you have less <b>🏆Rewards</b> than your Rivals, it sells for twice
-        as much.
+        <b>Sell</b> a card from your discard pile. <br />
+        If you have less <b>🏆Rewards</b> than your Rivals, <b>Sell</b> an extra
+        card.
       </span>
     ),
     recycle: <span>Gain +3 of a random crop.</span>,
@@ -512,7 +512,7 @@ const finance: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <FastTrack /> this card.
+        <Shuffle /> this card.
       </span>
     ),
   },
@@ -530,7 +530,8 @@ const finance: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.SELL, TAGS.DISCOUNT],
     description: (
       <span>
-        <Chew count={3} />, then <b>Sell</b> one of the chewed cards. <br />
+        <Chew count={3} />. <br /> You may <b>Sell</b> one of the <Chewed />{" "}
+        cards. <br />
         <Discount />
       </span>
     ),
@@ -549,7 +550,8 @@ const finance: IFarmCard[] = [
     tags: [TAGS.FREE_CRATE, TAGS.BURROW],
     description: (
       <span>
-        <Burrow /> this card. <br /> Draw a card.
+        Draw a card. <br />
+        <Burrow /> this card.
       </span>
     ),
     recycle: (
