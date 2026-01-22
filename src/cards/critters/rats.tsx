@@ -5,9 +5,11 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Burrow from "../text/Burrow";
 import Chew from "../text/Chew";
 import Discount from "../text/Discount";
 import FastTrack from "../text/FastTrack";
+import Finance from "../text/Finance";
 
 const rats: IFarmCard[] = [
   {
@@ -29,11 +31,6 @@ const rats: IFarmCard[] = [
         <b>-OR-</b>
         <br />
         <b>Sell</b> a card from your hand.
-      </span>
-    ),
-    buyBonus: (
-      <span>
-        <b>Refresh</b> a card.
       </span>
     ),
     energy: 2,
@@ -60,7 +57,7 @@ const rats: IFarmCard[] = [
     image: "/price_hiker.jpeg",
     description: (
       <span>
-        <Discount />, then <b>Snatch</b> the discounted crops from a card in the{" "}
+        <Discount />, then <b>Snatch</b> 3 discounted crops from a card in the{" "}
         <b>Market</b>.
       </span>
     ),
@@ -89,12 +86,8 @@ const rats: IFarmCard[] = [
     },
     description: (
       <span>
-        <b>Sell</b> a card from your hand to draw a card.
-      </span>
-    ),
-    buyBonus: (
-      <span>
-        <FastTrack /> a card.
+        <b>Sell</b> a card from your hand to draw a card. <br />
+        If it was a <Finance /> card, <Burrow /> it after.
       </span>
     ),
     energy: 2,
@@ -128,7 +121,7 @@ const rats: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.DISCOUNT, TAGS.CROP_STEAL, TAGS.FAST_TRACK],
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "Mole Rat",

@@ -273,13 +273,13 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you you <FastTrack /> a <Critter /> or <Seed />, you may{" "}
-        <Skewer /> it instead.
+        Whenever you you <FastTrack /> or <Burrow /> a <Critter /> or <Seed />,
+        you may <Skewer /> it instead.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.BASE,
-    tags: [TAGS.FAST_TRACK, TAGS.SKEWER],
+    tags: [TAGS.FAST_TRACK, TAGS.BURROW, TAGS.SKEWER],
   },
   {
     name: "Skewer Cart",
@@ -456,10 +456,9 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        You draw 1 less card at the end of your turns. <br />
         Whenever your deck is <b>Reset</b>, gain{" "}
         <span className="nowrap">
-          <b>+2🍏</b>, <b>+2🫐</b>, <b>+2🥕</b>
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
         </span>
         .
       </span>
@@ -491,8 +490,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Buy</b> a Farm card, <b>Discount</b> and gain +1 of the
-        discounted crop type.
+        After you <b>Buy</b> or <b>Sell</b> a Farm card, gain a random crop.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -509,7 +507,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.CROP_STEAL],
   },
   {
@@ -522,7 +520,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.CROP_STEAL, TAGS.RESET_DECK],
   },
   {
@@ -534,7 +532,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.TRASH, TAGS.GIFT],
   },
   {
@@ -547,7 +545,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_ALL, TAGS.LESS_REWARDS],
   },
   {
@@ -560,7 +558,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.LESS_REWARDS],
   },
   {
@@ -573,7 +571,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.SEED_SYNERGY, TAGS.LESS_REWARDS, TAGS.SUNLIGHT_ADD],
   },
   {
@@ -586,7 +584,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.TREAT_SYNERGY, TAGS.FAST_TRACK, TAGS.CARD_DRAW],
   },
   {
@@ -599,7 +597,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.FINANCE_SYNERGY, TAGS.DOUBLE_SELL],
   },
   {
@@ -615,7 +613,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.TOOL_SYNERGY, TAGS.SKEWER, TAGS.FREE_CRATE],
   },
   {

@@ -4,6 +4,7 @@ import { useAppSelector } from "../../store/hooks";
 import CardSubTypeList from "./CardSubTypeList";
 import CardTypeList from "./CardTypeList";
 import FavourCardList from "./FavourCardList";
+import MaskCardList from "./MaskCardList";
 import RewardCardList from "./RewardCardsList";
 import VisitorCardList from "./VisitorCardList";
 import WorkOrderCardList from "./WorkOrderCardList";
@@ -22,6 +23,7 @@ const Cards = () => {
       <WorkOrderCardList />
       <CardSubTypeList farmDeck={starterCards} subType={CARD_SUBTYPE.Starter} />
       <VisitorCardList />
+      <MaskCardList />
     </div>
   );
 };

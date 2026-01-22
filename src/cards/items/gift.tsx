@@ -115,7 +115,7 @@ const gifts: IFarmCard[] = [
       carrots: 1,
     },
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Gift,
     tags: [TAGS.GIFT, TAGS.SUNLIGHT_REMOVE, TAGS.CARD_DRAW],

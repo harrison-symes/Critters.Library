@@ -5,9 +5,8 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Burrow from "../text/Burrow";
 import Chew from "../text/Chew";
-import FastTrack from "../text/FastTrack";
-import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
 
 const beavers: IFarmCard[] = [
@@ -32,7 +31,7 @@ const beavers: IFarmCard[] = [
     energy: 2,
   },
   {
-    name: "Gnawer",
+    name: "Carpenter",
     cost: {
       apples: 1,
       berries: 1,
@@ -42,10 +41,10 @@ const beavers: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Beaver,
-    tags: [TAGS.CHEW, TAGS.FAST_TRACK],
+    tags: [TAGS.CHEW, TAGS.BURROW],
     description: (
       <span>
-        <Chew count={3} />, then <FastTrack /> one of the chewed cards.
+        <Chew count={3} />, then <Burrow /> one of the chewed cards.
       </span>
     ),
     energy: 2,

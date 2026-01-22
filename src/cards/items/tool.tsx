@@ -187,14 +187,19 @@ const tools: IFarmCard[] = [
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
-    tags: [TAGS.SKEWER, TAGS.ADD_TO_HAND, TAGS.CHOOSE_ONE],
+    tags: [
+      TAGS.SKEWER,
+      TAGS.PLANT_FROM_DISCARD,
+      TAGS.SEED_SYNERGY,
+      TAGS.CHOOSE_ONE,
+    ],
     holdable: true,
     description: (
       <span>
         <Skewer /> a card. <br />
         <b>-OR-</b>
         <br />
-        Put 2 <b>🏠Starter</b> cards from your discard pile into your hand.
+        <b>Plant</b> a <Seed /> from your discard pile.
       </span>
     ),
     flavour: "You're watering your Compost Bin? Well, okay then...",
@@ -394,7 +399,7 @@ const tools: IFarmCard[] = [
       carrots: 1,
     },
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
     tags: [],
@@ -419,7 +424,7 @@ const tools: IFarmCard[] = [
       carrots: 0,
     },
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
     tags: [
@@ -434,8 +439,7 @@ const tools: IFarmCard[] = [
       <span>
         <Burrow /> a card.
         <br />
-        If you have less <b>🏆Rewards</b> than your Rivals, put the card into
-        your hand instead.
+        If you have less <b>🏆Rewards</b> than your Rivals, draw a card.
       </span>
     ),
     recycle: (
@@ -456,7 +460,7 @@ const tools: IFarmCard[] = [
       carrots: 3,
     },
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Tool,
     tags: [TAGS.CARD_DRAW, TAGS.SKEWER, TAGS.TOOL_SYNERGY],

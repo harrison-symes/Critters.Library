@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   IFarmCard,
   IFavourCard,
+  IMaskCard,
   IRewardCard,
   IVisitorCard,
   IWorkOrder,
@@ -9,6 +10,7 @@ import {
 import {
   createDeck,
   createFavourDeck,
+  createMasksDeck,
   createRewardDeck,
   createStarterDeck,
   createVisitorsDeck,
@@ -37,6 +39,10 @@ interface DecksState {
     duplicates: IWorkOrder[];
     noDuplicates: IWorkOrder[];
   };
+  masksDeck: {
+    duplicates: IMaskCard[];
+    noDuplicates: IMaskCard[];
+  };
   visitorsDeck: IVisitorCard[];
 }
 
@@ -60,6 +66,10 @@ const initialState: DecksState = {
   workOrderDeck: {
     duplicates: createWorkOrderDeck(),
     noDuplicates: createWorkOrderDeck(true),
+  },
+  masksDeck: {
+    duplicates: createMasksDeck(),
+    noDuplicates: createMasksDeck(true),
   },
   visitorsDeck: createVisitorsDeck(),
 };
@@ -93,6 +103,10 @@ export const getDuplicatesWorkOrderDeck = (state: RootState) =>
   state.decks.workOrderDeck.duplicates;
 export const getWorkOrderDeck = (state: RootState) =>
   state.decks.workOrderDeck.noDuplicates;
+export const getMasksDeck = (state: RootState) =>
+  state.decks.masksDeck.noDuplicates;
+export const getDuplicatesMasksDeck = (state: RootState) =>
+  state.decks.masksDeck.duplicates;
 export const getVisitorsDeck = (state: RootState) => state.decks.visitorsDeck;
 
 export default decksSlice.reducer;

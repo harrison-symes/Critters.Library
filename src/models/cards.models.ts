@@ -6,15 +6,17 @@ export enum CARD_TYPE {
   Reward = "Rewards",
   WorkOrder = "Work Order",
   Visitor = "Visitor",
-  STUMP = "STUMP",
+  DEBRIS = "Debris",
+  Mask = "Mask",
 }
 
 export type RESOURCE = "apples" | "carrots" | "berries";
 
 export enum CARD_SET {
   BASE = "Base",
-  CROWD_FUND = "Crowd Fund",
+  CHARITY_DRIVE = "Charity Drive",
   WOOD_WORK = "Wood Work",
+  AUTUMN_HARVEST = "Autumn Harvest",
 }
 
 export enum CARD_SUBTYPE {
@@ -114,7 +116,7 @@ export interface IFarmCard extends ICard {
     three?: string | React.ReactNode;
   };
   energy?: number;
-  type: CARD_TYPE.Critter | CARD_TYPE.Item | CARD_TYPE.Seeds | CARD_TYPE.STUMP;
+  type: CARD_TYPE.Critter | CARD_TYPE.Item | CARD_TYPE.Seeds | CARD_TYPE.DEBRIS;
 }
 
 export interface IFavourCard extends ICard {
@@ -136,4 +138,10 @@ export interface IWorkOrder extends ICard {
   type: CARD_TYPE.WorkOrder;
 }
 
-export interface IVisitorCard extends ICard {}
+export interface IVisitorCard extends ICard {
+  type: CARD_TYPE.Visitor;
+}
+
+export interface IMaskCard extends ICard {
+  type: CARD_TYPE.Mask;
+}

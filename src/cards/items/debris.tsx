@@ -7,7 +7,7 @@ import {
 } from "../../models/cards.models";
 import Chew from "../text/Chew";
 
-const stumps: IFarmCard[] = [
+const debris: IFarmCard[] = [
   // {
   //   name: "Stump",
   //   cost: {
@@ -35,7 +35,7 @@ const stumps: IFarmCard[] = [
     },
     qty: 8,
     set: CARD_SET.WOOD_WORK,
-    type: CARD_TYPE.STUMP,
+    type: CARD_TYPE.DEBRIS,
     debris: true,
     description: (
       <span>
@@ -46,4 +46,4 @@ const stumps: IFarmCard[] = [
   },
 ];
 
-export default stumps;
+export default debris;

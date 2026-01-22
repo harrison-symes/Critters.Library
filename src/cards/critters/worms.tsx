@@ -75,8 +75,8 @@ const worms: IFarmCard[] = [
     },
     description: (
       <span>
-        Remove 1 <b>☀️Sunlight</b> from a <b className="nowrap">🌱Seed</b> to
-        gain +3 of a random crop.
+        Remove 1 <b>☀️Sunlight</b> from ANY one <b className="nowrap">🌱Seed</b>{" "}
+        to gain +3 of a random crop.
       </span>
     ),
     energy: 3,
@@ -99,7 +99,7 @@ const worms: IFarmCard[] = [
       carrots: 2,
     },
     qty: 2,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
     energy: 3,

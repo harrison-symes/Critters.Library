@@ -12,7 +12,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, Travelling Salesman",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -24,7 +24,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, Kickstarter",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -37,7 +37,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "Jemima, Coffee Lover",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -50,7 +50,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, the Sponsor",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -66,7 +66,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, Carrot Donor",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -78,7 +78,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, Apple Donor",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -90,7 +90,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, Berry Donor",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -102,7 +102,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, Workaholic",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
@@ -115,7 +115,7 @@ const visitors: IVisitorCard[] = [
   {
     name: "<PH>, Generous Donor",
     qty: 1,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.Visitor,
     description: (
       <span>

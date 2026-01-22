@@ -61,7 +61,7 @@ const workOrders: IWorkOrder[] = [
     cost: {
       apples: 1,
       berries: 1,
-      carrots: 2,
+      carrots: 1,
     },
     crateCost: {
       apples: 1,
@@ -77,7 +77,7 @@ const workOrders: IWorkOrder[] = [
     name: "Finger Food",
     qty: 3,
     cost: {
-      apples: 2,
+      apples: 1,
       berries: 1,
       carrots: 1,
     },
@@ -96,7 +96,7 @@ const workOrders: IWorkOrder[] = [
     qty: 3,
     cost: {
       apples: 1,
-      berries: 2,
+      berries: 1,
       carrots: 1,
     },
     crateCost: {
@@ -113,7 +113,7 @@ const workOrders: IWorkOrder[] = [
     name: "Apple Craving",
     qty: 2,
     cost: {
-      apples: 2,
+      apples: 1,
       berries: 1,
       carrots: 1,
     },
@@ -132,7 +132,7 @@ const workOrders: IWorkOrder[] = [
     qty: 2,
     cost: {
       apples: 1,
-      berries: 2,
+      berries: 1,
       carrots: 1,
     },
     crateCost: {
@@ -151,7 +151,7 @@ const workOrders: IWorkOrder[] = [
     cost: {
       apples: 1,
       berries: 1,
-      carrots: 2,
+      carrots: 1,
     },
     crateCost: {
       apples: 0,
@@ -167,9 +167,9 @@ const workOrders: IWorkOrder[] = [
     name: "Ample Apples",
     qty: 1,
     cost: {
-      apples: 1,
-      berries: 2,
-      carrots: 2,
+      apples: 2,
+      berries: 1,
+      carrots: 1,
     },
     crateCost: {
       apples: 3,
@@ -185,9 +185,9 @@ const workOrders: IWorkOrder[] = [
     name: "Berry Buffet",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 1,
-      carrots: 2,
+      apples: 1,
+      berries: 2,
+      carrots: 1,
     },
     crateCost: {
       apples: 0,
@@ -203,9 +203,9 @@ const workOrders: IWorkOrder[] = [
     name: "Carrot Cache",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 2,
-      carrots: 1,
+      apples: 1,
+      berries: 1,
+      carrots: 2,
     },
     crateCost: {
       apples: 0,
@@ -221,9 +221,9 @@ const workOrders: IWorkOrder[] = [
     name: "Apple Crumble",
     qty: 1,
     cost: {
-      apples: 1,
-      berries: 2,
-      carrots: 2,
+      apples: 2,
+      berries: 1,
+      carrots: 1,
     },
     crateCost: {
       apples: 2,
@@ -239,9 +239,9 @@ const workOrders: IWorkOrder[] = [
     name: "Big Brekkie",
     qty: 1,
     cost: {
-      apples: 1,
-      berries: 2,
-      carrots: 2,
+      apples: 2,
+      berries: 1,
+      carrots: 1,
     },
     crateCost: {
       apples: 2,
@@ -257,9 +257,9 @@ const workOrders: IWorkOrder[] = [
     name: "Fruit Salad",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 1,
-      carrots: 2,
+      apples: 1,
+      berries: 2,
+      carrots: 1,
     },
     crateCost: {
       apples: 1,
@@ -275,9 +275,9 @@ const workOrders: IWorkOrder[] = [
     name: "Second Breakfast",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 1,
-      carrots: 2,
+      apples: 1,
+      berries: 2,
+      carrots: 1,
     },
     crateCost: {
       apples: 0,
@@ -293,9 +293,9 @@ const workOrders: IWorkOrder[] = [
     name: "Farm Lunch",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 2,
-      carrots: 1,
+      apples: 1,
+      berries: 1,
+      carrots: 2,
     },
     crateCost: {
       apples: 1,
@@ -311,9 +311,9 @@ const workOrders: IWorkOrder[] = [
     name: "Carrot Cake",
     qty: 1,
     cost: {
-      apples: 2,
-      berries: 2,
-      carrots: 1,
+      apples: 1,
+      berries: 1,
+      carrots: 2,
     },
     crateCost: {
       apples: 0,
@@ -340,7 +340,7 @@ const workOrders: IWorkOrder[] = [
     },
     crateAmount: 5,
     image: "",
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.WorkOrder,
   },
   {
@@ -358,7 +358,7 @@ const workOrders: IWorkOrder[] = [
     },
     crateAmount: 3,
     image: "",
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.WorkOrder,
   },
   {
@@ -376,7 +376,7 @@ const workOrders: IWorkOrder[] = [
     },
     crateAmount: 3,
     image: "",
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.WorkOrder,
   },
   {
@@ -394,7 +394,7 @@ const workOrders: IWorkOrder[] = [
     },
     crateAmount: 3,
     image: "",
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     type: CARD_TYPE.WorkOrder,
   },
 ];

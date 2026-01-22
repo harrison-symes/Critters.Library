@@ -74,7 +74,7 @@ const rabbits: IFarmCard[] = [
       berries: 3,
     },
     description: "Gain 3 random crops",
-    buyBonus: "Your Rivals each gain a random crop.",
+    buyBonus: "Each other player gains a random crop.",
     energy: 3,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -145,7 +145,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE, TAGS.FREE_FAVOUR],
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     flavour: "He's here to lend a paw.",
     recycle: (
       <span>

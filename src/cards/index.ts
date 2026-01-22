@@ -3,6 +3,7 @@ import {
   ICard,
   IFarmCard,
   IFavourCard,
+  IMaskCard,
   IRewardCard,
   IVisitorCard,
   IWorkOrder,
@@ -17,7 +18,7 @@ import moles from "./critters/moles";
 import rabbits from "./critters/rabbits";
 import raccoons from "./critters/raccoons";
 import rats from "./critters/rats";
-import seeds from "./critters/seeds";
+import seeds from "./seeds";
 import workOrders from "./workOrders";
 import favours from "./favours";
 import rewards from "./rewards";
@@ -25,7 +26,8 @@ import starters from "./items/starter";
 import visitors from "./visitors";
 import beavers from "./critters/beavers";
 import wittled from "./critters/wittled";
-import stumps from "./items/stumps";
+import debris from "./items/debris";
+import masks from "./masks";
 
 const shuffleDeck = (deck: any[]) => {
   let currentIndex = deck.length;
@@ -69,7 +71,7 @@ export const createDeck = (noDuplicates: boolean = false): IFarmCard[] => {
   addToDeck(deck, bees, noDuplicates);
   addToDeck(deck, beavers, noDuplicates);
   addToDeck(deck, wittled, noDuplicates);
-  addToDeck(deck, stumps, noDuplicates);
+  addToDeck(deck, debris, noDuplicates);
 
   // if (!noDuplicates) {
   //   return shuffleDeck(deck);
@@ -132,6 +134,21 @@ export const createWorkOrderDeck = (
   const deck: IWorkOrder[] = [];
 
   workOrders.forEach((card) => {
+    for (let i = 0; i < card.qty; i++) {
+      deck.push({ ...card });
+    }
+  });
+
+  return shuffleDeck(deck);
+};
+
+export const createMasksDeck = (noDuplicates: boolean = false): IMaskCard[] => {
+  if (noDuplicates) {
+    return masks;
+  }
+  const deck: IMaskCard[] = [];
+
+  masks.forEach((card) => {
     for (let i = 0; i < card.qty; i++) {
       deck.push({ ...card });
     }

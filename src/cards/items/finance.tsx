@@ -408,7 +408,7 @@ const finance: IFarmCard[] = [
     ),
   },
   {
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     name: "Bargain Bin",
     cost: {
       apples: 3,
@@ -432,7 +432,7 @@ const finance: IFarmCard[] = [
     ),
   },
   {
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     name: "Money Sink",
     cost: {
       apples: 3,
@@ -444,7 +444,7 @@ const finance: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Finance,
     holdable: true,
     tags: [
-      TAGS.ADD_TO_HAND,
+      TAGS.SKEWER,
       TAGS.TRASH,
       TAGS.TRASH_FROM_DISCARD,
       TAGS.FINANCE_SYNERGY,
@@ -452,12 +452,12 @@ const finance: IFarmCard[] = [
     description: (
       <span>
         <b>Trash</b> a card from your discard pile. <br />
-        If it was a <b>🏦Finance</b> card, put it into your hand after.
+        If it was a <b>🏦Finance</b> card, <Skewer /> it after.
       </span>
     ),
   },
   {
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     name: "Emergency Fund",
     cost: {
       apples: 0,

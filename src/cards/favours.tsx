@@ -224,7 +224,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.CROP_STEAL],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "Tidy Up",
@@ -237,7 +237,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.RESET_DECK, TAGS.DISCOUNT],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "Donate",
@@ -250,7 +250,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.DISCARD_OWN, TAGS.GIFT],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "Fundraise",
@@ -263,7 +263,7 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.DISCOUNT],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "TIMBER!",

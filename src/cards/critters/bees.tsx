@@ -6,10 +6,7 @@ import {
   TAGS,
 } from "../../models/cards.models";
 import Chew from "../text/Chew";
-import Critter from "../text/Critter";
 import FastTrack from "../text/FastTrack";
-import Item from "../text/Item";
-import Seed from "../text/Seed";
 
 const bees: IFarmCard[] = [
   {
@@ -23,11 +20,7 @@ const bees: IFarmCard[] = [
     },
     description: (
       <span>
-        If you have 2 or more <b>Work Orders</b>, Gain{" "}
-        <span className="nowrap">
-          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
-        </span>
-        .
+        Gain a random crop for each <b>Work Order</b> you have.
       </span>
     ),
     energy: 2,
@@ -48,14 +41,10 @@ const bees: IFarmCard[] = [
     },
     description: (
       <span>
-        If you have 2 or more <b>Work Orders</b>, <b>Steal</b>{" "}
-        <span className="nowrap">
-          <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
-        </span>{" "}
-        from a Rival.
+        <b>Steal</b> 1 crop from a Rival for each <b>Work Order</b> you have.
       </span>
     ),
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Bee,
     tags: [TAGS.CROP_STEAL, TAGS.WORK_ORDERS_3],
@@ -73,8 +62,7 @@ const bees: IFarmCard[] = [
     },
     description: (
       <span>
-        If you have 2 or more <b>Work Orders</b>, <FastTrack /> a <Critter />, a{" "}
-        <Seed /> and an <Item />.
+        <FastTrack /> a card for each <b>Work Order</b> you have.
       </span>
     ),
     energy: 2,

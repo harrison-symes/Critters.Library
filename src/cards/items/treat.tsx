@@ -342,7 +342,7 @@ const treats: IFarmCard[] = [
     ),
   },
   {
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     name: "Lucky Dip",
     // notes: "An aluminium can with a lightning bolt logo on it",
     cost: {
@@ -363,13 +363,14 @@ const treats: IFarmCard[] = [
     description: (
       <span>
         Gain 3 random crops. <br />
-        If you have less <b>🏆Rewards</b> than your Rivals, gain 3 more.
+        If you have less <b>🏆Rewards</b> than your Rivals, choose the 3 crops
+        instead.
       </span>
     ),
     recycle: <span>Draw a card.</span>,
   },
   {
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     name: "Leftovers",
     cost: {
       apples: 1,
@@ -394,7 +395,7 @@ const treats: IFarmCard[] = [
     ),
   },
   {
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     name: "Potluck",
     cost: {
       apples: 1,

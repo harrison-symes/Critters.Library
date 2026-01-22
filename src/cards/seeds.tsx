@@ -1,16 +1,11 @@
-import {
-  CARD_SET,
-  CARD_TYPE,
-  IFarmCard,
-  TAGS,
-} from "../../models/cards.models";
-import Chew from "../text/Chew";
-import Critter from "../text/Critter";
-import Discount from "../text/Discount";
-import Seed from "../text/Seed";
-import Skewer from "../text/Skewer";
-import Sleepy from "../text/Sleepy";
-import Sunlight from "../text/Sunlight";
+import { CARD_SET, CARD_TYPE, IFarmCard, TAGS } from "./../models/cards.models";
+import Chew from "./text/Chew";
+import Critter from "./text/Critter";
+import Discount from "./text/Discount";
+import Seed from "./text/Seed";
+import Skewer from "./text/Skewer";
+import Sleepy from "./text/Sleepy";
+import Sunlight from "./text/Sunlight";
 
 const seeds: IFarmCard[] = [
   {
@@ -271,7 +266,7 @@ const seeds: IFarmCard[] = [
     set: CARD_SET.BASE,
   },
   {
-    name: "Rotten Seeds",
+    name: "Lavender Seeds",
     qty: 2,
     cost: {
       apples: 1,
@@ -282,23 +277,18 @@ const seeds: IFarmCard[] = [
     type: CARD_TYPE.Seeds,
     tags: [TAGS.ADD_ZZZ],
     sunlight: {
-      one: (
+      two: (
         <span>
           Add 1 <Sleepy /> to a <Critter />.
         </span>
       ),
-      two: (
+      three: (
         <span>
           Add 2 <Sleepy /> to a <Critter />.
         </span>
       ),
-      three: (
-        <span>
-          Add 3 <Sleepy /> to a <Critter />.
-        </span>
-      ),
     },
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "Shiny Seeds",
@@ -324,7 +314,7 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "Flower Seeds",
@@ -344,7 +334,7 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
   },
   {
     name: "Oak Seeds",

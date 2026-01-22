@@ -4,11 +4,13 @@ import { getFilterState, IFilterState } from "./filtersSlice";
 import {
   getDuplicatesFarmDeck,
   getDuplicatesFavourDeck,
+  getDuplicatesMasksDeck,
   getDuplicatesRewardDeck,
   getDuplicatesStarterDeck,
   getDuplicatesWorkOrderDeck,
   getFarmDeck,
   getFavourDeck,
+  getMasksDeck,
   getRewardDeck,
   getStarterDeck,
   getVisitorsDeck,
@@ -222,6 +224,15 @@ export const getFilteredDuplicatesWorkOrderDeck = createSelector(
   [getDuplicatesWorkOrderDeck, getFilterState],
   (deck, filters) => filterWorkOrderDeck(deck, filters)
 );
+export const getFilteredMasksDeck = appSelector(
+  [getMasksDeck, getFilterState],
+  (deck, filters) => filterNonFarmDeck(deck, filters)
+);
+
+export const getFilteredDuplicatesMasksDeck = createSelector(
+  [getDuplicatesMasksDeck, getFilterState],
+  (deck, filters) => filterNonFarmDeck(deck, filters)
+);
 export const getFilteredVisitorsDeck = createSelector(
   [getVisitorsDeck, getFilterState],
   (deck, filters) => filterNonFarmDeck(deck, filters)
@@ -251,6 +262,14 @@ export const getFilteredVisitorsDeckCount = createSelector(
   [getFilteredVisitorsDeck],
   (visitors) => visitors.length
 );
+export const getFilteredMasksDeckCount = createSelector(
+  [getFilteredMasksDeck],
+  (masks) => masks.length
+);
+export const getFilteredDuplicatesMasksDeckCount = createSelector(
+  [getFilteredDuplicatesMasksDeck],
+  (masks) => masks.length
+);
 
 export const getTotalFilteredCardsCount = createSelector(
   [
@@ -260,9 +279,10 @@ export const getTotalFilteredCardsCount = createSelector(
     getFilteredDuplicatesStarterDeckCount,
     getFilteredDuplicatesWorkOrderDeckCount,
     getFilteredVisitorsDeckCount,
+    getFilteredDuplicatesMasksDeckCount,
   ],
-  (farmDeck, favours, rewards, starters, workOrders, visitors) =>
-    farmDeck + favours + rewards + starters + workOrders + visitors
+  (farmDeck, favours, rewards, starters, workOrders, visitors, masks) =>
+    farmDeck + favours + rewards + starters + workOrders + visitors + masks
 );
 
 export const getFutureFilterCount =

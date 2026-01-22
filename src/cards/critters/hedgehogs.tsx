@@ -76,12 +76,17 @@ const hedgehogs: IFarmCard[] = [
     energy: 2,
     description: (
       <span>
-        <b>Gift</b> a card from your discard pile.
+        <b>Gift</b> a card from your hand.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <Skewer /> a card.
       </span>
     ),
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
-    tags: [TAGS.GIFT],
+    tags: [TAGS.GIFT, TAGS.SKEWER],
     set: CARD_SET.BASE,
     flavour:
       "Just in-case you were wondering who was in charge of all those Chogs.",
@@ -94,7 +99,7 @@ const hedgehogs: IFarmCard[] = [
       berries: 3,
       carrots: 3,
     },
-    energy: 2,
+    energy: 3,
     description: (
       <span>
         <FastTrack /> 2 cards for a Rival (from their discard pile).
@@ -103,7 +108,7 @@ const hedgehogs: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
     tags: [TAGS.FAST_TRACK],
-    set: CARD_SET.CROWD_FUND,
+    set: CARD_SET.CHARITY_DRIVE,
     buyBonus: (
       <span>
         <b>Gift</b> a card from your discard pile.

@@ -1,15 +1,15 @@
 import * as React from "react";
 import "./new-display.scss";
 import { useAppSelector } from "../../store/hooks";
-import { getFilteredVisitorsDeck } from "../../store/deck.selectors";
-import VisitorCard from "../Cards/VisitorCard";
+import { getFilteredMasksDeck } from "../../store/deck.selectors";
+import MaskCard from "../Cards/MaskCard";
 
-const VisitorCardList = () => {
-  const visitors = useAppSelector(getFilteredVisitorsDeck);
+const MaskCardList = () => {
+  const masks = useAppSelector(getFilteredMasksDeck);
   const [isHidden, setIsHidden] = React.useState(false);
-  const title = "Visitors";
+  const title = "Masks";
 
-  if (visitors.length === 0) {
+  if (masks.length === 0) {
     return null;
   }
 
@@ -17,7 +17,7 @@ const VisitorCardList = () => {
     <div className="card-type__container">
       <div className="card-type__title">
         <div>
-          {title} ({visitors.length})
+          {title} ({masks.length})
         </div>
         <button className="button" onClick={() => setIsHidden((h) => !h)}>
           {isHidden ? "Show" : "Hide"}
@@ -25,8 +25,8 @@ const VisitorCardList = () => {
       </div>
       {!isHidden && (
         <div className="card-subtype__list">
-          {visitors.map((card) => (
-            <VisitorCard card={card} key={card.name} />
+          {masks.map((card) => (
+            <MaskCard card={card} key={card.name} />
           ))}
         </div>
       )}
@@ -34,4 +34,4 @@ const VisitorCardList = () => {
   );
 };
 
-export default VisitorCardList;
+export default MaskCardList;
