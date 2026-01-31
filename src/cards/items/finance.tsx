@@ -15,6 +15,10 @@ import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
 import Sunlight from "../text/Sunlight";
+import App from "../../App";
+import Apple from "../text/Apple";
+import Berry from "../text/Berry";
+import Carrot from "../text/Carrot";
 
 const finance: IFarmCard[] = [
   {
@@ -452,13 +456,13 @@ const finance: IFarmCard[] = [
     description: (
       <span>
         <b>Trash</b> a card from your discard pile. <br />
-        If it was a <b>🏦Finance</b> card, <Skewer /> it after.
+        If it was a <b>🏦Finance</b> card, <Skewer /> it after. <br />
       </span>
     ),
   },
   {
     set: CARD_SET.CHARITY_DRIVE,
-    name: "Emergency Fund",
+    name: "Seed Fund",
     cost: {
       apples: 0,
       berries: 3,
@@ -471,18 +475,23 @@ const finance: IFarmCard[] = [
       TAGS.SELL,
       TAGS.SELL_FROM_DISCARD,
       TAGS.LESS_REWARDS,
-      TAGS.CROP_GENERATION,
-      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.SEED_SYNERGY,
+      TAGS.PLANT_FROM_DISCARD,
+      TAGS.SUNLIGHT_ADD,
     ],
     refundable: true,
     description: (
       <span>
         <b>Sell</b> a card from your discard pile. <br />
-        If you have less <b>🏆Rewards</b> than your Rivals, <b>Sell</b> an extra
-        card.
+        If you have less <b>🏆Rewards</b> than your Rivals, <b>Plant</b> a{" "}
+        <Seed /> from your discard pile.
       </span>
     ),
-    recycle: <span>Gain +3 of a random crop.</span>,
+    recycle: (
+      <span>
+        Add 2 <Sunlight /> to a <Seed />.
+      </span>
+    ),
   },
   {
     set: CARD_SET.WOOD_WORK,
@@ -557,6 +566,137 @@ const finance: IFarmCard[] = [
     recycle: (
       <span>
         Pack a free <b>📦Crate</b> into a <b>Work Order</b>.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Spooky Decorations",
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 0,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        <b>Trash</b> a card from your discard pile. <br />
+        Add 1 <Sleepy /> to a Rival's <Critter />.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        Put a <b>Mask</b> onto a friendly <Critter />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Festive Decorations",
+    cost: {
+      apples: 2,
+      berries: 0,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        <b>Sell</b> a card from your discard pile. <br />
+        Put a <b>Mask</b> onto a friendly <Critter />.
+      </span>
+    ),
+    recycle: (
+      <span>
+        Remove 1 <Sleepy /> from a friendly <Critter />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Colourful Decorations",
+    cost: {
+      apples: 0,
+      berries: 2,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        <b>Sell</b> a card from your hand. <br />
+        If it was a <b>Starter</b> card, <b>Gift</b> it after.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        Put a <b>Mask</b> onto a friendly <Critter />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Sale Sign",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        <Discount />. <br />
+        Gain +1 of the 2 crop types that weren't discounted.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Tarot Cards",
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        Draw 2 cards, then <b>Discard</b> a card.
+      </span>
+    ),
+    recycle: <span>Each player draws a card.</span>,
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Crystal Ball",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    holdable: true,
+    description: (
+      <span>
+        Look at at Rival's hand. <br />
+        If you have a <b>Masked</b>
+        <Critter />, <b>Discard</b> one of their cards.
       </span>
     ),
   },

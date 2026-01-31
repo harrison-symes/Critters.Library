@@ -104,7 +104,9 @@ const FarmCard = (props: IProps) => {
           })}
         >
           {props.card.type === CARD_TYPE.Critter && (
-            <span className="card__description__icon">⤵️</span>
+            <span className="card__description__icon">
+              {props.card.isWatcher ? "👀" : "⤵️"}
+            </span>
           )}
           <span className={cn("card__description__text")}>
             {props.card.description}

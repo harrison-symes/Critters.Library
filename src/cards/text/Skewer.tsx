@@ -1,6 +1,6 @@
 import { Tooltip } from "@mui/material";
 
-const Skewer = () => {
+const Skewer = ({ plural }: { plural?: boolean }) => {
   return (
     <Tooltip
       title={
@@ -12,7 +12,7 @@ const Skewer = () => {
       placement="top"
       className="tooltip"
     >
-      <b>Skewer</b>
+      <b>Skewer{plural ? "s" : ""}</b>
     </Tooltip>
   );
 };

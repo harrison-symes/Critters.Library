@@ -5,6 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Burrow from "../text/Burrow";
 import Chew, { Chewed } from "../text/Chew";
 import Shuffle from "../text/Shuffle";
 import Skewer from "../text/Skewer";
@@ -92,7 +93,7 @@ const hedgehogs: IFarmCard[] = [
       "Just in-case you were wondering who was in charge of all those Chogs.",
   },
   {
-    name: "Hedge-Funder",
+    name: "Pledge Hog",
     qty: 1,
     cost: {
       apples: 3,
@@ -136,6 +137,28 @@ const hedgehogs: IFarmCard[] = [
     buyBonus: (
       <span>
         <Skewer /> this card.
+      </span>
+    ),
+    energy: 3,
+  },
+  {
+    name: "Spooky Ghost",
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    qty: 2,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.SHUFFLE, TAGS.SKEWER, TAGS.BURROW, TAGS.WATCHER],
+    isWatcher: true,
+    description: (
+      <span>
+        When a Rival <Shuffle plural />, <Skewer plural /> or <Burrow plural />{" "}
+        a card... <br />
+        Do the same.
       </span>
     ),
     energy: 3,

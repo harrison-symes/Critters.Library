@@ -12,6 +12,11 @@ import Seed from "../text/Seed";
 import Sleepy from "../text/Sleepy";
 import Treat from "../text/Treat";
 import Burrow from "../text/Burrow";
+import Berry from "../text/Berry";
+import TrickOrTreat from "../text/TrickOrTreat";
+import Apple from "../text/Apple";
+import Carrot from "../text/Carrot";
+import Sunlight from "../text/Sunlight";
 
 const treats: IFarmCard[] = [
   {
@@ -360,7 +365,6 @@ const treats: IFarmCard[] = [
       TAGS.CROP_GENERATION_RANDOM,
       TAGS.CROP_GENERATION_CHOOSE,
       TAGS.LESS_REWARDS,
-      TAGS.CARD_DRAW,
     ],
     refundable: true,
     description: (
@@ -370,7 +374,7 @@ const treats: IFarmCard[] = [
         instead.
       </span>
     ),
-    recycle: <span>Draw a card.</span>,
+    recycle: <span>Gain +3 of a random crop.</span>,
   },
   {
     set: CARD_SET.CHARITY_DRIVE,
@@ -477,6 +481,146 @@ const treats: IFarmCard[] = [
     buyBonus: (
       <span>
         <Chew count={3} />
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Candy Berry",
+    cost: {
+      apples: 2,
+      berries: 3,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_BERRY,
+      TAGS.TRICK_OR_TREAT,
+    ],
+    description: (
+      <span>
+        Gain +2
+        <Berry />. <br />
+        <TrickOrTreat />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Candy Apple",
+    cost: {
+      apples: 3,
+      berries: 2,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_APPLE,
+      TAGS.TRICK_OR_TREAT,
+    ],
+    description: (
+      <span>
+        Gain +2
+        <Apple />. <br />
+        <TrickOrTreat />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Candy Carrot",
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 3,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_CARROT,
+      TAGS.TRICK_OR_TREAT,
+    ],
+    description: (
+      <span>
+        Gain +2
+        <Carrot />. <br />
+        <TrickOrTreat />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Candy Corn",
+    cost: {
+      apples: 2,
+      berries: 3,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [TAGS.TRICK_OR_TREAT, TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
+    description: (
+      <span>
+        <TrickOrTreat />. <br />
+        Add 1 <Sunlight /> to each of your <Seed plural />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Pumpkin",
+    cost: {
+      apples: 3,
+      berries: 1,
+      carrots: 2,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_ALL,
+      TAGS.SEED_SYNERGY,
+      TAGS.PLANT_FROM_DISCARD,
+    ],
+    description: (
+      <span>
+        Gain +1
+        <Apple />, +1
+        <Berry />, +1
+        <Carrot />. <br />
+        <b>Plant</b> a <Seed /> from your discard pile.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Candy Bag",
+    cost: {
+      apples: 1,
+      berries: 2,
+      carrots: 3,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Treat,
+    tags: [],
+    description: (
+      <span>
+        <TrickOrTreat />. <br /> If you have a{" "}
+        <b>
+          Masked <Critter />
+        </b>
+        , draw a card.
       </span>
     ),
   },

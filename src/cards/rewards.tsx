@@ -12,6 +12,7 @@ import Sleepy from "./text/Sleepy";
 import Sunlight from "./text/Sunlight";
 import Tool from "./text/Tool";
 import Treat from "./text/Treat";
+import TrickOrTreat from "./text/TrickOrTreat";
 
 const rewards: IRewardCard[] = [
   {
@@ -183,7 +184,7 @@ const rewards: IRewardCard[] = [
       <span>
         After you <b>Harvest</b> a <b>🌱Seed</b> with 3 <Sunlight />, draw a
         card.
-        <br /> (Once per turn.)
+        <br /> (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -258,7 +259,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         After you <b>Buy</b> or <b>Sell</b> a Farm card, draw a card. <br />{" "}
-        (Once per turn.)
+        (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -334,7 +335,8 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         After you play a <Treat />, remove 1 <Sleepy /> from a friendly{" "}
-        <Critter />. <br /> (Once per turn.)
+        <Critter />. <br />
+        (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -498,12 +500,25 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.ADD_TO_HAND],
   },
   {
-    name: "Donation Bin",
+    name: "Second-paw Store",
     qty: 1,
     description: (
       <span>
-        After you <b>Steal</b> a crop from a Rival, that Rival must also give
-        you a crop (If they have any).
+        Instantly, and whenever you complete a <b>Work Order</b>, <b>Snatch</b>{" "}
+        the discounted crops from a card in the <b>Market</b>.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CHARITY_DRIVE,
+    tags: [TAGS.WORK_ORDER_COMPLETION],
+  },
+  {
+    name: "Crowd Fund",
+    qty: 1,
+    description: (
+      <span>
+        After you play a <b>Friendship Charm</b>, each Rival must give you a
+        crop or <b>Discard</b> a card.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -511,20 +526,7 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.CROP_STEAL],
   },
   {
-    name: "Crowd Fund",
-    qty: 1,
-    description: (
-      <span>
-        After your deck is <b>Reset</b>, each Rival must give you a crop (If
-        they have any).
-      </span>
-    ),
-    type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
-    tags: [TAGS.CROP_STEAL, TAGS.RESET_DECK],
-  },
-  {
-    name: "Second-Hand Store",
+    name: "Donation Bin",
     qty: 1,
     description: (
       <span>
@@ -583,7 +585,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <Shuffle /> a <Treat />, draw a card. <br /> (Once per turn.)
+        After you <Shuffle /> a <Treat />, draw a card. <br /> (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -612,12 +614,26 @@ const rewards: IRewardCard[] = [
         <span className="nowrap">
           <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
         </span>
-        .
+        . <br />
+        (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.CHARITY_DRIVE,
     tags: [TAGS.TOOL_SYNERGY, TAGS.SKEWER],
+  },
+  {
+    name: "Fulfillment Center",
+    qty: 1,
+    description: (
+      <span>
+        At the end of your turn, if you have 3 <b>Work Orders</b>, draw an extra
+        card.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.CHARITY_DRIVE,
+    tags: [TAGS.WORK_ORDERS_3, TAGS.CARD_DRAW],
   },
   {
     name: "Oak Tree",
@@ -688,7 +704,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         After you <b>Buy</b> a <b>Favour</b>, <Chew count={2} /> and draw a
-        card. <br /> (Once per turn.)
+        card. <br /> (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -726,6 +742,164 @@ const rewards: IRewardCard[] = [
       TAGS.SUNLIGHT_ADD,
       TAGS.PLANT_FROM_DISCARD,
     ],
+  },
+  {
+    name: "Alchemy Lab",
+    qty: 2,
+    description: (
+      <span>
+        When you <b>Trade</b> crops... <br />
+        Gain +1 of the <b>Target</b> crop. <br />
+        (Once per turn)
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.TRADE],
+  },
+  {
+    name: "Candy Store",
+    qty: 2,
+    description: (
+      <span>
+        Instantly, and whenever you complete a <b>Work Order</b>,{" "}
+        <TrickOrTreat />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.WORK_ORDER_COMPLETION, TAGS.TRICK_OR_TREAT],
+  },
+  {
+    name: "Costume Shop",
+    qty: 2,
+    description: (
+      <span>
+        When you put a <b>Mask</b> onto an <b>Unmasked</b>
+        <Critter />, draw a card.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.MASK_SYNERGY, TAGS.CARD_DRAW],
+  },
+  {
+    name: "Pumpkin Patch",
+    qty: 1,
+    description: (
+      <span>
+        Whenever you <TrickOrTreat />, gain +2 of the crop on the{" "}
+        <b>Yellow Die</b>.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [
+      TAGS.TRICK_OR_TREAT,
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+    ],
+  },
+  {
+    name: "Trick Store",
+    qty: 1,
+    description: (
+      <span>
+        Whenever you roll a <b>Trick</b> from a <TrickOrTreat />, draw a card.{" "}
+        <br />
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.TRICK_OR_TREAT, TAGS.CARD_DRAW],
+  },
+  {
+    name: "Candy Hoard",
+    qty: 1,
+    description: (
+      <span>
+        Your <b>Masked</b>
+        <Critter plural /> have +1 <b>Energy</b>.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [],
+  },
+  {
+    name: "Spooky Plot",
+    qty: 1,
+    description: (
+      <span>
+        Whenever you <TrickOrTreat />, add 1 <Sunlight /> to each of your{" "}
+        <Seed plural />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.TRICK_OR_TREAT, TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
+  },
+  {
+    name: "Fortune Farm",
+    qty: 1,
+    description: (
+      <span>
+        At the end of your turn, draw an extra card, then <b>Discard</b> a card
+        from your hand.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN],
+  },
+  {
+    name: "Pink Potion Lab",
+    qty: 1,
+    description: (
+      <span>
+        After you <b>Discard</b> a <Treat />, <TrickOrTreat />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [],
+  },
+  {
+    name: "Blue Potion Lab",
+    qty: 1,
+    description: (
+      <span>
+        After you <b>Discard</b> a <Tool />, <TrickOrTreat />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [],
+  },
+  {
+    name: "Yellow Potion Lab",
+    qty: 1,
+    description: (
+      <span>
+        After you <b>Discard</b> a <Finance /> card, <TrickOrTreat />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [],
+  },
+  {
+    name: "Tarot Tent",
+    qty: 1,
+    description: (
+      <span>
+        Instantly and whenever you complete a <b>Work Order</b>, look at a
+        Rival's hand and <b>Discard</b> on of their cards.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.DISCARD_RIVAL, TAGS.WORK_ORDER_COMPLETION],
   },
 ];
 

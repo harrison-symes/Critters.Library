@@ -14,6 +14,9 @@ import Seed from "../text/Seed";
 import Skewer from "../text/Skewer";
 import Sleepy from "../text/Sleepy";
 import Item from "../text/Item";
+import Treat from "../text/Treat";
+import Tool from "../text/Tool";
+import Finance from "../text/Finance";
 
 const tools: IFarmCard[] = [
   {
@@ -137,7 +140,7 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        <b>Discard</b> a card from hand to draw 2 cards.
+        <b>Discard</b> a card from your hand to draw 2 cards.
       </span>
     ),
     buyBonus: (
@@ -266,8 +269,8 @@ const tools: IFarmCard[] = [
     ],
     description: (
       <span>
-        <b>Steal</b> 2 crops from a Rival. <br /> Discard a card from hand to{" "}
-        <b>Steal</b> 1 more.
+        <b>Steal</b> 2 crops from a Rival. <br /> Discard a card from your hand
+        to <b>Steal</b> 1 more.
       </span>
     ),
     recycle: "Gain 3 random crops.",
@@ -538,6 +541,140 @@ const tools: IFarmCard[] = [
       <span>
         Draw a card. If you have less than 3 cards in your deck, draw another
         card.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Pink Cauldron",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [
+      TAGS.DISCARD_OWN,
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.TREAT_SYNERGY,
+    ],
+    holdable: true,
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to gain +3 of a random crop. <br />
+        If it was a <Treat />, <Shuffle /> it.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Blue Cauldron",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [
+      TAGS.DISCARD_OWN,
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.TOOL_SYNERGY,
+    ],
+    holdable: true,
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to gain +3 of a random crop. <br />
+        If it was a <Tool />, <Skewer /> it.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Yellow Cauldron",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [
+      TAGS.DISCARD_OWN,
+      TAGS.CROP_GENERATION,
+      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.FINANCE_SYNERGY,
+    ],
+    holdable: true,
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to gain +3 of a random crop. <br />
+        If it was a <Finance /> card, <b>Sell</b> a different card from your
+        discard pile.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Jack-o-lantern",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [],
+    description: (
+      <span>
+        Remove 1 <Sleepy /> from each friendly <b>Masked</b>
+        <Critter />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Pumpkin Carver",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [],
+    description: (
+      <span>
+        <b>Plant</b> a <Seed /> from your discard pile. <br />
+        If you have a <b>Masked</b>
+        <Critter />, <b>Plant</b> another <Seed />.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.AUTUMN_HARVEST,
+    name: "Broomstick",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Tool,
+    tags: [],
+    description: (
+      <span>
+        Put a <b>Mask</b> onto ANY one <Critter />. <br />
+        If it was a friendly <Critter />, remove 1 <Sleepy /> from them.
       </span>
     ),
   },

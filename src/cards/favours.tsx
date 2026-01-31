@@ -7,6 +7,7 @@ import Shuffle from "./text/Shuffle";
 import Seed from "./text/Seed";
 import Sleepy from "./text/Sleepy";
 import Skewer from "./text/Skewer";
+import TrickOrTreat from "./text/TrickOrTreat";
 
 const favours: IFavourCard[] = [
   {
@@ -314,6 +315,81 @@ const favours: IFavourCard[] = [
     tags: [TAGS.SEED_SYNERGY, TAGS.PLANT_FROM_DISCARD],
     type: CARD_TYPE.Favour,
     set: CARD_SET.WOOD_WORK,
+  },
+  {
+    name: "Magic Trick",
+    qty: 1,
+    description: (
+      <span>
+        <b>Refresh</b> the <b>Favour</b> row in the market. <br />
+        Get a <b>Favour</b> from the <b>Market</b> for free.
+      </span>
+    ),
+    tags: [TAGS.REFRESH, TAGS.FREE_FAVOUR],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Trick or Treat",
+    qty: 3,
+    description: (
+      <span>
+        <TrickOrTreat />.
+      </span>
+    ),
+    tags: [TAGS.TRICK_OR_TREAT],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Dress Up",
+    qty: 2,
+    description: (
+      <span>
+        Put a <b>Mask</b> from the <b>Market</b> onto a friendly <Critter />.
+      </span>
+    ),
+    tags: [TAGS.FREE_MASK],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "",
+    qty: 2,
+    description: (
+      <span>
+        If you have a <b>Masked</b>
+        <Critter />, <b>Sell</b> a card from your discard pile.
+      </span>
+    ),
+    tags: [],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Hand out Candy",
+    qty: 1,
+    description: (
+      <span>
+        Remove 1 <Sleepy /> from each Friendly <b>Masked</b>
+        <Critter />.
+      </span>
+    ),
+    tags: [TAGS.REMOVE_ZZZ, TAGS.MASK_SYNERGY],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Read my Fortune",
+    qty: 1,
+    description: (
+      <span>
+        Draw a card, then <b>Discard</b> a card from your hand.
+      </span>
+    ),
+    tags: [TAGS.CARD_DRAW, TAGS.DISCARD_OWN],
+    type: CARD_TYPE.Favour,
+    set: CARD_SET.AUTUMN_HARVEST,
   },
 ];
 

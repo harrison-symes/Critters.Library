@@ -5,8 +5,13 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Apple from "../text/Apple";
+import Berry from "../text/Berry";
+import Carrot from "../text/Carrot";
 import Chew, { Chewed } from "../text/Chew";
+import Critter from "../text/Critter";
 import Discount from "../text/Discount";
+import TrickOrTreat from "../text/TrickOrTreat";
 
 const rabbits: IFarmCard[] = [
   {
@@ -154,13 +159,38 @@ const rabbits: IFarmCard[] = [
     ),
   },
   {
+    name: "Benefactor",
+    qty: 1,
+    cost: {
+      apples: 4,
+      carrots: 4,
+      berries: 4,
+    },
+    description: (
+      <span>
+        Pack a free <b>📦Crate</b> into a <b>Work Order</b>.
+      </span>
+    ),
+    energy: 2,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [],
+    set: CARD_SET.CHARITY_DRIVE,
+    flavour: "",
+    buyBonus: (
+      <span>
+        <b>Burrow</b> a card.
+      </span>
+    ),
+  },
+  {
     name: "Wood Worker",
     cost: {
       apples: 2,
       carrots: 2,
       berries: 2,
     },
-    qty: 1,
+    qty: 2,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
@@ -171,6 +201,88 @@ const rabbits: IFarmCard[] = [
       </span>
     ),
     energy: 2,
+  },
+  {
+    name: "Trick or Treater",
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    qty: 2,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [TAGS.TRICK_OR_TREAT],
+    description: (
+      <span>
+        <TrickOrTreat />
+      </span>
+    ),
+    energy: 2,
+  },
+  {
+    name: "Berry Seeker",
+    cost: {
+      apples: 1,
+      carrots: 1,
+      berries: 4,
+    },
+    qty: 1,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [TAGS.WATCHER, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_BERRY],
+    isWatcher: true,
+    description: (
+      <span>
+        When a <Berry /> is <b>rolled</b> on a die <br />
+        Gain +2 <Berry />.
+      </span>
+    ),
+    energy: 3,
+  },
+  {
+    name: "Carrot Seeker",
+    cost: {
+      apples: 1,
+      carrots: 4,
+      berries: 1,
+    },
+    qty: 1,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [TAGS.WATCHER, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CARROT],
+    isWatcher: true,
+    description: (
+      <span>
+        When a <Carrot /> is <b>rolled</b> on a die <br />
+        Gain +2 <Carrot />.
+      </span>
+    ),
+    energy: 3,
+  },
+  {
+    name: "Apple Seeker",
+    cost: {
+      apples: 4,
+      carrots: 1,
+      berries: 1,
+    },
+    qty: 1,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [TAGS.WATCHER, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_APPLE],
+    isWatcher: true,
+    description: (
+      <span>
+        When a <Apple /> is <b>rolled</b> on a die <br />
+        Gain +2 <Apple />.
+      </span>
+    ),
+    energy: 3,
   },
 ];
 

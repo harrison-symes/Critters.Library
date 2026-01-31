@@ -1,6 +1,6 @@
 import { Tooltip } from "@mui/material";
 
-const Burrow = () => {
+const Burrow = ({ plural }: { plural?: boolean }) => {
   return (
     <Tooltip
       title={
@@ -12,7 +12,7 @@ const Burrow = () => {
       placement="top"
       className="tooltip"
     >
-      <b>Burrow</b>
+      <b>Burrow{plural ? "s" : ""}</b>
     </Tooltip>
   );
 };

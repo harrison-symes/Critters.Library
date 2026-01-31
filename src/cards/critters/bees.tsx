@@ -10,6 +10,7 @@ import Critter from "../text/Critter";
 import Shuffle from "../text/Shuffle";
 import Item from "../text/Item";
 import Seed from "../text/Seed";
+import TrickOrTreat from "../text/TrickOrTreat";
 
 const bees: IFarmCard[] = [
   {
@@ -17,9 +18,9 @@ const bees: IFarmCard[] = [
     notes: "A Bee wearing a suit and tie, holding a briefcase",
     qty: 2,
     cost: {
-      apples: 3,
-      carrots: 3,
-      berries: 3,
+      apples: 2,
+      carrots: 2,
+      berries: 2,
     },
     description: (
       <span>
@@ -91,6 +92,26 @@ const bees: IFarmCard[] = [
       <span>
         <Chew count={3} />, then draw a card. <br />
         <Chew /> one less card for each <b>Work Order</b> you have.
+      </span>
+    ),
+    energy: 2,
+  },
+  {
+    name: "Jester",
+    cost: {
+      apples: 3,
+      carrots: 3,
+      berries: 3,
+    },
+    qty: 1,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Bee,
+    tags: [TAGS.CHEW, TAGS.WORK_ORDERS_3, TAGS.CARD_DRAW],
+    description: (
+      <span>
+        <TrickOrTreat />. This <Critter /> has +1 <b>Energy</b> for each{" "}
+        <b>Work Orders</b> you have.
       </span>
     ),
     energy: 2,

@@ -6,6 +6,7 @@ import {
   TAGS,
 } from "../../models/cards.models";
 import Shuffle from "../text/Shuffle";
+import TrickOrTreat from "../text/TrickOrTreat";
 
 const raccoons: IFarmCard[] = [
   {
@@ -82,12 +83,12 @@ const raccoons: IFarmCard[] = [
     flavour: "Be sure to wash your hands after playing this card.",
   },
   {
-    name: "Broker",
-    qty: 1,
+    name: "Dealmaker",
+    qty: 2,
     cost: {
-      apples: 2,
+      apples: 1,
       berries: 2,
-      carrots: 2,
+      carrots: 1,
     },
     description: (
       <span>
@@ -95,12 +96,31 @@ const raccoons: IFarmCard[] = [
         <b>Discard</b> a card from their hand.
       </span>
     ),
-    energy: 3,
+    energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.DISCARD_OWN, TAGS.DISCARD_RIVAL],
     set: CARD_SET.CHARITY_DRIVE,
     recycle: <span>Put this card into your hand.</span>,
+  },
+  {
+    name: "Burglar",
+    qty: 2,
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    description: (
+      <span>
+        Discard a card from your hand to <TrickOrTreat />.
+      </span>
+    ),
+    energy: 3,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Raccoon,
+    tags: [TAGS.DISCARD_OWN, TAGS.TRICK_OR_TREAT],
+    set: CARD_SET.AUTUMN_HARVEST,
   },
 ];
 

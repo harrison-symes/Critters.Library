@@ -101,10 +101,10 @@ const rats: IFarmCard[] = [
   },
   {
     name: "Tax Collector",
-    qty: 2,
+    qty: 1,
     cost: {
       apples: 2,
-      berries: 2,
+      berries: 1,
       carrots: 1,
     },
     description: (
@@ -148,6 +148,25 @@ const rats: IFarmCard[] = [
       </span>
     ),
     energy: 2,
+  },
+  {
+    name: "Vampire Rat",
+    cost: {
+      apples: 2,
+      carrots: 0,
+      berries: 3,
+    },
+    qty: 2,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rat,
+    tags: [TAGS.FREE_MASK],
+    description: (
+      <span>
+        Put a <b>Mask</b> from the <b>Market</b> onto a <Critter />.
+      </span>
+    ),
+    energy: 3,
   },
 ];
 

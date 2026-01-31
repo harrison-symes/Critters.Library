@@ -28,6 +28,7 @@ import beavers from "./critters/beavers";
 import wittled from "./critters/wittled";
 import debris from "./items/debris";
 import masks from "./masks";
+import crows from "./critters/crows";
 
 const shuffleDeck = (deck: any[]) => {
   let currentIndex = deck.length;
@@ -72,6 +73,7 @@ export const createDeck = (noDuplicates: boolean = false): IFarmCard[] => {
   addToDeck(deck, beavers, noDuplicates);
   addToDeck(deck, wittled, noDuplicates);
   addToDeck(deck, debris, noDuplicates);
+  addToDeck(deck, crows, noDuplicates);
 
   // if (!noDuplicates) {
   //   return shuffleDeck(deck);

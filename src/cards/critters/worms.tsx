@@ -136,6 +136,28 @@ const worms: IFarmCard[] = [
     ),
     energy: 3,
   },
+  {
+    name: "Un-Earthed Worm",
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    qty: 1,
+    set: CARD_SET.AUTUMN_HARVEST,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Worm,
+    tags: [TAGS.SEED_SYNERGY, TAGS.WATCHER, TAGS.CARD_DRAW],
+    isWatcher: true,
+    description: (
+      <span>
+        When ANY player <b>Harvests</b> a <Seed />
+        ... <br />
+        Draw a card.
+      </span>
+    ),
+    energy: 2,
+  },
 ];
 
 export default worms;

@@ -1,4 +1,7 @@
 import { CARD_SET, CARD_TYPE, IFarmCard, TAGS } from "./../models/cards.models";
+import Apple from "./text/Apple";
+import Berry from "./text/Berry";
+import Carrot from "./text/Carrot";
 import Chew from "./text/Chew";
 import Critter from "./text/Critter";
 import Discount from "./text/Discount";
@@ -6,6 +9,7 @@ import Seed from "./text/Seed";
 import Skewer from "./text/Skewer";
 import Sleepy from "./text/Sleepy";
 import Sunlight from "./text/Sunlight";
+import TrickOrTreat from "./text/TrickOrTreat";
 
 const seeds: IFarmCard[] = [
   {
@@ -412,6 +416,199 @@ const seeds: IFarmCard[] = [
       ),
     },
     set: CARD_SET.WOOD_WORK,
+  },
+  {
+    name: "Cursed Apple Seeds",
+    qty: 1,
+    cost: {
+      apples: 3,
+      carrots: 0,
+      berries: 0,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SUGAR_RUSH],
+    sunlight: {
+      one: (
+        <span>
+          +2
+          <Apple />.
+        </span>
+      ),
+      two: (
+        <span>
+          <TrickOrTreat />.
+        </span>
+      ),
+      three: (
+        <span>
+          +5
+          <Apple />.
+        </span>
+      ),
+    },
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Cursed Berry Seeds",
+    qty: 1,
+    cost: {
+      apples: 0,
+      berries: 3,
+      carrots: 0,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SUGAR_RUSH],
+    sunlight: {
+      one: (
+        <span>
+          +2
+          <Berry />.
+        </span>
+      ),
+      two: (
+        <span>
+          <TrickOrTreat />.
+        </span>
+      ),
+      three: (
+        <span>
+          +5
+          <Berry />.
+        </span>
+      ),
+    },
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Cursed Carrot Seeds",
+    qty: 1,
+    cost: {
+      apples: 0,
+      berries: 0,
+      carrots: 3,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SUGAR_RUSH],
+    sunlight: {
+      one: (
+        <span>
+          +2
+          <Carrot />.
+        </span>
+      ),
+      two: (
+        <span>
+          <TrickOrTreat />.
+        </span>
+      ),
+      three: (
+        <span>
+          +5
+          <Carrot />.
+        </span>
+      ),
+    },
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Pumpkin Seeds",
+    qty: 2,
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SUGAR_RUSH],
+    sunlight: {
+      two: (
+        <span>
+          Gain +1
+          <Apple />, +1
+          <Berry />, +1
+          <Carrot />
+          ...
+        </span>
+      ),
+      three: (
+        <span>
+          ... and <b>Plant</b> a <Seed /> from your discard pile.
+        </span>
+      ),
+    },
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Candied Seeds",
+    qty: 2,
+    cost: {
+      apples: 1,
+      carrots: 1,
+      berries: 1,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SUGAR_RUSH],
+    sunlight: {
+      two: (
+        <span>
+          <TrickOrTreat />
+          ...
+        </span>
+      ),
+      three: <span>...and draw a card.</span>,
+    },
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Foretold Seeds",
+    qty: 2,
+    cost: {
+      apples: 1,
+      carrots: 1,
+      berries: 1,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SUGAR_RUSH],
+    sunlight: {
+      three: (
+        <span>
+          Draw 2 cards, then <b>Discard</b> a card.
+        </span>
+      ),
+    },
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Haunted Seeds",
+    qty: 1,
+    cost: {
+      apples: 2,
+      carrots: 2,
+      berries: 2,
+    },
+    description: <span>Gains 1 ☀️ at the end of your turn.</span>,
+    type: CARD_TYPE.Seeds,
+    tags: [TAGS.SUGAR_RUSH],
+    sunlight: {
+      two: (
+        <span>
+          Put <b>Masks</b> onto 2 friendly <Critter plural />
+          ...
+        </span>
+      ),
+      three: (
+        <span>
+          ...and remove all <Sleepy /> from them.
+        </span>
+      ),
+    },
+    set: CARD_SET.AUTUMN_HARVEST,
   },
 ];
 

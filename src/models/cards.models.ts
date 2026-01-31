@@ -34,6 +34,7 @@ export enum CARD_SUBTYPE {
   Beaver = "Beaver",
   Starter = "Starter",
   Wittled = "Wittled",
+  Crow = "Crow",
 }
 
 export enum TAGS {
@@ -87,6 +88,10 @@ export enum TAGS {
   CHOOSE_ONE = "Choose one",
   CHEW = "Chew",
   SUGAR_RUSH = "SUGAR_RUSH",
+  TRICK_OR_TREAT = "Trick or Treat",
+  WATCHER = "Watcher",
+  FREE_MASK = "FREE_MASK",
+  MASK_SYNERGY = "MASK_SYNERGY",
 }
 
 export interface ICard {
@@ -111,6 +116,7 @@ export interface IFarmCard extends ICard {
   refundable?: boolean;
   unsellable?: boolean;
   debris?: boolean;
+  isWatcher?: boolean;
   sunlight?: {
     one?: string | React.ReactNode;
     two?: string | React.ReactNode;

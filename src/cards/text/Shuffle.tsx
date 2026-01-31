@@ -1,6 +1,6 @@
 import { Tooltip } from "@mui/material";
 
-const Shuffle = () => {
+const Shuffle = ({ plural }: { plural?: boolean }) => {
   return (
     <Tooltip
       title={
@@ -13,7 +13,7 @@ const Shuffle = () => {
       placement="top"
       className="tooltip"
     >
-      <b>Shuffle</b>
+      <b>Shuffle{plural ? "s" : ""}</b>
     </Tooltip>
   );
 };

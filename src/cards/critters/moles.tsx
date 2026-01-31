@@ -8,6 +8,7 @@ import {
 import Burrow from "../text/Burrow";
 import Critter from "../text/Critter";
 import Sleepy from "../text/Sleepy";
+import TrickOrTreat from "../text/TrickOrTreat";
 
 const moles: IFarmCard[] = [
   {
@@ -89,8 +90,8 @@ const moles: IFarmCard[] = [
     flavour: "Now he holds the mallet.",
   },
   {
-    name: "Taskmaster",
-    qty: 2,
+    name: "Project Lead",
+    qty: 1,
     cost: {
       apples: 1,
       berries: 2,
@@ -112,6 +113,48 @@ const moles: IFarmCard[] = [
         <Burrow /> this card.
       </span>
     ),
+  },
+  {
+    name: "Captain Blind-beard",
+    qty: 1,
+    cost: {
+      apples: 3,
+      berries: 3,
+      carrots: 3,
+    },
+    description: (
+      <span>
+        <TrickOrTreat />. <br />
+        <b>Steal</b> the 3 crops on the dice from a Rival.
+      </span>
+    ),
+    energy: 2,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Mole,
+    tags: [TAGS.TRICK_OR_TREAT, TAGS.CROP_STEAL],
+    set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Secret Agent",
+    qty: 2,
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    isWatcher: true,
+    description: (
+      <span>
+        When a Rival plays a <Critter />
+        ... <br />
+        Add 1 <Sleepy /> to it.
+      </span>
+    ),
+    energy: 3,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Mole,
+    tags: [TAGS.TRICK_OR_TREAT, TAGS.CROP_STEAL],
+    set: CARD_SET.AUTUMN_HARVEST,
   },
 ];
 
