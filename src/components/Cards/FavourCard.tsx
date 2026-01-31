@@ -8,12 +8,13 @@ import "./cards.scss";
 
 interface IProps {
   card: IFavourCard;
+  isMarketSim?: boolean;
 }
 
 const FavourCard = (props: IProps) => {
   const areDesignNotesVisible = useAppSelector(getAreDesignNotesVisible);
   const shouldShowAiColouredImages = useAppSelector(
-    getShouldShowAiColouredImages
+    getShouldShowAiColouredImages,
   );
   const image =
     shouldShowAiColouredImages && props.card.ai_image
@@ -23,7 +24,8 @@ const FavourCard = (props: IProps) => {
   return (
     <div className="card card--favour">
       <div className="card__name">
-        {props.card.name} {props.card.qty > 1 && <>(x{props.card.qty})</>}
+        {props.card.name}{" "}
+        {props.card.qty > 1 && !props.isMarketSim && <>(x{props.card.qty})</>}
       </div>
       {areDesignNotesVisible && props.card.notes && !image ? (
         <div className="card__notes__container">

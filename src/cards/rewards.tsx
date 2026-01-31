@@ -840,6 +840,19 @@ const rewards: IRewardCard[] = [
     tags: [TAGS.TRICK_OR_TREAT, TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
   },
   {
+    name: "Sweet Plot",
+    qty: 1,
+    description: (
+      <span>
+        Whenever you <b>Harvest</b> a <Seed /> with 3 1 <Sunlight />,{" "}
+        <TrickOrTreat />.
+      </span>
+    ),
+    type: CARD_TYPE.Reward,
+    set: CARD_SET.AUTUMN_HARVEST,
+    tags: [TAGS.TRICK_OR_TREAT, TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
+  },
+  {
     name: "Fortune Farm",
     qty: 1,
     description: (

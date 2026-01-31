@@ -4,13 +4,15 @@ import CropCost from "./CropCost";
 
 interface IProps {
   card: IWorkOrder;
+  isMarketSim?: boolean;
 }
 
 const WorkOrderCard = (props: IProps) => {
   return (
     <div className="card card--work-order">
       <div className="card__name">
-        {props.card.name} {props.card.qty > 1 && <>(x{props.card.qty})</>}
+        {props.card.name}{" "}
+        {props.card.qty > 1 && !props.isMarketSim && <>(x{props.card.qty})</>}
       </div>
       <div className="card__special__container">
         <div className="card__cost__container">
