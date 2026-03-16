@@ -43,7 +43,7 @@ const tools: IFarmCard[] = [
     description: (
       <span>
         Gain +2 🍏.
-        <br /> Add 1 <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+        <br /> Add 1 <b>☀️Sunlight</b> to your <b>🌱Seeds</b>.
       </span>
     ),
     buyBonus: (

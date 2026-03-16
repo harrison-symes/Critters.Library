@@ -515,7 +515,7 @@ const finance: IFarmCard[] = [
     description: (
       <span>
         <b>Sell</b> a card from your hand. <br />
-        Add 1 <Sunlight /> to each of your <Seed plural />. <br />
+        Add 1 <Sunlight /> to your <Seed plural />. <br />
         <Discount />.
       </span>
     ),

@@ -8,6 +8,7 @@ import {
 import Chew, { Chewed } from "../text/Chew";
 import Shuffle from "../text/Shuffle";
 import Seed from "../text/Seed";
+import Sunlight from "../text/Sunlight";
 
 const worms: IFarmCard[] = [
   {
@@ -21,7 +22,7 @@ const worms: IFarmCard[] = [
     },
     description: (
       <span>
-        Add 1 <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+        Add 2 <Sunlight /> to a <Seed />.
       </span>
     ),
     buyBonus: (
@@ -51,13 +52,14 @@ const worms: IFarmCard[] = [
         <b>Plant</b> a <Seed /> from your discard pile.
       </span>
     ),
-    recycle: "Gain +3 of a random crop.",
+    recycle: (
+      <span>Add 1 <Sunlight /> to your <Seed plural />.</span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
     tags: [
-      TAGS.CROP_GENERATION,
-      TAGS.CROP_GENERATION_RANDOM,
+      TAGS.SUNLIGHT_ADD,
       TAGS.SEED_SYNERGY,
       TAGS.PLANT_FROM_DISCARD,
     ],

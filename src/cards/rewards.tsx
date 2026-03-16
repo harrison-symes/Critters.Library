@@ -152,7 +152,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         At the end of your turn, if you have at least 3 planted <Seed plural />,
-        add 1 <Sunlight /> to each of your <Seed plural />.
+        add 1 <Sunlight /> to your <Seed plural />.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -167,8 +167,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        After you <b>Sell</b> or <b>Trash</b> a card, add 1 <Sunlight /> to each
-        of your <Seed plural />.
+        After you <b>Buy</b>, <b>Sell</b> or <b>Trash</b> a Farm card, add 1 <Sunlight /> to a <Seed />.
       </span>
     ),
     type: CARD_TYPE.Reward,
@@ -730,7 +729,7 @@ const rewards: IRewardCard[] = [
     description: (
       <span>
         Whenever your deck is <b>Reset</b>, first <b>plant</b> a <Seed /> from
-        your discard pile and add 1 <Sunlight /> to each of your <Seed plural />
+        your discard pile and add 1 <Sunlight /> to your <Seed plural />
         .
       </span>
     ),
@@ -831,7 +830,7 @@ const rewards: IRewardCard[] = [
     qty: 1,
     description: (
       <span>
-        Whenever you <TrickOrTreat />, add 1 <Sunlight /> to each of your{" "}
+        Whenever you <TrickOrTreat />, add 1 <Sunlight /> to your{" "}
         <Seed plural />.
       </span>
     ),

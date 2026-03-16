@@ -157,13 +157,13 @@ const favours: IFavourCard[] = [
     set: CARD_SET.BASE,
   },
   {
-    name: "Feed the Seeds",
+    name: "Feed the Seed",
     notes:
       "A worm (Fertilizer) is watering a seedling sprout with a watering can (held by his 'tail')",
     qty: 1,
     description: (
       <span>
-        Add 1 <b>☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+        Add 2 <b>☀️Sunlight</b> to a <b>🌱Seed</b>.
       </span>
     ),
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],

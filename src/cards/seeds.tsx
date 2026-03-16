@@ -233,12 +233,12 @@ const seeds: IFarmCard[] = [
     sunlight: {
       two: (
         <span>
-          Add <b>1 ☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+          Add <b>1 ☀️Sunlight</b> to your <b>🌱Seeds</b>...
         </span>
       ),
       three: (
         <span>
-          Add <b>2 ☀️Sunlight</b> to each of your <b>🌱Seeds</b>.
+          ...and return this to your hand.
         </span>
       ),
     },

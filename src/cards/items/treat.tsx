@@ -343,8 +343,8 @@ const treats: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <b>Plant</b> a <Seed /> from your discard pile. <br /> Add 1{" "}
-        <b>☀️Sunlight</b> to each of your <Seed plural />.
+        <b>Plant</b> a <Seed /> from your discard pile. <br /> Add 2{" "}
+        <b>☀️Sunlight</b> to that <Seed />.
       </span>
     ),
   },
@@ -571,7 +571,7 @@ const treats: IFarmCard[] = [
     description: (
       <span>
         <TrickOrTreat />. <br />
-        Add 1 <Sunlight /> to each of your <Seed plural />.
+        Add 1 <Sunlight /> to your <Seed plural />.
       </span>
     ),
   },
