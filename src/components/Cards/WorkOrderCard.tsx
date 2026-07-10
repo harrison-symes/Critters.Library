@@ -1,4 +1,6 @@
-import { IWorkOrder } from "../../models/cards.models";
+import { CARD_TYPE, IWorkOrder } from "../../models/cards.models";
+import { getAreDesignNotesVisible } from "../../store/filtersSlice";
+import { useAppSelector } from "../../store/hooks";
 import "./cards.scss";
 import CropCost from "./CropCost";
 
@@ -8,12 +10,30 @@ interface IProps {
 }
 
 const WorkOrderCard = (props: IProps) => {
+    const areDesignNotesVisible = useAppSelector(getAreDesignNotesVisible);
+    const image = props.card.image;
+        
   return (
     <div className="card card--work-order">
       <div className="card__name">
         {props.card.name}{" "}
         {props.card.qty > 1 && !props.isMarketSim && <>(x{props.card.qty})</>}
       </div>
+      {areDesignNotesVisible && props.card.notes && !image ? (
+        <div className="card__notes__container">
+          <div className="card__notes__text">{props.card.notes}</div>
+        </div>
+      ) : (
+        <div
+          className="card__image__container"
+        >
+          <img
+            className="card__image"
+            alt={image}
+            src={`/images/workOrders/${image}`}
+          />
+        </div>
+      )}
       <div className="card__special__container">
         <div className="card__cost__container">
           <CropCost costs={props.card.cost} crop="apples" />

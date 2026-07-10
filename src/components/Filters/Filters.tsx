@@ -1,5 +1,4 @@
 import { CARD_TYPE, CARD_SUBTYPE } from "../../models/cards.models";
-import AiColouredImagesToggle from "./AiColouredImagesToggle";
 import CardSetFilterss from "./CardSetFilters";
 import CardTypeFilters, {
   CardSubTypeFilter,
@@ -39,7 +38,6 @@ const Filters = () => {
       <div className="filters__container">
         <DesignNotesToggle />
         <ShowCardWithArtSwitch />
-        <AiColouredImagesToggle />
         <ShowStatsToggle />
       </div>
     </div>

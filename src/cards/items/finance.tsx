@@ -29,7 +29,6 @@ const finance: IFarmCard[] = [
       carrots: 2,
     },
     image: "/recycling_bin.png",
-    ai_image: "/ai/recycling_bin.png",
     flavour: "Reduce waste, play that card again!",
     qty: 1,
     set: CARD_SET.BASE,
@@ -59,7 +58,6 @@ const finance: IFarmCard[] = [
   {
     name: "Closed Sign",
     image: "/closed_sign.png",
-    ai_image: "/ai/closed_sign.png",
     flavour: "Come back in the morning.",
     notes: "A fold up sign with the word 'closed' written on it",
     cost: {
@@ -96,7 +94,6 @@ const finance: IFarmCard[] = [
   {
     name: "Loyalty Card",
     image: "/loyalty_card.png",
-    ai_image: "/ai/loyalty_card.png",
     flavour: "You're my favourite customer!",
     notes:
       "A punch card with a cartoon rat face and 6 circles with berries on them. Some of them are punched out (like a coffee loyalty card).",
@@ -134,7 +131,6 @@ const finance: IFarmCard[] = [
   {
     name: "Cooked Books",
     image: "/cooked_books.png",
-    ai_image: "/ai/cooked_books.png",
     flavour: "A delicious meal, unless you're an Auditor.",
     notes: "A thick open book resting in a pot of boiling water",
     cost: {
@@ -161,8 +157,7 @@ const finance: IFarmCard[] = [
   },
   {
     name: "Instruction manual",
-    image: "/instruction_manual",
-    ai_image: "/ai/instruction_manual",
+    image: "/instruction_manual.png",
     notes:
       "A sheet similar to lego instructions, with numbered steps 1 2 and 3. The steps show how to put and apple into a crate",
     flavour: "Step 1: Get Apples. Step 2: ???. Step 3: Profit!",
@@ -191,7 +186,6 @@ const finance: IFarmCard[] = [
   {
     name: "Damaged Goods",
     image: "/damaged_goods.png",
-    ai_image: "/ai/damaged_goods.png",
     flavour: "It was broken when I bought it.",
     notes: "A worn down opened top crate, with rotten crops inside",
     cost: {
@@ -207,7 +201,7 @@ const finance: IFarmCard[] = [
       TAGS.SELL,
       TAGS.SELL_FROM_DISCARD,
       TAGS.TRASH,
-      TAGS.TRASH_FROM_DISCARD,
+      TAGS.TRASH_FROM_HAND,
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_ALL,
       TAGS.CHOOSE_ONE,
@@ -215,11 +209,11 @@ const finance: IFarmCard[] = [
     holdable: true,
     description: (
       <span>
-        <b>Sell</b> a card from your hand.
+        <b>Sell</b> a card from your discard pile.
         <br />
         <b>-OR-</b>
         <br />
-        <b>Trash</b> a card from your discard pile.
+        <b>Trash</b> 2 cards from your hand pile.
       </span>
     ),
     recycle: (
@@ -234,7 +228,6 @@ const finance: IFarmCard[] = [
   {
     name: "Gift Card",
     image: "/gift_card.png",
-    ai_image: "/ai/gift_card.png",
     flavour: "For when you're out of ideas.",
     notes:
       "A gift card with a cartoon rat face and the word 'FREE!' written on it.",
@@ -260,7 +253,6 @@ const finance: IFarmCard[] = [
     name: "Paper Shredder",
     flavour: "Carrot patch? You mean shredded Carrots?",
     image: "/paper_shredder.png",
-    ai_image: "/ai/paper_shredder.png",
     notes: "A paper shredder that is shredding receipts",
     cost: {
       apples: 0,
@@ -291,7 +283,6 @@ const finance: IFarmCard[] = [
     name: "Open Sign",
     flavour: "Excuse me, do you work here?",
     image: "/open_sign.png",
-    ai_image: "/ai/open_sign.png",
     notes: "A fold out sign with the word 'OPEN' on it",
     cost: {
       apples: 3,
@@ -321,7 +312,6 @@ const finance: IFarmCard[] = [
   {
     name: "Contrabrand",
     image: "/contrabrand.png",
-    ai_image: "/ai/contrabrand.png",
     notes: "A purple carrot and a red apple",
     flavour: "Red Apples? Purple Carrots? Are these allowed?",
     cost: {
@@ -349,7 +339,6 @@ const finance: IFarmCard[] = [
   {
     name: "Register",
     image: "/register.png",
-    ai_image: "/ai/register.png",
     flavour: "Will that be Crops or Card?",
     notes:
       "A cash register with a pull lever on the side. 3 buttons with icons for each crop type. The draw is open and there are various crops in little compartments",
@@ -378,7 +367,6 @@ const finance: IFarmCard[] = [
     name: "Receipts",
     flavour: "You've been keeping track of your purchases, right?",
     image: "/receipts.png",
-    ai_image: "/ai/receipts.png",
     notes:
       "A bundle of receipts, the text is eligible squiggly lines. Possibly a rubber band around them.",
     cost: {
@@ -412,8 +400,9 @@ const finance: IFarmCard[] = [
     ),
   },
   {
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     name: "Bargain Bin",
+    image: "/bargain_bin.png",
     cost: {
       apples: 3,
       berries: 3,
@@ -429,15 +418,16 @@ const finance: IFarmCard[] = [
         <Shuffle /> every <b>🏠Starter</b> card from your discard pile too.
       </span>
     ),
-    buyBonus: (
+    recycle: (
       <span>
-        <Discount />.
+        <Discount /> twice.
       </span>
-    ),
+    )
   },
   {
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     name: "Crop Sink",
+    image: "/crop_sink.png",
     cost: {
       apples: 3,
       berries: 0,
@@ -455,14 +445,15 @@ const finance: IFarmCard[] = [
     ],
     description: (
       <span>
-        <b>Trash</b> a card from your discard pile. <br />
+        <b>Trash</b> a card from your discard pile to gain 2 random crops.<br />
         If it was a <b>🏦Finance</b> card, <Skewer /> it after. <br />
       </span>
     ),
   },
   {
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     name: "Seed Fund",
+    image: "/seed_fund.png",
     cost: {
       apples: 0,
       berries: 3,
@@ -472,8 +463,6 @@ const finance: IFarmCard[] = [
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Finance,
     tags: [
-      TAGS.SELL,
-      TAGS.SELL_FROM_DISCARD,
       TAGS.LESS_REWARDS,
       TAGS.SEED_SYNERGY,
       TAGS.PLANT_FROM_DISCARD,
@@ -482,20 +471,16 @@ const finance: IFarmCard[] = [
     refundable: true,
     description: (
       <span>
-        <b>Sell</b> a card from your discard pile. <br />
-        If you have less <b>🏆Rewards</b> than your Rivals, <b>Plant</b> a{" "}
-        <Seed /> from your discard pile.
+        <b>Plant</b> 2 <Seed plural /> from your discard pile. <br />
+        If you have less <b>🏆Rewards</b> than your Rivals, add 2 <Sunlight /> to those <Seed plural />.
       </span>
-    ),
-    recycle: (
-      <span>
-        Add 2 <Sunlight /> to a <Seed />.
-      </span>
-    ),
+    )
   },
   {
     set: CARD_SET.WOOD_WORK,
-    name: "Money Tree",
+    name: "Rosebud",
+    image: "/rosebud.png",
+    flavour: "Previously owned by Citizen Crane.",
     cost: {
       apples: 2,
       berries: 1,
@@ -528,6 +513,8 @@ const finance: IFarmCard[] = [
   {
     set: CARD_SET.WOOD_WORK,
     name: "Birdhouse",
+    image: "/birdhouse.png",
+    flavour: "But where are all the birds?",
     cost: {
       apples: 0,
       berries: 2,
@@ -541,13 +528,15 @@ const finance: IFarmCard[] = [
       <span>
         <Chew count={3} />. <br /> You may <b>Sell</b> one of the <Chewed />{" "}
         cards. <br />
-        <Discount />
+        <Discount />.
       </span>
     ),
   },
   {
     set: CARD_SET.WOOD_WORK,
     name: "Hand-made Crate",
+    image: "/hand_made_crate.png",
+    flavour: "Lovingly crafted, soon to be discarded.",
     cost: {
       apples: 3,
       berries: 2,
@@ -559,8 +548,7 @@ const finance: IFarmCard[] = [
     tags: [TAGS.FREE_CRATE, TAGS.BURROW],
     description: (
       <span>
-        Draw a card. <br />
-        <Burrow /> this card.
+        Draw a card, then <Burrow /> this card.
       </span>
     ),
     recycle: (
@@ -674,7 +662,7 @@ const finance: IFarmCard[] = [
     tags: [],
     description: (
       <span>
-        Draw 2 cards, then <b>Discard</b> a card.
+        Draw a card. You may <b>Discard</b> it to draw another card.
       </span>
     ),
     recycle: <span>Each player draws a card.</span>,
@@ -697,6 +685,60 @@ const finance: IFarmCard[] = [
         Look at at Rival's hand. <br />
         If you have a <b>Masked</b>
         <Critter />, <b>Discard</b> one of their cards.
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.HOLIDAY,
+    name: "Treasure Map",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.HOLIDAY,
+    name: "Holiday Pay",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        
+      </span>
+    ),
+  },
+  {
+    set: CARD_SET.HOLIDAY,
+    name: "",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    type: CARD_TYPE.Item,
+    subtype: CARD_SUBTYPE.Finance,
+    tags: [],
+    description: (
+      <span>
+        
       </span>
     ),
   },

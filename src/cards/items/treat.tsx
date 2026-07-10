@@ -23,7 +23,6 @@ const treats: IFarmCard[] = [
     name: "Rat Food",
     flavour: "They love the way the Apples feel on their teeth.",
     image: "/rat_food.png",
-    ai_image: "/ai/rat_food.png",
     notes: "A plate of 3 apples",
     cost: {
       apples: 3,
@@ -52,7 +51,6 @@ const treats: IFarmCard[] = [
     name: "Rabbit Food",
     flavour: "I don't need to explain this one to you.",
     image: "/rabbit_food.png",
-    ai_image: "/ai/rabbit_food.png",
     notes: "A plate of 3 carrots",
     cost: {
       apples: 1,
@@ -81,7 +79,6 @@ const treats: IFarmCard[] = [
     name: "Hog Food",
     flavour: "Berries skewer very nicely.",
     image: "/hog_food.png",
-    ai_image: "/ai/hog_food.png",
     notes: "A plate of 3 berries",
     cost: {
       apples: 1,
@@ -115,7 +112,6 @@ const treats: IFarmCard[] = [
     name: "Picnic Basket",
     flavour: "Bring a little extra of your favourite.",
     image: "/picnic_basket.png",
-    ai_image: "/ai/picnic_basket.png",
     notes: "A closed picnic basket on a picnic blanket",
     cost: {
       apples: 2,
@@ -149,7 +145,6 @@ const treats: IFarmCard[] = [
     name: "Award Winning Crop",
     flavour: "Is a really large Apple still only worth 1 Apple in value?",
     image: "/award_winning_crop.png",
-    ai_image: "/ai/award_winning_crop.png",
     notes: "A giant carrot with an award ribbon on it with the text '#1.",
     cost: {
       apples: 3,
@@ -169,7 +164,6 @@ const treats: IFarmCard[] = [
     name: "Gift Basket",
     flavour: "And you get to keep the basket.",
     image: "/gift_basket.png",
-    ai_image: "/ai/gift_basket.png",
     cost: {
       apples: 4,
       berries: 4,
@@ -200,7 +194,6 @@ const treats: IFarmCard[] = [
   {
     name: "Pot of Feed",
     image: "/pot_of_feed.png",
-    ai_image: "/pot_of_feed.png",
     flavour: "You can play this card to draw 2 cards.",
     notes:
       "A clay pot filled with grain. Etchings of a toothy grin face on it (like Pot of Greed Yugioh card).",
@@ -220,7 +213,6 @@ const treats: IFarmCard[] = [
     name: "Midnight Snack",
     flavour: "C'mon, it's just one Apple.",
     image: "/midnight_snack.png",
-    ai_image: "/ai/midnight_snack.png",
     notes: "A slice of frosted cake with a berry on top",
     cost: {
       apples: 2,
@@ -237,13 +229,12 @@ const treats: IFarmCard[] = [
         Gain a random crop. <br /> Draw a card.
       </span>
     ),
-    buyBonus: "Each player gains a random crop",
+    buyBonus: "Each gains 1 of the same random crop.",
   },
   {
     name: "Pik'n'mix",
     flavour: "Maybe this should be called 'Pick'or'Mix'.",
     image: "/pik_n_mix.png",
-    ai_image: "/ai/pik_n_mix.png",
     notes: "An open paper bag with 1 of each crop inside",
     cost: {
       apples: 0,
@@ -278,7 +269,6 @@ const treats: IFarmCard[] = [
       carrots: 0,
     },
     image: "/morning_cuppa.png",
-    ai_image: "/ai/morning_cuppa.png",
     qty: 1,
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
@@ -300,7 +290,6 @@ const treats: IFarmCard[] = [
     name: "Sharing Plate",
     flavour: "Everybody bring a plate.",
     image: "/sharing_plate.png",
-    ai_image: "/ai/sharing_plate.png",
     notes: "A glad-wrapped plate with lots of apples on it",
     cost: {
       apples: 2,
@@ -328,7 +317,6 @@ const treats: IFarmCard[] = [
     name: "Plant Food",
     flavour: "I'm on a Plant Food diet. I plant food and then I eat it.",
     image: "/plant_food.png",
-    ai_image: "/ai/plant_food.png",
     notes: "A plate with a bag sitting on it. The bag says 'Potting Mix'",
     cost: {
       apples: 3,
@@ -349,8 +337,9 @@ const treats: IFarmCard[] = [
     ),
   },
   {
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     name: "Lucky Dip",
+    image: "/lucky_dip.png",
     // notes: "An aluminium can with a lightning bolt logo on it",
     cost: {
       apples: 2,
@@ -374,11 +363,11 @@ const treats: IFarmCard[] = [
         instead.
       </span>
     ),
-    recycle: <span>Gain +3 of a random crop.</span>,
   },
   {
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     name: "Leftovers",
+    image: "/leftovers.png",
     cost: {
       apples: 1,
       berries: 1,
@@ -391,9 +380,8 @@ const treats: IFarmCard[] = [
     tags: [TAGS.TREAT_SYNERGY, TAGS.SHUFFLE, TAGS.DISCARD_OWN],
     description: (
       <span>
-        <Shuffle /> a <Treat />. <br />
-        <b>Discard</b> a card from your hand to <Shuffle /> ALL of your{" "}
-        <Treat plural /> instead.
+        <b>Discard</b> a card from your hand to <Shuffle /> ALL other{" "}
+        <Treat plural /> from your discard pile.
       </span>
     ),
     buyBonus: (
@@ -403,8 +391,9 @@ const treats: IFarmCard[] = [
     ),
   },
   {
-    set: CARD_SET.CHARITY_DRIVE,
-    name: "Potluck",
+    set: CARD_SET.CROWD_FUND,
+    name: "Shared Lunch",
+    image: "/shared_lunch.png",
     cost: {
       apples: 1,
       berries: 3,
@@ -424,6 +413,7 @@ const treats: IFarmCard[] = [
   {
     set: CARD_SET.WOOD_WORK,
     name: "Maple Syrup",
+    image: "/maple_syrup.png",
     cost: {
       apples: 2,
       berries: 2,
@@ -435,7 +425,7 @@ const treats: IFarmCard[] = [
     tags: [TAGS.SUGAR_RUSH],
     description: (
       <span>
-        Perform a friendly <Critter ownership /> <b>Talent</b>. <br />
+        Perform a friendly <Critter ownership /> <b>Talent</b> twice. <br />
         (Without adding any <Sleepy />)
       </span>
     ),
@@ -443,6 +433,7 @@ const treats: IFarmCard[] = [
   {
     set: CARD_SET.WOOD_WORK,
     name: "Acorn",
+    image: "/acorn.png",
     cost: {
       apples: 2,
       berries: 0,
@@ -463,6 +454,7 @@ const treats: IFarmCard[] = [
   {
     set: CARD_SET.WOOD_WORK,
     name: "Beaver Food",
+    image: "/beaver_food.png",
     cost: {
       apples: 1,
       berries: 3,

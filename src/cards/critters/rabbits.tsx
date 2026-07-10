@@ -7,10 +7,12 @@ import {
 } from "../../models/cards.models";
 import Apple from "../text/Apple";
 import Berry from "../text/Berry";
+import Burrow from "../text/Burrow";
 import Carrot from "../text/Carrot";
 import Chew, { Chewed } from "../text/Chew";
 import Critter from "../text/Critter";
 import Discount from "../text/Discount";
+import Sleepy from "../text/Sleepy";
 import TrickOrTreat from "../text/TrickOrTreat";
 
 const rabbits: IFarmCard[] = [
@@ -52,6 +54,7 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Apple Grower",
+    image: "/apple_grower.png",
     notes:
       "A rabbit wearing a farm hat, standing on a step ladder to reach an apple from a tree",
     qty: 2,
@@ -111,6 +114,7 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Crop Picker",
+    image: "/crop_picker.png",
     notes:
       "A rabbit in a vintage dress, holding an empty basket. In motion / walking somewhere.",
     qty: 2,
@@ -133,7 +137,8 @@ const rabbits: IFarmCard[] = [
     flavour: "You can't be TOO picky.",
   },
   {
-    name: "Volunteer",
+    name: "Fundraiser",
+    image: "/fundraiser.png",
     qty: 2,
     cost: {
       apples: 2,
@@ -143,14 +148,14 @@ const rabbits: IFarmCard[] = [
     description: (
       <span>
         <Discount />. <br />
-        Gain +2 of the discounted crop type.
+        Gain +3 of the discounted crop type.
       </span>
     ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_CHOOSE, TAGS.FREE_FAVOUR],
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     flavour: "He's here to lend a paw.",
     recycle: (
       <span>
@@ -160,6 +165,7 @@ const rabbits: IFarmCard[] = [
   },
   {
     name: "Benefactor",
+    image: "/benefactor.png",
     qty: 1,
     cost: {
       apples: 4,
@@ -175,7 +181,7 @@ const rabbits: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [],
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     flavour: "",
     buyBonus: (
       <span>
@@ -184,20 +190,21 @@ const rabbits: IFarmCard[] = [
     ),
   },
   {
-    name: "Wood Worker",
+    name: "Lumberjack",
+    image: "/lumberjack.png",
     cost: {
       apples: 2,
       carrots: 2,
       berries: 2,
     },
-    qty: 2,
+    qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rabbit,
     tags: [TAGS.CHEW, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     description: (
       <span>
-        <Chew count={3} />. <br /> Gain a random crop for each card <Chewed />.
+        <Chew count={3} />. <br /> Gain a random crop for each <Chewed /> card.
       </span>
     ),
     energy: 2,
@@ -226,7 +233,7 @@ const rabbits: IFarmCard[] = [
     cost: {
       apples: 1,
       carrots: 1,
-      berries: 4,
+      berries: 3,
     },
     qty: 1,
     set: CARD_SET.AUTUMN_HARVEST,
@@ -246,7 +253,7 @@ const rabbits: IFarmCard[] = [
     name: "Carrot Seeker",
     cost: {
       apples: 1,
-      carrots: 4,
+      carrots: 3,
       berries: 1,
     },
     qty: 1,
@@ -266,7 +273,7 @@ const rabbits: IFarmCard[] = [
   {
     name: "Apple Seeker",
     cost: {
-      apples: 4,
+      apples: 3,
       carrots: 1,
       berries: 1,
     },
@@ -283,6 +290,31 @@ const rabbits: IFarmCard[] = [
       </span>
     ),
     energy: 3,
+  },
+  {
+    name: "Overworker",
+    qty: 2,
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    isWatcher: true,
+    description: (
+      <span>
+        Add 1 <Sleepy /> to another friendly <Critter /> to gain +3 of a random crop.
+      </span>
+    ),
+    clockOut: (
+      <span>
+        
+      </span>
+    ),
+    energy: 3,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rabbit,
+    tags: [],
+    set: CARD_SET.HOLIDAY,
   },
 ];
 

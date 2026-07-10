@@ -10,7 +10,6 @@ import CropCost from "./CropCost";
 import { useAppSelector } from "../../store/hooks";
 import {
   getAreDesignNotesVisible,
-  getShouldShowAiColouredImages,
 } from "../../store/filtersSlice";
 
 interface IProps {
@@ -50,13 +49,7 @@ const getSubtypeIcon = (type?: CARD_SUBTYPE) => {
 
 const FarmCard = (props: IProps) => {
   const areDesignNotesVisible = useAppSelector(getAreDesignNotesVisible);
-  const shouldShowAiColouredImages = useAppSelector(
-    getShouldShowAiColouredImages,
-  );
-  const image =
-    shouldShowAiColouredImages && props.card.ai_image
-      ? props.card.ai_image
-      : props.card.image;
+  const image = props.card.image;
 
   return (
     <div className="card card--farm-card">
@@ -127,6 +120,14 @@ const FarmCard = (props: IProps) => {
             <span className="card__description__icon">💰</span>
             <span className="card__description__text">
               {props.card.buyBonus}
+            </span>
+          </div>
+        )}
+        {props.card.clockOut && (
+          <div className="card__description__block">
+            <span className="card__description__icon">⏰</span>
+            <span className="card__description__text">
+              {props.card.clockOut}
             </span>
           </div>
         )}

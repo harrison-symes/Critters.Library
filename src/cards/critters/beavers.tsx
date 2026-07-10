@@ -12,31 +12,29 @@ import Skewer from "../text/Skewer";
 const beavers: IFarmCard[] = [
   {
     name: "Nibblot",
+    image: "/nibblot.png",
     cost: {
       apples: 1,
-      berries: 3,
+      berries: 2,
       carrots: 1,
     },
     qty: 2,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Beaver,
-    tags: [TAGS.CHEW, TAGS.SELL],
+    tags: [TAGS.CHEW, TAGS.TRASH],
     description: (
       <span>
-        <Chew count={3} />. <br /> You may <b>Sell</b> one of the <Chewed />{" "}
+        <Chew count={3} />. <br /> You may <b>Trash</b> one of the <Chewed />{" "}
         cards.
       </span>
     ),
-    buyBonus: (
-      <span>
-        <b>Gift</b> a card.
-      </span>
-    ),
+
     energy: 2,
   },
   {
     name: "Carpenter",
+    image: "/carpenter.png",
     cost: {
       apples: 1,
       berries: 1,
@@ -62,6 +60,7 @@ const beavers: IFarmCard[] = [
   },
   {
     name: "Ava",
+    image: "/ava.png",
     cost: {
       apples: 3,
       berries: 1,
@@ -71,14 +70,19 @@ const beavers: IFarmCard[] = [
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Beaver,
-    tags: [TAGS.CHEW, TAGS.SKEWER],
+    tags: [TAGS.CHEW, TAGS.GIFT],
     description: (
       <span>
-        <Chew count={3} /> from a Rival's deck, then <Skewer /> one of the
-        chewed cards for them.
+        <Chew count={3} />. <br />
+        Get a free <b>Favour</b> from the <b>Market</b>.
       </span>
     ),
-    energy: 2,
+    buyBonus: (
+      <span>
+        <b>Gift</b> a card.
+      </span>
+    ),
+    energy: 3,
   },
 ];
 

@@ -17,6 +17,7 @@ import TrickOrTreat from "./text/TrickOrTreat";
 const rewards: IRewardCard[] = [
   {
     name: "Apple Stall",
+    image: "/apple_stall.png",
     flavour: "Orange really is the new Black.",
     notes:
       "A market stall with a sign with apples on it. A crate filled with apples is behind the stall.",
@@ -34,6 +35,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Berry Stall",
+    image: "/berry_stall.png",
     flavour: "That's a Berry good deal!",
     notes:
       "A market stall with a sign with berries on it. A crate filled with berries is sitting on the stall counter.",
@@ -51,6 +53,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Carrot Stall",
+    image: "/carrot_stall.png",
     flavour: "2 Apples a day keeps the Apples away.",
     notes:
       "A market stall with a sign with carrots on it. A crate filled with carrots is behind the stall.",
@@ -68,6 +71,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Pawn Shop",
+    image: "/pawn_shop.png",
     flavour: "Where you can buy a Chess set with only half the pieces.",
     notes: "A popup shop with various trinkets on display.",
     qty: 1,
@@ -84,6 +88,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Notice Board",
+    image: "/notice_board.png",
     flavour: "Have you ever noticed?",
     notes: "A bulliton board with things pinned to it in the village square.",
     qty: 1,
@@ -99,6 +104,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Work Bench",
+    image: "/work_bench.png",
     flavour: "It's all Work Bench and no Play bench.",
     notes: "Unfolded blueprints on a wooden workbench.",
     qty: 1,
@@ -114,6 +120,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Gift Shop",
+    image: "/gift_shop.png",
     flavour: "You have to pass through here on your way out of the Market.",
     notes: "A small stall with presents on display.",
     qty: 1,
@@ -129,6 +136,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Coffee Cart",
+    image: "/coffee_cart.png",
     flavour: "You get great Coffee Art from this Coffee Cart.",
     notes:
       "A little cart with a big coffee pot sitting in it. A sign with an espresso on it.",
@@ -145,6 +153,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Greenhouse",
+    image: "/green_house.png",
     flavour: "The house is green from all the Chlorophyll.",
     notes:
       "A simple small greenhouse. Inside you can see a row of sprouted seedlings.",
@@ -161,6 +170,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Rich Plot",
+    image: "/rich_plot.png",
     flavour: "The other plots didn't work as hard, and bought too much coffee.",
     notes:
       "A plot of land with lots of seedlings sprouting from the soil. The soil is dark.",
@@ -176,6 +186,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Bountiful Plot",
+    image: "/bountiful_plot.png",
     flavour: "There's a bounty out for this Plot.",
     notes: "A plot of land with lots of lush bush.",
     qty: 1,
@@ -192,6 +203,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Sunny Plot",
+    image: "/sunny_plot.png",
     flavour: "The perfect spot for Sunflowers.",
     notes: "A empty plot of land, nothing is planted, but the sun is shining",
     qty: 1,
@@ -206,6 +218,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Pot Plant",
+    image: "/pot_plant.png",
     flavour: "Harvest him? But he is my friend!",
     notes: "A clay pot filled with soil with a single seed sproutling inside",
     qty: 1,
@@ -221,6 +234,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Clocktower",
+    image: "/clock_tower.png",
     flavour:
       "The Roosters have been real quiet ever since this Clocktower showed up.",
     notes: "A big Cuckoo Clock in the middle of the town square.",
@@ -236,6 +250,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Freezer",
+    image: "/freezer.png",
     flavour: "You can sell those Berries for more during the off-season.",
     notes: "An open box freezer with lots of crops inside.",
     qty: 1,
@@ -251,6 +266,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Toll Booth",
+    image: "/toll_booth.png",
     flavour: "Do not pass. Do not collect 200 Carrots.",
     notes:
       "A stall at the market, but with a big toll gate (being held by the Raccoon inside the stall)",
@@ -267,6 +283,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Weather Vane",
+    image: "/weather_vane.png",
     flavour: "They used to employ real Roosters to sit on these all day.",
     notes:
       "A classic weather vane, with compass directions and a big metal rooster on top",
@@ -283,6 +300,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Skewer Cart",
+    image: "/skewer_cart.png",
     flavour: "Skewer? I hardly know her!",
     notes: "A hedgehog is selling skewers (kebobs) at the cart.",
     qty: 1,
@@ -297,6 +315,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Junkyard",
+    image: "/junk_yard.png",
     flavour: "Elephant's have a LOT of junk in their trunks.",
     notes: "A pile of old tools and various items",
     qty: 1,
@@ -312,6 +331,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Tool Shed",
+    image: "/tool_shed.png",
     flavour: "Snakes also shed sometimes.",
     notes:
       "A worn down wooden shed. The door is a bit wonky and open slightly. Inside you can see a rake and a pitchfork",
@@ -327,6 +347,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Breakroom",
+    image: "/break_room.png",
     flavour: "Please don't actually break anything.",
     notes:
       "A cozy room with a table with a coffee mug on it. Maybe a beanbag in the corner.",
@@ -344,6 +365,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Snack Cart",
+    image: "/snack_cart.png",
     flavour: "Beavers think that the Cart is a snack too.",
     notes: "A wooden cart with lots of plated cakes and cupcakes.",
     qty: 1,
@@ -358,6 +380,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Burnt Ledger",
+    image: "/burnt_ledger.png",
     flavour: "Hey! Who cooked the books?",
     notes:
       "Like the book from Cooked Books card, but it is singed / has burn marks",
@@ -374,6 +397,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Vault",
+    image: "/vault.png",
     flavour: "Store your crops to gain Compost Interest.",
     notes: "A large safe, with a metal wheel to open it.",
     qty: 1,
@@ -392,6 +416,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Trading Post",
+    image: "/trading_post.png",
     flavour: "Where you can get the rarest trading cards.",
     notes: "A popup stall with a big SALE sign. All 3 crops on display.",
     qty: 1,
@@ -406,6 +431,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Dumpster",
+    image: "/dumpster.png",
     flavour: "'NO DIVING!'",
     notes: "A big dumpster filled with garbage bags and various items.",
     qty: 1,
@@ -421,6 +447,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Lost & Found",
+    image: "/lost_and_found.png",
     flavour: "But what if this ever gets lost?",
     notes: "A box with the label 'Lost & Found' with various things inside.",
     qty: 1,
@@ -436,6 +463,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Billboard",
+    image: "/billboard.png",
     flavour: "Need a job done? Call Clodhopper!",
     notes:
       "A billboard advertising Clodhopper's services. (A big rabbit with big boots)",
@@ -452,6 +480,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Grain Silo",
+    image: "/grain_silo.png",
     flavour: "When it is the only silo you have, its a solo silo.",
     notes: "A large silo on a farm with grain spilling out.",
     qty: 1,
@@ -470,8 +499,9 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "The Burrows",
-    flavour: "",
-    notes: "A hole in the ground",
+    image: "/the_burrows.png",
+    flavour: "Otherwise known as 'The Mole Hole'.",
+    notes: "A hole in the ground. Roughly dug. Maybe a mole face peeking out?",
     qty: 1,
     description: (
       <span>
@@ -485,6 +515,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Tip Jar",
+    image: "/tip_jar.png",
     flavour: "You'll want to collect them before they start rotting.",
     notes:
       "A glass jar with a coin slot in the lid. It has a label with the text 'Tips' on it. Has some berries in it.",
@@ -500,6 +531,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Second-paw Store",
+    image: "/second_paw_store.png",
     qty: 1,
     description: (
       <span>
@@ -508,11 +540,12 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.WORK_ORDER_COMPLETION],
   },
   {
     name: "Crowd Fund",
+    image: "/crowd_fund.png",
     qty: 1,
     description: (
       <span>
@@ -521,11 +554,12 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.CROP_STEAL],
   },
   {
     name: "Donation Bin",
+    image: "/donation_bin.png",
     qty: 1,
     description: (
       <span>
@@ -533,11 +567,12 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.TRASH, TAGS.GIFT],
   },
   {
     name: "Advertisement",
+    image: "/advertisement.png",
     qty: 1,
     description: (
       <span>
@@ -546,7 +581,7 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [
       TAGS.CROP_GENERATION,
       TAGS.CROP_GENERATION_RANDOM,
@@ -555,32 +590,33 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Meeting Room",
+    image: "/meeting_room.png",
     qty: 1,
     description: (
       <span>
-        If you have less <b>🏆Rewards</b> than your Rivals, you don't have to
-        pay any <b>Overtime</b> packing fees.
+        At the end of your turn, if you have less <b>🏆Rewards</b> than your Rivals, draw an extra card.
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
-    tags: [TAGS.LESS_REWARDS],
+    set: CARD_SET.CROWD_FUND,
+    tags: [TAGS.LESS_REWARDS, TAGS.CARD_DRAW],
   },
   {
     name: "Investment Window",
+    image: "/investment_window.png",
     qty: 1,
     description: (
       <span>
-        If you have less <b>🏆Rewards</b> than your Rivals, your <Seed plural />{" "}
-        gain 2 <Sunlight /> at the end of your turn.
+        At the end of your turn, if you have less <b>🏆Rewards</b> than your Rivals, add 1 <Sunlight /> to your <Seed plural />.
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.SEED_SYNERGY, TAGS.LESS_REWARDS, TAGS.SUNLIGHT_ADD],
   },
   {
     name: "Sample Stand",
+    image: "/sample_stand.png",
     qty: 1,
     description: (
       <span>
@@ -588,11 +624,12 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.TREAT_SYNERGY, TAGS.SHUFFLE, TAGS.CARD_DRAW],
   },
   {
     name: "Fraudulent Documents",
+    image: "/fraudulent_documents.png",
     qty: 1,
     description: (
       <span>
@@ -601,11 +638,12 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.FINANCE_SYNERGY, TAGS.SELL, TAGS.CARD_DRAW],
   },
   {
     name: "Warehouse",
+    image: "/warehouse.png",
     qty: 1,
     description: (
       <span>
@@ -618,11 +656,12 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.TOOL_SYNERGY, TAGS.SKEWER],
   },
   {
     name: "Fulfillment Center",
+    image: "/fulfillment_center.png",
     qty: 1,
     description: (
       <span>
@@ -631,11 +670,12 @@ const rewards: IRewardCard[] = [
       </span>
     ),
     type: CARD_TYPE.Reward,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     tags: [TAGS.WORK_ORDERS_3, TAGS.CARD_DRAW],
   },
   {
     name: "Oak Tree",
+    image: "/oak_tree.png",
     qty: 1,
     description: (
       <span>
@@ -648,18 +688,20 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Birch Tree",
+    image: "/birch_tree.png",
     qty: 1,
     description: (
       <span>
-        After you <Chew /> or <b>Discard</b> a <Critter />, draw a card.
+        After you <Chew /> or <b>Discard</b> a <Critter />, draw a card. <br /> (Once per turn)
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.WOOD_WORK,
-    tags: [TAGS.CHEW],
+    tags: [TAGS.CHEW, TAGS.CARD_DRAW],
   },
   {
     name: "Maple Tree",
+    image: "/maple_tree.png",
     qty: 1,
     description: (
       <span>
@@ -673,6 +715,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Beaver Dam",
+    image: "/beaver_dam.png",
     qty: 1,
     description: (
       <span>
@@ -682,23 +725,25 @@ const rewards: IRewardCard[] = [
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.WOOD_WORK,
-    tags: [TAGS.CHEW, TAGS.SKEWER],
+    tags: [TAGS.CHEW, TAGS.CARD_DRAW],
   },
   {
-    name: "Wittle House",
+    name: "Whittle Workshop",
+    image: "/whittle_workshop.png",
     qty: 1,
     description: (
       <span>
-        Instantly, and whenever you complete a <b>Work Order</b>, get a random{" "}
-        <b>Wittle Critter</b>.
+        Instantly, and whenever you complete a <b>Work Order</b>, <Burrow /> a random{" "}
+        <b>Whittle Critter</b>.
       </span>
     ),
     type: CARD_TYPE.Reward,
     set: CARD_SET.WOOD_WORK,
-    tags: [TAGS.CHEW, TAGS.CARD_DRAW],
+    tags: [TAGS.CHEW, TAGS.BURROW, TAGS.WORK_ORDER_COMPLETION],
   },
   {
     name: "Sawmill",
+    image: "/sawmill.png",
     qty: 1,
     description: (
       <span>
@@ -712,6 +757,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Farm Gate",
+    image: "/farm_gate.png",
     qty: 1,
     description: (
       <span>
@@ -725,6 +771,7 @@ const rewards: IRewardCard[] = [
   },
   {
     name: "Lush Forest",
+    image: "/lush_forest.png",
     qty: 1,
     description: (
       <span>

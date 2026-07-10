@@ -15,7 +15,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Apple Seeds",
     image: "/apple_seeds.png",
-    ai_image: "/ai/apple_seeds.png",
     flavour: "If you thought Apples were crunchy, wait until you try these!",
     notes:
       "A big open canvas bag of seeds, with an apple logo on the front. The seeds are light.",
@@ -50,7 +49,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Berry Seeds",
     image: "/berry_seeds.png",
-    ai_image: "/ai/berry_seeds.png",
     flavour: "You must be Berry patient with these",
     notes:
       "A big open canvas bag of seeds, with a berry logo on the front. The seeds are dark.",
@@ -85,7 +83,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Carrot Seeds",
     image: "/carrot_seeds.png",
-    ai_image: "/ai/carrot_seeds.png",
     flavour: "Otherwise known as baby baby Carrots",
     notes:
       "A big open canvas bag of seeds, with a carrot logo on the front, the seeds are shaded.",
@@ -120,7 +117,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Mystery Seeds",
     image: "/mystery_seeds.png",
-    ai_image: "/ai/mystery_seeds.png",
     flavour: "When you're as blind as a Mole, all seeds are Mystery Seeds",
     notes:
       "A big closed canvas bag of seeds, with big question mark on the front",
@@ -142,7 +138,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Mixed Seeds",
     image: "/mixed_seeds.png",
-    ai_image: "/ai/mixed_seeds.png",
     flavour: "These seeds are like a box of chocolates...",
     notes:
       "A big open canvas bag of seeds, with an circle logo split into thirds the front. Inside each third is an icon of carrot, berry and apple. The seeds are 3 different shades. Light, shaded and dark.",
@@ -165,7 +160,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Coffee Seeds",
     image: "/coffee_seeds.png",
-    ai_image: "/ai/coffee_seeds.png",
     flavour:
       "You plant Coffee Seeds to grow Coffee BEANS. Why are you planting the beans?",
     notes:
@@ -188,7 +182,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Golden Seeds",
     image: "/golden_seeds.png",
-    ai_image: "/ai/golden_seeds.png",
     flavour: "What do they grow into? Deals!",
     notes:
       "A big open canvas bag of seeds, with a $ logo on the front. The seeds are shiny.",
@@ -218,7 +211,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Sunflower Seeds",
     image: "/sunflower_seeds.png",
-    ai_image: "/ai/sunflower_seeds.png",
     flavour: "A certain Worm's favourite snack.",
     notes: "A big canvas bag of seeds, with a Sunflower logo on the front",
     qty: 2,
@@ -247,7 +239,6 @@ const seeds: IFarmCard[] = [
   {
     name: "Magic Seeds",
     image: "/magic_seeds.png",
-    ai_image: "/ai/magic_seeds.png",
     flavour: "You could trade a Cow for these, if you had one...",
     notes:
       "A big canvas bag of seeds, with no logo on the front. The bag is open and the seeds are glowing.",
@@ -271,6 +262,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Lavender Seeds",
+    image: "/lavender_seeds.png",
     qty: 2,
     cost: {
       apples: 1,
@@ -292,10 +284,11 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
-    name: "Shiny Seeds",
+    name: "Daisy Seeds",
+    image: "/mountain_daisy_seeds.png",
     qty: 2,
     cost: {
       apples: 1,
@@ -319,10 +312,11 @@ const seeds: IFarmCard[] = [
         </span>
       ),
     },
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
-    name: "Flower Seeds",
+    name: "Rose Seeds",
+    image: "/rose_seeds.png",
     qty: 1,
     cost: {
       apples: 2,
@@ -335,14 +329,15 @@ const seeds: IFarmCard[] = [
     sunlight: {
       three: (
         <span>
-          Pack a free crate into one of your <b>Work Orders</b>.
+          Pack a free <b>📦Crate</b> into one of your <b>Work Orders</b>.
         </span>
       ),
     },
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
     name: "Oak Seeds",
+    image: "/oak_seeds.png",
     qty: 2,
     cost: {
       apples: 1,
@@ -368,6 +363,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Birch Seeds",
+    image: "/birch_seeds.png",
     qty: 2,
     cost: {
       apples: 1,
@@ -378,11 +374,6 @@ const seeds: IFarmCard[] = [
     type: CARD_TYPE.Seeds,
     tags: [TAGS.CHEW, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     sunlight: {
-      one: (
-        <span>
-          <Chew count={3} />, gain 3 random crops.
-        </span>
-      ),
       two: (
         <span>
           <Chew count={2} />, gain 3 random crops.
@@ -390,7 +381,7 @@ const seeds: IFarmCard[] = [
       ),
       three: (
         <span>
-          <Chew count={1} />, gain 3 random crops.
+          Gain 3 random crops.
         </span>
       ),
     },
@@ -398,6 +389,7 @@ const seeds: IFarmCard[] = [
   },
   {
     name: "Maple Seeds",
+    image: "/maple_seeds.png",
     qty: 1,
     cost: {
       apples: 2,
@@ -565,7 +557,7 @@ const seeds: IFarmCard[] = [
     set: CARD_SET.AUTUMN_HARVEST,
   },
   {
-    name: "Foretold Seeds",
+    name: "Fortune Seeds",
     qty: 2,
     cost: {
       apples: 1,

@@ -9,8 +9,6 @@ const WorkOrderCardList = () => {
   const [isHidden, setIsHidden] = React.useState(false);
   const title = "Work Orders";
 
-  console.log({ workOrders });
-
   if (workOrders.length === 0) {
     return null;
   }

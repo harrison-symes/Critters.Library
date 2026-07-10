@@ -14,9 +14,10 @@ export type RESOURCE = "apples" | "carrots" | "berries";
 
 export enum CARD_SET {
   BASE = "Base",
-  CHARITY_DRIVE = "Charity Drive",
+  CROWD_FUND = "Crowd Fund",
   WOOD_WORK = "Wood Work",
   AUTUMN_HARVEST = "Autumn Harvest",
+  HOLIDAY = "Holiday",
 }
 
 export enum CARD_SUBTYPE {
@@ -33,7 +34,7 @@ export enum CARD_SUBTYPE {
   Bee = "Bee",
   Beaver = "Beaver",
   Starter = "Starter",
-  Wittled = "Wittled",
+  Whittled = "Whittled",
   Crow = "Crow",
 }
 
@@ -99,7 +100,6 @@ export interface ICard {
   description?: string | React.ReactNode;
   qty: number;
   image?: string;
-  ai_image?: string;
   tags?: TAGS[];
   type: CARD_TYPE;
   set: CARD_SET;
@@ -112,6 +112,7 @@ export interface IFarmCard extends ICard {
   subtype?: CARD_SUBTYPE;
   buyBonus?: string | React.ReactNode;
   recycle?: string | React.ReactNode;
+  clockOut?: string | React.ReactNode;
   holdable?: boolean;
   refundable?: boolean;
   unsellable?: boolean;

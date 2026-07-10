@@ -5,7 +5,7 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
-import Chew from "../text/Chew";
+import Chew, { Chewed } from "../text/Chew";
 import Critter from "../text/Critter";
 import Shuffle from "../text/Shuffle";
 import Item from "../text/Item";
@@ -15,6 +15,7 @@ import TrickOrTreat from "../text/TrickOrTreat";
 const bees: IFarmCard[] = [
   {
     name: "Worker Bee",
+    image: "/worker_bee.png",
     notes: "A Bee wearing a suit and tie, holding a briefcase",
     qty: 2,
     cost: {
@@ -57,6 +58,7 @@ const bees: IFarmCard[] = [
   },
   {
     name: "Plan Bee",
+    image: "/plan_bee.png",
     notes: "A bee wearing glasses, holding up and looking at some blueprints.",
     qty: 1,
     cost: {
@@ -78,10 +80,11 @@ const bees: IFarmCard[] = [
   },
   {
     name: "Architect",
+    image: "/architect.png",
     cost: {
-      apples: 2,
-      carrots: 2,
-      berries: 2,
+      apples: 3,
+      carrots: 3,
+      berries: 3,
     },
     qty: 1,
     set: CARD_SET.WOOD_WORK,
@@ -90,8 +93,7 @@ const bees: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.WORK_ORDERS_3, TAGS.CARD_DRAW],
     description: (
       <span>
-        <Chew count={3} />, then draw a card. <br />
-        <Chew /> one less card for each <b>Work Order</b> you have.
+        <Chew count={1} /> for each <b>Work Order</b> you have, then add one of the <Chewed /> cards to your hand.
       </span>
     ),
     energy: 2,
@@ -99,9 +101,9 @@ const bees: IFarmCard[] = [
   {
     name: "Jester",
     cost: {
-      apples: 3,
-      carrots: 3,
-      berries: 3,
+      apples: 2,
+      carrots: 2,
+      berries: 2,
     },
     qty: 1,
     set: CARD_SET.AUTUMN_HARVEST,
@@ -110,11 +112,11 @@ const bees: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.WORK_ORDERS_3, TAGS.CARD_DRAW],
     description: (
       <span>
-        <TrickOrTreat />. This <Critter /> has +1 <b>Energy</b> for each{" "}
-        <b>Work Orders</b> you have.
+        <TrickOrTreat />. <br />This <Critter /> has +1 <b>Energy</b> for each{" "}
+        <b>Work Order</b> you have.
       </span>
     ),
-    energy: 2,
+    energy: 1,
   },
 ];
 

@@ -76,6 +76,12 @@ const filterFarmDeck = (cards: IFarmCard[], filters: IFilterState) => {
 
 const filterWorkOrderDeck = (cards: IWorkOrder[], filters: IFilterState) => {
   return cards.filter((card) => {
+    if (filters.cardsWithArtFilter === "artOnly" && !card.image) {
+      return false;
+    }
+    if (filters.cardsWithArtFilter === "withoutArtOnly" && card.image) {
+      return false;
+    }
     if (filters.types.length && !filters.types.includes(card.type)) {
       return false;
     }

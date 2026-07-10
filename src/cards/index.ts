@@ -25,7 +25,7 @@ import rewards from "./rewards";
 import starters from "./items/starter";
 import visitors from "./visitors";
 import beavers from "./critters/beavers";
-import wittled from "./critters/wittled";
+import whittled from "./critters/wittled";
 import debris from "./items/debris";
 import masks from "./masks";
 import crows from "./critters/crows";
@@ -71,7 +71,7 @@ export const createDeck = (noDuplicates: boolean = false): IFarmCard[] => {
   addToDeck(deck, hedgehogs, noDuplicates);
   addToDeck(deck, bees, noDuplicates);
   addToDeck(deck, beavers, noDuplicates);
-  addToDeck(deck, wittled, noDuplicates);
+  addToDeck(deck, whittled, noDuplicates);
   addToDeck(deck, debris, noDuplicates);
   addToDeck(deck, crows, noDuplicates);
 

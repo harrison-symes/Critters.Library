@@ -26,14 +26,12 @@ export interface IFilterState {
   sets: CARD_SET[];
   areDesignNotesVisible: boolean;
   cardsWithArtFilter: TCardsWithArtFilter;
-  showAiColouredImages: boolean;
   showStats: boolean;
 }
 
 const initialState: IFilterState = {
   areDesignNotesVisible: true,
   cardsWithArtFilter: "all",
-  showAiColouredImages: false,
   showStats: false,
   types: [],
   subTypes: [],
@@ -102,9 +100,6 @@ const filterSlice = createSlice({
     ) => {
       state.cardsWithArtFilter = action.payload;
     },
-    toggleShowAiColouredImages: (state) => {
-      state.showAiColouredImages = !state.showAiColouredImages;
-    },
     toggleShowStats: (state) => {
       state.showStats = !state.showStats;
     },
@@ -121,7 +116,6 @@ export const {
   toggleCardSetFilter,
   toggleDesignNotesVisible,
   setCardsWithArtFilter,
-  toggleShowAiColouredImages,
   toggleShowStats,
 } = filterSlice.actions;
 
@@ -137,8 +131,6 @@ export const getAreDesignNotesVisible = (state: RootState) =>
   state.filters.areDesignNotesVisible;
 export const getCardsWithArtFilter = (state: RootState) =>
   state.filters.cardsWithArtFilter;
-export const getShouldShowAiColouredImages = (state: RootState) =>
-  state.filters.showAiColouredImages;
 export const getShouldShowStats = (state: RootState) => state.filters.showStats;
 
 export default filterSlice.reducer;

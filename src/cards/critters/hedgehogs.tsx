@@ -39,6 +39,7 @@ const hedgehogs: IFarmCard[] = [
   },
   {
     name: "Picky Eater",
+    image: "/picky_eater.png",
     qty: 2,
     cost: {
       apples: 2,
@@ -94,13 +95,14 @@ const hedgehogs: IFarmCard[] = [
   },
   {
     name: "Pledge Hog",
+    image: "/pledge_hog.png",
     qty: 1,
     cost: {
       apples: 3,
       berries: 3,
       carrots: 3,
     },
-    energy: 3,
+    energy: 2,
     description: (
       <span>
         <Shuffle /> 2 cards for a Rival (from their discard pile).
@@ -108,19 +110,20 @@ const hedgehogs: IFarmCard[] = [
     ),
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Hedgehog,
-    tags: [TAGS.SHUFFLE],
-    set: CARD_SET.CHARITY_DRIVE,
+    tags: [TAGS.SHUFFLE, TAGS.GIFT],
+    set: CARD_SET.CROWD_FUND,
     buyBonus: (
       <span>
-        <b>Gift</b> a card from your discard pile.
+        <b>Gift</b> a card.
       </span>
     ),
   },
   {
     name: "Splinter",
+    image: "/splinter.png",
     cost: {
       apples: 2,
-      berries: 1,
+      berries: 3,
       carrots: 1,
     },
     qty: 1,
@@ -130,8 +133,8 @@ const hedgehogs: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.SKEWER, TAGS.GIFT],
     description: (
       <span>
-        <Chew count={1} />. <br /> <Skewer /> or <b>Gift</b> the <Chewed />{" "}
-        card.
+        <Chew count={2} />. <br /> <Skewer /> or <b>Gift</b> one of the <Chewed />{" "}
+        cards.
       </span>
     ),
     buyBonus: (
@@ -139,7 +142,7 @@ const hedgehogs: IFarmCard[] = [
         <Skewer /> this card.
       </span>
     ),
-    energy: 3,
+    energy: 2,
   },
   {
     name: "Spooky Ghost",
@@ -159,6 +162,26 @@ const hedgehogs: IFarmCard[] = [
         When a Rival <Shuffle plural />, <Skewer plural /> or <Burrow plural />{" "}
         a card... <br />
         Do the same.
+      </span>
+    ),
+    energy: 3,
+  },
+  {
+    name: "",
+    cost: {
+      apples: 2,
+      berries: 2,
+      carrots: 2,
+    },
+    qty: 2,
+    set: CARD_SET.HOLIDAY,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Hedgehog,
+    tags: [TAGS.SHUFFLE, TAGS.SKEWER, TAGS.BURROW, TAGS.WATCHER],
+    isWatcher: true,
+    description: (
+      <span>
+        
       </span>
     ),
     energy: 3,

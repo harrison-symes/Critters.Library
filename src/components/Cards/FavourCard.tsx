@@ -1,7 +1,6 @@
 import { IFarmCard, IFavourCard, IRewardCard } from "../../models/cards.models";
 import {
   getAreDesignNotesVisible,
-  getShouldShowAiColouredImages,
 } from "../../store/filtersSlice";
 import { useAppSelector } from "../../store/hooks";
 import "./cards.scss";
@@ -13,13 +12,7 @@ interface IProps {
 
 const FavourCard = (props: IProps) => {
   const areDesignNotesVisible = useAppSelector(getAreDesignNotesVisible);
-  const shouldShowAiColouredImages = useAppSelector(
-    getShouldShowAiColouredImages,
-  );
-  const image =
-    shouldShowAiColouredImages && props.card.ai_image
-      ? props.card.ai_image
-      : props.card.image;
+  const image = props.card.image;
 
   return (
     <div className="card card--favour">

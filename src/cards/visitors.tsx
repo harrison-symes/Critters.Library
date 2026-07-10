@@ -6,17 +6,20 @@ import {
 } from "../models/cards.models";
 import Critter from "./text/Critter";
 import Discount from "./text/Discount";
+import Seed from "./text/Seed";
 import Sleepy from "./text/Sleepy";
+import Sunlight from "./text/Sunlight";
 
 const visitors: IVisitorCard[] = [
   {
     name: "Travelling Salesman",
+    image: "/travelling_salesman.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, <b>Refresh</b> the Farm card row in the <b>Market</b>,
+        When I <b>Arrive</b>, <b>Refresh</b> EVERY card in the <b>Market</b>,
         then <Discount /> twice.
         <br />
         Then I leave.
@@ -26,26 +29,27 @@ const visitors: IVisitorCard[] = [
   },
   {
     name: "Investor",
+    image: "/investor.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, all players <b>Reset</b> their decks and then draw 2
-        cards. <br />
+        When I <b>Arrive</b>, each player draws 2 cards. <br />
         Then I leave.
       </span>
     ),
-    tags: [TAGS.RESET_DECK, TAGS.CARD_DRAW],
+    tags: [TAGS.CARD_DRAW],
   },
   {
     name: "Coffee Donor",
+    image: "/coffee_donor.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, remove 1 <Sleepy /> from each
+        When I <b>Arrive</b>, remove 1 <Sleepy /> from each
         <Critter />.<br />
         Then I leave.
       </span>
@@ -54,14 +58,15 @@ const visitors: IVisitorCard[] = [
   },
   {
     name: "Generous Donor",
+    image: "/generous_donor.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, each player gains{" "}
+        When I <b>Arrive</b>, each player gains{" "}
         <span className="nowrap">
-          <b>1🍏</b>, <b>1🫐</b>, <b>1🥕</b>
+          <b>+1🍏</b>, <b>+1🫐</b>, <b>+1🥕</b>
         </span>
         .<br />
         Then I leave.
@@ -71,12 +76,13 @@ const visitors: IVisitorCard[] = [
   },
   {
     name: "Carrot Donor",
+    image: "/carrot_donor.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, each player gains +2 🥕.
+        When I <b>Arrive</b>, each player gains +3 🥕.
         <br />
         Then I leave.
       </span>
@@ -85,12 +91,13 @@ const visitors: IVisitorCard[] = [
   },
   {
     name: "Apple Donor",
+    image: "/apple_donor.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, each player gains +2 🍏.
+        When I <b>Arrive</b>, each player gains +3 🍏.
         <br />
         Then I leave.
       </span>
@@ -99,12 +106,13 @@ const visitors: IVisitorCard[] = [
   },
   {
     name: "Berry Donor",
+    image: "/berry_donor.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, each player gains +2 🫐.
+        When I <b>Arrive</b>, each player gains +3 🫐.
         <br />
         Then I leave.
       </span>
@@ -113,13 +121,28 @@ const visitors: IVisitorCard[] = [
   },
   {
     name: "Workaholic",
+    image: "/workaholic.png",
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Visitor,
     description: (
       <span>
-        When I arrive, each player can get a free <b>Work Order</b>. <br /> (In
-        turn order)
+        When I <b>Arrive</b>, each player can pack a free <b>📦Crate</b> into one of their <b>Work Orders</b>.
+        <br />
+        Then I leave.
+      </span>
+    ),
+    tags: [TAGS.FREE_CRATE],
+  },
+  {
+    name: "Seed Funder",
+    image: "/seed_funder.png",
+    qty: 1,
+    set: CARD_SET.CROWD_FUND,
+    type: CARD_TYPE.Visitor,
+    description: (
+      <span>
+        When I <b>Arrive</b>, add 1 <Sunlight /> to ALL <Seed plural />.
         <br />
         Then I leave.
       </span>

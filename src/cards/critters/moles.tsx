@@ -13,6 +13,7 @@ import TrickOrTreat from "../text/TrickOrTreat";
 const moles: IFarmCard[] = [
   {
     name: "Saboteur",
+    image: "/saboteur.png",
     qty: 2,
     cost: {
       apples: 1,
@@ -28,7 +29,7 @@ const moles: IFarmCard[] = [
     ),
     recycle: (
       <span>
-        <b>Exhaust</b> a Rival's <Critter />.
+        Put this into play.
       </span>
     ),
     energy: 2,
@@ -47,7 +48,6 @@ const moles: IFarmCard[] = [
       carrots: 2,
     },
     image: "/burrower.png",
-    ai_image: "/ai/burrower.png",
     description: (
       <span>
         <b>Steal</b> a crop from a Rival.
@@ -68,7 +68,7 @@ const moles: IFarmCard[] = [
   {
     name: "Wacker Mole",
     image: "/whacker_mole.png",
-    ai_image: "/ai/whacker_mole.png",
+    unsellable: true,
     notes:
       "A big mole, wearing a blindfold and holding a big cartoonish mallet (very looney toons).",
     qty: 1,
@@ -82,6 +82,11 @@ const moles: IFarmCard[] = [
         Add 1 <Sleepy /> to each of a Rival's <Critter plural />.
       </span>
     ),
+    buyBonus: (
+      <span>
+        Put this into play.
+      </span>
+    ),
     energy: 2,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
@@ -90,11 +95,12 @@ const moles: IFarmCard[] = [
     flavour: "Now he holds the mallet.",
   },
   {
-    name: "Project Lead",
-    qty: 1,
+    name: "Project Manager",
+    image: "/project_manager.png",
+    qty: 2,
     cost: {
-      apples: 1,
-      berries: 2,
+      apples: 2,
+      berries: 1,
       carrots: 2,
     },
     description: (
@@ -107,7 +113,7 @@ const moles: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.REMOVE_ZZZ, TAGS.ADD_ZZZ, TAGS.BURROW, TAGS.MOVE_ZZZ],
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     recycle: (
       <span>
         <Burrow /> this card.
@@ -155,6 +161,31 @@ const moles: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Mole,
     tags: [TAGS.TRICK_OR_TREAT, TAGS.CROP_STEAL],
     set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Sun Bather",
+    qty: 1,
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    isWatcher: true,
+    description: (
+      <span>
+        Add 1 <Sleepy /> to another friendly <Critter /> to draw a card.
+      </span>
+    ),
+    clockOut: (
+      <span>
+        <Burrow /> this card.
+      </span>
+    ),
+    energy: 2,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Mole,
+    tags: [],
+    set: CARD_SET.HOLIDAY,
   },
 ];
 

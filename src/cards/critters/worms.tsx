@@ -13,6 +13,7 @@ import Sunlight from "../text/Sunlight";
 const worms: IFarmCard[] = [
   {
     name: "Fertiliser",
+    image: "/fertiliser.png",
     notes: "A worm wearing a sunhat, looking at a sprouted seedling proudly.",
     qty: 2,
     cost: {
@@ -22,7 +23,7 @@ const worms: IFarmCard[] = [
     },
     description: (
       <span>
-        Add 2 <Sunlight /> to a <Seed />.
+        Add 1 <Sunlight /> to a <Seed />.
       </span>
     ),
     buyBonus: (
@@ -30,7 +31,7 @@ const worms: IFarmCard[] = [
         <Shuffle /> a <Seed />.
       </span>
     ),
-    energy: 3,
+    energy: 4,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD, TAGS.SHUFFLE],
@@ -39,6 +40,7 @@ const worms: IFarmCard[] = [
   },
   {
     name: "Top-Soiler",
+    image: "/top_soiler.png",
     notes:
       "A worm holding a shovel with the end of his tail. Standing over some soil mounds.",
     qty: 2,
@@ -68,6 +70,7 @@ const worms: IFarmCard[] = [
   },
   {
     name: "Chloro Phil",
+    image: "/chloro_phil.png",
     notes: "A big worm taking a bite out of a Sunflower",
     qty: 1,
     cost: {
@@ -95,13 +98,14 @@ const worms: IFarmCard[] = [
   },
   {
     name: "Transplanter",
+    image: "/transplanter.png",
     cost: {
-      apples: 2,
-      berries: 1,
+      apples: 1,
+      berries: 2,
       carrots: 2,
     },
-    qty: 2,
-    set: CARD_SET.CHARITY_DRIVE,
+    qty: 1,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Worm,
     energy: 3,
@@ -115,6 +119,7 @@ const worms: IFarmCard[] = [
   },
   {
     name: "Wood Worm",
+    image: "/wood_worm.png",
     cost: {
       apples: 2,
       berries: 1,
@@ -127,7 +132,7 @@ const worms: IFarmCard[] = [
     tags: [TAGS.CHEW, TAGS.SEED_SYNERGY, TAGS.PLANT_FROM_DISCARD, TAGS.SHUFFLE],
     description: (
       <span>
-        <Chew count={2} />. <br /> <b>Plant</b> any <Seed plural /> that were{" "}
+        <Chew count={3} />. <br /> <b>Plant</b> any <Seed plural /> that were{" "}
         <Chewed />.
       </span>
     ),
@@ -141,9 +146,9 @@ const worms: IFarmCard[] = [
   {
     name: "Un-Earthed Worm",
     cost: {
-      apples: 2,
-      berries: 2,
-      carrots: 2,
+      apples: 3,
+      berries: 3,
+      carrots: 3,
     },
     qty: 1,
     set: CARD_SET.AUTUMN_HARVEST,
@@ -158,7 +163,7 @@ const worms: IFarmCard[] = [
         Draw a card.
       </span>
     ),
-    energy: 2,
+    energy: 3,
   },
 ];
 

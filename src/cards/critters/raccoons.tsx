@@ -5,12 +5,14 @@ import {
   IFarmCard,
   TAGS,
 } from "../../models/cards.models";
+import Dive from "../text/Dive";
 import Shuffle from "../text/Shuffle";
 import TrickOrTreat from "../text/TrickOrTreat";
 
 const raccoons: IFarmCard[] = [
   {
     name: "Rummager",
+    image: "/rummager.png",
     notes:
       "A raccoon digging through a trashcan. He is wearing black gloves. An empty open trashbag is lying on the ground.",
     qty: 2,
@@ -26,7 +28,7 @@ const raccoons: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <Shuffle /> a <b>🏠Starter</b> card.
+        <Shuffle /> every <b>🏠Starter</b> card from your discard pile.
       </span>
     ),
     energy: 3,
@@ -38,6 +40,7 @@ const raccoons: IFarmCard[] = [
   },
   {
     name: "Dumpster Diver",
+    image: "/dumpster_diver.png",
     notes:
       "A raccoon is poking out of a pile a trash in a dumpster. He is holding up a trowel that he found.",
     qty: 2,
@@ -84,6 +87,7 @@ const raccoons: IFarmCard[] = [
   },
   {
     name: "Dealmaker",
+    image: "/dealmaker.png",
     qty: 2,
     cost: {
       apples: 1,
@@ -100,7 +104,7 @@ const raccoons: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.DISCARD_OWN, TAGS.DISCARD_RIVAL],
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     recycle: <span>Put this card into your hand.</span>,
   },
   {
@@ -121,6 +125,30 @@ const raccoons: IFarmCard[] = [
     subtype: CARD_SUBTYPE.Raccoon,
     tags: [TAGS.DISCARD_OWN, TAGS.TRICK_OR_TREAT],
     set: CARD_SET.AUTUMN_HARVEST,
+  },
+  {
+    name: "Holiday Hooligan",
+    qty: 1,
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    description: (
+      <span>
+        <b>Discard</b> a card from your hand to <Dive count={1} />.
+      </span>
+    ),
+    clockOut: (
+      <span>
+        Each of your Rivals must <b>Discard</b> a card from their hands.
+      </span>
+    ),
+    energy: 3,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Raccoon,
+    tags: [],
+    set: CARD_SET.HOLIDAY,
   },
 ];
 

@@ -24,7 +24,6 @@ const gifts: IFarmCard[] = [
     tags: [TAGS.GIFT],
     unsellable: true,
     image: "/goldfish.png",
-    ai_image: "/ai/goldfish.png",
     description: (
       <span>
         This does nothing. <br />
@@ -46,7 +45,6 @@ const gifts: IFarmCard[] = [
     },
     qty: 1,
     image: "/birthday_present.png",
-    ai_image: "/ai/birthday_present.png",
     set: CARD_SET.BASE,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Gift,
@@ -54,7 +52,7 @@ const gifts: IFarmCard[] = [
     tags: [TAGS.GIFT, TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM],
     description: (
       <span>
-        Gain 3 random crops. <br /> <b>Gift</b> this card.
+        Gain +4 of a random crop. <br /> <b>Gift</b> this card.
       </span>
     ),
   },
@@ -66,7 +64,6 @@ const gifts: IFarmCard[] = [
       carrots: 0,
     },
     image: "/hot_potato.png",
-    ai_image: "/ai/hot_potato.png",
     notes:
       "A potato with drawn on eyes (with long eyelashes and eyeliner) and seductive lips ;)",
     qty: 1,
@@ -82,7 +79,8 @@ const gifts: IFarmCard[] = [
     ),
     buyBonus: (
       <span>
-        <b>Gift</b> this to a Rival.
+        <b>Gift</b> this to a Rival. <br />
+        Draw a card.
       </span>
     ),
   },
@@ -94,7 +92,6 @@ const gifts: IFarmCard[] = [
       carrots: 0,
     },
     image: "/rotten_crops.png",
-    ai_image: "/ai/rotten_crops.png",
     notes: "A pile of rotten berries.",
     qty: 1,
     set: CARD_SET.BASE,
@@ -111,13 +108,14 @@ const gifts: IFarmCard[] = [
   },
   {
     name: "Nightshade",
+    image: "/nightshade.png",
     cost: {
       apples: 1,
       berries: 1,
       carrots: 1,
     },
     qty: 1,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
     type: CARD_TYPE.Item,
     subtype: CARD_SUBTYPE.Gift,
     tags: [TAGS.GIFT, TAGS.SUNLIGHT_REMOVE, TAGS.CARD_DRAW],
@@ -136,6 +134,7 @@ const gifts: IFarmCard[] = [
   },
   {
     name: "Plank",
+    image: "/plank.png",
     cost: {
       apples: 1,
       berries: 1,
@@ -204,6 +203,36 @@ const gifts: IFarmCard[] = [
     buyBonus: (
       <span>
         <b>Gift</b> this card.
+      </span>
+    ),
+  },
+  {
+    name: "Pet Rock",
+    cost: {
+      apples: 1,
+      berries: 1,
+      carrots: 1,
+    },
+    qty: 1,
+    set: CARD_SET.HOLIDAY,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Gift,
+    tags: [TAGS.GIFT, TAGS.ADD_ZZZ, TAGS.CARD_DRAW],
+    unsellable: true,
+    energy: 5,
+    description: (
+      <span>
+        Do nothing...
+      </span>
+    ),
+    clockOut: (
+      <span>
+        Draw 3 cards.
+      </span>
+    ),
+    buyBonus: (
+      <span>
+        <b>Gift</b> this card... Or keep it for yourself.
       </span>
     ),
   },

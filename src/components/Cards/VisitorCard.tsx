@@ -1,4 +1,7 @@
 import { IVisitorCard } from "../../models/cards.models";
+import { getAreDesignNotesVisible } from "../../store/filtersSlice";
+import { useAppSelector } from "../../store/hooks";
+import { RootState } from "../../store/store";
 import "./cards.scss";
 
 interface IProps {
@@ -6,9 +9,25 @@ interface IProps {
 }
 
 const VisitorCard = (props: IProps) => {
+  const areDesignNotesVisible = useAppSelector(getAreDesignNotesVisible);
+  const image = props.card.image;
+    
   return (
     <div className="card card--favour">
       <div className="card__name">{props.card.name}</div>
+      {areDesignNotesVisible && props.card.notes && !image ? (
+        <div className="card__notes__container">
+          <div className="card__notes__text">{props.card.notes}</div>
+        </div>
+      ) : (
+        <div className="card__image__container">
+          <img
+            className="card__image"
+            alt={image}
+            src={`/images/${props.card.type.toLowerCase()}${image}`}
+          />
+        </div>
+      )}
       <div className="card__description__container">
         <div className="card__description__block card__description__block--solo">
           {props.card.description}
@@ -22,3 +41,4 @@ const VisitorCard = (props: IProps) => {
 };
 
 export default VisitorCard;
+

@@ -8,9 +8,11 @@ import {
   getFilteredDuplicatesFarmDeck,
   getFilteredDuplicatesFavourDeck,
   getFilteredDuplicatesRewardDeck,
+  getFilteredDuplicatesWorkOrderDeck,
   getFilteredFarmDeck,
   getFilteredFavourDeck,
   getFilteredRewardDeck,
+  getFilteredWorkOrderDeck,
 } from "../../store/deck.selectors";
 
 import cn from "classnames";
@@ -30,17 +32,32 @@ const NewDisplay = () => {
     getFilteredDuplicatesFarmDeck
   );
   const filteredFarmDeck = useAppSelector(getFilteredFarmDeck);
+
+  const filteredDuplicatesWorkOrdersDeck = useAppSelector(
+    getFilteredDuplicatesWorkOrderDeck
+  )
+  const filteredWorkOrdersDeck = useAppSelector(
+    getFilteredWorkOrderDeck
+  )
   const shouldShowStats = useAppSelector(getShouldShowStats);
+
+  const totalDupes = filteredDuplicatesFarmDeck.length + filteredRewardsDuplicates.length + filteredFavoursDuplicates.length + filteredDuplicatesWorkOrdersDeck.length
+  const totalUnique = filteredFarmDeck.length + filteredRewards.length + filteredFavours.length + filteredWorkOrdersDeck.length
 
   return (
     <div className="display">
       <Filters />
       <h1>
-        {filteredDuplicatesFarmDeck.length} Farm cards (
-        {filteredFarmDeck.length} unique) - {filteredRewardsDuplicates.length}{" "}
-        Rewards ({filteredRewards.length} unique) -{" "}
-        {filteredFavoursDuplicates.length} Favours ({filteredFavours.length}{" "}
-        unique)
+        <div>
+          {totalDupes} cards. ({totalUnique} unique)
+        </div>
+        <div>
+          {filteredDuplicatesFarmDeck.length} Farm cards (
+          {filteredFarmDeck.length} unique) - {filteredRewardsDuplicates.length}{" "}
+          Rewards ({filteredRewards.length} unique) -{" "}
+          {filteredFavoursDuplicates.length} Favours ({filteredFavours.length}{" "}
+          unique) - {" "}{filteredDuplicatesWorkOrdersDeck.length} Work Orders ({filteredWorkOrdersDeck.length} unique)
+        </div>
       </h1>
       <div
         className={cn("display__content", {

@@ -217,7 +217,8 @@ const favours: IFavourCard[] = [
     set: CARD_SET.BASE,
   },
   {
-    name: "Broker a deal",
+    name: "Make a deal",
+    image: "/make_a_deal.png",
     qty: 1,
     description: (
       <span>
@@ -227,22 +228,25 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.CROP_STEAL],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
-    name: "Lend a hand",
+    name: "Hike the price",
+    image: "/hike_the_price.png",
     qty: 1,
     description: (
       <span>
-        <Skewer /> a card for a Rival. <br /> (from their discard pile)
+        <b>Snatch</b> the discounted crops from a card in the <b>Market</b>. <br />
+        <b>Refresh</b> that card.
       </span>
     ),
-    tags: [TAGS.SKEWER],
+    tags: [TAGS.SNATCH_DISCOUNT, TAGS.REFRESH],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
     name: "Donate",
+    image: "/donate.png",
     qty: 1,
     description: (
       <span>
@@ -252,10 +256,11 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.DISCARD_OWN, TAGS.GIFT],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
     name: "Fundraise",
+    image: "/fundraise.png",
     qty: 2,
     description: (
       <span>
@@ -265,10 +270,11 @@ const favours: IFavourCard[] = [
     ),
     tags: [TAGS.CROP_GENERATION, TAGS.CROP_GENERATION_RANDOM, TAGS.DISCOUNT],
     type: CARD_TYPE.Favour,
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
     name: "TIMBER!",
+    image: "/timber.png",
     qty: 1,
     description: (
       <span>
@@ -281,6 +287,7 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Gnaw",
+    image: "/gnaw.png",
     qty: 2,
     description: (
       <span>
@@ -294,6 +301,7 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Nibble",
+    image: "/nibble.png",
     qty: 1,
     description: (
       <span>
@@ -306,6 +314,7 @@ const favours: IFavourCard[] = [
   },
   {
     name: "Sprinkle the Seeds",
+    image: "/sprinkle_the_seeds.png",
     qty: 1,
     description: (
       <span>

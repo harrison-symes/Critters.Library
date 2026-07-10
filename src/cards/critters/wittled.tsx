@@ -10,9 +10,10 @@ import Discount from "../text/Discount";
 import Seed from "../text/Seed";
 import Sunlight from "../text/Sunlight";
 
-const wittled: IFarmCard[] = [
+const whittled: IFarmCard[] = [
   {
-    name: "Wittle Rat",
+    name: "Whittle Rat",
+    image: "/whittle_rat.png",
     notes: "A wood carving of a rat",
     cost: {
       apples: 1,
@@ -22,7 +23,7 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     description: (
       <span>
@@ -31,7 +32,8 @@ const wittled: IFarmCard[] = [
     ),
   },
   {
-    name: "Wittle Mole",
+    name: "Whittle Mole",
+    image: "/whittle_mole.png",
     notes: "A wood carving of a mole",
     cost: {
       apples: 1,
@@ -41,7 +43,7 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     description: (
       <span>
@@ -54,7 +56,8 @@ const wittled: IFarmCard[] = [
     ),
   },
   {
-    name: "Wittle Rabbit",
+    name: "Whittle Rabbit",
+    image: "/whittle_rabbit.png",
     notes: "A wood carving of a Rabbit",
     cost: {
       apples: 1,
@@ -64,12 +67,13 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     description: <span>Gain +3 of a crop of your choosing.</span>,
   },
   {
-    name: "Wittle Raccoon",
+    name: "Whittle Raccoon",
+    image: "/whittle_raccoon.png",
     notes: "A wood carving of a Raccoon",
     cost: {
       apples: 1,
@@ -79,7 +83,7 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     tags: [TAGS.DISCARD_OWN, TAGS.CARD_DRAW],
     description: (
@@ -90,7 +94,8 @@ const wittled: IFarmCard[] = [
     ),
   },
   {
-    name: "Wittle Hog",
+    name: "Whittle Hog",
+    image: "/whittle_hog.png",
     notes: "A wood carving of a hedgehog",
     cost: {
       apples: 1,
@@ -100,7 +105,7 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     tags: [TAGS.GIFT],
     description: (
@@ -110,7 +115,8 @@ const wittled: IFarmCard[] = [
     ),
   },
   {
-    name: "Wittle Worm",
+    name: "Whittle Worm",
+    image: "/whittle_worm.png",
     notes: "A wood carving of a worm",
     cost: {
       apples: 1,
@@ -120,7 +126,7 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     tags: [TAGS.SEED_SYNERGY, TAGS.SUNLIGHT_ADD],
     description: (
@@ -131,7 +137,8 @@ const wittled: IFarmCard[] = [
     ),
   },
   {
-    name: "Wittle Beaver",
+    name: "Whittle Beaver",
+    image: "/whittle_beaver.png",
     notes: "A wood carving of a beaver",
     cost: {
       apples: 1,
@@ -141,18 +148,18 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     tags: [TAGS.CHEW, TAGS.ADD_TO_HAND],
     description: (
       <span>
-        <Chew count={3} />. <br /> Put one of the <Chewed /> cards into your
-        hand.
+        <Chew count={3} />, then add one of the <Chewed /> cards to your hand.
       </span>
     ),
   },
   {
-    name: "Wittle Bee",
+    name: "Whittle Bee",
+    image: "/whittle_bee.png",
     notes: "A wood carving of a bee",
     cost: {
       apples: 1,
@@ -162,15 +169,15 @@ const wittled: IFarmCard[] = [
     qty: 1,
     set: CARD_SET.WOOD_WORK,
     type: CARD_TYPE.Critter,
-    subtype: CARD_SUBTYPE.Wittled,
+    subtype: CARD_SUBTYPE.Whittled,
     energy: 1,
     tags: [TAGS.WORK_ORDERS_3, TAGS.CARD_DRAW],
     description: (
       <span>
-        If you have 3 <b>Work Orders</b>, draw 2 cards.
+        Pack a free <b>📦Crate</b> into a <b>Work Order</b>.
       </span>
     ),
   },
 ];
 
-export default wittled;
+export default whittled;

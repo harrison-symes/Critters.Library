@@ -11,7 +11,6 @@ const starter: IFarmCard[] = [
   {
     name: "Apple Tree",
     image: "/apple_tree.png",
-    ai_image: "/ai/apple_tree.png",
     cost: {
       apples: 2,
       berries: 0,
@@ -28,7 +27,6 @@ const starter: IFarmCard[] = [
   {
     name: "Berry Bush",
     image: "/berry_bush.png",
-    ai_image: "/ai/berry_bush.png",
     notes: "A berry bush with lots of purple berries on it",
     cost: {
       apples: 0,
@@ -45,7 +43,6 @@ const starter: IFarmCard[] = [
   {
     name: "Carrot Patch",
     image: "/carrot_patch.png",
-    ai_image: "/carrot_patch.png",
     notes: "A carrot patch with lots of grown carrots poking out",
     cost: {
       apples: 0,
@@ -62,7 +59,6 @@ const starter: IFarmCard[] = [
   {
     name: "Friendship Charm",
     image: "/friendship_charm.png",
-    ai_image: "/ai/friendship_charm.png",
     notes:
       "A heart shaped necklace with two letters enscribed. 8 combinations of letters. R+P. D+C. A+H. Z+S. A+P. T+M. M+R. H+I.",
     cost: {
@@ -84,7 +80,6 @@ const starter: IFarmCard[] = [
   {
     name: "Pick of the Crop",
     image: "/pick_of_the_crop.png",
-    ai_image: "/ai/pick_of_the_crop.png",
     notes:
       "A picnic table with one of each crop laid out, like professor oak's table in pokemon.",
     cost: {

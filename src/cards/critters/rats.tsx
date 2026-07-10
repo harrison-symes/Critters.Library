@@ -12,12 +12,12 @@ import Shuffle from "../text/Shuffle";
 import Finance from "../text/Finance";
 import Sleepy from "../text/Sleepy";
 import Critter from "../text/Critter";
+import Dive from "../text/Dive";
 
 const rats: IFarmCard[] = [
   {
     name: "Aristoc-Rat",
     image: "/aristoc_rat.png",
-    ai_image: "/ai/aristoc_rat.png",
     notes:
       "A rat lying on a beach chair. He has sunglasses and a silk gown on. Eating berries out of his hand very royally.",
     qty: 2,
@@ -77,6 +77,7 @@ const rats: IFarmCard[] = [
   },
   {
     name: "Hermes",
+    image: "/hermes.png",
     notes:
       "A black and white rat is running fast, holding a parcel. He has winged shoes on.",
     qty: 1,
@@ -101,6 +102,7 @@ const rats: IFarmCard[] = [
   },
   {
     name: "Tax Collector",
+    image: "/tax_collector.png",
     qty: 1,
     cost: {
       apples: 2,
@@ -122,10 +124,11 @@ const rats: IFarmCard[] = [
     type: CARD_TYPE.Critter,
     subtype: CARD_SUBTYPE.Rat,
     tags: [TAGS.DISCOUNT, TAGS.CROP_STEAL, TAGS.SHUFFLE],
-    set: CARD_SET.CHARITY_DRIVE,
+    set: CARD_SET.CROWD_FUND,
   },
   {
     name: "Mole Rat",
+    image: "/mole_rat.png",
     cost: {
       apples: 4,
       carrots: 4,
@@ -163,7 +166,31 @@ const rats: IFarmCard[] = [
     tags: [TAGS.FREE_MASK],
     description: (
       <span>
-        Put a <b>Mask</b> from the <b>Market</b> onto a <Critter />.
+        Put a <b>Mask</b> from the <b>Market</b> onto ANY one <Critter />.
+      </span>
+    ),
+    energy: 2,
+  },
+  {
+    name: "Price Diver",
+    cost: {
+      apples: 0,
+      carrots: 0,
+      berries: 0,
+    },
+    qty: 1,
+    set: CARD_SET.HOLIDAY,
+    type: CARD_TYPE.Critter,
+    subtype: CARD_SUBTYPE.Rat,
+    tags: [TAGS.FREE_MASK],
+    description: (
+      <span>
+        <Discount />.
+      </span>
+    ),
+    clockOut: (
+      <span>
+        <Dive count={2} />.
       </span>
     ),
     energy: 3,
